@@ -8,5 +8,8 @@ namespace Entitie
 {
     class Usuario
     {
+        //aqui se mapearia el documento usuario
     }
 }
+
+
