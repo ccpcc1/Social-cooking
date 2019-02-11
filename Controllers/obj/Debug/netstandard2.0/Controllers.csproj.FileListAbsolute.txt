@@ -1,0 +1,9 @@
+C:\Users\palac\Desktop\Social-cooking\Controllers\bin\Debug\netstandard2.0\Controllers.deps.json
+C:\Users\palac\Desktop\Social-cooking\Controllers\bin\Debug\netstandard2.0\Controllers.dll
+C:\Users\palac\Desktop\Social-cooking\Controllers\bin\Debug\netstandard2.0\Controllers.pdb
+C:\Users\palac\Desktop\Social-cooking\Controllers\obj\Debug\netstandard2.0\Controllers.csprojAssemblyReference.cache
+C:\Users\palac\Desktop\Social-cooking\Controllers\obj\Debug\netstandard2.0\Controllers.csproj.CoreCompileInputs.cache
+C:\Users\palac\Desktop\Social-cooking\Controllers\obj\Debug\netstandard2.0\Controllers.AssemblyInfoInputs.cache
+C:\Users\palac\Desktop\Social-cooking\Controllers\obj\Debug\netstandard2.0\Controllers.AssemblyInfo.cs
+C:\Users\palac\Desktop\Social-cooking\Controllers\obj\Debug\netstandard2.0\Controllers.dll
+C:\Users\palac\Desktop\Social-cooking\Controllers\obj\Debug\netstandard2.0\Controllers.pdb
