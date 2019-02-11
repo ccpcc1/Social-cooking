@@ -25,11 +25,32 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite", "WebSite\", "{A8C
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{8930D9CD-390E-4BE5-BCB5-5AB9C6F4E025}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{8930D9CD-390E-4BE5-BCB5-5AB9C6F4E025}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker", "Broker\Broker.csproj", "{9851FD8E-7260-4DD5-9A8B-73CAAE627DC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Broker", "Broker\Broker.csproj", "{9851FD8E-7260-4DD5-9A8B-73CAAE627DC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\Controllers.csproj", "{6388F891-25FB-41FE-A112-D7B58598A86E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controllers", "Controllers\Controllers.csproj", "{6388F891-25FB-41FE-A112-D7B58598A86E}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SocialCooking", "SocialCooking\", "{3AB12C7E-2510-4975-A1A0-0C543808269F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_3962"
+		Debug.AspNetCompiler.PhysicalPath = "SocialCooking\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3962\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_3962"
+		Release.AspNetCompiler.PhysicalPath = "SocialCooking\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3962\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3962"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +74,10 @@ Global
 		{6388F891-25FB-41FE-A112-D7B58598A86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6388F891-25FB-41FE-A112-D7B58598A86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6388F891-25FB-41FE-A112-D7B58598A86E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AB12C7E-2510-4975-A1A0-0C543808269F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB12C7E-2510-4975-A1A0-0C543808269F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB12C7E-2510-4975-A1A0-0C543808269F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB12C7E-2510-4975-A1A0-0C543808269F}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
