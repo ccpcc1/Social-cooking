@@ -179,23 +179,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\palac\\.nuget\\packages\\": {},
+    "C:\\Users\\b15s04est\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\palac\\Desktop\\Social-cooking\\Broker\\Broker.csproj",
+      "projectUniqueName": "C:\\Users\\b15s04est\\Desktop\\Social-cooking\\Broker\\Broker.csproj",
       "projectName": "Broker",
-      "projectPath": "C:\\Users\\palac\\Desktop\\Social-cooking\\Broker\\Broker.csproj",
-      "packagesPath": "C:\\Users\\palac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\palac\\Desktop\\Social-cooking\\Broker\\obj\\",
+      "projectPath": "C:\\Users\\b15s04est\\Desktop\\Social-cooking\\Broker\\Broker.csproj",
+      "packagesPath": "C:\\Users\\b15s04est\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\b15s04est\\Desktop\\Social-cooking\\Broker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\palac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\b15s04est\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
