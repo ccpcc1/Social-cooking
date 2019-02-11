@@ -4,6 +4,8 @@
 	<title>Login SC</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="375831710522-5lbcpjfdj2cicu1gqridvmqi6a5t8d4i.apps.googleusercontent.com">
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -25,6 +27,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #666666;">
@@ -68,9 +71,10 @@
 
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<!--<button class="login100-form-btn">
 							Login
-						</button>
+						</button>-->
+						<div class="g-signin2" data-onsuccess="onSignIn"></div> <!--button de google api-->
 					</div>
 
 					<div class="text-center p-t-46 p-b-20">
