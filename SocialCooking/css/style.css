@@ -12,6 +12,19 @@ body {
     font-weight: 300;
 	}
 
+.alinear{
+    border: 1px solid #000
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    margin-right:500px;
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em
+}
+
 html,body {
   width: 100%;
   overflow-x: hidden;

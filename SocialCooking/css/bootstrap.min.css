@@ -3807,8 +3807,8 @@ fieldset[disabled] .btn-default:hover {
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #286090;
-    border-color: #204d74
+    background-color: #dda406;
+    border-color: #f29202
 }
 
 .btn-primary.active,
