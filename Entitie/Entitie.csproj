@@ -59,10 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ingredientes.cs" />
+    <Compile Include="Categorias.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Ingrediente.cs" />
     <Compile Include="IniciarSesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Receta.cs" />
+    <Compile Include="Recetas.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

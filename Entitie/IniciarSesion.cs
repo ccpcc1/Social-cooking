@@ -18,6 +18,23 @@ namespace Entitie
             var collection = database.GetCollection<BsonDocument>("Usuarios");
             var filter = Builders<BsonDocument>.Filter.Eq("Correo", correo);
             var result = collection.Find(filter).FirstOrDefault();
+            Usuario usu = new Usuario();
+            if (result!=null)
+            {
+                //primero hay que convertir el result a un objeto usuario
+                // despues mirar si el usuario es moderador, y mostrar la ventana del moderador
+                // si no mostrar la ventana de usu normal.
+                return "moderador";
+            }
+            else
+            {
+               
+                usu.Correo = "prueba@algo";
+                usu.Nombre = "juan";
+                usu.Receta = null;
+                return "normal";
+                //se agregaria a la base de datos
+            }
             //si result es igual a null, se crearia el usuario por defecto y retornaria nuevo.
             //en caso de que exista se mirar el siguiente comentario
             //creacion de objecto usuario para mandar lo que hay en el result al objeto usuario, alli se miraria que tipo de usuario es
