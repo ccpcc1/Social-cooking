@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Bson.Serialization;
-namespace Entitie
+namespace Entidades
 {
     public class IniciarSesion
     {
@@ -24,22 +24,30 @@ namespace Entitie
                 //primero hay que convertir el result a un objeto usuario
                 // despues mirar si el usuario es moderador, y mostrar la ventana del moderador
                 // si no mostrar la ventana de usu normal.
-                return "moderador";
+                usu = BsonSerializer.Deserialize<Usuario>(result);
+
+                return usu.TipoUsu;
             }
             else
             {
-               
+                
                 usu.Correo = "prueba@algo";
                 usu.Nombre = "juan";
                 usu.Receta = null;
-                return "normal";
+                usu.TipoUsu = "normal";
+                BsonDocument documento = usu.ToBsonDocument();
+                collection.InsertOne(documento);
                 //se agregaria a la base de datos
+
+                return usu.TipoUsu;
+                // retornaria normal, y la app lo interpretaria para ingresar al perfil correspondiente
+                
             }
             //si result es igual a null, se crearia el usuario por defecto y retornaria nuevo.
             //en caso de que exista se mirar el siguiente comentario
             //creacion de objecto usuario para mandar lo que hay en el result al objeto usuario, alli se miraria que tipo de usuario es
             //por ultimo se retornaria el tipo de usuario.
-            return "";
+            
         }
     }
 }
