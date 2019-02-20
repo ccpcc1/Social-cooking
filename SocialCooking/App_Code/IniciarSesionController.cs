@@ -7,11 +7,12 @@ using System.Web.Http;
 
 
 
+
 public class IniciarSesionController : ApiController
 {
     
     // GET api/<controller>
-    public string Get(string correo)
+    public string Get(string correo, string nombre)
     {
         
        
