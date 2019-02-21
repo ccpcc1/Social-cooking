@@ -32,6 +32,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SocialCooking", "SocialCooking\", "{3AB12C7E-2510-4975-A1A0-0C543808269F}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{9851fd8e-7260-4dd5-9a8b-73caae627dc9}|Broker.dll;{6388f891-25fb-41fe-a112-d7b58598a86e}|Controllers.dll;{5e001dfb-2d38-41f6-a6b3-212c58f7ffc0}|Entitie.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_3962"
 		Debug.AspNetCompiler.PhysicalPath = "SocialCooking\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3962\"

@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categorias.cs" />
-    <Compile Include="Conexion.cs" />
     <Compile Include="Ingrediente.cs" />
     <Compile Include="IniciarSesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
