@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Usuario
+    public class Usuario
     {
         [BsonElement("_id")] // este es campo que pone por defecto el mongoDB
         public string Correo { get; set; }

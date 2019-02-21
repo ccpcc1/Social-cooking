@@ -25,6 +25,28 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Controllers/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Controllers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Controllers.dll": {}
+        }
+      },
+      "Entidades/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Entidades.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entidades.dll": {}
+        }
       }
     }
   },
@@ -170,31 +192,43 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Controllers/1.0.0": {
+      "type": "project",
+      "path": "../Controllers/Controllers.csproj",
+      "msbuildProject": "../Controllers/Controllers.csproj"
+    },
+    "Entidades/1.0.0": {
+      "type": "project",
+      "path": "../Entitie/Entidades.csproj",
+      "msbuildProject": "../Entitie/Entidades.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Controllers >= 1.0.0",
+      "Entidades >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\b15s04est\\.nuget\\packages\\": {},
+    "C:\\Users\\palac\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\b15s04est\\Pictures\\Social-cooking\\Broker\\Broker.csproj",
+      "projectUniqueName": "C:\\Users\\palac\\Desktop\\sc\\Social-cooking\\Broker\\Broker.csproj",
       "projectName": "Broker",
-      "projectPath": "C:\\Users\\b15s04est\\Pictures\\Social-cooking\\Broker\\Broker.csproj",
-      "packagesPath": "C:\\Users\\b15s04est\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\b15s04est\\Pictures\\Social-cooking\\Broker\\obj\\",
+      "projectPath": "C:\\Users\\palac\\Desktop\\sc\\Social-cooking\\Broker\\Broker.csproj",
+      "packagesPath": "C:\\Users\\palac\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\palac\\Desktop\\sc\\Social-cooking\\Broker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\b15s04est\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\palac\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -206,7 +240,14 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\palac\\Desktop\\sc\\Social-cooking\\Controllers\\Controllers.csproj": {
+              "projectPath": "C:\\Users\\palac\\Desktop\\sc\\Social-cooking\\Controllers\\Controllers.csproj"
+            },
+            "C:\\Users\\palac\\Desktop\\sc\\Social-cooking\\Entitie\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\palac\\Desktop\\sc\\Social-cooking\\Entitie\\Entidades.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

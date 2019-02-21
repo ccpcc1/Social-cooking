@@ -13,10 +13,11 @@ namespace Entidades
         protected static IMongoClient client = new MongoClient("mongodb://general:123456c@ds225205.mlab.com:25205/social_cooking");
         protected static IMongoDatabase database = client.GetDatabase("social_cooking");
 
-        public string ValidarUsuario(string correo)
+       
+        public string ValidarUsuario(Usuario usuario)
         {
             var collection = database.GetCollection<BsonDocument>("Usuarios");
-            var filter = Builders<BsonDocument>.Filter.Eq("Correo", correo);
+            var filter = Builders<BsonDocument>.Filter.Eq("Correo", usuario.Correo);
             var result = collection.Find(filter).FirstOrDefault();
             Usuario usu = new Usuario();
             if (result!=null)
@@ -30,24 +31,25 @@ namespace Entidades
             }
             else
             {
-                
-                usu.Correo = "prueba@algo";
-                usu.Nombre = "juan";
-                usu.Receta = null;
-                usu.TipoUsu = "normal";
-                BsonDocument documento = usu.ToBsonDocument();
-                collection.InsertOne(documento);
+
+                string tipoUsu=CrearUsuario(usuario);
                 //se agregaria a la base de datos
 
-                return usu.TipoUsu;
+                return tipoUsu;
                 // retornaria normal, y la app lo interpretaria para ingresar al perfil correspondiente
-                
+
             }
-            //si result es igual a null, se crearia el usuario por defecto y retornaria nuevo.
-            //en caso de que exista se mirar el siguiente comentario
-            //creacion de objecto usuario para mandar lo que hay en el result al objeto usuario, alli se miraria que tipo de usuario es
-            //por ultimo se retornaria el tipo de usuario.
             
+
+            
+        }
+        public string CrearUsuario(Usuario usu)
+        {
+            var collection = database.GetCollection<BsonDocument>("Usuarios");
+            usu.TipoUsu = "normal";
+            BsonDocument documento = usu.ToBsonDocument();
+            collection.InsertOne(documento);
+            return usu.TipoUsu;
         }
     }
 }
