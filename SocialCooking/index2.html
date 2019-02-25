@@ -117,28 +117,21 @@ http://www.tooplate.com/view/2083-steak-house
    
         
 
-        <div class="form-row">
-    <div class="form-group col-md-6">
+     <div class="form-row" id="Ingredientes">
+    <div class="margen col-md-6"  >
       <label for="inputEmail4">Nombre</label>
-      <div class="field_wrapper">
-        <div>
-          <br><input type="text" class="form-control" id="inputEmail4" required/>
-          <a href="javascript:void(0);" class="add_button" title="Add field"><img src="images/addicon.png"></a>
-        </div>
-      </div>
+      <input type="email" class="form-control" id="inputEmail4" >
+      
     </div>
-    <div class="form-group col-md-6">
+    <div class="margen col-md-6" >
       <label for="inputPassword4">Cantidad</label>
-       <div class="field_wrapper">
-        <div>
-          <br><input type="text" class="form-control" id="inputEmail4" required/>
-          <a href="javascript:void(0);" class="add_button" title="Add field"><img src="images/addicon.png"/></a>
-        </div>
-      </div>
+      <input type="password" class="form-control" id="inputPassword4" >
+      
     </div>
   </div>
+  <button onclick="agregar()" class="btn btn-primary margenBoton">Agregar</button>
+  <button onclick="eliminar()" class="btn btn-danger margenBoton">Eliminar</button>
   <hr>
-
 
 
 
@@ -638,7 +631,8 @@ http://www.tooplate.com/view/2083-steak-house
 <script src="js/wow.min.js"></script>
 
 <script src="js/custom.js"></script>
-<script type="text/javascript" src="js/formulario.js"></script>
+<script src="js/agregar.js"></script>
+
 
 </body>
 </html>
