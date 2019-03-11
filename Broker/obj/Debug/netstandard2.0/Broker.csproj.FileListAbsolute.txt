@@ -1,9 +1,0 @@
-C:\Users\palac\Desktop\Social-cooking\Broker\bin\Debug\netstandard2.0\Broker.deps.json
-C:\Users\palac\Desktop\Social-cooking\Broker\bin\Debug\netstandard2.0\Broker.dll
-C:\Users\palac\Desktop\Social-cooking\Broker\bin\Debug\netstandard2.0\Broker.pdb
-C:\Users\palac\Desktop\Social-cooking\Broker\obj\Debug\netstandard2.0\Broker.csprojAssemblyReference.cache
-C:\Users\palac\Desktop\Social-cooking\Broker\obj\Debug\netstandard2.0\Broker.csproj.CoreCompileInputs.cache
-C:\Users\palac\Desktop\Social-cooking\Broker\obj\Debug\netstandard2.0\Broker.AssemblyInfoInputs.cache
-C:\Users\palac\Desktop\Social-cooking\Broker\obj\Debug\netstandard2.0\Broker.AssemblyInfo.cs
-C:\Users\palac\Desktop\Social-cooking\Broker\obj\Debug\netstandard2.0\Broker.dll
-C:\Users\palac\Desktop\Social-cooking\Broker\obj\Debug\netstandard2.0\Broker.pdb
