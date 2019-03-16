@@ -17,7 +17,7 @@ namespace Controladora
 
             try
             {
-                //AutoMapper.Mapper.CreateMap<EN.Usuario, DA.Usuario>();
+                AutoMapper.Mapper.CreateMap<EN.Usuario, DA.Usuario>();
                 DA.Usuario objUsuario = AutoMapper.Mapper.Map< DA.Usuario>(usuario);
                 db.Usuarios.Add(objUsuario);
                 db.SaveChanges();

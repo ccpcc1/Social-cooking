@@ -10,3 +10,15 @@ C:\Users\sebas\Pictures\Proyecto inicio\SocialCookingv3.2\Entidades\obj\Debug\En
 C:\Users\sebas\Pictures\Proyecto inicio\SocialCookingv3.2\Entidades\obj\Debug\Entidades.dll
 C:\Users\sebas\Pictures\Proyecto inicio\SocialCookingv3.2\Entidades\obj\Debug\Entidades.pdb
 C:\Users\sebas\Pictures\Proyecto inicio\SocialCookingv3.2\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\bin\Debug\Entidades.dll
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\bin\Debug\Entidades.pdb
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\obj\Debug\Entidades.dll
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Entidades\obj\Debug\Entidades.pdb

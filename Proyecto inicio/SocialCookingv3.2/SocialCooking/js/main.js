@@ -17,8 +17,6 @@ function onSignIn(googleUser) {
     verificarTipoUsu(profile.getEmail);
 }
 
-
-
 function verificarTipoUsu(correo) {
     var tipousu
     $.getJSON('/api/User?correo=' + correo, function (data) {

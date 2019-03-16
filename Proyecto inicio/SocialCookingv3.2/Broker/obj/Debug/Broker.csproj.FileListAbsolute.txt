@@ -9,3 +9,15 @@ C:\Users\sebas\Pictures\Proyecto inicio\SocialCookingv3.2\Broker\obj\Debug\Broke
 C:\Users\sebas\Pictures\Proyecto inicio\SocialCookingv3.2\Broker\obj\Debug\Broker.csproj.CopyComplete
 C:\Users\sebas\Pictures\Proyecto inicio\SocialCookingv3.2\Broker\obj\Debug\Broker.dll
 C:\Users\sebas\Pictures\Proyecto inicio\SocialCookingv3.2\Broker\obj\Debug\Broker.pdb
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\bin\Debug\Broker.dll.config
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\bin\Debug\Broker.dll
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\bin\Debug\Broker.pdb
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\bin\Debug\EntityFramework.dll
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\bin\Debug\EntityFramework.xml
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\obj\Debug\Broker.csproj.CopyComplete
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\obj\Debug\Broker.dll
+C:\Users\sebas\Desktop\frontend\Social-cooking\Proyecto inicio\SocialCookingv3.2\Broker\obj\Debug\Broker.pdb
