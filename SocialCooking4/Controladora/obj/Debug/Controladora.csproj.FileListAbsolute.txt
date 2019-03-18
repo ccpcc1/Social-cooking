@@ -18,3 +18,23 @@ C:\Users\sebas\source\repos\SocialCooking4\Controladora\bin\Debug\EntityFramewor
 C:\Users\sebas\source\repos\SocialCooking4\Controladora\obj\Debug\Controladora.csproj.CopyComplete
 C:\Users\sebas\source\repos\SocialCooking4\Controladora\obj\Debug\Controladora.dll
 C:\Users\sebas\source\repos\SocialCooking4\Controladora\obj\Debug\Controladora.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\obj\Debug\Controladora.csprojAssemblyReference.cache
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\obj\Debug\Controladora.csproj.CoreCompileInputs.cache
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\Controladora.dll.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\Controladora.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\Controladora.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\Broker.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\Entidades.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\Broker.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\Broker.dll.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\Entidades.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\Entidades.dll.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\AutoMapper.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\EntityFramework.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\EntityFramework.SqlServer.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\obj\Debug\Controladora.csproj.CopyComplete
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\obj\Debug\Controladora.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\obj\Debug\Controladora.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\AutoMapper.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\EntityFramework.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Controladora\bin\Debug\EntityFramework.SqlServer.dll

@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SocialCookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Categoria">
+  <EntityType Name="Categorias">
     <Key>
       <PropertyRef Name="Id_categoria" />
     </Key>
     <Property Name="Id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Descripcion" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Recetas" Relationship="Self.FK_Recetas_Categorias" FromRole="Categorias" ToRole="Recetas" />
   </EntityType>
-  <EntityType Name="Comentario">
+  <EntityType Name="Comentarios">
     <Key>
       <PropertyRef Name="Id_comentario" />
     </Key>
@@ -25,9 +25,9 @@
     </Key>
     <Property Name="Id_receta" Type="Int32" Nullable="false" />
     <Property Name="img" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Receta" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="imagenesxReceta" ToRole="Recetas" />
+    <NavigationProperty Name="Recetas" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="imagenesxReceta" ToRole="Recetas" />
   </EntityType>
-  <EntityType Name="Ingrediente">
+  <EntityType Name="Ingredientes">
     <Key>
       <PropertyRef Name="Id_ingrediente" />
     </Key>
@@ -35,7 +35,7 @@
     <Property Name="nombre" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
     <NavigationProperty Name="recetasxIngredientes" Relationship="Self.FK_recetasxIngredientes_Ingredientes" FromRole="Ingredientes" ToRole="recetasxIngredientes" />
   </EntityType>
-  <EntityType Name="Receta">
+  <EntityType Name="Recetas">
     <Key>
       <PropertyRef Name="Id_receta" />
     </Key>
@@ -48,14 +48,14 @@
     <Property Name="Id_categoria" Type="Int32" Nullable="false" />
     <Property Name="puntuacion" Type="Int32" Nullable="false" />
     <Property Name="nopuntuaciones" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Categoria" Relationship="Self.FK_Recetas_Categorias" FromRole="Recetas" ToRole="Categorias" />
-    <NavigationProperty Name="imagenesxRecetas" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="Recetas" ToRole="imagenesxReceta" />
+    <NavigationProperty Name="Categorias" Relationship="Self.FK_Recetas_Categorias" FromRole="Recetas" ToRole="Categorias" />
+    <NavigationProperty Name="imagenesxReceta" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="Recetas" ToRole="imagenesxReceta" />
     <NavigationProperty Name="Usuario" Relationship="Self.FK_Recetas_Usuario" FromRole="Recetas" ToRole="Usuario" />
     <NavigationProperty Name="recetasxIngredientes" Relationship="Self.FK_recetasxIngredientes_Recetas" FromRole="Recetas" ToRole="recetasxIngredientes" />
     <NavigationProperty Name="Comentarios" Relationship="Self.comentariosXreceta" FromRole="Recetas" ToRole="Comentarios" />
-    <NavigationProperty Name="Usuarios" Relationship="Self.usuariosxfavoritos" FromRole="Recetas" ToRole="Usuario" />
+    <NavigationProperty Name="Usuario1" Relationship="Self.usuariosxfavoritos" FromRole="Recetas" ToRole="Usuario" />
   </EntityType>
-  <EntityType Name="recetasxIngrediente">
+  <EntityType Name="recetasxIngredientes">
     <Key>
       <PropertyRef Name="Id_receta" />
       <PropertyRef Name="Id_ingredientes" />
@@ -63,8 +63,8 @@
     <Property Name="Id_receta" Type="Int32" Nullable="false" />
     <Property Name="Id_ingredientes" Type="Int32" Nullable="false" />
     <Property Name="cantidad" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Ingrediente" Relationship="Self.FK_recetasxIngredientes_Ingredientes" FromRole="recetasxIngredientes" ToRole="Ingredientes" />
-    <NavigationProperty Name="Receta" Relationship="Self.FK_recetasxIngredientes_Recetas" FromRole="recetasxIngredientes" ToRole="Recetas" />
+    <NavigationProperty Name="Ingredientes" Relationship="Self.FK_recetasxIngredientes_Ingredientes" FromRole="recetasxIngredientes" ToRole="Ingredientes" />
+    <NavigationProperty Name="Recetas" Relationship="Self.FK_recetasxIngredientes_Recetas" FromRole="recetasxIngredientes" ToRole="Recetas" />
   </EntityType>
   <EntityType Name="Tipo_Usuario">
     <Key>
@@ -72,7 +72,7 @@
     </Key>
     <Property Name="IdTipoUsu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Descripcion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuario_Tipo_Usuario" FromRole="Tipo_Usuario" ToRole="Usuario" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_Tipo_Usuario" FromRole="Tipo_Usuario" ToRole="Usuario" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
@@ -87,25 +87,9 @@
     <NavigationProperty Name="Tipo_Usuario" Relationship="Self.FK_Usuario_Tipo_Usuario" FromRole="Usuario" ToRole="Tipo_Usuario" />
     <NavigationProperty Name="Recetas1" Relationship="Self.usuariosxfavoritos" FromRole="Usuario" ToRole="Recetas" />
   </EntityType>
-  <EntityType Name="database_firewall_rules">
-    <Key>
-      <PropertyRef Name="id" />
-      <PropertyRef Name="name" />
-      <PropertyRef Name="start_ip_address" />
-      <PropertyRef Name="end_ip_address" />
-      <PropertyRef Name="create_date" />
-      <PropertyRef Name="modify_date" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
   <Association Name="FK_Recetas_Categorias">
-    <End Role="Categorias" Type="Self.Categoria" Multiplicity="1" />
-    <End Role="Recetas" Type="Self.Receta" Multiplicity="*" />
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Categorias">
         <PropertyRef Name="Id_categoria" />
@@ -116,7 +100,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_imagenesxReceta_Recetas">
-    <End Role="Recetas" Type="Self.Receta" Multiplicity="1" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="1" />
     <End Role="imagenesxReceta" Type="Self.imagenesxReceta" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Recetas">
@@ -128,8 +112,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_recetasxIngredientes_Ingredientes">
-    <End Role="Ingredientes" Type="Self.Ingrediente" Multiplicity="1" />
-    <End Role="recetasxIngredientes" Type="Self.recetasxIngrediente" Multiplicity="*" />
+    <End Role="Ingredientes" Type="Self.Ingredientes" Multiplicity="1" />
+    <End Role="recetasxIngredientes" Type="Self.recetasxIngredientes" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Ingredientes">
         <PropertyRef Name="Id_ingrediente" />
@@ -141,7 +125,7 @@
   </Association>
   <Association Name="FK_Recetas_Usuario">
     <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-    <End Role="Recetas" Type="Self.Receta" Multiplicity="*" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Usuario">
         <PropertyRef Name="Id_Usuario" />
@@ -152,8 +136,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_recetasxIngredientes_Recetas">
-    <End Role="Recetas" Type="Self.Receta" Multiplicity="1" />
-    <End Role="recetasxIngredientes" Type="Self.recetasxIngrediente" Multiplicity="*" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="1" />
+    <End Role="recetasxIngredientes" Type="Self.recetasxIngredientes" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Recetas">
         <PropertyRef Name="Id_receta" />
@@ -176,37 +160,36 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="comentariosXreceta">
-    <End Role="Comentarios" Type="Self.Comentario" Multiplicity="*" />
-    <End Role="Recetas" Type="Self.Receta" Multiplicity="*" />
+    <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
   </Association>
   <Association Name="usuariosxfavoritos">
-    <End Role="Recetas" Type="Self.Receta" Multiplicity="*" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
     <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="SocialCookingEntities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Categorias" EntityType="Self.Categoria" />
-    <EntitySet Name="Comentarios" EntityType="Self.Comentario" />
-    <EntitySet Name="imagenesxRecetas" EntityType="Self.imagenesxReceta" />
-    <EntitySet Name="Ingredientes" EntityType="Self.Ingrediente" />
-    <EntitySet Name="Recetas" EntityType="Self.Receta" />
-    <EntitySet Name="recetasxIngredientes" EntityType="Self.recetasxIngrediente" />
+  <EntityContainer Name="SocialCookingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" />
+    <EntitySet Name="Comentarios" EntityType="Self.Comentarios" />
+    <EntitySet Name="imagenesxReceta" EntityType="Self.imagenesxReceta" />
+    <EntitySet Name="Ingredientes" EntityType="Self.Ingredientes" />
+    <EntitySet Name="Recetas" EntityType="Self.Recetas" />
+    <EntitySet Name="recetasxIngredientes" EntityType="Self.recetasxIngredientes" />
     <EntitySet Name="Tipo_Usuario" EntityType="Self.Tipo_Usuario" />
-    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
-    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
     <AssociationSet Name="FK_Recetas_Categorias" Association="Self.FK_Recetas_Categorias">
       <End Role="Categorias" EntitySet="Categorias" />
       <End Role="Recetas" EntitySet="Recetas" />
     </AssociationSet>
     <AssociationSet Name="FK_imagenesxReceta_Recetas" Association="Self.FK_imagenesxReceta_Recetas">
       <End Role="Recetas" EntitySet="Recetas" />
-      <End Role="imagenesxReceta" EntitySet="imagenesxRecetas" />
+      <End Role="imagenesxReceta" EntitySet="imagenesxReceta" />
     </AssociationSet>
     <AssociationSet Name="FK_recetasxIngredientes_Ingredientes" Association="Self.FK_recetasxIngredientes_Ingredientes">
       <End Role="Ingredientes" EntitySet="Ingredientes" />
       <End Role="recetasxIngredientes" EntitySet="recetasxIngredientes" />
     </AssociationSet>
     <AssociationSet Name="FK_Recetas_Usuario" Association="Self.FK_Recetas_Usuario">
-      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Usuario" EntitySet="Usuario" />
       <End Role="Recetas" EntitySet="Recetas" />
     </AssociationSet>
     <AssociationSet Name="FK_recetasxIngredientes_Recetas" Association="Self.FK_recetasxIngredientes_Recetas">
@@ -215,7 +198,7 @@
     </AssociationSet>
     <AssociationSet Name="FK_Usuario_Tipo_Usuario" Association="Self.FK_Usuario_Tipo_Usuario">
       <End Role="Tipo_Usuario" EntitySet="Tipo_Usuario" />
-      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Usuario" EntitySet="Usuario" />
     </AssociationSet>
     <AssociationSet Name="comentariosXreceta" Association="Self.comentariosXreceta">
       <End Role="Comentarios" EntitySet="Comentarios" />
@@ -223,7 +206,7 @@
     </AssociationSet>
     <AssociationSet Name="usuariosxfavoritos" Association="Self.usuariosxfavoritos">
       <End Role="Recetas" EntitySet="Recetas" />
-      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Usuario" EntitySet="Usuario" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="Categorias.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Recetas.cs" />
+    <Compile Include="Receta.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

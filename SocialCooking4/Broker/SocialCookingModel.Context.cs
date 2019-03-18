@@ -13,10 +13,10 @@ namespace Broker
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SocialCookingEntities1 : DbContext
+    public partial class SocialCookingEntities : DbContext
     {
-        public SocialCookingEntities1()
-            : base("name=SocialCookingEntities1")
+        public SocialCookingEntities()
+            : base("name=SocialCookingEntities")
         {
         }
     
@@ -25,14 +25,13 @@ namespace Broker
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Categoria> Categorias { get; set; }
-        public virtual DbSet<Comentario> Comentarios { get; set; }
-        public virtual DbSet<imagenesxReceta> imagenesxRecetas { get; set; }
-        public virtual DbSet<Ingrediente> Ingredientes { get; set; }
-        public virtual DbSet<Receta> Recetas { get; set; }
-        public virtual DbSet<recetasxIngrediente> recetasxIngredientes { get; set; }
+        public virtual DbSet<Categorias> Categorias { get; set; }
+        public virtual DbSet<Comentarios> Comentarios { get; set; }
+        public virtual DbSet<imagenesxReceta> imagenesxReceta { get; set; }
+        public virtual DbSet<Ingredientes> Ingredientes { get; set; }
+        public virtual DbSet<Recetas> Recetas { get; set; }
+        public virtual DbSet<recetasxIngredientes> recetasxIngredientes { get; set; }
         public virtual DbSet<Tipo_Usuario> Tipo_Usuario { get; set; }
-        public virtual DbSet<Usuario> Usuarios { get; set; }
-        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SocialCookingModelStoreContainer" CdmEntityContainer="SocialCookingEntities1">
+  <EntityContainerMapping StorageEntityContainer="SocialCookingModelStoreContainer" CdmEntityContainer="SocialCookingEntities">
     <EntitySetMapping Name="Categorias">
-      <EntityTypeMapping TypeName="SocialCookingModel.Categoria">
+      <EntityTypeMapping TypeName="SocialCookingModel.Categorias">
         <MappingFragment StoreEntitySet="Categorias">
           <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -11,7 +11,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Comentarios">
-      <EntityTypeMapping TypeName="SocialCookingModel.Comentario">
+      <EntityTypeMapping TypeName="SocialCookingModel.Comentarios">
         <MappingFragment StoreEntitySet="Comentarios">
           <ScalarProperty Name="Id_comentario" ColumnName="Id_comentario" />
           <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
@@ -19,7 +19,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="imagenesxRecetas">
+    <EntitySetMapping Name="imagenesxReceta">
       <EntityTypeMapping TypeName="SocialCookingModel.imagenesxReceta">
         <MappingFragment StoreEntitySet="imagenesxReceta">
           <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
@@ -28,7 +28,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Ingredientes">
-      <EntityTypeMapping TypeName="SocialCookingModel.Ingrediente">
+      <EntityTypeMapping TypeName="SocialCookingModel.Ingredientes">
         <MappingFragment StoreEntitySet="Ingredientes">
           <ScalarProperty Name="Id_ingrediente" ColumnName="Id_ingrediente" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -36,7 +36,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Recetas">
-      <EntityTypeMapping TypeName="SocialCookingModel.Receta">
+      <EntityTypeMapping TypeName="SocialCookingModel.Recetas">
         <MappingFragment StoreEntitySet="Recetas">
           <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
@@ -51,7 +51,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="recetasxIngredientes">
-      <EntityTypeMapping TypeName="SocialCookingModel.recetasxIngrediente">
+      <EntityTypeMapping TypeName="SocialCookingModel.recetasxIngredientes">
         <MappingFragment StoreEntitySet="recetasxIngredientes">
           <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
           <ScalarProperty Name="Id_ingredientes" ColumnName="Id_ingredientes" />
@@ -67,7 +67,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Usuarios">
+    <EntitySetMapping Name="Usuario">
       <EntityTypeMapping TypeName="SocialCookingModel.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
           <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
@@ -75,18 +75,6 @@
           <ScalarProperty Name="Correo" ColumnName="Correo" />
           <ScalarProperty Name="IdTipoUsu" ColumnName="IdTipoUsu" />
           <ScalarProperty Name="img" ColumnName="img" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="database_firewall_rules">
-      <EntityTypeMapping TypeName="SocialCookingModel.database_firewall_rules">
-        <MappingFragment StoreEntitySet="database_firewall_rules">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
-          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
-          <ScalarProperty Name="create_date" ColumnName="create_date" />
-          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

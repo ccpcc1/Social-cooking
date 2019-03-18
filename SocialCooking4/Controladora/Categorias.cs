@@ -13,14 +13,20 @@ namespace Controladora
    
     public class Categorias
     {
-        private BR.SocialCookingEntities1 db = new BR.SocialCookingEntities1();
+        private BR.SocialCookingEntities db = new BR.SocialCookingEntities();
 
         public int getIdCategoria(string categoria)
         {
 
-            BR.Categoria categoriaBuscada = db.Categorias.Where(x => x.Descripcion == categoria).FirstOrDefault();
+            BR.Categorias categoriaBuscada = db.Categorias.Where(x => x.Nombre == categoria).FirstOrDefault();
 
             return categoriaBuscada.Id_categoria;
+        }
+
+        public string getNombreCategoria(int id)
+        {
+           
+            return db.Categorias.Where(x => x.Id_categoria == id).FirstOrDefault().Nombre;
         }
     }
 }

@@ -11,3 +11,17 @@ C:\Users\sebas\source\repos\SocialCooking4\Entidades\obj\Debug\Entidades.csproj.
 C:\Users\sebas\source\repos\SocialCooking4\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 C:\Users\sebas\source\repos\SocialCooking4\Entidades\obj\Debug\Entidades.dll
 C:\Users\sebas\source\repos\SocialCooking4\Entidades\obj\Debug\Entidades.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\Entidades.dll.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\Entidades.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\Entidades.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\AutoMapper.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\AutoMapper.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache

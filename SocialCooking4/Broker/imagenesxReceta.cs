@@ -17,6 +17,6 @@ namespace Broker
         public int Id_receta { get; set; }
         public string img { get; set; }
     
-        public virtual Receta Receta { get; set; }
+        public virtual Recetas Recetas { get; set; }
     }
 }

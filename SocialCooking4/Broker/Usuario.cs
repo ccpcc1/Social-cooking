@@ -17,8 +17,8 @@ namespace Broker
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuario()
         {
-            this.Recetas = new HashSet<Receta>();
-            this.Recetas1 = new HashSet<Receta>();
+            this.Recetas = new HashSet<Recetas>();
+            this.Recetas1 = new HashSet<Recetas>();
         }
     
         public int Id_Usuario { get; set; }
@@ -28,9 +28,9 @@ namespace Broker
         public string img { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Receta> Recetas { get; set; }
+        public virtual ICollection<Recetas> Recetas { get; set; }
         public virtual Tipo_Usuario Tipo_Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Receta> Recetas1 { get; set; }
+        public virtual ICollection<Recetas> Recetas1 { get; set; }
     }
 }

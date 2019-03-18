@@ -1,8 +1,8 @@
-﻿window.onload = console.log("hola");
+﻿
 
 function onSignIn(googleUser) {
 
-    console.log("hasta");
+    
     var profile = googleUser.getBasicProfile();
     console.log("ID: " + profile.getId()); // Don't send this directly to your server!
     console.log('Full Name: ' + profile.getName());
@@ -19,7 +19,7 @@ function onSignIn(googleUser) {
 
 function verificarTipoUsu(correo) {
     var tipousu
-    $.getJSON('/api/User?correo=' + correo, function (data) {
+    $.getJSON('/api/Usuario?correo=' + correo, function (data) {
         console.log("es lo que recoge=" + data)
         tipousu = data;
         enviarAPerfil(tipousu);
