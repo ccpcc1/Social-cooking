@@ -1,9 +1,5 @@
 
-
 var instanciar= true;
-
-
-
 function agregar() {
   
   

@@ -26,9 +26,6 @@ function verificarTipoUsu(correo) {
        
     });
    
-        
-        
-   
 }
 
 function enviarAPerfil(tipousuario) {

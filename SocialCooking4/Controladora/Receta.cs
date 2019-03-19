@@ -28,6 +28,7 @@ namespace Controladora
                 BR.Recetas rec = new BR.Recetas();
                 Usuario temp1 = new Usuario();
                 Categorias cat = new Categorias();
+                ImagenesxReceta imagenes = new ImagenesxReceta();
                 rec.Id_usuario = temp1.getIdUsuario(recetas.correo_usu);
                 rec.Id_categoria = cat.getIdCategoria(recetas.Categoria);// verificar el nombre
                 rec.Descripcion = recetas.Descripcion;
@@ -38,7 +39,8 @@ namespace Controladora
                 rec.nopuntuaciones = 0;
                 db.Recetas.Add(rec);
                 db.SaveChanges();
-
+                recetas.Id_receta = rec.Id_receta;
+                imagenes.ingresarImagenesReceta(recetas);
 
                 resultado = true;
 
