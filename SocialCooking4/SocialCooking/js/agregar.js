@@ -77,12 +77,12 @@ function agregarCampos() {
 
 
 function agregar() {
-    var br1 = document.createElement("BR")
-    var br2 = document.createElement("BR")
+    var br1 = document.createElement("BR");
+    var br2 = document.createElement("BR");
     var x = document.createElement("INPUT");
     var y = document.createElement("INPUT");
-  if(instanciar== true)
-  {
+    if(instanciar== true)
+     {
       // cuando se le da click por primera al boton "+", para agregar un ingrediente
       var div1 = document.createElement("DIV");
       var div2 = document.createElement("DIV");
@@ -95,7 +95,7 @@ function agregar() {
       div2.setAttribute("id", "cantidad");
       document.getElementById("Ingredientes").appendChild(div2);
       instanciar= false;
-  }
+    }
   
 
   
@@ -124,7 +124,6 @@ function agregar() {
 function eliminar() {
 
   var c = document.getElementById("nombre").childElementCount;
-
   var list = document.getElementById("nombre");
   list.removeChild(list.childNodes[c-1]);
   list = document.getElementById("cantidad");
