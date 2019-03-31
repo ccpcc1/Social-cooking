@@ -7120,7 +7120,7 @@ button.close {
     margin: 10px
 }
 
-.modal-content {
+.ventanaFormulario{
     position: relative;
     background-color: rgba(0, 0, 0, 0.65);
     -webkit-background-clip: padding-box;
@@ -7152,22 +7152,22 @@ button.close {
     opacity: .5
 }
 
-.modal-header {
+.encabezadoFormulario {
     min-height: 16.43px;
     padding: 15px;
     border-bottom: 1px solid #e5e5e5
 }
 
-.modal-header .close {
+.encabezadoFormulario .close {
     margin-top: -2px
 }
 
-.modal-title {
+.tituloFormulario {
     margin: 0;
     line-height: 1.42857143
 }
 
-.modal-body {
+.cuerpoFormulario {
     position: relative;
     padding: 15px
 }

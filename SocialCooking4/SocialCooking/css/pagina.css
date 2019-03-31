@@ -77,11 +77,6 @@ transition: background .55s ease;
    }
 
 
-
-
-
-
-
 .container-3{
   width: 100%; 
   height:auto;
@@ -90,7 +85,7 @@ transition: background .55s ease;
   padding: 30px;
 }
  
-.container-3 input#search{
+.container-3 input#buscarReceta{
   width:100%; 
   height:auto;
   background: #fff3bd;
@@ -107,19 +102,19 @@ transition: background .55s ease;
 }
 
 
-.container-3 input#search::-webkit-input-placeholder {
+.container-3 input#buscarReceta::-webkit-input-placeholder {
    color: #dd8277;
 }
  
-.container-3 input#search:-moz-placeholder { /* Firefox 18- */
+.container-3 input#buscarReceta:-moz-placeholder { /* Firefox 18- */
    color: #dd8277;  
 }
  
-.container-3 input#search::-moz-placeholder {  /* Firefox 19+ */
+.container-3 input#buscarReceta::-moz-placeholder {  /* Firefox 19+ */
    color: #dd8277;  
 }
  
-.container-3 input#search:-ms-input-placeholder {  
+.container-3 input#buscarReceta:-ms-input-placeholder {  
    color: #dd8277;  
 }
 
@@ -138,7 +133,7 @@ transition: background .55s ease;
   transition: all .55s ease;
 }
 
-.container-3 input#search:focus, .container-3 input#search:active{
+.container-3 input#buscarReceta:focus, .container-3 input#buscarReceta:active{
     outline:none; 
 }
  
@@ -152,3 +147,34 @@ transition: background .55s ease;
   -o-transform:scale(1.5); /* Opera */
    transform:scale(1.5);
   }
+
+  #barraCategorias{
+    top:-100px;
+    position :relative;
+    width: 100%;
+    height: 200px;
+    background-color: #fdbf00;
+
+  }
+
+  .categoria{
+    margin:0px;
+    margin-top:0px;
+    width: 210px;
+    height: 150px;
+    border-radius: 8px 8px 8px 8px;
+    text-align: center;
+    margin-left:12px;
+
+
+
+  }
+
+
+
+
+
+
+
+
+

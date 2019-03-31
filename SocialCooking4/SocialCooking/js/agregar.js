@@ -1,37 +1,20 @@
-
-var instanciar = true;
+var instanciar= true;
+var identificador=0;
+var div1;
+var div2;
+var br1;
+var br2;
+var inputNombre;
+var inputCantidad;
+var contador;
+var list;
 var files;
-function agregarCampos() {
+var reader;
 
 
-
-    if (instanciar == true) {
-        var div1 = document.createElement("DIV")
-        div1.setAttribute("class", "form-group col-md-6");
-        div1.setAttribute("id", "nombre");
-        document.getElementById("Ingredientes").appendChild(div1);
-
-        var div2 = document.createElement("DIV")
-        div2.setAttribute("class", "form-group col-md-6");
-        div2.setAttribute("id", "cantidad");
-        document.getElementById("Ingredientes").appendChild(div2);
-        instanciar = false;
-
-        /*recordar que estos nodos se tienen que recorrer de 2 en 2 y el for empezaria desde 1*/
-        //var ingrediente=document.getElementById('nombre');
-        //ingrediente.childNodes[7].value;
-        //var cantidad= document.getElementById('cantidad');
-        //cantidad.childNodes[1].value;
-        //var idiomas=document.getElementById('listaIdiomas');
-        //idiomas.value
-        //imagen.files[i]
-
-    }
-
-    function guardarDatos() {
+function guardarDatos() {
 
         //trabajo bajo el supuesto de que los campos estan llenos
-
         var ingredientes = [];
         var imagenes = [];
         var nombreReceta = document.getElementById('nombreReceta');
@@ -41,10 +24,11 @@ function agregarCampos() {
         var imagen = document.getElementById('files');
         var descripcion = document.getElementById('descripcionReceta');
         var pasoApaso = document.getElementById('pasosReceta');
-        var categoria = document.getElementById('Categoria');
+        //var categoria = document.getElementById('Categoria');
         var j = 0;
+        var i;
         var Receta;
-        for (var i = 0; i < ingrediente.childNodes.length; i + 2) {
+        for (i = 0; i < ingrediente.childNodes.length; i + 2) {
             ingredientes[j].nombre = ingrediente.childNodes[i].value;
             ingredientes[j].cantidad = cantidadIngrediente.childNodes[i].value;
             j++;
@@ -60,8 +44,9 @@ function agregarCampos() {
                 "imagenes": imagenes.value
             }
 
-    }
-    function ConvertirBase64(file) {
+}
+    
+function ConvertirBase64(file) {
         var lectorImg = new FileReader();
         lectorImg.readAsDataURL(file);
         lectorImg.onload = function () {
@@ -73,72 +58,80 @@ function agregarCampos() {
             console.log('Hubo un error: ', error);
             return error;
         };
-    }
+}
 
 
-function agregar() {
-    var br1 = document.createElement("BR");
-    var br2 = document.createElement("BR");
-    var x = document.createElement("INPUT");
-    var y = document.createElement("INPUT");
-    if(instanciar== true)
-     {
-      // cuando se le da click por primera al boton "+", para agregar un ingrediente
-      var div1 = document.createElement("DIV");
-      var div2 = document.createElement("DIV");
-      div1.setAttribute("class", "form-group col-md-6");
-      div1.setAttribute("id", "nombre");
-      document.getElementById("Ingredientes").appendChild(div1);
-
+//Funcion para agregar campos de nombre y cantidad en la ventana modal.
+function agregarCampos() {
   
-      div2.setAttribute("class", "form-group col-md-6");
-      div2.setAttribute("id", "cantidad");
-      document.getElementById("Ingredientes").appendChild(div2);
-      instanciar= false;
-    }
   
 
+  if(instanciar== true)
+  {
+  div1 = document.createElement("DIV")
+  div1.setAttribute("class", "form-group col-md-6");
+  div1.setAttribute("id", "nombre");
+  document.getElementById("Ingredientes").appendChild(div1);
+
+  div2 = document.createElement("DIV")
+  div2.setAttribute("class", "form-group col-md-6");
+  div2.setAttribute("id", "cantidad");
+  document.getElementById("Ingredientes").appendChild(div2);
+  instanciar= false;
+
+}
   
+//Agregar espacios entre cada campo.
+  br1 = document.createElement("BR")
   document.getElementById("nombre").appendChild(br1);
 
-  
+  br2 = document.createElement("BR")
   document.getElementById("cantidad").appendChild(br2);
 
+//Agregar atributos a cada campo.
+  inputNombre = document.createElement("INPUT");
+  inputNombre.setAttribute("type", "text");
+  inputNombre.setAttribute("class", "form-control");
+  inputNombre.setAttribute("id", "campoNombre"+identificador);
+  document.getElementById("nombre").appendChild(inputNombre);
 
- 
-  x.setAttribute("type", "text");
-  x.setAttribute("class", "form-control");
-  document.getElementById("nombre").appendChild(x);
-
-  
-  y.setAttribute("type", "text");
-  y.setAttribute("class", "form-control");
-  document.getElementById("cantidad").appendChild(y);
+  inputCantidad = document.createElement("INPUT");
+  inputCantidad.setAttribute("type", "text");
+  inputCantidad.setAttribute("class", "form-control");
+  inputCantidad.setAttribute("id", "campoCantidad"+identificador);
+  document.getElementById("cantidad").appendChild(inputCantidad);
+  identificador++;
    
   
-
-  
 }
 
- 
-function eliminar() {
+//Funcion para eliminar campos de nombre y cantidad en la ventana modal. 
+function eliminarCampos() {
 
-  var c = document.getElementById("nombre").childElementCount;
-  var list = document.getElementById("nombre");
-  list.removeChild(list.childNodes[c-1]);
-  list = document.getElementById("cantidad");
-  list.removeChild(list.childNodes[c-1]);
+  contador = document.getElementById("nombre").childElementCount;
+
   list = document.getElementById("nombre");
-  list.removeChild(list.childNodes[c-2]);
+  list.removeChild(list.childNodes[contador-1]);
+
   list = document.getElementById("cantidad");
-  list.removeChild(list.childNodes[c-2]);
+  list.removeChild(list.childNodes[contador-1]);
+
+  list = document.getElementById("nombre");
+  list.removeChild(list.childNodes[contador-2]);
+
+  list = document.getElementById("cantidad");
+  list.removeChild(list.childNodes[contador-2]);
+
+  identificador--;
 
  
 }
+
+//agregar Imágenes
 
 function archivo(evt) {
-  var files = evt.target.files; // FileList object
-  var reader = new FileReader();  
+  files = evt.target.files; // FileList object
+   
     //Obtenemos la imagen del campo "file". 
   for (var i = 0, f; f = files[i]; i++) {         
        //Solo admitimos imágenes.
@@ -146,12 +139,12 @@ function archivo(evt) {
             continue;
        }
    
-       
+       reader = new FileReader();
        
        reader.onload = (function(theFile) {
            return function(e) {
-           // Creamos la imagen miniatura.
-                  document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+           // Creamos la imagen.
+                  document.getElementById("list").innerHTML += ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
            };
 
        })(f);
@@ -161,6 +154,11 @@ function archivo(evt) {
 }
          
   document.getElementById('files').addEventListener('change', archivo, false);
+
+    
+ 
+
+
 
 
 
