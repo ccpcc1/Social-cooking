@@ -68,16 +68,16 @@ function agregarCampos() {
 
   if(instanciar== true)
   {
-  div1 = document.createElement("DIV")
-  div1.setAttribute("class", "form-group col-md-6");
-  div1.setAttribute("id", "nombre");
-  document.getElementById("Ingredientes").appendChild(div1);
+      div1 = document.createElement("DIV")
+      div1.setAttribute("class", "form-group col-md-6");
+      div1.setAttribute("id", "nombre");
+      document.getElementById("Ingredientes").appendChild(div1);
 
-  div2 = document.createElement("DIV")
-  div2.setAttribute("class", "form-group col-md-6");
-  div2.setAttribute("id", "cantidad");
-  document.getElementById("Ingredientes").appendChild(div2);
-  instanciar= false;
+      div2 = document.createElement("DIV")
+      div2.setAttribute("class", "form-group col-md-6");
+      div2.setAttribute("id", "cantidad");
+      document.getElementById("Ingredientes").appendChild(div2);
+      instanciar= false;
 
 }
   
