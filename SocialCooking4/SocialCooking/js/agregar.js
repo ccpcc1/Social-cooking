@@ -59,7 +59,9 @@ function guardarDatos() {
 
 }
 
-function 
+function GuardarReceta() {
+    // esta funcion es para guardar en la base de datos la receta
+}
     
 function ConvertirBase64(file) {
         var lectorImg = new FileReader();
