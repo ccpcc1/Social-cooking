@@ -10,21 +10,45 @@ namespace SocialCooking.Controllers
 {
     public class recetaController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        // devuelve la receta especifica
+        public EN.Receta Get(int idReceta)
         {
-            return new string[] { "value1", "value2" };
+            CT.Receta receta = new CT.Receta();
+
+            return receta.getReceta(idReceta);
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        // obtener todas las recetas
+        public List<EN.Receta> Get()
         {
-            return "value";
+            CT.Receta recetas = new CT.Receta();
+            return recetas.getRecetas();
         }
 
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        //buscar la receta por categoria
+        public List<EN.Receta> Get(String categoria)
         {
+            CT.Receta receta = new CT.Receta();
+
+            return receta.getRecetaxCategoria(categoria);
+        }
+
+        //buscar  la recta por nombre
+        public List<EN.Receta> Get(String nombre, bool validar)
+        {
+            CT.Receta receta = new CT.Receta();
+
+            return receta.getRecetaxNombre(nombre);
+        }
+
+
+
+        // guarda en la bd la receta
+        public void Post(EN.Receta receta)
+        {
+            CT.Receta nuevaReceta = new CT.Receta();
+            nuevaReceta.CrearReceta(receta);
+
         }
 
         // PUT api/<controller>/5

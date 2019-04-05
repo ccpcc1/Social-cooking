@@ -25,10 +25,12 @@ namespace Controladora
             BR.Recetas temp = new BR.Recetas();
             try
             {
+                
                 BR.Recetas rec = new BR.Recetas();
                 Usuario temp1 = new Usuario();
                 Categorias cat = new Categorias();
                 ImagenesxReceta imagenes = new ImagenesxReceta();
+                Ingredientes ingredientes = new Ingredientes();
                 rec.Id_usuario = temp1.getIdUsuario(recetas.correo_usu);
                 rec.Id_categoria = cat.getIdCategoria(recetas.Categoria);// verificar el nombre
                 rec.Descripcion = recetas.Descripcion;
@@ -37,11 +39,13 @@ namespace Controladora
                 rec.Nombre = recetas.Nombre;
                 rec.puntuacion = 0;
                 rec.nopuntuaciones = 0;
-                db.Recetas.Add(rec);
+                db.Recetas.Add(rec);               
                 db.SaveChanges();
+                rec=db.Recetas.Last<BR.Recetas>();
                 recetas.Id_receta = rec.Id_receta;
                 imagenes.ingresarImagenesReceta(recetas);
-
+                ingredientes.ingresarIngrediente(recetas);
+                cat.agregarCategoria(recetas.Categoria);
                 resultado = true;
 
             }
@@ -62,7 +66,10 @@ namespace Controladora
             {
                 EN.Receta receta_buscada = new EN.Receta();
                 Categorias categoriaController = new Categorias();
+                ImagenesxReceta img = new ImagenesxReceta();
+                Ingredientes ingredientes = new Ingredientes();
                 Usuario usu = new Usuario();
+                receta_buscada.Id_receta = item.Id_receta;
                 receta_buscada.correo_usu = usu.getNombreUsuario(item.Id_usuario);
                 receta_buscada.Categoria = categoriaController.getNombreCategoria(item.Id_categoria);
                 receta_buscada.Descripcion = item.Descripcion;
@@ -71,6 +78,8 @@ namespace Controladora
                 receta_buscada.Nombre = item.Nombre;
                 receta_buscada.puntuacion = item.puntuacion;
                 receta_buscada.nopuntucaiones = item.nopuntuaciones;
+                receta_buscada.imagenes = img.getImagenes(item.Id_receta).ToArray();
+                receta_buscada.ingrediente = ingredientes.getIngredientes(item.Id_receta).ToArray();
                 recetas.Add(receta_buscada);
             }
 
@@ -78,17 +87,45 @@ namespace Controladora
 
         }
 
+        // metodo que devuelve una receta en especifico
+        public EN.Receta getReceta(int idReceta)
+        {
+            EN.Receta receta = new EN.Receta();
+            Usuario usuario = new Usuario();
+            Categorias categoria = new Categorias();
+            ImagenesxReceta img = new ImagenesxReceta();
+            Ingredientes ingredientes = new Ingredientes();
+            var query = db.Recetas.Where(x => x.Id_receta==idReceta).FirstOrDefault();
+            receta.Id_receta = query.Id_receta;
+            receta.Idioma = query.Idioma;
+            receta.PasoApaso = query.PasoApaso;
+            receta.Descripcion = query.Descripcion;
+            receta.Nombre = query.Nombre;
+            receta.puntuacion = query.puntuacion;
+            receta.Categoria = query.Categorias.Nombre;
+            receta.correo_usu = usuario.getNombreUsuario(query.Id_usuario);
+            receta.Categoria = categoria.getNombreCategoria(query.Id_categoria);
+            receta.nopuntucaiones = query.nopuntuaciones;
+            receta.imagenes =img.getImagenes(query.Id_receta).ToArray();
+            receta.ingrediente = ingredientes.getIngredientes(query.Id_receta).ToArray();
+
+
+            return receta;
+        }
+
         //Metodo para obtener recetas por nombre
         public List<EN.Receta> getRecetaxNombre(string nombre_receta)
         {
             List<EN.Receta> recetas = new List<EN.Receta>();
-
+            ImagenesxReceta img = new ImagenesxReceta();
+            Ingredientes ingredientes = new Ingredientes();
             var query = db.Recetas.Where(x => x.Nombre.Contains(nombre_receta));
             foreach (var item in query)
             {
                 EN.Receta receta_buscada = new EN.Receta();
                 Categorias categoriaController = new Categorias();
                 Usuario usu = new Usuario();
+                receta_buscada.Id_receta = item.Id_receta;
                 receta_buscada.correo_usu = usu.getNombreUsuario(item.Id_usuario);
                 receta_buscada.Categoria = categoriaController.getNombreCategoria(item.Id_categoria);
                 receta_buscada.Descripcion = item.Descripcion;
@@ -97,6 +134,8 @@ namespace Controladora
                 receta_buscada.Nombre = item.Nombre;
                 receta_buscada.puntuacion = item.puntuacion;
                 receta_buscada.nopuntucaiones = item.nopuntuaciones;
+                receta_buscada.imagenes = img.getImagenes(item.Id_receta).ToArray();
+                receta_buscada.ingrediente = ingredientes.getIngredientes(item.Id_receta).ToArray();
                 recetas.Add(receta_buscada);
             }
 
@@ -108,12 +147,15 @@ namespace Controladora
         {
             List<EN.Receta> recetas = new List<EN.Receta>();
             Categorias categorias = new Categorias();
+            ImagenesxReceta img = new ImagenesxReceta();
+            Ingredientes ingredientes = new Ingredientes();
             var query = db.Recetas.Where(x => x.Nombre.Contains(categoria));
             foreach (var item in query)
             {
                 EN.Receta receta_buscada = new EN.Receta();
                 Categorias categoriaController = new Categorias();
                 Usuario usuarioController = new Usuario();
+                receta_buscada.Id_receta = item.Id_receta;
                 receta_buscada.correo_usu = usuarioController.getNombreUsuario(item.Id_usuario);
                 receta_buscada.Categoria = categoriaController.getNombreCategoria(item.Id_categoria);
                 receta_buscada.Descripcion = item.Descripcion;
@@ -122,6 +164,8 @@ namespace Controladora
                 receta_buscada.Nombre = item.Nombre;
                 receta_buscada.puntuacion = item.puntuacion;
                 receta_buscada.nopuntucaiones = item.nopuntuaciones;
+                receta_buscada.imagenes = img.getImagenes(item.Id_receta).ToArray();
+                receta_buscada.ingrediente = ingredientes.getIngredientes(item.Id_receta).ToArray();
                 recetas.Add(receta_buscada);
             }
 

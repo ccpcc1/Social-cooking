@@ -15,6 +15,8 @@ namespace Entidades
         public string Idioma { get; set; }
         public string Nombre { get; set; }
         public string[] imagenes { get; set; }
+
+        public Ingrediente[] ingrediente { get; set; }
         public string correo_usu { get; set; }
         public string Categoria { get; set; }
         public int puntuacion { get; set; }

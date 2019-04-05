@@ -28,5 +28,12 @@ namespace Controladora
            
             return db.Categorias.Where(x => x.Id_categoria == id).FirstOrDefault().Nombre;
         }
+
+        public void  agregarCategoria(String categoria)
+        {
+            BR.Categorias categoriaNueva = new BR.Categorias();
+            categoriaNueva.Nombre = categoria;
+            categoriaNueva.Descripcion = "";
+        }
     }
 }
