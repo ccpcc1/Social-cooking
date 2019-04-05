@@ -10,13 +10,15 @@ var contador;
 var list;
 var files;
 var reader;
-
+var tempimagen;
+var imagenes = [];
 
 function guardarDatos() {
 
-        //trabajo bajo el supuesto de que los campos estan llenos
-        var ingredientes = [];
-        var imagenes = [];
+    //trabajo bajo el supuesto de que los campos estan llenos
+    var ingredientes = [];
+    
+    
         var nombreReceta = document.getElementById('nombreReceta');
         var ingrediente = document.getElementById('nombre');
         var cantidadIngrediente = document.getElementById('cantidad');
@@ -24,15 +26,26 @@ function guardarDatos() {
         var imagen = document.getElementById('files');
         var descripcion = document.getElementById('descripcionReceta');
         var pasoApaso = document.getElementById('pasosReceta');
-        //var categoria = document.getElementById('Categoria');
-        var j = 0;
+        var categoria = document.getElementById('listaCategorias').value;
+        ingredientes[0] = { nombre: "", cantidad: "" };
+        ingredientes[0].nombre = document.getElementById('nombreIngrediente').value;
+        ingredientes[0].cantidad = document.getElementById('cantidadIngrediente').value;
+        var j = 1;
         var i;
         var Receta;
-        for (i = 0; i < ingrediente.childNodes.length; i + 2) {
+        for (i = 1; i < ingrediente.childNodes.length; i += 2)
+        {
+            ingredientes[j]= { nombre: "", cantidad: "" };
             ingredientes[j].nombre = ingrediente.childNodes[i].value;
             ingredientes[j].cantidad = cantidadIngrediente.childNodes[i].value;
             j++;
         }
+        for (var k = 0; k < imagen.files.length; k++)
+        {
+            ConvertirBase64(imagen.files[k]);
+        }
+
+
         receta =
             {
                 "nombreReceta": nombreReceta.value,
@@ -41,22 +54,25 @@ function guardarDatos() {
                 "descripcion": descripcion.value,
                 "pasoApaso": pasoApaso.value,
                 "categoria": categoria.value,
-                "imagenes": imagenes.value
+                "imagenes": imagenes
             }
 
 }
+
+function 
     
 function ConvertirBase64(file) {
         var lectorImg = new FileReader();
         lectorImg.readAsDataURL(file);
         lectorImg.onload = function () {
             console.log(lectorImg.result);
-            return lectorImg.result.value;
+            imagenes.push(lectorImg.result);
+            
 
         };
         lectorImg.onerror = function (error) {
             console.log('Hubo un error: ', error);
-            return error;
+            
         };
 }
 
@@ -133,7 +149,8 @@ function archivo(evt) {
   files = evt.target.files; // FileList object
    
     //Obtenemos la imagen del campo "file". 
-  for (var i = 0, f; f = files[i]; i++) {         
+    for (var i = 0, f; f = files[i]; i++) {  
+        document.getElementById("list").innerHTML = "";
        //Solo admitimos imágenes.
        if (!f.type.match('image.*')) {
             continue;

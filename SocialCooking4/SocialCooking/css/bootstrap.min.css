@@ -2811,7 +2811,8 @@ pre code {
 }
 
 table {
-    background-color: transparent
+    color: black;
+    background-color:  #c21500;
 }
 
 caption {
@@ -2826,7 +2827,8 @@ th {
 }
 
 .table {
-    width: 100%;
+    margin-left: 11px;
+    width: 80%;
     max-width: 100%;
     margin-bottom: 20px
 }
@@ -2876,6 +2878,30 @@ th {
 
 .table-bordered {
     border: 1px solid #ddd
+}
+
+.usuario{
+ 
+ color: white;
+ font-size:15pt;
+ font-weight: 700; 
+
+}
+
+.categorias{
+margin-right: 20px;
+ color: white;
+ font-size:15pt;
+ font-weight: 700; 
+
+}
+
+.Idiomas{
+ margin-right: 40px;
+ color: white;
+ font-size:15pt;
+ font-weight: 700; 
+
 }
 
 .table-bordered>tbody>tr>td,
@@ -7132,6 +7158,23 @@ button.close {
     box-shadow: 0 3px 9px rgba(0, 0, 0, .5)
 }
 
+.ventanaPost{
+    position: relative;
+    border-radius: 20px;
+    max-width: 60%;
+    margin: auto;
+    margin-top: 70px;
+    background-color: rgb(240, 152, 0);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;8
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, .2);
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5)
+
+}
+
 .modal-backdrop {
     
     top: 0;
@@ -7162,6 +7205,43 @@ button.close {
     margin-top: -2px
 }
 
+.encabezadoPost {
+    min-height: 16.43px;
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+.tituloPost {
+    margin: 0;
+    line-height: 1.42857143;
+    font-weight: 600;
+    color: white;
+    
+}
+
+.titulos {
+    margin: 0;
+    line-height: 1.42857143;
+    font-weight: 600;
+    color: white;
+    
+}
+
+
+
+.imagenes {
+    margin: 5px;
+    margin-top: 0px;
+    width: 180px;
+    height: 130px;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 12px;
+}
+
+
+
 .tituloFormulario {
     margin: 0;
     line-height: 1.42857143
@@ -7173,7 +7253,7 @@ button.close {
 }
 
 .modal-footer {
-    padding: 15px;
+    padding: 15px 5px;
     text-align: right;
     border-top: 1px solid #e5e5e5
 }
