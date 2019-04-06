@@ -1,0 +1,340 @@
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csprojAssemblyReference.cache
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csproj.CoreCompileInputs.cache
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\SocialCooking.dll.config
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\SocialCooking.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\SocialCooking.pdb
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\csc.exe
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\csc.exe.config
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\csc.rsp
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\csi.exe
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\csi.exe.config
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\csi.rsp
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.AppContext.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Console.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.IO.Compression.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.IO.Pipes.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Claims.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Threading.Thread.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.ValueTuple.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XPath.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\vbc.exe
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\vbc.exe.config
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\vbc.rsp
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\VBCSCompiler.exe
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\AutoMapper.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Broker.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Controladora.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Entidades.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\EntityFramework.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\EntityFramework.SqlServer.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Newtonsoft.Json.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\System.Net.Http.Formatting.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\System.Web.Http.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\System.Web.Http.WebHost.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Broker.pdb
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Broker.dll.config
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Controladora.pdb
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Controladora.dll.config
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Entidades.pdb
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Entidades.dll.config
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\AutoMapper.xml
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\EntityFramework.xml
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\EntityFramework.SqlServer.xml
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Newtonsoft.Json.xml
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\System.Net.Http.Formatting.xml
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\System.Web.Http.xml
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\System.Web.Http.WebHost.xml
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\es\System.Web.Http.resources.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csproj.CopyComplete
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.dll
+C:\Users\sebas\source\repos\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csproj.CoreCompileInputs.cache
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csprojFakesResolveAssemblyReference.cache
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\SocialCooking.dll.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\SocialCooking.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\SocialCooking.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csc.exe
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csc.exe.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csc.rsp
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csi.exe
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csi.exe.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csi.rsp
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.AppContext.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Collections.Immutable.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Console.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.Process.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.Compression.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.Pipes.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Reflection.Metadata.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.AccessControl.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Claims.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Principal.Windows.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Threading.Thread.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.ValueTuple.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XmlDocument.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XPath.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\vbc.exe
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\vbc.exe.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\vbc.rsp
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\VBCSCompiler.exe
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\VBCSCompiler.exe.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Fakes.fakesconfig
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\AutoMapper.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Broker.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Controladora.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Entidades.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.SqlServer.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Microsoft.QualityTools.Testing.Fakes.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Newtonsoft.Json.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\System.Net.Http.Formatting.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.WebHost.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Broker.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Broker.dll.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Controladora.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Controladora.dll.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Entidades.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Entidades.dll.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\AutoMapper.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.SqlServer.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Newtonsoft.Json.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\System.Net.Http.Formatting.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.WebHost.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\es\System.Net.Http.Formatting.resources.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\es\System.Web.Http.resources.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\bin\es\System.Web.Http.WebHost.resources.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csproj.CopyComplete
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csprojAssemblyReference.cache
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\SocialCooking.dll.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\SocialCooking.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\SocialCooking.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csc.exe
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csc.exe.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csc.rsp
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csi.exe
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csi.exe.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csi.rsp
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.AppContext.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Console.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.Compression.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.Pipes.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Claims.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Threading.Thread.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.ValueTuple.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XPath.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\vbc.exe
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\vbc.exe.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\vbc.rsp
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\VBCSCompiler.exe
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\AutoMapper.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Broker.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Controladora.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Entidades.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.SqlServer.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Newtonsoft.Json.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Net.Http.Formatting.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.WebHost.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Broker.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Broker.dll.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Controladora.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Controladora.dll.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Entidades.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Entidades.dll.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\AutoMapper.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.SqlServer.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Newtonsoft.Json.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Net.Http.Formatting.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.WebHost.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\es\System.Web.Http.resources.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csprojAssemblyReference.cache
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csproj.CopyComplete
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.pdb
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\SocialCooking.dll.config
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\SocialCooking.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\SocialCooking.pdb
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csc.exe
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csc.exe.config
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csc.rsp
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csi.exe
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csi.exe.config
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\csi.rsp
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.AppContext.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Console.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.Compression.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.IO.Pipes.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Claims.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Threading.Thread.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.ValueTuple.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XPath.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\vbc.exe
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\vbc.exe.config
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\vbc.rsp
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\VBCSCompiler.exe
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\AutoMapper.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Broker.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Controladora.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Entidades.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Newtonsoft.Json.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Net.Http.Formatting.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.WebHost.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Broker.pdb
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Broker.dll.config
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Controladora.pdb
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Controladora.dll.config
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Entidades.pdb
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Entidades.dll.config
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\AutoMapper.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Newtonsoft.Json.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Net.Http.Formatting.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\System.Web.Http.WebHost.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\es\System.Net.Http.Formatting.resources.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\es\System.Web.Http.resources.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\bin\es\System.Web.Http.WebHost.resources.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.csproj.CopyComplete
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking4\SocialCooking\obj\Debug\SocialCooking.pdb
