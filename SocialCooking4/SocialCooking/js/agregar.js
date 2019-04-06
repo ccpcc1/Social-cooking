@@ -12,6 +12,7 @@ var files;
 var reader;
 var tempimagen;
 var imagenes = [];
+var receta=new Object();
 
 function guardarDatos() {
 
@@ -32,7 +33,7 @@ function guardarDatos() {
         ingredientes[0].cantidad = document.getElementById('cantidadIngrediente').value;
         var j = 1;
         var i;
-        var Receta;
+        
         for (i = 1; i < ingrediente.childNodes.length; i += 2)
         {
             ingredientes[j]= { nombre: "", cantidad: "" };
@@ -47,22 +48,35 @@ function guardarDatos() {
 
 
         receta =
-            {
-                "nombreReceta": nombreReceta.value,
-                "ingredientes": ingredientes,
-                "idiomas": idiomas.value,
-                "descripcion": descripcion.value,
-                "pasoApaso": pasoApaso.value,
-                "categoria": categoria.value,
-                "imagenes": imagenes
-            }
+        {
+            "nombreReceta": nombreReceta.value,
+            "ingredientes": ingredientes,
+            "idiomas": idiomas.value,
+            "descripcion": descripcion.value,
+            "pasoApaso": pasoApaso.value,
+            "categoria": categoria.value,
+            "imagenes": imagenes
+        };
+        GuardarReceta(receta);
 
 }
 
-function GuardarReceta() {
-    // esta funcion es para guardar en la base de datos la receta
+function GuardarReceta(receta) {
+
+    $.ajax({
+        url: "/api/receta",
+        type: 'POST',
+        contentType:
+            "application/json;charset=utf-8",
+        data: JSON.stringify(receta),
+        success: function (receta) {
+            productAddSuccess(receta.nombreReceta);
+        },
+        error: function (request, message, error) {
+            handleException(request, message, error);
+        }
+    });
 }
-    
 function ConvertirBase64(file) {
         var lectorImg = new FileReader();
         lectorImg.readAsDataURL(file);
@@ -84,14 +98,14 @@ function agregarCampos() {
   
   
 
-  if(instanciar== true)
+  if(instanciar=== true)
   {
-      div1 = document.createElement("DIV")
+      div1 = document.createElement("DIV");
       div1.setAttribute("class", "form-group col-md-6");
       div1.setAttribute("id", "nombre");
       document.getElementById("Ingredientes").appendChild(div1);
 
-      div2 = document.createElement("DIV")
+      div2 = document.createElement("DIV");
       div2.setAttribute("class", "form-group col-md-6");
       div2.setAttribute("id", "cantidad");
       document.getElementById("Ingredientes").appendChild(div2);
@@ -100,10 +114,10 @@ function agregarCampos() {
 }
   
 //Agregar espacios entre cada campo.
-  br1 = document.createElement("BR")
+  br1 = document.createElement("BR");
   document.getElementById("nombre").appendChild(br1);
 
-  br2 = document.createElement("BR")
+  br2 = document.createElement("BR");
   document.getElementById("cantidad").appendChild(br2);
 
 //Agregar atributos a cada campo.

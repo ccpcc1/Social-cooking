@@ -18,9 +18,17 @@ namespace Controladora
         public int getIdCategoria(string categoria)
         {
 
-            BR.Categorias categoriaBuscada = db.Categorias.Where(x => x.Nombre == categoria).FirstOrDefault();
+            BR.Categorias categoriaBuscada = db.Categorias.Where(x => x.Nombre.Contains(categoria)).FirstOrDefault();
 
-            return categoriaBuscada.Id_categoria;
+            if(categoriaBuscada.Id_categoria!=0)
+            {
+                return categoriaBuscada.Id_categoria;
+            }
+            else
+            {
+                return 1;
+            }
+            
         }
 
         public string getNombreCategoria(int id)
