@@ -28,7 +28,7 @@ namespace Controladora
             {
                 
                 imgReceta.img = otherReceta;
-                db.imagenesxReceta.Add(imgReceta);
+                db.imagenesxRecetas.Add(imgReceta);
                 db.SaveChanges();
             
 
@@ -41,7 +41,7 @@ namespace Controladora
             //Lista a retornar
             List<string> imagenes = new List<string>();
             //Consulta por LINQ
-            var query = db.imagenesxReceta.Where(x => x.Id_receta == id);
+            var query = db.imagenesxRecetas.Where(x => x.Id_receta == id);
             foreach (var imagen in query)
             {
                 imagenes.Add(imagen.img);

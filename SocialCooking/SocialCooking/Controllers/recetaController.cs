@@ -46,6 +46,8 @@ namespace SocialCooking.Controllers
         // guarda en la bd la receta
         public void Post(EN.Receta receta)
         {
+            
+            Console.WriteLine(receta.Idioma);
             CT.Receta nuevaReceta = new CT.Receta();
             nuevaReceta.CrearReceta(receta);
 

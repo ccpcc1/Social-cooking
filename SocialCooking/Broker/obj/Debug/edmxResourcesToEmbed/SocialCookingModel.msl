@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SocialCookingModelStoreContainer" CdmEntityContainer="SocialCookingEntities">
     <EntitySetMapping Name="Categorias">
-      <EntityTypeMapping TypeName="SocialCookingModel.Categorias">
+      <EntityTypeMapping TypeName="SocialCookingModel.Categoria">
         <MappingFragment StoreEntitySet="Categorias">
           <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -11,7 +11,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Comentarios">
-      <EntityTypeMapping TypeName="SocialCookingModel.Comentarios">
+      <EntityTypeMapping TypeName="SocialCookingModel.Comentario">
         <MappingFragment StoreEntitySet="Comentarios">
           <ScalarProperty Name="Id_comentario" ColumnName="Id_comentario" />
           <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
@@ -19,7 +19,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="imagenesxReceta">
+    <EntitySetMapping Name="imagenesxRecetas">
       <EntityTypeMapping TypeName="SocialCookingModel.imagenesxReceta">
         <MappingFragment StoreEntitySet="imagenesxReceta">
           <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
@@ -28,7 +28,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Ingredientes">
-      <EntityTypeMapping TypeName="SocialCookingModel.Ingredientes">
+      <EntityTypeMapping TypeName="SocialCookingModel.Ingrediente">
         <MappingFragment StoreEntitySet="Ingredientes">
           <ScalarProperty Name="Id_ingrediente" ColumnName="Id_ingrediente" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -36,26 +36,30 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Recetas">
-      <EntityTypeMapping TypeName="SocialCookingModel.Recetas">
+      <EntityTypeMapping TypeName="SocialCookingModel.Receta">
         <MappingFragment StoreEntitySet="Recetas">
           <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="PasoApaso" ColumnName="PasoApaso" />
-          <ScalarProperty Name="Idioma" ColumnName="Idioma" />
+          <ScalarProperty Name="Idiomas" ColumnName="Idiomas" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
           <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
           <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
           <ScalarProperty Name="nopuntuaciones" ColumnName="nopuntuaciones" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="tiempoPreparacion" ColumnName="tiempoPreparacion" />
+          <ScalarProperty Name="porciones" ColumnName="porciones" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="recetasxIngredientes">
-      <EntityTypeMapping TypeName="SocialCookingModel.recetasxIngredientes">
+      <EntityTypeMapping TypeName="SocialCookingModel.recetasxIngrediente">
         <MappingFragment StoreEntitySet="recetasxIngredientes">
           <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
           <ScalarProperty Name="Id_ingredientes" ColumnName="Id_ingredientes" />
           <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -67,7 +71,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Usuario">
+    <EntitySetMapping Name="Usuarios">
       <EntityTypeMapping TypeName="SocialCookingModel.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
           <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
@@ -75,6 +79,18 @@
           <ScalarProperty Name="Correo" ColumnName="Correo" />
           <ScalarProperty Name="IdTipoUsu" ColumnName="IdTipoUsu" />
           <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="SocialCookingModel.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -94,5 +110,29 @@
         <ScalarProperty Name="Id_Usuario" ColumnName="Id_usuario" />
       </EndProperty>
     </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SocialCookingModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SocialCookingModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SocialCookingModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SocialCookingModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialCookingModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SocialCookingModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SocialCookingModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SocialCookingModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SocialCookingModel.Store.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>

@@ -19,8 +19,8 @@ namespace Controladora
         }
         public void ingresarIngrediente(EN.Receta receta)
         {
-            BR.Ingredientes ingrediente = new BR.Ingredientes();
-            BR.recetasxIngredientes recetaXIngrediente = new BR.recetasxIngredientes();
+            BR.Ingrediente ingrediente = new BR.Ingrediente();
+            BR.recetasxIngrediente recetaXIngrediente = new BR.recetasxIngrediente();
             for(int i=0;i<receta.ingrediente.Length;i++)
             {
                 // primero se añade el ingrediente
@@ -29,7 +29,7 @@ namespace Controladora
                 db.SaveChanges();
 
                 // se agrega a la tabla el recexingredientes el id del ultimo ingrediente que se agrego y el id de la receta
-                recetaXIngrediente.Id_ingredientes = db.Ingredientes.Last<BR.Ingredientes>().Id_ingrediente;
+                recetaXIngrediente.Id_ingredientes = db.Ingredientes.Last<BR.Ingrediente>().Id_ingrediente;
                 recetaXIngrediente.Id_receta = receta.Id_receta;
                 recetaXIngrediente.cantidad = receta.ingrediente[i].cantidad;
                 db.recetasxIngredientes.Add(recetaXIngrediente);
@@ -46,8 +46,8 @@ namespace Controladora
             var query = db.recetasxIngredientes.Where(x => x.Id_receta == idReceta);
             foreach (var item in query)
             {
-                ingrediente.idIngrediente = item.Ingredientes.Id_ingrediente;
-                ingrediente.ingrediente = item.Ingredientes.nombre;
+                ingrediente.idIngrediente = item.Ingrediente.Id_ingrediente;
+                ingrediente.ingrediente = item.Ingrediente.nombre;
                 ingrediente.cantidad = item.cantidad;             
                 ingredientes.Add(ingrediente);
             }

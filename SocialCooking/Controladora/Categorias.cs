@@ -18,28 +18,29 @@ namespace Controladora
         public int getIdCategoria(string categoria)
         {
 
-            BR.Categorias categoriaBuscada = db.Categorias.Where(x => x.Nombre.Contains(categoria)).FirstOrDefault();
+            BR.Categoria categoriaBuscada = db.Categorias.Where(x => x.Nombre.Contains(categoria)).FirstOrDefault();
 
-            if(categoriaBuscada.Id_categoria!=0)
+            if(categoriaBuscada==null)
             {
-                return categoriaBuscada.Id_categoria;
+                return 1;
             }
             else
             {
-                return 1;
+                return categoriaBuscada.Id_categoria;
             }
             
         }
 
         public string getNombreCategoria(int id)
         {
+            
            
             return db.Categorias.Where(x => x.Id_categoria == id).FirstOrDefault().Nombre;
         }
 
         public void  agregarCategoria(String categoria)
         {
-            BR.Categorias categoriaNueva = new BR.Categorias();
+            BR.Categoria categoriaNueva = new BR.Categoria();
             categoriaNueva.Nombre = categoria;
             categoriaNueva.Descripcion = "";
         }
