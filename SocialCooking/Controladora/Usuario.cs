@@ -11,28 +11,23 @@ namespace Controladora
     public class Usuario
     {
         private DA.SocialCookingEntities db = new DA.SocialCookingEntities();
-        public bool crearUsuario(EN.Usuario usuario)
+        public int crearUsuario(EN.Usuario usuario)
         {
-            bool resultado = false;
+            DA.Usuario objUsuario = new DA.Usuario();
 
-            try
-            {
-                //AutoMapper.Mapper.CreateMap<EN.Usuario, DA.Usuario>();
-                DA.Usuario objUsuario = AutoMapper.Mapper.Map< DA.Usuario>(usuario);
-                db.Usuario.Add(objUsuario);
+                        
+                objUsuario.Correo = usuario.Correo;
+                objUsuario.img = usuario.img;
+                objUsuario.Nombre = usuario.Nombre;
+                objUsuario.IdTipoUsu = usuario.IdTipoUsu;
+                db.Usuarios.Add(objUsuario);
                 db.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                ((IDisposable)ex).Dispose();
-
-                throw ex;
-            }
-            return resultado;
+            
+            return objUsuario.IdTipoUsu;
         }
         public int getIdUsuario(string correo)
         {
-            DA.Usuario usu = db.Usuario.Where(x => x.Correo == correo).FirstOrDefault();
+            DA.Usuario usu = db.Usuarios.Where(x => x.Correo == correo).FirstOrDefault();
             if (usu != null)
             {
                 return usu.Id_Usuario;
@@ -45,43 +40,38 @@ namespace Controladora
         public string getNombreUsuario(int id)
         {
           
-            return db.Usuario.Where(x => x.Id_Usuario == id).FirstOrDefault().Nombre; 
+            return db.Usuarios.Where(x => x.Id_Usuario == id).FirstOrDefault().Nombre; 
         }
 
         public int RetornarTipoUsu(string correo)
         {
-            try
-            {
-                DA.Usuario usu = db.Usuario.Where(x => x.Correo == correo).FirstOrDefault();
-                Console.WriteLine(usu.Nombre);
+            
+                DA.Usuario usu = new DA.Usuario();
+                usu = db.Usuarios.Where(x => x.Correo == correo).FirstOrDefault();
+                
 
-                if (usu==null)
+                if (usu == null)
                 {
+                    int tipoUsuario;
                     EN.Usuario user = new EN.Usuario();
                     user.Correo = correo;
                     user.Nombre = "una prueba";
                     user.img = "//";
                     user.IdTipoUsu = 5;
-                    crearUsuario(user);
-                    return usu.IdTipoUsu;
+                    tipoUsuario =crearUsuario(user);
+                    return tipoUsuario;
                 }
-
+                
                 return usu.IdTipoUsu;
 
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("el error es"+ex);
-                throw;
-                
-            }
+            
+            
             
         }
 
         public List<DA.Usuario> getUsuarios() {
 
-            return db.Usuario.ToList<DA.Usuario>();
+            return db.Usuarios.ToList<DA.Usuario>();
 
         }
     }

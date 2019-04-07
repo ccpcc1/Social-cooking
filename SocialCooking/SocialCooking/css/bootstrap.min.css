@@ -774,6 +774,7 @@ th {
     content: "\e108"
 }
 
+
 .glyphicon-calendar:before {
     content: "\e109"
 }
@@ -1056,6 +1057,12 @@ th {
 
 .glyphicon-header:before {
     content: "\e180"
+}
+
+.card{
+    background-color: #d24400;
+    margin-top: 40px;
+    margin-right: 20px;
 }
 
 .glyphicon-compressed:before {
@@ -1994,7 +2001,7 @@ pre code {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto
+    margin-left: 15%;
 }
 
 @media (min-width:768px) {

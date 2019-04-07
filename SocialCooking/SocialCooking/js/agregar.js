@@ -23,11 +23,11 @@ function guardarDatos() {
         var nombreReceta = document.getElementById('nombreReceta');
         var ingrediente = document.getElementById('nombre');
         var cantidadIngrediente = document.getElementById('cantidad');
-        var idiomas = document.getElementById('listaIdiomas').value;
+        var idiomas = document.getElementById('listaIdiomas');
         var imagen = document.getElementById('files');
         var descripcion = document.getElementById('descripcionReceta');
         var pasoApaso = document.getElementById('pasosReceta');
-        var categoria = document.getElementById('listaCategorias').value;
+        var categoria = document.getElementById('listaCategorias');
         ingredientes[0] = { nombre: "", cantidad: "" };
         ingredientes[0].nombre = document.getElementById('nombreIngrediente').value;
         ingredientes[0].cantidad = document.getElementById('cantidadIngrediente').value;
@@ -49,28 +49,29 @@ function guardarDatos() {
 
         receta =
         {
-            "nombreReceta": nombreReceta.value,
-            "ingredientes": ingredientes,
-            "idiomas": idiomas.value,
-            "descripcion": descripcion.value,
-            "pasoApaso": pasoApaso.value,
-            "categoria": categoria.value,
-            "imagenes": imagenes
+            'Nombre': nombreReceta.value,
+            'correo_usu': "sebascz97@gmail.com",
+            'ingredientes': ingredientes,
+            'Idioma': idiomas.value,
+            'Descripcion': descripcion.value,
+            'PasoApaso': pasoApaso.value,
+            'Categoria': categoria.value,
+            'imagenes': imagenes
         };
         GuardarReceta(receta);
 
 }
 
 function GuardarReceta(receta) {
-
+    receta = JSON.stringify(receta);
     $.ajax({
         url: "/api/receta",
         type: 'POST',
-        contentType:
-            "application/json;charset=utf-8",
-        data: JSON.stringify(receta),
+        contentType:'application/json;charset=utf-8',
+        dataType: 'json',
+        data: receta,
         success: function (receta) {
-            productAddSuccess(receta.nombreReceta);
+            productAddSuccess(receta.Nombre);
         },
         error: function (request, message, error) {
             handleException(request, message, error);

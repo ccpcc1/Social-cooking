@@ -22,30 +22,30 @@ namespace Controladora
         public bool CrearReceta(EN.Receta recetas)
         {
             bool resultado = false;
-            BR.Recetas temp = new BR.Recetas();
+            BR.Receta temp = new BR.Receta();
             try
             {
                 
-                BR.Recetas rec = new BR.Recetas();
+                BR.Receta rec = new BR.Receta();
                 Usuario temp1 = new Usuario();
                 Categorias cat = new Categorias();
                 ImagenesxReceta imagenes = new ImagenesxReceta();
                 Ingredientes ingredientes = new Ingredientes();
-                rec.Id_usuario = temp1.getIdUsuario(recetas.correo_usu);
-                rec.Id_categoria = cat.getIdCategoria(recetas.Categoria);// verificar el nombre
+                rec.Id_usuario = temp1.getIdUsuario(recetas.correo_usu);             
                 rec.Descripcion = recetas.Descripcion;
                 rec.PasoApaso = recetas.PasoApaso;
-                rec.Idioma = recetas.Idioma;
+                rec.Idiomas = recetas.Idioma;
                 rec.Nombre = recetas.Nombre;
                 rec.puntuacion = 0;
                 rec.nopuntuaciones = 0;
+                rec.Id_categoria = cat.getIdCategoria(recetas.Categoria);// verificar el nombre
                 db.Recetas.Add(rec);               
                 db.SaveChanges();
-                rec=db.Recetas.Last<BR.Recetas>();
+                rec=db.Recetas.Last<BR.Receta>();
                 recetas.Id_receta = rec.Id_receta;
                 imagenes.ingresarImagenesReceta(recetas);
                 ingredientes.ingresarIngrediente(recetas);
-                cat.agregarCategoria(recetas.Categoria);
+                
                 resultado = true;
 
             }
@@ -74,7 +74,7 @@ namespace Controladora
                 receta_buscada.Categoria = categoriaController.getNombreCategoria(item.Id_categoria);
                 receta_buscada.Descripcion = item.Descripcion;
                 receta_buscada.PasoApaso = item.PasoApaso;
-                receta_buscada.Idioma = item.Idioma;
+                receta_buscada.Idioma = item.Idiomas;
                 receta_buscada.Nombre = item.Nombre;
                 receta_buscada.puntuacion = item.puntuacion;
                 receta_buscada.nopuntucaiones = item.nopuntuaciones;
@@ -97,12 +97,12 @@ namespace Controladora
             Ingredientes ingredientes = new Ingredientes();
             var query = db.Recetas.Where(x => x.Id_receta==idReceta).FirstOrDefault();
             receta.Id_receta = query.Id_receta;
-            receta.Idioma = query.Idioma;
+            receta.Idioma = query.Idiomas;
             receta.PasoApaso = query.PasoApaso;
             receta.Descripcion = query.Descripcion;
             receta.Nombre = query.Nombre;
             receta.puntuacion = query.puntuacion;
-            receta.Categoria = query.Categorias.Nombre;
+            receta.Categoria = query.Categoria.Nombre;
             receta.correo_usu = usuario.getNombreUsuario(query.Id_usuario);
             receta.Categoria = categoria.getNombreCategoria(query.Id_categoria);
             receta.nopuntucaiones = query.nopuntuaciones;
@@ -130,7 +130,7 @@ namespace Controladora
                 receta_buscada.Categoria = categoriaController.getNombreCategoria(item.Id_categoria);
                 receta_buscada.Descripcion = item.Descripcion;
                 receta_buscada.PasoApaso = item.PasoApaso;
-                receta_buscada.Idioma = item.Idioma;
+                receta_buscada.Idioma = item.Idiomas;
                 receta_buscada.Nombre = item.Nombre;
                 receta_buscada.puntuacion = item.puntuacion;
                 receta_buscada.nopuntucaiones = item.nopuntuaciones;
@@ -160,7 +160,7 @@ namespace Controladora
                 receta_buscada.Categoria = categoriaController.getNombreCategoria(item.Id_categoria);
                 receta_buscada.Descripcion = item.Descripcion;
                 receta_buscada.PasoApaso = item.PasoApaso;
-                receta_buscada.Idioma = item.Idioma;
+                receta_buscada.Idioma = item.Idiomas;
                 receta_buscada.Nombre = item.Nombre;
                 receta_buscada.puntuacion = item.puntuacion;
                 receta_buscada.nopuntucaiones = item.nopuntuaciones;
