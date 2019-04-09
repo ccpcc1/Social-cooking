@@ -11,19 +11,17 @@ namespace Controladora
     public class Usuario
     {
         private DA.SocialCookingEntities db = new DA.SocialCookingEntities();
-        public int crearUsuario(EN.Usuario usuario)
-        {
-            DA.Usuario objUsuario = new DA.Usuario();
 
-                        
+        public void crearUsuario(EN.Usuario usuario)
+        {
+                DA.Usuario objUsuario = new DA.Usuario();
                 objUsuario.Correo = usuario.Correo;
                 objUsuario.img = usuario.img;
                 objUsuario.Nombre = usuario.Nombre;
-                objUsuario.IdTipoUsu = usuario.IdTipoUsu;
+                objUsuario.IdTipoUsu = 5;
                 db.Usuarios.Add(objUsuario);
                 db.SaveChanges();
-            
-            return objUsuario.IdTipoUsu;
+                
         }
         public int getIdUsuario(string correo)
         {
@@ -52,14 +50,15 @@ namespace Controladora
 
                 if (usu == null)
                 {
-                    int tipoUsuario;
-                    EN.Usuario user = new EN.Usuario();
-                    user.Correo = correo;
-                    user.Nombre = "una prueba";
-                    user.img = "//";
-                    user.IdTipoUsu = 5;
-                    tipoUsuario =crearUsuario(user);
-                    return tipoUsuario;
+                //int tipoUsuario;
+                //EN.Usuario user = new EN.Usuario();
+                //user.Correo = correo;
+                //user.Nombre = "una prueba";
+                //user.img = "//";
+                //user.IdTipoUsu = 5;
+                //tipoUsuario =crearUsuario(user);
+                //return tipoUsuario;
+                    return 0;
                 }
                 
                 return usu.IdTipoUsu;

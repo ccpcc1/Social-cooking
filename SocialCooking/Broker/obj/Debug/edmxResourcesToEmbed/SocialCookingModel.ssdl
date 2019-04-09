@@ -66,6 +66,16 @@
     <Property Name="cantidad" Type="int" Nullable="false" />
     <Property Name="unidad" Type="nchar" MaxLength="10" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="Tipo_Usuario">
     <Key>
       <PropertyRef Name="IdTipoUsu" />
@@ -78,10 +88,10 @@
       <PropertyRef Name="Id_Usuario" />
     </Key>
     <Property Name="Id_Usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nombre" Type="nchar" MaxLength="20" Nullable="false" />
-    <Property Name="Correo" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Nombre" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Correo" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="IdTipoUsu" Type="int" Nullable="false" />
-    <Property Name="img" Type="nchar" MaxLength="50" />
+    <Property Name="img" Type="nchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="usuariosxfavoritos">
     <Key>
@@ -268,6 +278,7 @@ advertencia 6002: La tabla o vista 'SocialCooking.sys.database_firewall_rules' n
     <EntitySet Name="Ingredientes" EntityType="Self.Ingredientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Recetas" EntityType="Self.Recetas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="recetasxIngredientes" EntityType="Self.recetasxIngredientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tipo_Usuario" EntityType="Self.Tipo_Usuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="usuariosxfavoritos" EntityType="Self.usuariosxfavoritos" Schema="dbo" store:Type="Tables" />

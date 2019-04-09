@@ -1,10 +1,8 @@
-﻿
+﻿var usuario = new Object();
 
 function onSignIn(googleUser) {
 
-    
     var profile = googleUser.getBasicProfile();
-    var usuario = new Object();
     console.log("ID: " + profile.getId()); // Don't send this directly to your server!
     console.log('Full Name: ' + profile.getName());
     console.log('Given Name: ' + profile.getGivenName());
@@ -17,13 +15,11 @@ function onSignIn(googleUser) {
             'Correo': profile.getEmail(),
             'img': profile.getImageUrl()
         }
-    // The ID token you need to pass to your backend:
-    //var id_token = googleUser.getAuthResponse().id_token;
-
-    //console.log("ID Token: " + id_token);
+ 
     verificarTipoUsu(profile.getEmail());
 }
 
+//Funcion para verificar que tipo de usuario es 
 function verificarTipoUsu(correo) {
     var tipousu
     $.getJSON('/api/Usuario?correo=' + correo, function (data) {
@@ -36,14 +32,34 @@ function verificarTipoUsu(correo) {
 }
 
 function enviarAPerfil(tipousuario) {
-    console.log("ese recibio=" + tipousuario);
-    
-    if (tipousuario === 4) {
-        window.location = "moderador.html";
+    console.log("ese recibio =" + tipousuario);
+
+    switch (tipousuario) {
+        case 0:
+            $.ajax({
+                url: "/api/Usuario",
+                type: 'POST',
+                contentType: 'application/json;charset=utf-8',
+                dataType: 'json',
+                data: JSON.stringify(usuario),
+                success: function (usuario) {
+                    window.location = "index2.html";
+                },
+                error: function (request, message, error) {
+                    handleException(request, message, error);
+                }
+            });
+            break;
+        case 4:
+            window.location = "moderador.html";
+            break;
+        case 5:
+            window.location = "index2.html";
+            break;
+        default:
+            console.log('Lo lamentamos, no se puede ingresar a la plataforma');
     }
-    if (tipousuario === 5) {
-        window.location = "index2.html";
-    }
+
     
 }
 

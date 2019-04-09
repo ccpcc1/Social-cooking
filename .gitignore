@@ -1,6 +1,5 @@
 # Código gitignore para evitar procesar los directorios de las dependencias
 # Ignorar el contenido de las carpeta packages
 SocialCooking\packages\
-SocialCooking/packages/
 
-SocialCooking/\.vs/
+

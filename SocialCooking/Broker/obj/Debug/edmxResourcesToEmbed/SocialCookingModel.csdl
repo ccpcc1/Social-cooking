@@ -70,6 +70,16 @@
     <NavigationProperty Name="Ingrediente" Relationship="Self.FK_recetasxIngredientes_Ingredientes" FromRole="recetasxIngredientes" ToRole="Ingredientes" />
     <NavigationProperty Name="Receta" Relationship="Self.FK_recetasxIngredientes_Recetas" FromRole="recetasxIngredientes" ToRole="Recetas" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="Tipo_Usuario">
     <Key>
       <PropertyRef Name="IdTipoUsu" />
@@ -83,10 +93,10 @@
       <PropertyRef Name="Id_Usuario" />
     </Key>
     <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Correo" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Correo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="IdTipoUsu" Type="Int32" Nullable="false" />
-    <Property Name="img" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="img" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Recetas" Relationship="Self.FK_Recetas_Usuario" FromRole="Usuario" ToRole="Recetas" />
     <NavigationProperty Name="Tipo_Usuario" Relationship="Self.FK_Usuario_Tipo_Usuario" FromRole="Usuario" ToRole="Tipo_Usuario" />
     <NavigationProperty Name="Recetas1" Relationship="Self.usuariosxfavoritos" FromRole="Usuario" ToRole="Recetas" />
@@ -194,6 +204,7 @@
     <EntitySet Name="Ingredientes" EntityType="Self.Ingrediente" />
     <EntitySet Name="Recetas" EntityType="Self.Receta" />
     <EntitySet Name="recetasxIngredientes" EntityType="Self.recetasxIngrediente" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Tipo_Usuario" EntityType="Self.Tipo_Usuario" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
     <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />

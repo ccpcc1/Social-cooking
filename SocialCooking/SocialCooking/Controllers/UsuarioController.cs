@@ -33,8 +33,9 @@ namespace SocialCooking.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post(EN.Usuario usuario)
         {
+            usuarioController.crearUsuario(usuario);
         }
 
         // PUT api/<controller>/5

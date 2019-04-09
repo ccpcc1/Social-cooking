@@ -117,7 +117,6 @@
     <Content Include="index.html" />
     <Content Include="index2.html" />
     <Content Include="js\agregar.js" />
-    <Content Include="js\AgregarReceta.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\custom.js" />
     <Content Include="js\imagesloaded.min.js" />
