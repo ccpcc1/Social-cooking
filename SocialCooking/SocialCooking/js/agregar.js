@@ -12,14 +12,12 @@ var files;
 var reader;
 var tempimagen;
 var imagenes = [];
-var receta=new Object();
+var receta = new Object();
 
 function guardarDatos() {
 
-    //trabajo bajo el supuesto de que los campos estan llenos
-    var ingredientes = [];
-    
-    
+        //trabajo bajo el supuesto de que los campos estan llenos
+        var ingredientes = [];
         var nombreReceta = document.getElementById('nombreReceta');
         var ingrediente = document.getElementById('nombre');
         var cantidadIngrediente = document.getElementById('cantidad');
@@ -28,16 +26,16 @@ function guardarDatos() {
         var descripcion = document.getElementById('descripcionReceta');
         var pasoApaso = document.getElementById('pasosReceta');
         var categoria = document.getElementById('listaCategorias');
-        ingredientes[0] = { nombre: "", cantidad: "" };
-        ingredientes[0].nombre = document.getElementById('nombreIngrediente').value;
+        ingredientes[0] = { ingrediente: "", cantidad: "" };
+        ingredientes[0].ingrediente = document.getElementById('nombreIngrediente').value;
         ingredientes[0].cantidad = document.getElementById('cantidadIngrediente').value;
         var j = 1;
         var i;
         
         for (i = 1; i < ingrediente.childNodes.length; i += 2)
         {
-            ingredientes[j]= { nombre: "", cantidad: "" };
-            ingredientes[j].nombre = ingrediente.childNodes[i].value;
+            ingredientes[j] = { ingrediente: "", cantidad: "" };
+            ingredientes[j].ingrediente = ingrediente.childNodes[i].value;
             ingredientes[j].cantidad = cantidadIngrediente.childNodes[i].value;
             j++;
         }
@@ -51,7 +49,7 @@ function guardarDatos() {
         {
             'Nombre': nombreReceta.value,
             'correo_usu': "sebascz97@gmail.com",
-            'ingredientes': ingredientes,
+            'ingrediente': ingredientes,
             'Idioma': idiomas.value,
             'Descripcion': descripcion.value,
             'PasoApaso': pasoApaso.value,

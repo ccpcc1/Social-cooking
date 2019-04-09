@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Entidades
 {
-    [Serializable]
+   
     public class Usuario
     {
 

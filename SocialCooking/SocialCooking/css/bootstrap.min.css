@@ -1997,11 +1997,21 @@ pre code {
     overflow-y: scroll
 }
 
-.container {
+.containerPost{
+    display: block;
+    position: absolute;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: 15%;
+    margin-left: 20%;
+}
+
+.container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
 }
 
 @media (min-width:768px) {
