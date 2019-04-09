@@ -38,11 +38,11 @@ namespace Controladora
                 rec.Nombre = recetas.Nombre;
                 rec.puntuacion = 0;
                 rec.nopuntuaciones = 0;
-                rec.Id_categoria = cat.getIdCategoria(recetas.Categoria);// verificar el nombre
-                db.Recetas.Add(rec);               
-                db.SaveChanges();
-                rec=db.Recetas.Last<BR.Receta>();
-                recetas.Id_receta = rec.Id_receta;
+                rec.Id_categoria = cat.getIdCategoria(recetas.Categoria);
+                db.Recetas.Add(rec);
+                db.SaveChanges();//hasta aqui va bien
+                BR.Receta tempReceta= db.Recetas.ToList().Last();             
+                recetas.Id_receta = tempReceta.Id_receta;
                 imagenes.ingresarImagenesReceta(recetas);
                 ingredientes.ingresarIngrediente(recetas);
                 

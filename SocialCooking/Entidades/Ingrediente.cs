@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Ingrediente
     {
-        public int idIngrediente { get; set; }
+        //public int id_ingrediente { get; set; }
         public string ingrediente { get; set; }
         public int cantidad { get; set; }
     }

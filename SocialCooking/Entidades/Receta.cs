@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Entidades
 {
-    [Serializable]
+   
     public class Receta
     {
         public int Id_receta { get; set; }
