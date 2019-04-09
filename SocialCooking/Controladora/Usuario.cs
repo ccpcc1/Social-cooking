@@ -73,5 +73,22 @@ namespace Controladora
             return db.Usuarios.ToList<DA.Usuario>();
 
         }
+
+        public EN.Usuario retornarUser(string correo)
+        {
+
+            DA.Usuario usu = new DA.Usuario();
+            EN.Usuario user = new EN.Usuario();
+            usu = db.Usuarios.Where(x => x.Correo == correo).FirstOrDefault();
+            user.Correo = usu.Correo;
+            user.Nombre = usu.Nombre;
+            user.IdTipoUsu = usu.IdTipoUsu;
+            user.img = usu.img;
+            user.Id_Usuario = usu.Id_Usuario;
+
+
+            return user;
+        }
+
     }
 }

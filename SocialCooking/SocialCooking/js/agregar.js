@@ -14,6 +14,33 @@ var tempimagen;
 var imagenes = [];
 var receta = new Object();
 
+var usuario = new Object();
+usuario =
+    {
+
+        'Nombre': "",
+        'Correo': "",
+        'img': "",
+        'IdTipoUsu': "",
+        'Id_Usuario': "" 
+    }
+
+function cargarUsuario()
+{
+
+    var parametro = window.location.search.substr('?').split('=');
+    var correo = parametro[1];
+    $.getJSON('/api/Usuario?correo=' + correo +"&confirmacion="+true, function (data) {
+        console.log("es lo que recoge=" + data)
+        usuario = data;
+        document.getElementById("nombreUsuario").value = usuario.Nombre;
+        document.getElementById("images").src = usuario.img;
+
+
+    });
+    
+}
+
 function guardarDatos() {
 
         //trabajo bajo el supuesto de que los campos estan llenos
