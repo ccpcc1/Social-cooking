@@ -94,3 +94,17 @@ C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.cspr
 C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
 C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
 C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll.config
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.pdb
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
+C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb

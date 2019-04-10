@@ -22,8 +22,8 @@ usuario =
         'Correo': "",
         'img': "",
         'IdTipoUsu': "",
-        'Id_Usuario': "" 
-    }
+        'Id_Usuario': ""
+    };
 
 function cargarUsuario()
 {
@@ -33,8 +33,8 @@ function cargarUsuario()
     $.getJSON('/api/Usuario?correo=' + correo +"&confirmacion="+true, function (data) {
         console.log("es lo que recoge=" + data)
         usuario = data;
-        document.getElementById("nombreUsuario").value = usuario.Nombre;
-        document.getElementById("images").src = usuario.img;
+        document.getElementById("nombreUsuario").innerHTML = "<img src=" + usuario.img + " id='images' >" + usuario.Nombre;
+        //document.getElementById("images").src =; usuario.img;
 
 
     });
