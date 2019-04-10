@@ -13,8 +13,9 @@ var reader;
 var tempimagen;
 var imagenes = [];
 var receta = new Object();
-
 var usuario = new Object();
+window.onload = cargarUsuario(); 
+
 usuario =
     {
 

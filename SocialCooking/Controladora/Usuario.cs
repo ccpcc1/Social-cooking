@@ -41,6 +41,7 @@ namespace Controladora
             return db.Usuarios.Where(x => x.Id_Usuario == id).FirstOrDefault().Nombre; 
         }
 
+        //Funcion que retorna el tipo de usuario, si no esta registrado se hace el INSERT en la BD
         public int RetornarTipoUsu(string correo)
         {
             
@@ -56,9 +57,9 @@ namespace Controladora
                 //user.Nombre = "una prueba";
                 //user.img = "//";
                 //user.IdTipoUsu = 5;
-                //tipoUsuario =crearUsuario(user);
+                //tipoUsuario = crearUsuario(user);
                 //return tipoUsuario;
-                    return 0;
+                return 0;
                 }
                 
                 return usu.IdTipoUsu;

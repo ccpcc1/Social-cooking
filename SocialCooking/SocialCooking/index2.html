@@ -1,20 +1,20 @@
 ﻿<!DOCTYPE html>
   <html lang="en">
-    <head>
+  <head>
 
       <!-- Parametros de plantilla 2083 Steak House http://www.tooplate.com/view/2083-steak-house-->
 
-	    <title>Steak House - Free HTML CSS Template</title>
-        
+      <title>Steak House - Free HTML CSS Template</title>
+
       <meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta name="keywords" content="">
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="">
       <meta name="description" content="">
 
       <!-- Estilos css -->
-      
-	    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+      <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/magnific-popup.css">
       <link rel="stylesheet" href="css/animate.min.css">
       <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -22,17 +22,25 @@
       <link rel="stylesheet" href="css/nivo-lightbox.css">
       <link rel="stylesheet" href="css/nivo_themes/default/default.css">
       <link rel="stylesheet" href="css/hover-min.css">
-  	  <link rel="stylesheet" href="css/flexslider.css">
+      <link rel="stylesheet" href="css/flexslider.css">
       <link rel="stylesheet" href="css/style.css">
       <link href="css/custom.css" rel="stylesheet">
-      
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+      <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
+
       <!-- Fuentas de letras -->
 
       <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-  	  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    
-    </head>
+
+  </head>
       <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50" style="padding: 0px;">
 
         <!-- Preloader section -->
@@ -75,96 +83,121 @@
           <div class="container">
             <div class="row">
               <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10" >
-                <div class="wow fadeInUp section-title" data-wow-delay="0.6s">
-                  <h2 class="compartir">¡Comparte tu nueva receta!</h2>
-            
-                <!-- Boton Compartir -->
-                  <button type="button" class="btn btn-primary btnluz" id="btnCompartir" data-toggle="modal" data-target="#exampleModalCenter">Compartir</button>
+                  <div class="wow fadeInUp section-title" data-wow-delay="0.6s">
+                      <h2 class="compartir">¡Comparte tu nueva receta!</h2>
 
-                  <!-- Ventana Modal Para formulacio de agregar receta -->
-                  
-                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="ventanaFormulario">
-                      <div class="encabezadoFormulario">
-                        <h5 class="tituloFormulario" id="titulo">Agrega tu Receta</h5>
-                      </div>
-                  <!-- Campo Nombre de la receta -->
-                      <div class="cuerpoFormulario">
-                          <div class="form-group">
-                              <label for="recipient-name" class="alinear">Nombre de la Receta</label>
-                              <input type="text" class="form-control" id="nombreReceta" required>
-                          </div>
-                          <!-- lista de Idiomas -->
-                          <div class="form-group">
-                              <label for="exampleFormControlSelect1">Idioma</label>
-                              <select class="form-control" id="listaIdiomas">
-                                  <option value="" disabled selected>Selecciona un Idioma</option>
-                                  <option>Español</option>
-                                  <option>Inglés</option>
-                                  <option>Francés</option>
-                                  <option>Italiano</option>
-                              </select>
-                          </div>
+                      <!-- Boton Compartir -->
+                      <button type="button" class="btn btn-primary btnluz" id="btnCompartir" data-toggle="modal" data-target="#exampleModalCenter">Compartir</button>
 
-                          <div class="form-group">
-                              <label for="exampleFormControlSelect1">Categoría</label>
-                              <select class="form-control" id="listaCategorias">
-                                  <option value="" disabled selected>Selecciona una Categoría</option>
-                                  <option>Vegetariana</option>
-                                  <option>Comida Rápida</option>
-                                  <option>Comida Italiana</option>
-                                  <option>Desayuno</option>
-                              </select>
-                          </div>
-                          <!-- campos de nombre y cantidad de ingredientes -->
-                          <div class="form-group">
-                              <label for="recipient-name" class="col-form-label">Ingredientes</label>
-                              <hr>
-                          </div>
-                          <!-- campo nombre de ingrediente -->
-                          <div class="form-row" id="Ingredientes">
-                              <div class="margen col-md-6">
-                                  <label for="inputEmail4">Nombre</label>
-                                  <input type="text" class="form-control" id="nombreIngrediente">
+                      <!-- Ventana Modal Para formulacio de agregar receta -->
+
+                      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="ventanaFormulario">
+                                  <div class="encabezadoFormulario">
+                                      <h5 class="tituloFormulario" id="titulo">Agrega tu Receta</h5>
+                                  </div>
+                                  <!-- Campo Nombre de la receta -->
+                                  <div class="cuerpoFormulario">
+                                      <div class="form-group">
+                                          <label for="recipient-name" class="alinear">Nombre de la Receta</label>
+                                          <input type="text" class="form-control" id="nombreReceta" required>
+                                      </div>
+                                      <!-- lista de Idiomas -->
+                                      <div class="form-group">
+                                          <label for="exampleFormControlSelect1">Idioma</label>
+                                          <select class="form-control" id="listaIdiomas">
+                                              <option value="" disabled selected>Selecciona un Idioma</option>
+                                              <option>Español</option>
+                                              <option>Inglés</option>
+                                              <option>Francés</option>
+                                              <option>Italiano</option>
+                                          </select>
+                                      </div>
+
+              
+                                      <div class="form-group">
+                                          <label for="exampleFormControlSelect1">Categoría</label>
+                                          <select class="form-control" id="listaCategorias">
+                                              <option value="" disabled selected>Selecciona una Categoría</option>
+                                              <option>Vegetariana</option>
+                                              <option>Comida Rápida</option>
+                                              <option>Comida Italiana</option>
+                                              <option>Desayuno</option>
+                                          </select>
+                                      </div>
+                                      <!-- campos de nombre y cantidad de ingredientes -->
+                                      <div class="form-group">
+                                          <label for="recipient-name" class="col-form-label">Ingredientes</label>
+                                          <hr>
+                                      </div>
+                                      <!-- campo nombre de ingrediente -->
+                                      <div class="form-row" id="Ingredientes">
+                                          <div class="margen col-md-6">
+                                              <label for="inputEmail4">Nombre</label>
+                                              <input type="text" class="form-control" id="nombreIngrediente">
+                                          </div>
+                                          <!-- campo cantidad de ingrediente -->
+                                          <div class="margen col-md-3">
+                                              <label for="inputPassword4">Cantidad</label>
+                                              <input type="text" class="form-control" id="cantidadIngrediente">
+                                          </div>
+                                          <!--Campo para las unidades del ingrediente-->
+                                          <div class="margen col-md-3">
+                                              <label for="inputPassword4">Unidad</label>
+                                              <select class="form-control" id="sel1">
+                                                  <optgroup label="Liquidos">
+                                                      <option>Onz.</option>
+                                                      <option>Lts.</option>
+                                                      <option>Mls.</option>
+                                                  </optgroup>
+                                                  <optgroup label="Por peso">
+                                                      <option>Kgs.</option>
+                                                      <option>Grs.</option>
+                                                  </optgroup>
+                                                  <optgroup label="Otras">
+                                                      <option>Cdas.</option>
+                                                      <option>Cditas.</option>
+                                                      <option>Pizca</option>
+                                                      <option>Al gusto</option>
+                                                  </optgroup>
+
+                                              </select>
+                                          </div>
+
+                                      </div>
+                                      <!-- botones agregar y eliminar campos de cantidad y nombre -->
+                                      <button onclick="agregarCampos()" class="btn btn-primary margenBoton">Agregar</button>
+                                      <button onclick="eliminarCampos()" class="btn btn-danger margenBoton">Eliminar</button>
+                                      <hr>
+                                      <!-- campo de texto descripción-->
+                                      <div class="form-group">
+                                          <label for="exampleFormControlTextarea1" class="alinear">Descripción</label>
+                                          <textarea class="form-control" id="descripcionReceta" rows="3"></textarea>
+                                      </div>
+                                      <!-- campo de texto paso a paso -->
+                                      <div class="form-group">
+                                          <label for="exampleFormControlTextarea1" class="alinear">Paso a Paso</label>
+                                          <textarea class="form-control" id="pasosReceta" rows="3"></textarea>
+                                      </div>
+                                      <!-- obtener imagenes -->
+                                      <div class="form-group">
+                                          <label for="exampleFormControlFile1">Imágenes</label>
+                                          <input type="file" id="files" name="files[]" multiple><br>
+                                          <output id="list"></output>
+                                      </div>
+
+                                  </div>
+                                  <!-- Parte final del formulario -->
+                                  <div class="modal-footer" id="finalFormulario">
+                                      <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
+                                      <button type="button" class="btn btn-primary" id="btnAgregarReceta" onclick="guardarDatos()">Agregar Receta</button>
+
+                                  </div>
                               </div>
-                              <!-- campo cantidad de ingrediente -->
-                              <div class="margen col-md-6">
-                                  <label for="inputPassword4">Cantidad</label>
-                                  <input type="text" class="form-control" id="cantidadIngrediente">
-                              </div>
                           </div>
-                          <!-- botones agregar y eliminar campos de cantidad y nombre -->
-                          <button onclick="agregarCampos()" class="btn btn-primary margenBoton">Agregar</button>
-                          <button onclick="eliminarCampos()" class="btn btn-danger margenBoton">Eliminar</button>
-                          <hr>
-                          <!-- campo de texto descripción-->
-                          <div class="form-group">
-                              <label for="exampleFormControlTextarea1" class="alinear">Descripción</label>
-                              <textarea class="form-control" id="descripcionReceta" rows="3"></textarea>
-                          </div>
-                          <!-- campo de texto paso a paso -->
-                          <div class="form-group">
-                              <label for="exampleFormControlTextarea1" class="alinear">Paso a Paso</label>
-                              <textarea class="form-control" id="pasosReceta" rows="3"></textarea>
-                          </div>
-                          <!-- obtener imagenes -->
-                          <div class="form-group">
-                              <label for="exampleFormControlFile1">Imágenes</label>
-                              <input type="file" id="files" name="files[]" multiple><br>
-                              <output id="list"></output>
-                          </div>
-
                       </div>
-                    <!-- Parte final del formulario -->
-                    <div class="modal-footer" id="finalFormulario">
-                      <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
-                      <button type="button" class="btn btn-primary" id="btnAgregarReceta" onclick="guardarDatos()">Agregar Receta</button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-               </div>
+                  </div>
               </div>
             </div>
             </div>
