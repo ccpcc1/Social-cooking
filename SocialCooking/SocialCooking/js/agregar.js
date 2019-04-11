@@ -13,34 +13,6 @@ var reader;
 var tempimagen;
 var imagenes = [];
 var receta = new Object();
-var usuario = new Object();
-window.onload = cargarUsuario(); 
-
-usuario =
-    {
-
-        'Nombre': "",
-        'Correo': "",
-        'img': "",
-        'IdTipoUsu': "",
-        'Id_Usuario': ""
-    };
-
-function cargarUsuario()
-{
-
-    var parametro = window.location.search.substr('?').split('=');
-    var correo = parametro[1];
-    $.getJSON('/api/Usuario?correo=' + correo +"&confirmacion="+true, function (data) {
-        console.log("es lo que recoge=" + data)
-        usuario = data;
-        document.getElementById("nombreUsuario").innerHTML = "<img src=" + usuario.img + " id='images' >" + usuario.Nombre;
-        //document.getElementById("images").src =; usuario.img;
-
-
-    });
-    
-}
 
 function guardarDatos() {
 
@@ -216,10 +188,7 @@ function archivo(evt) {
   document.getElementById('files').addEventListener('change', archivo, false);
 
     
-function signOut() {
-    GoogleAuth.signOut();
-    
-}
+ 
 
 
 

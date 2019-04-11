@@ -43,8 +43,7 @@ function enviarAPerfil(tipousuario) {
                 dataType: 'json',
                 data: JSON.stringify(usuario),
                 success: function (usuario) {
-                    window.location = "index2.html?user=" + usuario.Correo;
-                    
+                    window.location = "index2.html";
                 },
                 error: function (request, message, error) {
                     handleException(request, message, error);
@@ -52,10 +51,10 @@ function enviarAPerfil(tipousuario) {
             });
             break;
         case 4:
-            window.location = "moderador.html?user=" + usuario.Correo;
+            window.location = "moderador.html";
             break;
         case 5:
-            window.location = "index2.html?user=" + usuario.Correo;
+            window.location = "index2.html";
             break;
         default:
             console.log('Lo lamentamos, no se puede ingresar a la plataforma');

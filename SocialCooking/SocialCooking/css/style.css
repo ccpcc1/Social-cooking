@@ -269,13 +269,12 @@ a:focus {
     background-color: transparent;
 }
 
-    .navbar-default .navbar-nav > .active > a,
-    .navbar-default .navbar-nav > .active > a:hover,
-    .navbar-default .navbar-nav > .active > a:focus {
-        color: floralwhite !important ;
-        background-color: transparent !important;
-        font-weight: bold !important;
-    }
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #c21500;
+    background-color: transparent;
+}
 
 .navbar-default .navbar-toggle {
      border: none;

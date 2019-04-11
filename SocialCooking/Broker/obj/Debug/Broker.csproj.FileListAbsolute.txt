@@ -52,6 +52,20 @@ F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Broker\obj\Debug\Br
 F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
 F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
 F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
 C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll.config
 C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll
 C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.pdb
@@ -80,45 +94,3 @@ F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooki
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll.config
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.pdb
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.dll
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.dll
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.xml
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.xml
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
-C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll.config
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.pdb
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.dll
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.dll
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.xml
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.xml
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
-C:\Users\user\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll.config
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.pdb
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.dll
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.dll
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.xml
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.xml
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
