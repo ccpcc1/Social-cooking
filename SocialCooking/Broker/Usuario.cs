@@ -20,7 +20,12 @@ namespace Broker
             this.Recetas = new HashSet<Receta>();
             this.Recetas1 = new HashSet<Receta>();
         }
-    
+
+        public Usuario(int id_Usuario)
+        {
+            this.Id_Usuario = id_Usuario;
+        }
+
         public int Id_Usuario { get; set; }
         public string Nombre { get; set; }
         public string Correo { get; set; }
