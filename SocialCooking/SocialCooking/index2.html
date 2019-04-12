@@ -91,77 +91,78 @@
                       </div>
                   <!-- Campo Nombre de la receta -->
                       <form>
-                      <div class="cuerpoFormulario">
-                          <div class="form-group">
-                              <label for="recipient-name" class="alinear">Nombre de la Receta</label>
-                              <input type="text" class="form-control" id="nombreReceta" required>
-                          </div>
-                          <!-- lista de Idiomas -->
-                          <div class="form-group">
-                              <label for="exampleFormControlSelect1">Idioma</label>
-                              <select class="form-control" id="listaIdiomas" required>
-                                  <option value="" disabled selected>Selecciona un Idioma</option>
-                                  <option>Español</option>
-                                  <option>Inglés</option>
-                                  <option>Francés</option>
-                                  <option>Italiano</option>
-                              </select>
-                          </div>
+                          <div class="cuerpoFormulario">
+                              <div class="form-group">
+                                  <label for="recipient-name" class="alinear">Nombre de la Receta</label>
+                                  <input type="text" class="form-control" id="nombreReceta" required>
+                              </div>
+                              <!-- lista de Idiomas -->
+                              <div class="form-group">
+                                  <label for="exampleFormControlSelect1">Idioma</label>
+                                  <select class="form-control" id="listaIdiomas" required>
+                                      <option value="" disabled selected>Selecciona un Idioma</option>
+                                      <option>Español</option>
+                                      <option>Inglés</option>
+                                      <option>Francés</option>
+                                      <option>Italiano</option>
+                                  </select>
+                              </div>
 
-                          <div class="form-group">
-                              <label for="exampleFormControlSelect1">Categoría</label>
-                              <select class="form-control" id="listaCategorias" required>
-                                  <option value="" disabled selected>Selecciona una Categoría</option>
-                                  <option>Vegetariana</option>
-                                  <option>Comida Rápida</option>
-                                  <option>Comida Italiana</option>
-                                  <option>Desayuno</option>
-                              </select>
-                          </div>
-                          <!-- campos de nombre y cantidad de ingredientes -->
-                          <div class="form-group">
-                              <label for="recipient-name" class="col-form-label">Ingredientes</label>
+                              <div class="form-group">
+                                  <label for="exampleFormControlSelect1">Categoría</label>
+                                  <select class="form-control" id="listaCategorias" required>
+                                      <option value="" disabled selected>Selecciona una Categoría</option>
+                                      <option>Vegetariana</option>
+                                      <option>Comida Rápida</option>
+                                      <option>Comida Italiana</option>
+                                      <option>Desayuno</option>
+                                  </select>
+                              </div>
+                              <!-- campos de nombre y cantidad de ingredientes -->
+                              <div class="form-group">
+                                  <label for="recipient-name" class="col-form-label">Ingredientes</label>
+                                  <hr>
+                              </div>
+                              <!-- campo nombre de ingrediente -->
+                              <div class="form-row" id="Ingredientes">
+                                  <div class="margen col-md-6">
+                                      <label for="inputEmail4">Nombre</label>
+                                      <input type="text" class="form-control" id="nombreIngrediente" required>
+                                  </div>
+                                  <!-- campo cantidad de ingrediente -->
+                                  <div class="margen col-md-6">
+                                      <label for="inputPassword4">Cantidad</label>
+                                      <input type="number" class="form-control" id="cantidadIngrediente" required>
+                                  </div>
+                              </div>
+                              <!-- botones agregar y eliminar campos de cantidad y nombre -->
+                              <button onclick="agregarCampos()" class="btn btn-primary margenBoton">Agregar</button>
+                              <button onclick="eliminarCampos()" class="btn btn-danger margenBoton">Eliminar</button>
                               <hr>
-                          </div>
-                          <!-- campo nombre de ingrediente -->
-                          <div class="form-row" id="Ingredientes">
-                              <div class="margen col-md-6">
-                                  <label for="inputEmail4">Nombre</label>
-                                  <input type="text" class="form-control" id="nombreIngrediente" required>
+                              <!-- campo de texto descripción-->
+                              <div class="form-group">
+                                  <label for="exampleFormControlTextarea1" class="alinear">Descripción</label>
+                                  <textarea class="form-control" id="descripcionReceta" rows="3" required></textarea>
                               </div>
-                              <!-- campo cantidad de ingrediente -->
-                              <div class="margen col-md-6">
-                                  <label for="inputPassword4">Cantidad</label>
-                                  <input type="number" class="form-control" id="cantidadIngrediente" required>
+                              <!-- campo de texto paso a paso -->
+                              <div class="form-group">
+                                  <label for="exampleFormControlTextarea1" class="alinear">Paso a Paso</label>
+                                  <textarea class="form-control" id="pasosReceta" rows="3" required></textarea>
                               </div>
-                          </div>
-                          <!-- botones agregar y eliminar campos de cantidad y nombre -->
-                          <button onclick="agregarCampos()" class="btn btn-primary margenBoton">Agregar</button>
-                          <button onclick="eliminarCampos()" class="btn btn-danger margenBoton">Eliminar</button>
-                          <hr>
-                          <!-- campo de texto descripción-->
-                          <div class="form-group">
-                              <label for="exampleFormControlTextarea1" class="alinear">Descripción</label>
-                              <textarea class="form-control" id="descripcionReceta" rows="3" required></textarea>
-                          </div>
-                          <!-- campo de texto paso a paso -->
-                          <div class="form-group">
-                              <label for="exampleFormControlTextarea1" class="alinear"  >Paso a Paso</label>
-                              <textarea class="form-control" id="pasosReceta" rows="3" required ></textarea>
-                          </div>
-                          <!-- obtener imagenes -->
-                          <div class="form-group">
-                              <label for="exampleFormControlFile1">Imágenes</label>
-                              <input type="file" id="files" name="files[]" multiple><br>
-                              <output id="list"></output>
-                          </div>
+                              <!-- obtener imagenes -->
+                              <div class="form-group">
+                                  <label for="exampleFormControlFile1">Imágenes</label>
+                                  <input type="file" id="files" name="files[]" multiple><br>
+                                  <output id="list"></output>
+                              </div>
 
-                      </div>
-                    <!-- Parte final del formulario -->
-                    <div class="modal-footer" id="finalFormulario">
-                      <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
-                      <button type="submit" class="btn btn-primary" id="btnAgregarReceta" onclick="guardarDatos()">Agregar Receta</button>
-                    </div>
+                          </div>
+                          <!-- Parte final del formulario -->
+                          <div class="modal-footer" id="finalFormulario">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
+                              <button type="submit" class="btn btn-primary" id="btnAgregarReceta" onclick="guardarDatos()">Agregar Receta</button>
+                          </div>
+                      </form>
                     </div>
                 </div>
                 </div>
@@ -169,7 +170,7 @@
               </div>
             </div>
             </div>
-            </form>
+            
 
         </section>
 
@@ -223,72 +224,74 @@
           <div class="box">
              <!-- Barra buscar receta-->
             <div class="container-3">
-              <span class="icon"><i class="fa fa-search"></i></span>
+              <span class="icon" ><i class="fa fa-search" onclick="buscarxNombre()"></i></span>
               <input type="search" id="buscarReceta" placeholder="Buscar Receta..." />
             </div>
 
           </div>  
-
+           
 
           <div class="containerPost">
+              <div id="recetasxNombre">
 
-            <div class="clearfix"></div>
-              <div class="col-md-3 col-sm-6 wow fadeInUp card " >
+              </div>
+              <div class="clearfix"></div>
+              <div class="col-md-3 col-sm-6 wow fadeInUp card ">
                   <div class="team-thumb">
-                    <img src="images/chef1.jpg" class="img-responsive" alt="Team">  
-                        <div class="team-des">
+                      <img src="images/chef1.jpg" class="img-responsive" alt="Team">
+                      <div class="team-des">
                           <h3>Hamburguesa</h3>
                           <h4>Comida Rapida</h4>
-                            <ul class="social-icon">
+                          <ul class="social-icon">
                               <li><a href="#" class="fa fa-facebook"></a></li>
                               <li><button type="button" class="btn btn-primary" id="btnComentar">Ver Mas</button></li>
-                              
-                            </ul>
-                        </div>
+
+                          </ul>
+                      </div>
                   </div>
               </div>
 
 
-              <div class="col-md-3 col-sm-6 wow fadeInUp card " >
+              <div class="col-md-3 col-sm-6 wow fadeInUp card ">
                   <div class="team-thumb">
-                    <img src="images/chef1.jpg" class="img-responsive" alt="Team">  
-                        <div class="team-des">
+                      <img src="images/chef1.jpg" class="img-responsive" alt="Team">
+                      <div class="team-des">
                           <h3>Ensalada Cesar</h3>
                           <h4>Comida Vegetariana</h4>
-                            <ul class="social-icon">
+                          <ul class="social-icon">
                               <li><a href="#" class="fa fa-facebook"></a></li>
                               <li><button type="button" class="btn btn-primary" id="btnComentar">Ver Mas</button></li>
-                            </ul>
-                        </div>
+                          </ul>
+                      </div>
                   </div>
               </div>
 
-              <div class="col-md-3 col-sm-6 wow fadeInUp card " >
+              <div class="col-md-3 col-sm-6 wow fadeInUp card ">
                   <div class="team-thumb">
-                    <img src="images/chef1.jpg" class="img-responsive" alt="Team">  
-                        <div class="team-des">
+                      <img src="images/chef1.jpg" class="img-responsive" alt="Team">
+                      <div class="team-des">
                           <h3>Recalentado</h3>
                           <h4>Desayuno</h4>
-                            <ul class="social-icon">
+                          <ul class="social-icon">
                               <li><a href="#" class="fa fa-facebook"></a></li>
                               <li><button type="button" class="btn btn-primary" id="btnComentar">Ver Mas</button></li>
-                            </ul>
-                        </div>
+                          </ul>
+                      </div>
                   </div>
               </div>
 
 
-              <div class="col-md-3 col-sm-6 wow fadeInUp card " >
+              <div class="col-md-3 col-sm-6 wow fadeInUp card ">
                   <div class="team-thumb">
-                    <img src="images/chef1.jpg" class="img-responsive" alt="Team">  
-                        <div class="team-des">
+                      <img src="images/chef1.jpg" class="img-responsive" alt="Team">
+                      <div class="team-des">
                           <h3>Penne al Pesto</h3>
                           <h4>Comida Italiana</h4>
-                            <ul class="social-icon">
+                          <ul class="social-icon">
                               <li><a href="#" class="fa fa-facebook"></a></li>
                               <li><button type="button" class="btn btn-primary" id="btnComentar">Ver Mas</button></li>
-                            </ul>
-                        </div>
+                          </ul>
+                      </div>
                   </div>
               </div>
 

@@ -27,22 +27,14 @@ var prueba =
     };
 window.onload = cargarUsuario();
 
-usuario =
-    {
 
-        'Nombre': "",
-        'Correo': "",
-        'img': "",
-        'IdTipoUsu': "",
-        'Id_Usuario': ""
-    };
 
 function cargarUsuario() {
 
     var parametro = window.location.search.substr('?').split('=');
     var correo = parametro[1];
     $.getJSON('/api/Usuario?correo=' + correo + "&confirmacion=" + true, function (data) {
-        console.log("es lo que recoge=" + data)
+        console.log("es lo que recoge=" + data);
         usuario = data;
         document.getElementById("nombreUsuario").innerHTML = "<img src=" + usuario.img + " id='images' >" + usuario.Nombre;
         //document.getElementById("images").src =; usuario.img;
@@ -199,7 +191,7 @@ function eliminarCampos() {
 
 function archivo(evt) {
   files = evt.target.files; // FileList object
-   
+  
     //Obtenemos la imagen del campo "file". 
     for (var i = 0, f; f = files[i]; i++) {  
         document.getElementById("list").innerHTML = "";
@@ -228,27 +220,78 @@ function archivo(evt) {
 
 function buscarxNombre()
 {
-    var search = Document.getElementById('buscarReceta').value;
+    $("#recetasxNombre").innerHTML = "";
+    var search = document.getElementById('buscarReceta').value;
     //(String nombre, bool validar)
     $.getJSON('/api/receta?nombre=' + search + "&validar=" + true, function (data) {
-        var i = 0;
-        for (var recetacargada in data) {
-            prueba[i].Nombre = recetacargada.Nombre;
-            prueba[i].correo_usu = recetacargada.correo_usu;
-        }
+        var ContendorRecetas = document.getElementById("recetasXNombre");
+        $.each(data, function (recetaobtenidas, recActual) {
+            {
+                
+                $("#recetasxNombre").append("\
+                    <div class='col - md - 3 col - sm - 6 wow fadeInUp card ' > \
+                        <div class='team - thumb'> \
+                            <img src='images / chef1.jpg' class='img - responsive' alt='Team'> \
+                                <div class='team - des'> \
+                                    <h3>"+recActual.Nombre+"</h3> \
+                                    <h4>"+ recActual.Categoria+"</h4> \
+                                    <ul class='social - icon'> \
+                                        <li><a href='#' class='fa fa - facebook'></a></li> \
+                                        <li><button type='button' class='btn btn - primary' id='btnComentar' onclick=" + recActual.Id_receta +">Ver Mas</button></li> \
+                                    </ul> \
+                               </div> \
+                        </div> \
+                </div> ");
+                console.log("1" + recActual.Id_receta);
+                console.log("2" + recActual.Categoria);
+                console.log("3" + recActual.Descripcion);
+                console.log("4" + recActual.Idioma);
+                console.log("5" + recActual.Nombre);
+                console.log("6" + recActual.correo_usu);
+                console.log("7" + recActual.imagenes);
+            }
 
+
+        });
 
     });
-
 }
 
+function buscarXCategoria(categoria) {
+    $.getJSON('/api/receta?categoria=' + categoria, function (data) {
+        var ContendorRecetas = document.getElementById("recetasXNombre");
+        $.each(data, function (recetaobtenidas, recActual) {
+            {
+
+                $("#recetasxNombre").append("\
+                    <div class='col - md - 3 col - sm - 6 wow fadeInUp card ' > \
+                        <div class='team - thumb'> \
+                            <img src='images / chef1.jpg' class='img - responsive' alt='Team'> \
+                                <div class='team - des'> \
+                                    <h3>"+ recActual.Nombre + "</h3> \
+                                    <h4>"+ recActual.Categoria + "</h4> \
+                                    <ul class='social - icon'> \
+                                        <li><a href='#' class='fa fa - facebook'></a></li> \
+                                        <li><button type='button' class='btn btn - primary' id='btnComentar' onclick=" + recActual.Id_receta + ">Ver Mas</button></li> \
+                                    </ul> \
+                               </div> \
+                        </div> \
+                </div> ");
+                console.log("1" + recActual.Id_receta);
+                console.log("2" + recActual.Categoria);
+                console.log("3" + recActual.Descripcion);
+                console.log("4" + recActual.Idioma);
+                console.log("5" + recActual.Nombre);
+                console.log("6" + recActual.correo_usu);
+                console.log("7" + recActual.imagenes);
+            }
+
+
+        });
+
+    });
+}
 function signOut() {
     GoogleAuth.signOut();
 
 }
-
-
-
-
-
-
