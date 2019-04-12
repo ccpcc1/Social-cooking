@@ -27,9 +27,11 @@ namespace SocialCooking.Controllers
 
         }
         // GET api/<controller>/5
-        public string Get(int id)
+        public EN.Usuario Get(string correo, bool confirmacion)
         {
-            return "value";
+            EN.Usuario user = new EN.Usuario();
+            user = usuarioController.retornarUser(correo);
+            return user;
         }
 
         // POST api/<controller>

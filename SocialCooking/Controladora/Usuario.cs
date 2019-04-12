@@ -14,14 +14,14 @@ namespace Controladora
 
         public void crearUsuario(EN.Usuario usuario)
         {
-                DA.Usuario objUsuario = new DA.Usuario();
-                objUsuario.Correo = usuario.Correo;
-                objUsuario.img = usuario.img;
-                objUsuario.Nombre = usuario.Nombre;
-                objUsuario.IdTipoUsu = 5;
-                db.Usuarios.Add(objUsuario);
-                db.SaveChanges();
-                
+            DA.Usuario objUsuario = new DA.Usuario();
+            objUsuario.Correo = usuario.Correo;
+            objUsuario.img = usuario.img;
+            objUsuario.Nombre = usuario.Nombre;
+            objUsuario.IdTipoUsu = 5;
+            db.Usuarios.Add(objUsuario);
+            db.SaveChanges();
+
         }
         public int getIdUsuario(string correo)
         {
@@ -37,19 +37,19 @@ namespace Controladora
         }
         public string getNombreUsuario(int id)
         {
-          
-            return db.Usuarios.Where(x => x.Id_Usuario == id).FirstOrDefault().Nombre; 
+
+            return db.Usuarios.Where(x => x.Id_Usuario == id).FirstOrDefault().Nombre;
         }
 
         public int RetornarTipoUsu(string correo)
         {
-            
-                DA.Usuario usu = new DA.Usuario();
-                usu = db.Usuarios.Where(x => x.Correo == correo).FirstOrDefault();
-                
 
-                if (usu == null)
-                {
+            DA.Usuario usu = new DA.Usuario();
+            usu = db.Usuarios.Where(x => x.Correo == correo).FirstOrDefault();
+
+
+            if (usu == null)
+            {
                 //int tipoUsuario;
                 //EN.Usuario user = new EN.Usuario();
                 //user.Correo = correo;
@@ -58,20 +58,38 @@ namespace Controladora
                 //user.IdTipoUsu = 5;
                 //tipoUsuario =crearUsuario(user);
                 //return tipoUsuario;
-                    return 0;
-                }
-                
-                return usu.IdTipoUsu;
+                return 0;
+            }
 
-            
-            
-            
+            return usu.IdTipoUsu;
+
+
+
+
         }
 
-        public List<DA.Usuario> getUsuarios() {
+        public List<DA.Usuario> getUsuarios()
+        {
 
             return db.Usuarios.ToList<DA.Usuario>();
 
         }
+
+        public EN.Usuario retornarUser(string correo)
+        {
+
+            DA.Usuario usu = new DA.Usuario();
+            EN.Usuario user = new EN.Usuario();
+            usu = db.Usuarios.Where(x => x.Correo == correo).FirstOrDefault();
+            user.Correo = usu.Correo;
+            user.Nombre = usu.Nombre;
+            user.IdTipoUsu = usu.IdTipoUsu;
+            user.img = usu.img;
+            user.Id_Usuario = usu.Id_Usuario;
+
+
+            return user;
+        }
+
     }
 }

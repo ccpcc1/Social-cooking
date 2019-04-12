@@ -21,5 +21,8 @@ namespace Entidades
         public string Categoria { get; set; }
         public int puntuacion { get; set; }
         public int nopuntucaiones { get; set; }
+
+        
+
     }
 }

@@ -15,7 +15,7 @@ function onSignIn(googleUser) {
             'Correo': profile.getEmail(),
             'img': profile.getImageUrl()
         }
- 
+
     verificarTipoUsu(profile.getEmail());
 }
 
@@ -26,9 +26,9 @@ function verificarTipoUsu(correo) {
         console.log("es lo que recoge=" + data)
         tipousu = data;
         enviarAPerfil(tipousu);
-       
+
     });
-   
+
 }
 
 function enviarAPerfil(tipousuario) {
@@ -43,7 +43,8 @@ function enviarAPerfil(tipousuario) {
                 dataType: 'json',
                 data: JSON.stringify(usuario),
                 success: function (usuario) {
-                    window.location = "index2.html";
+                    window.location = "index2.html?user=" + usuario.Correo;
+
                 },
                 error: function (request, message, error) {
                     handleException(request, message, error);
@@ -51,16 +52,15 @@ function enviarAPerfil(tipousuario) {
             });
             break;
         case 4:
-            window.location = "moderador.html";
+            window.location = "moderador.html?user=" + usuario.Correo;
             break;
         case 5:
-            window.location = "index2.html";
+            window.location = "index2.html?user=" + usuario.Correo;
             break;
         default:
             console.log('Lo lamentamos, no se puede ingresar a la plataforma');
     }
 
-    
-}
 
+}
 
