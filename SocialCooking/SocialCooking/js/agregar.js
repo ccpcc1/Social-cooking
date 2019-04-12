@@ -1,5 +1,5 @@
-var instanciar= true;
-var identificador=0;
+var instanciar = true;
+var identificador = 0;
 var div1;
 var div2;
 var br1;
@@ -13,39 +13,75 @@ var reader;
 var tempimagen;
 var imagenes = [];
 var receta = new Object();
+var usuario = new Object();
+var prueba =
+    {
+        'Nombre': "",
+        'correo_usu': "",
+        'ingrediente': "",
+        'Idioma': "",
+        'Descripcion': "",
+        'PasoApaso': "",
+        'Categoria': "",
+        'imagenes': ""
+    };
+window.onload = cargarUsuario();
+
+usuario =
+    {
+
+        'Nombre': "",
+        'Correo': "",
+        'img': "",
+        'IdTipoUsu': "",
+        'Id_Usuario': ""
+    };
+
+function cargarUsuario() {
+
+    var parametro = window.location.search.substr('?').split('=');
+    var correo = parametro[1];
+    $.getJSON('/api/Usuario?correo=' + correo + "&confirmacion=" + true, function (data) {
+        console.log("es lo que recoge=" + data)
+        usuario = data;
+        document.getElementById("nombreUsuario").innerHTML = "<img src=" + usuario.img + " id='images' >" + usuario.Nombre;
+        //document.getElementById("images").src =; usuario.img;
+
+
+    });
+
+}
 
 function guardarDatos() {
 
-        //trabajo bajo el supuesto de que los campos estan llenos
-        var ingredientes = [];
-        var nombreReceta = document.getElementById('nombreReceta');
-        var ingrediente = document.getElementById('nombre');
-        var cantidadIngrediente = document.getElementById('cantidad');
-        var idiomas = document.getElementById('listaIdiomas');
-        var imagen = document.getElementById('files');
-        var descripcion = document.getElementById('descripcionReceta');
-        var pasoApaso = document.getElementById('pasosReceta');
-        var categoria = document.getElementById('listaCategorias');
-        ingredientes[0] = { ingrediente: "", cantidad: "" };
-        ingredientes[0].ingrediente = document.getElementById('nombreIngrediente').value;
-        ingredientes[0].cantidad = document.getElementById('cantidadIngrediente').value;
-        var j = 1;
-        var i;
-        
-        for (i = 1; i < ingrediente.childNodes.length; i += 2)
-        {
-            ingredientes[j] = { ingrediente: "", cantidad: "" };
-            ingredientes[j].ingrediente = ingrediente.childNodes[i].value;
-            ingredientes[j].cantidad = cantidadIngrediente.childNodes[i].value;
-            j++;
-        }
-        for (var k = 0; k < imagen.files.length; k++)
-        {
-            ConvertirBase64(imagen.files[k]);
-        }
+    //trabajo bajo el supuesto de que los campos estan llenos
+    var ingredientes = [];
+    var nombreReceta = document.getElementById('nombreReceta');
+    var ingrediente = document.getElementById('nombre');
+    var cantidadIngrediente = document.getElementById('cantidad');
+    var idiomas = document.getElementById('listaIdiomas');
+    var imagen = document.getElementById('files');
+    var descripcion = document.getElementById('descripcionReceta');
+    var pasoApaso = document.getElementById('pasosReceta');
+    var categoria = document.getElementById('listaCategorias');
+    ingredientes[0] = { ingrediente: "", cantidad: "" };
+    ingredientes[0].ingrediente = document.getElementById('nombreIngrediente').value;
+    ingredientes[0].cantidad = document.getElementById('cantidadIngrediente').value;
+    var j = 1;
+    var i;
+
+    for (i = 1; i < ingrediente.childNodes.length; i += 2) {
+        ingredientes[j] = { ingrediente: "", cantidad: "" };
+        ingredientes[j].ingrediente = ingrediente.childNodes[i].value;
+        ingredientes[j].cantidad = cantidadIngrediente.childNodes[i].value;
+        j++;
+    }
+    for (var k = 0; k < imagen.files.length; k++) {
+        ConvertirBase64(imagen.files[k]);
+    }
 
 
-        receta =
+    receta =
         {
             'Nombre': nombreReceta.value,
             'correo_usu': "sebascz97@gmail.com",
@@ -56,7 +92,7 @@ function guardarDatos() {
             'Categoria': categoria.value,
             'imagenes': imagenes
         };
-        GuardarReceta(receta);
+    GuardarReceta(receta);
 
 }
 
@@ -65,7 +101,7 @@ function GuardarReceta(receta) {
     $.ajax({
         url: "/api/receta",
         type: 'POST',
-        contentType:'application/json;charset=utf-8',
+        contentType: 'application/json;charset=utf-8',
         dataType: 'json',
         data: receta,
         success: function (receta) {
@@ -77,20 +113,19 @@ function GuardarReceta(receta) {
     });
 }
 function ConvertirBase64(file) {
-        var lectorImg = new FileReader();
-        lectorImg.readAsDataURL(file);
-        lectorImg.onload = function () {
-            console.log(lectorImg.result);
-            imagenes.push(lectorImg.result);
-            
+    var lectorImg = new FileReader();
+    lectorImg.readAsDataURL(file);
+    lectorImg.onload = function () {
+        console.log(lectorImg.result);
+        imagenes.push(lectorImg.result);
 
-        };
-        lectorImg.onerror = function (error) {
-            console.log('Hubo un error: ', error);
-            
-        };
+
+    };
+    lectorImg.onerror = function (error) {
+        console.log('Hubo un error: ', error);
+
+    };
 }
-
 
 //Funcion para agregar campos de nombre y cantidad en la ventana modal.
 function agregarCampos() {
@@ -123,12 +158,14 @@ function agregarCampos() {
   inputNombre = document.createElement("INPUT");
   inputNombre.setAttribute("type", "text");
   inputNombre.setAttribute("class", "form-control");
+  inputNombre.setAttribute("required", "required");
   inputNombre.setAttribute("id", "campoNombre"+identificador);
   document.getElementById("nombre").appendChild(inputNombre);
 
   inputCantidad = document.createElement("INPUT");
-  inputCantidad.setAttribute("type", "text");
+    inputCantidad.setAttribute("type", "number");
   inputCantidad.setAttribute("class", "form-control");
+  inputCantidad.setAttribute("required", "required");
   inputCantidad.setAttribute("id", "campoCantidad"+identificador);
   document.getElementById("cantidad").appendChild(inputCantidad);
   identificador++;
@@ -188,8 +225,27 @@ function archivo(evt) {
   document.getElementById('files').addEventListener('change', archivo, false);
 
     
- 
 
+function buscarxNombre()
+{
+    var search = Document.getElementById('buscarReceta').value;
+    //(String nombre, bool validar)
+    $.getJSON('/api/receta?nombre=' + search + "&validar=" + true, function (data) {
+        var i = 0;
+        for (var recetacargada in data) {
+            prueba[i].Nombre = recetacargada.Nombre;
+            prueba[i].correo_usu = recetacargada.correo_usu;
+        }
+
+
+    });
+
+}
+
+function signOut() {
+    GoogleAuth.signOut();
+
+}
 
 
 

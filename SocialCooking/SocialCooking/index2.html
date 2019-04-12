@@ -90,6 +90,7 @@
                         <h5 class="tituloFormulario" id="titulo">Agrega tu Receta</h5>
                       </div>
                   <!-- Campo Nombre de la receta -->
+                      <form>
                       <div class="cuerpoFormulario">
                           <div class="form-group">
                               <label for="recipient-name" class="alinear">Nombre de la Receta</label>
@@ -98,7 +99,7 @@
                           <!-- lista de Idiomas -->
                           <div class="form-group">
                               <label for="exampleFormControlSelect1">Idioma</label>
-                              <select class="form-control" id="listaIdiomas">
+                              <select class="form-control" id="listaIdiomas" required>
                                   <option value="" disabled selected>Selecciona un Idioma</option>
                                   <option>Español</option>
                                   <option>Inglés</option>
@@ -109,7 +110,7 @@
 
                           <div class="form-group">
                               <label for="exampleFormControlSelect1">Categoría</label>
-                              <select class="form-control" id="listaCategorias">
+                              <select class="form-control" id="listaCategorias" required>
                                   <option value="" disabled selected>Selecciona una Categoría</option>
                                   <option>Vegetariana</option>
                                   <option>Comida Rápida</option>
@@ -126,12 +127,12 @@
                           <div class="form-row" id="Ingredientes">
                               <div class="margen col-md-6">
                                   <label for="inputEmail4">Nombre</label>
-                                  <input type="text" class="form-control" id="nombreIngrediente">
+                                  <input type="text" class="form-control" id="nombreIngrediente" required>
                               </div>
                               <!-- campo cantidad de ingrediente -->
                               <div class="margen col-md-6">
                                   <label for="inputPassword4">Cantidad</label>
-                                  <input type="text" class="form-control" id="cantidadIngrediente">
+                                  <input type="number" class="form-control" id="cantidadIngrediente" required>
                               </div>
                           </div>
                           <!-- botones agregar y eliminar campos de cantidad y nombre -->
@@ -141,12 +142,12 @@
                           <!-- campo de texto descripción-->
                           <div class="form-group">
                               <label for="exampleFormControlTextarea1" class="alinear">Descripción</label>
-                              <textarea class="form-control" id="descripcionReceta" rows="3"></textarea>
+                              <textarea class="form-control" id="descripcionReceta" rows="3" required></textarea>
                           </div>
                           <!-- campo de texto paso a paso -->
                           <div class="form-group">
-                              <label for="exampleFormControlTextarea1" class="alinear">Paso a Paso</label>
-                              <textarea class="form-control" id="pasosReceta" rows="3"></textarea>
+                              <label for="exampleFormControlTextarea1" class="alinear"  >Paso a Paso</label>
+                              <textarea class="form-control" id="pasosReceta" rows="3" required ></textarea>
                           </div>
                           <!-- obtener imagenes -->
                           <div class="form-group">
@@ -159,7 +160,7 @@
                     <!-- Parte final del formulario -->
                     <div class="modal-footer" id="finalFormulario">
                       <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
-                      <button type="button" class="btn btn-primary" id="btnAgregarReceta" onclick="guardarDatos()">Agregar Receta</button>
+                      <button type="submit" class="btn btn-primary" id="btnAgregarReceta" onclick="guardarDatos()">Agregar Receta</button>
                     </div>
                     </div>
                 </div>
@@ -168,6 +169,7 @@
               </div>
             </div>
             </div>
+            </form>
 
         </section>
 
