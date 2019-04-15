@@ -22,7 +22,9 @@ namespace Entidades
         public int puntuacion { get; set; }
         public int nopuntucaiones { get; set; }
 
-        
+        public FileInfo[] imgs { get; set; }
+
+
 
     }
 }

@@ -1454,6 +1454,7 @@ img {
 .img-responsive,
 .thumbnail a>img,
 .thumbnail>img {
+    margin-top:15px;
     display: block;
     max-width: 100%;
     height: auto
@@ -2905,12 +2906,21 @@ th {
 
 }
 
-.categorias{
-margin-right: 20px;
- color: white;
- font-size:15pt;
- font-weight: 700; 
+.texto-encima {
+    position: absolute;
+    margin-left:6px;
+    top: 0%;
+    
+    width:250px;
+    background-color: rgba(253, 191, 0, 0.63);
+    border-radius: 10px;
+}
 
+.categoria {
+    margin-right: 10px;
+    color: white;
+    font-size: 15pt;
+    font-weight: 700;
 }
 
 .Idiomas{
@@ -8182,4 +8192,9 @@ button.close {
     .hidden-print {
         display: none!important
     }
+}
+
+#botonBusqueda {
+    background-color: #fff3bd;
+    border: 0px;
 }

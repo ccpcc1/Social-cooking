@@ -42,6 +42,7 @@ function cargarUsuario() {
 
     var parametro = window.location.search.substr('?').split('=');
     var correo = parametro[1];
+    
     $.getJSON('/api/Usuario?correo=' + correo + "&confirmacion=" + true, function (data) {
         console.log("es lo que recoge=" + data)
         usuario = data;
@@ -70,13 +71,16 @@ function guardarDatos() {
     ingredientes[0].cantidad = document.getElementById('cantidadIngrediente').value;
     var j = 1;
     var i;
-
-    for (i = 1; i < ingrediente.childNodes.length; i += 2) {
-        ingredientes[j] = { ingrediente: "", cantidad: "" };
-        ingredientes[j].ingrediente = ingrediente.childNodes[i].value;
-        ingredientes[j].cantidad = cantidadIngrediente.childNodes[i].value;
-        j++;
+    if (ingrediente.childNodes != null)
+    {
+        for (i = 1; i < ingrediente.childNodes.length; i += 2) {
+            ingredientes[j] = { ingrediente: "", cantidad: "" };
+            ingredientes[j].ingrediente = ingrediente.childNodes[i].value;
+            ingredientes[j].cantidad = cantidadIngrediente.childNodes[i].value;
+            j++;
+        }
     }
+   
     for (var k = 0; k < imagen.files.length; k++) {
         ConvertirBase64(imagen.files[k]);
     }
@@ -106,10 +110,12 @@ function GuardarReceta(receta) {
         dataType: 'json',
         data: receta,
         success: function (receta) {
-            productAddSuccess(receta.Nombre);
+            alert("Receta agregada satisfactoriamente");
+            $("#exampleModalCenter").modal('hide');
+
         },
         error: function (request, message, error) {
-            handleException(request, message, error);
+            alert("compa hubo un error");
         }
     });
 }
@@ -225,12 +231,18 @@ function archivo(evt) {
          
   document.getElementById('files').addEventListener('change', archivo, false);
 
+function limpiarBusqueda() {
+    var item = document.getElementById('recetasxNombre');
+    item.innerHTML = "";
+}
     
 
 function buscarxNombre()
 {
-    $("#recetasxNombre").innerHTML = "";
+    
+    limpiarBusqueda();
     var search = document.getElementById('buscarReceta').value;
+
     //(String nombre, bool validar)
     $.getJSON('/api/receta?nombre=' + search + "&validar=" + true, function (data) {
         var ContendorRecetas = document.getElementById("recetasXNombre");
@@ -238,15 +250,15 @@ function buscarxNombre()
             {
                 
                 $("#recetasxNombre").append("\
-                    <div class='col - md - 3 col - sm - 6 wow fadeInUp card ' > \
-                        <div class='team - thumb'> \
-                            <img src='images / chef1.jpg' class='img - responsive' alt='Team'> \
-                                <div class='team - des'> \
-                                    <h3>"+recActual.Nombre+"</h3> \
+                    <div class='col-md-3 col-sm-6 wow fadeInUp card ' > \
+                        <div class='team-thumb'> \
+                            <img src='images/chef1.jpg' class='img-responsive' alt='Team'> \
+                                <div class='team-des'> \
+                                    <h6>"+recActual.Nombre+"</h6> \
                                     <h4>"+ recActual.Categoria+"</h4> \
-                                    <ul class='social - icon'> \
-                                        <li><a href='#' class='fa fa - facebook'></a></li> \
-                                        <li><button type='button' class='btn btn - primary' id='btnComentar' onclick=" + recActual.Id_receta +">Ver Mas</button></li> \
+                                    <ul class='social-icon'> \
+                                        <li><a href='#' class='fa fa-facebook'></a></li> \
+                                        <li><button type='button' class='btn btn-primary' id='btnComentar' onclick=" + recActual.Id_receta +">Ver Mas</button></li> \
                                     </ul> \
                                </div> \
                         </div> \
@@ -267,21 +279,22 @@ function buscarxNombre()
 }
 
 function buscarXCategoria(categoria) {
+    limpiarBusqueda();
     $.getJSON('/api/receta?categoria=' + categoria, function (data) {
         var ContendorRecetas = document.getElementById("recetasXNombre");
         $.each(data, function (recetaobtenidas, recActual) {
             {
 
                 $("#recetasxNombre").append("\
-                    <div class='col - md - 3 col - sm - 6 wow fadeInUp card ' > \
-                        <div class='team - thumb'> \
-                            <img src='images / chef1.jpg' class='img - responsive' alt='Team'> \
-                                <div class='team - des'> \
-                                    <h3>"+ recActual.Nombre + "</h3> \
+                    <div class='col-md-3 col-sm-6 wow fadeInUp card ' > \
+                        <div class='team-thumb'> \
+                            <img src='images/chef1.jpg' class='img-responsive' alt='Team'> \
+                                <div class='team-des'> \
+                                    <h6>"+ recActual.Nombre + "</h6> \
                                     <h4>"+ recActual.Categoria + "</h4> \
-                                    <ul class='social - icon'> \
-                                        <li><a href='#' class='fa fa - facebook'></a></li> \
-                                        <li><button type='button' class='btn btn - primary' id='btnComentar' onclick=" + recActual.Id_receta + ">Ver Mas</button></li> \
+                                    <ul class='social-icon'> \
+                                        <li><a href='#' class='fa fa-facebook'></a></li> \
+                                        <li><button type='button' class='btn btn-primary' id='btnComentar' onclick=" + recActual.Id_receta + ">Ver Mas</button></li> \
                                     </ul> \
                                </div> \
                         </div> \

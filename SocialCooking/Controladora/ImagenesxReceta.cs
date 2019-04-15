@@ -36,6 +36,7 @@ namespace Controladora
             }
 
         //Metodo para obtener los strings con las direcciones de la imagenes
+        //Metodo para obtener los strings con las direcciones de la imagenes
         public List<string> getImagenes(int id)
         {
             //Lista a retornar
@@ -48,6 +49,17 @@ namespace Controladora
             }
             return imagenes;
 
+        }
+
+        public EN.Receta convertirImg(EN.Receta imgReceta)
+        {
+            string ruta = "../SocialCooking/images/";
+            for (int i = 0; i < imgReceta.imgs.Length; i++)
+            {
+                imgReceta.imgs[i].CopyTo(ruta);
+                imgReceta.imagenes[i] = imgReceta.imgs[i].Name;
+            }
+            return imgReceta;
         }
     }
 }

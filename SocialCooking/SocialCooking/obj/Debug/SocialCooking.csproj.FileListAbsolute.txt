@@ -894,3 +894,4 @@ C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\SocialCooking\obj\Debu
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csproj.CopyComplete
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.dll
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\SocialCooking\bin\es\Microsoft.QualityTools.Testing.Fakes.resources.dll

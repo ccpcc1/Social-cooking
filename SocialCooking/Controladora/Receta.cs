@@ -149,7 +149,8 @@ namespace Controladora
             Categorias categorias = new Categorias();
             ImagenesxReceta img = new ImagenesxReceta();
             Ingredientes ingredientes = new Ingredientes();
-            var query = db.Recetas.Where(x => x.Nombre.Contains(categoria));
+            int prueba = categorias.getIdCategoria(categoria);
+            var query = db.Recetas.Where(x => x.Id_categoria== prueba);
             foreach (var item in query)
             {
                 EN.Receta receta_buscada = new EN.Receta();
@@ -172,6 +173,32 @@ namespace Controladora
             return recetas;
 
         }
+        public int deleteReceta(int IdReceta)
+        {
+
+            var query = db.Recetas.Where(x => x.Id_receta == IdReceta);
+            if (query != null)
+            {
+                db.Recetas.Remove((BR.Receta)query);
+                db.SaveChanges();
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public void calificarReceta(int idReceta, int puntaje)
+        {
+            BR.Receta recetaPuntuada = new BR.Receta();
+            var query = db.Recetas.Where(x => x.Id_receta == idReceta);
+            recetaPuntuada = (BR.Receta)query;
+            recetaPuntuada.puntuacion = puntaje;
+            recetaPuntuada.nopuntuaciones += 1;
+            db.SaveChanges();
+        }
+
 
     }
 }
