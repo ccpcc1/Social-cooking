@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -46,11 +47,11 @@ namespace SocialCooking.Controllers
         // guarda en la bd la receta
         public void Post(EN.Receta receta)
         {
-            
-            Console.WriteLine(receta.Idioma);
+        
             CT.Receta nuevaReceta = new CT.Receta();
+            
             nuevaReceta.CrearReceta(receta);
-
+          
         }
 
         // PUT api/<controller>/5
@@ -59,8 +60,10 @@ namespace SocialCooking.Controllers
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        public void Delete(int idreceta)
         {
+            CT.Receta recetaEliminada = new CT.Receta();
+            recetaEliminada.deleteReceta(idreceta);
         }
     }
 }

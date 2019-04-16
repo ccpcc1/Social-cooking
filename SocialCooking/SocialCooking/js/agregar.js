@@ -58,6 +58,7 @@ function guardarDatos() {
 
     //trabajo bajo el supuesto de que los campos estan llenos
     var ingredientes = [];
+    var img=[];
     var nombreReceta = document.getElementById('nombreReceta');
     var ingrediente = document.getElementById('nombre');
     var cantidadIngrediente = document.getElementById('cantidad');
@@ -71,7 +72,7 @@ function guardarDatos() {
     ingredientes[0].cantidad = document.getElementById('cantidadIngrediente').value;
     var j = 1;
     var i;
-    if (ingrediente.childNodes != null)
+    if (ingrediente != null)
     {
         for (i = 1; i < ingrediente.childNodes.length; i += 2) {
             ingredientes[j] = { ingrediente: "", cantidad: "" };
@@ -83,6 +84,7 @@ function guardarDatos() {
    
     for (var k = 0; k < imagen.files.length; k++) {
         ConvertirBase64(imagen.files[k]);
+        img[k] = imagen.files[k];
     }
 
 
@@ -95,7 +97,8 @@ function guardarDatos() {
             'Descripcion': descripcion.value,
             'PasoApaso': pasoApaso.value,
             'Categoria': categoria.value,
-            'imagenes': imagenes
+            'imagenes': imagenes,
+            'imgs':img
         };
     GuardarReceta(receta);
 
@@ -110,12 +113,12 @@ function GuardarReceta(receta) {
         dataType: 'json',
         data: receta,
         success: function (receta) {
-            alert("Receta agregada satisfactoriamente");
+            swal("Receta agregada satisfactoriamente", "success");
             $("#exampleModalCenter").modal('hide');
 
         },
         error: function (request, message, error) {
-            alert("compa hubo un error");
+            swal("Receta agregada satisfactoriamente", "warning");
         }
     });
 }

@@ -33,6 +33,10 @@ transition: background .55s ease;
 
 }
 
+.btnluz:hover {
+    box-shadow: 0px 0px 12px white;
+}
+
 .busqueda{
   color:#c21500;
   font-weight: 600; 
