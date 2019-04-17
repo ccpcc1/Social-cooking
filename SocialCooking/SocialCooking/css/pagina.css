@@ -6,6 +6,15 @@
   margin: 10px 5px 0 0;
 }
 
+.encima {
+    
+    z-index: 20000;
+    display: inline;
+    position: absolute;
+    left: 4%;
+    right: 25%;
+}
+
 #images{
 width: 40px;
 height: 40px;

@@ -10,7 +10,6 @@ var contador;
 var list;
 var files;
 var reader;
-var tempimagen;
 var imagenes = [];
 var receta = new Object();
 var usuario = new Object();
@@ -23,17 +22,7 @@ usuario =
         'IdTipoUsu': "",
         'Id_Usuario': ""
     };
-var prueba =
-    {
-        'Nombre': "",
-        'correo_usu': "",
-        'ingrediente': "",
-        'Idioma': "",
-        'Descripcion': "",
-        'PasoApaso': "",
-        'Categoria': "",
-        'imagenes': ""
-    };
+
 window.onload = cargarUsuario();
 
 
@@ -91,7 +80,7 @@ function guardarDatos() {
     receta =
         {
             'Nombre': nombreReceta.value,
-            'correo_usu': "sebascz97@gmail.com",
+            'correo_usu': usuario.Correo,
             'ingrediente': ingredientes,
             'Idioma': idiomas.value,
             'Descripcion': descripcion.value,
@@ -113,12 +102,12 @@ function GuardarReceta(receta) {
         dataType: 'json',
         data: receta,
         success: function (receta) {
-            swal("Receta agregada satisfactoriamente", "success");
+            swal("Receta agregada satisfactoriamente", "Oprime ok para continuar", "success");
             $("#exampleModalCenter").modal('hide');
 
         },
         error: function (request, message, error) {
-            swal("Receta agregada satisfactoriamente", "warning");
+            swal("Receta no agregada", "warning");
         }
     });
 }
@@ -173,7 +162,7 @@ function agregarCampos() {
   document.getElementById("nombre").appendChild(inputNombre);
 
   inputCantidad = document.createElement("INPUT");
-    inputCantidad.setAttribute("type", "number");
+  inputCantidad.setAttribute("type", "number");
   inputCantidad.setAttribute("class", "form-control");
   inputCantidad.setAttribute("required", "required");
   inputCantidad.setAttribute("id", "campoCantidad"+identificador);
@@ -249,9 +238,15 @@ function buscarxNombre()
     //(String nombre, bool validar)
     $.getJSON('/api/receta?nombre=' + search + "&validar=" + true, function (data) {
         var ContendorRecetas = document.getElementById("recetasXNombre");
+        if (data == "") {
+            swal("No se encontró la receta :(", "Intenta con otra :)", "warning");
+            
+
+        }
+        else { 
         $.each(data, function (recetaobtenidas, recActual) {
             {
-                
+               
                 $("#recetasxNombre").append("\
                     <div class='col-md-3 col-sm-6 wow fadeInUp card ' > \
                         <div class='team-thumb'> \
@@ -261,11 +256,94 @@ function buscarxNombre()
                                     <h4>"+ recActual.Categoria+"</h4> \
                                     <ul class='social-icon'> \
                                         <li><a href='#' class='fa fa-facebook'></a></li> \
-                                        <li><button type='button' class='btn btn-primary' id='btnComentar' onclick=" + recActual.Id_receta +">Ver Mas</button></li> \
+                                        <li><button type='button' class='btn btn-primary' id='btnComentar' onclick=" + recActual.Id_receta +" data-toggle='modal' data-target='#exampleModalCenter6'>Ver Mas</button></li> \
                                     </ul> \
                                </div> \
                         </div> \
-                </div> ");
+                </div> \
+                   <div class='encima' aria-hidden='true'> \
+                    <div class='modal fade' id ='exampleModalCenter6' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'> \
+                    <div class='modal-dialog modal-dialog-centered' role='document'> \
+                        <div class='ventanaFormulario'> \
+                            <div class='encabezadoFormulario'> \
+                                <h5 class='tituloFormulario' id='titulo'>"+recActual.Nombre+"</h5> \
+                            </div> \
+                                <form method='dialog'> \
+                                <div class='cuerpoFormulario'> \
+                                    <div class='form-group'> \
+                                        <label for='recipient-name' class='alinear'>Nombre de la Receta</label> \
+                                        <input type='text' class='form-control' id='nombreReceta' required> \
+                                        </div> \
+                                        <!-- lista de Idiomas --> \
+                                        <div class='form-group'> \
+                                            <label for='exampleFormControlSelect1'>Idioma</label> \
+                                            <select class='form-control' id='listaIdiomas' required> \
+                                                <option value='' disabled selected>Selecciona un Idioma</option> \
+                                                <option>Español</option> \
+                                                <option>Inglés</option> \
+                                                <option>Francés</option> \
+                                                <option>Italiano</option> \
+                                            </select> \
+                                        </div> \
+                                        <div class='form-group'> \
+                                            <label for='exampleFormControlSelect1'>Categoría</label> \
+                                            <select class='form-control' id='listaCategorias' required> \
+                                                <option value='' disabled selected>Selecciona una Categoría</option> \
+                                                <option>Vegetariana</option> \
+                                                <option>Comida Rápida</option> \
+                                                <option>Comida Italiana</option> \
+                                                <option>Desayuno</option> \
+                                            </select> \
+                                        </div> \
+                                        <!-- campos de nombre y cantidad de ingredientes --> \
+                                        <div class='form-group'> \
+                                            <label for='recipient-name' class='col-form-label'>Ingredientes</label> \
+                                            <hr> \
+                                        </div> \
+                                            <!-- campo nombre de ingrediente --> \
+                                        <div class='form-row' id='Ingredientes'> \
+                                                <div class='margen col-md-6'> \
+                                                    <label for='inputEmail4'>Nombre</label> \
+                                                    <input type='text' class='form-control' id='nombreIngrediente' required> \
+                                            </div> \
+                                                    <!-- campo cantidad de ingrediente --> \
+                                            <div class='margen col-md-6'> \
+                                                        <label for='inputPassword4'>Cantidad</label> \
+                                                        <input type='number' class='form-control' id='cantidadIngrediente' required> \
+                                            </div> \
+                                                    </div> \
+                                                    <!-- botones agregar y eliminar campos de cantidad y nombre --> \
+                                        <button onclick='agregarCampos()' class='btn btn-primary margenBoton'>Agregar</button> \
+                                                    <button onclick='eliminarCampos()' class='btn btn-danger margenBoton'>Eliminar</button> \
+                                                    <hr> \
+                                                        <!-- campo de texto descripción--> \
+                                        <div class='form-group'> \
+                                                            <label for='exampleFormControlTextarea1' class='alinear'>Descripción</label> \
+                                                            <textarea class='form-control' id='descripcionReceta' rows='3' required></textarea> \
+                                                        </div> \
+                                                        <!-- campo de texto paso a paso --> \
+                                        <div class='form-group'> \
+                                                            <label for='exampleFormControlTextarea1' class='alinear'>Paso a Paso</label> \
+                                                            <textarea class='form-control' id='pasosReceta' rows='3' required></textarea> \
+                                                        </div> \
+                                                        <!-- obtener imagenes --> \
+                                        <div class='form-group'> \
+                                                            <label for='exampleFormControlFile1'>Imágenes</label> \
+                                                            <input type='file' id='files' name='files[]' multiple><br> \
+                                                                <output id='list'></output> \
+                                        </div>\
+                                    </div>\
+                                                            <!-- Parte final del formulario --> \
+                                    <div class='modal-footer' id='finalFormulario'> \
+                                                                <button type='button' class='btn btn-danger' data-dismiss='modal' id='btnCerrarModal'>Cerrar</button> \
+                                                                <button type='submit' class='btn btn-primary' id='btnAgregarReceta'>Agregar Receta</button> \
+                                                            </div> \
+                                </form> \
+                            </div> \
+                                                </div> \
+                                            </div>\
+                                        </div>");
+                
                 console.log("1" + recActual.Id_receta);
                 console.log("2" + recActual.Categoria);
                 console.log("3" + recActual.Descripcion);
@@ -276,7 +354,9 @@ function buscarxNombre()
             }
 
 
-        });
+            });
+
+        }
 
     });
 }
@@ -297,11 +377,11 @@ function buscarXCategoria(categoria) {
                                     <h4>"+ recActual.Categoria + "</h4> \
                                     <ul class='social-icon'> \
                                         <li><a href='#' class='fa fa-facebook'></a></li> \
-                                        <li><button type='button' class='btn btn-primary' id='btnComentar' onclick=" + recActual.Id_receta + ">Ver Mas</button></li> \
+                                        <li><button type='button' class='btn btn-primary' id='btnComentar' onclick=" + recActual.Id_receta + " data-toggle='modal' data-target='#exampleModalCenter2' >Ver Mas</button></li> \
                                     </ul> \
                                </div> \
                         </div> \
-                </div> ");
+                </div>");
                 console.log("1" + recActual.Id_receta);
                 console.log("2" + recActual.Categoria);
                 console.log("3" + recActual.Descripcion);
