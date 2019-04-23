@@ -164,13 +164,16 @@ function agregarCampos() {
     //var hr = document.createElement("HR");
     //document.getElementById("unidades").appendChild(hr);
 
-//Agregar atributos a cada campo.
+//Agregar atributos a cada campo
+//Input nombre
   inputNombre = document.createElement("INPUT");
   inputNombre.setAttribute("type", "text");
   inputNombre.setAttribute("class", "form-control");
   inputNombre.setAttribute("required", "required");
   inputNombre.setAttribute("id", "campoNombre"+identificador);
   document.getElementById("nombre").appendChild(inputNombre);
+
+//Input cantidad
 
   inputCantidad = document.createElement("INPUT");
   inputCantidad.setAttribute("type", "number");
@@ -179,12 +182,13 @@ function agregarCampos() {
   inputCantidad.setAttribute("id", "campoCantidad"+identificador);
   document.getElementById("cantidad").appendChild(inputCantidad);
 
+//Input unidad
   var optionUnidades = document.createElement("select");
   optionUnidades.setAttribute("class", "form-control");
-    optionUnidades.setAttribute("required", "required");
-    optionUnidades.setAttribute("id", "optionUnidades"+identificador);
-  document.getElementById("unidades").appendChild(optionUnidades);
-
+  optionUnidades.setAttribute("required", "required");
+  optionUnidades.setAttribute("id", "optionUnidades"+identificador);
+    document.getElementById("unidades").appendChild(optionUnidades);
+    addOptions();
 
   identificador++;
 
@@ -214,8 +218,23 @@ function eliminarCampos() {
 }
 
 //Funcion para agregar opciones al option Select
-function addOption(optionSelect) {
+function addOptions() {
 
+    var tipos = ['Liquidos', 'Solidos','Otros'];
+
+    let optionSelect = document.getElementById("optionUnidades0");
+    for (let i = 0; i <= 3; i++) {
+        //Crear el optGroup
+        let optGroup = document.createElement('optgroup');
+        optGroup.setAttribute("Label", tipos[i]);
+        optGroup.setAttribute("id", "optGroup"+i);
+        optionSelect.appendChild(optGroup);
+        //Crear las opciones dentro del optGroup
+        let opt = document.createElement('option');
+        opt.value = i;
+        opt.innerHTML = i;
+        document.getElementById("optGroup"+i).appendChild(opt);
+    }
 }
 
 //agregar Imágenes
