@@ -107,3 +107,4 @@ C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\En
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache

@@ -120,21 +120,44 @@
                                                 </div>
                                                 <!-- campos de nombre y cantidad de ingredientes -->
                                                 <div class="form-group">
-                                                    <label for="recipient-name" class="col-form-label">Ingredientes</label>
+                                                    <label class="col-form-label">Ingredientes</label>
                                                     <hr>
                                                 </div>
-                                                <!-- campo nombre de ingrediente -->
+                                                <!-- campo nombre de ingrediente Ppal -->
                                                 <div class="form-row" id="Ingredientes">
+                                                    <!--campo para el nombre-->
                                                     <div class="margen col-md-6">
-                                                        <label for="inputEmail4">Nombre</label>
+                                                        <label>Nombre</label>
                                                         <input type="text" class="form-control" id="nombreIngrediente" required>
                                                     </div>
                                                     <!-- campo cantidad de ingrediente -->
-                                                    <div class="margen col-md-6">
-                                                        <label for="inputPassword4">Cantidad</label>
+                                                    <div class="margen col-md-3">
+                                                        <label>Cantidad</label>
                                                         <input type="number" class="form-control" id="cantidadIngrediente" required>
                                                     </div>
+                                                    <!--campo de las unidades-->
+                                                    <div class="margen col-md-3">
+                                                        <label>Unidades</label>
+                                                        <select class="form-control" required>
+                                                            <optgroup label="Liquidos">
+                                                                <option value="Lts">Lts</option>
+                                                                <option value="Mls">Mls.</option>
+                                                            </optgroup>
+                                                            <optgroup label="Solidos">
+                                                                <option value="Kgs">Kgs.</option>
+                                                                <option value="Grs">Grs.</option>
+                                                            </optgroup>
+                                                            <optgroup label="Otros">
+                                                                <option value="Cdtas">Cdtas.</option>
+                                                                <option value="Cdtas">Cdas.</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </div>
                                                 </div>
+                                             
+                                                    
+                                                </div>
+                                                <hr />
                                                 <!-- botones agregar y eliminar campos de cantidad y nombre -->
                                                 <button onclick="agregarCampos()" class="btn btn-primary margenBoton">Agregar</button>
                                                 <button onclick="eliminarCampos()" class="btn btn-danger margenBoton">Eliminar</button>
@@ -260,10 +283,9 @@
                         </div>
                     </div>
                 </div>
-             
 
                 <div class="encima">
-                <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="ventanaFormulario">
                             <div class="encabezadoFormulario">

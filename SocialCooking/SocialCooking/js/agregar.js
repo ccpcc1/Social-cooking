@@ -4,6 +4,7 @@ var div1;
 var div2;
 var br1;
 var br2;
+var br3;
 var inputNombre;
 var inputCantidad;
 var contador;
@@ -126,11 +127,9 @@ function ConvertirBase64(file) {
     };
 }
 
-//Funcion para agregar campos de nombre y cantidad en la ventana modal.
+//Funcion para agregar campos de nombre, cantidad y unidades en la ventana modal.
 function agregarCampos() {
-  
-  
-
+ 
   if(instanciar=== true)
   {
       div1 = document.createElement("DIV");
@@ -139,19 +138,31 @@ function agregarCampos() {
       document.getElementById("Ingredientes").appendChild(div1);
 
       div2 = document.createElement("DIV");
-      div2.setAttribute("class", "form-group col-md-6");
+      div2.setAttribute("class", "form-group col-md-3");
       div2.setAttribute("id", "cantidad");
       document.getElementById("Ingredientes").appendChild(div2);
-      instanciar= false;
 
-}
-  
-//Agregar espacios entre cada campo.
-  br1 = document.createElement("BR");
-  document.getElementById("nombre").appendChild(br1);
+      var unidades = document.createElement("div");
+      unidades.setAttribute("class", "form-group col-md-3");
+      unidades.setAttribute("id", "unidades");
+      document.getElementById("Ingredientes").appendChild(unidades);
+      instanciar = false;
 
-  br2 = document.createElement("BR");
-  document.getElementById("cantidad").appendChild(br2);
+    }
+    
+    //Agregar espacios entre cada campo.
+    br1 = document.createElement("BR");
+    document.getElementById("nombre").appendChild(br1);
+
+    br2 = document.createElement("BR");
+    document.getElementById("cantidad").appendChild(br2);
+
+    br3 = document.createElement("BR");
+    document.getElementById("unidades").appendChild(br3);
+
+//Agregar Hr para separar cada ingrediente
+    //var hr = document.createElement("HR");
+    //document.getElementById("unidades").appendChild(hr);
 
 //Agregar atributos a cada campo.
   inputNombre = document.createElement("INPUT");
@@ -167,7 +178,16 @@ function agregarCampos() {
   inputCantidad.setAttribute("required", "required");
   inputCantidad.setAttribute("id", "campoCantidad"+identificador);
   document.getElementById("cantidad").appendChild(inputCantidad);
+
+  var optionUnidades = document.createElement("select");
+  optionUnidades.setAttribute("class", "form-control");
+    optionUnidades.setAttribute("required", "required");
+    optionUnidades.setAttribute("id", "optionUnidades"+identificador);
+  document.getElementById("unidades").appendChild(optionUnidades);
+
+
   identificador++;
+
    
   
 }
@@ -190,12 +210,15 @@ function eliminarCampos() {
   list.removeChild(list.childNodes[contador-2]);
 
   identificador--;
-
  
 }
 
-//agregar Imágenes
+//Funcion para agregar opciones al option Select
+function addOption(optionSelect) {
 
+}
+
+//agregar Imágenes
 function archivo(evt) {
   files = evt.target.files; // FileList object
   
@@ -221,14 +244,13 @@ function archivo(evt) {
    }
 }
          
-  document.getElementById('files').addEventListener('change', archivo, false);
+document.getElementById('files').addEventListener('change', archivo, false);
 
 function limpiarBusqueda() {
     var item = document.getElementById('recetasxNombre');
     item.innerHTML = "";
 }
-    
-
+  
 function buscarxNombre()
 {
     
@@ -396,7 +418,7 @@ function buscarXCategoria(categoria) {
 
     });
 }
+
 function signOut() {
     GoogleAuth.signOut();
-
 }
