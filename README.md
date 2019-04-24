@@ -1,15 +1,11 @@
-#Proyecto web Social-Cooking 
+# Proyecto web Social-Cooking 
  🍷 🍴 🍕 🍔 🍟 🍗 🍖
  
 > La cocina social y libre esta aqui La cocina social y libre esta aqui
 
 👦 👧 👩 👨  👴 👲 👳
 
-**Tabla de contenido**
-
-[TOCM]
-
-#¿Que es Social Cooking?
+# ¿Que es Social Cooking?
 - Social Cooking es un proyecto desarrollado por estudiantes de ingenieria de sistemas e informatica de la Universidad Pontificia Bolivariana de 7mo semestre.
 - La finalidad del desarrollo de esta aplicacion tiene varias vertientes:
 
