@@ -1,4 +1,5 @@
 # Proyecto web Social-Cooking 
+
  🍷 🍴 🍕 🍔 🍟 🍗 🍖
  
 > La cocina social y libre esta aqui La cocina social y libre esta aqui
@@ -6,6 +7,7 @@
 👦 👧 👩 👨  👴 👲 👳
 
 # ¿Que es Social Cooking?
+
 - Social Cooking es un proyecto desarrollado por estudiantes de ingenieria de sistemas e informatica de la Universidad Pontificia Bolivariana de 7mo semestre.
 - La finalidad del desarrollo de esta aplicacion tiene varias vertientes:
 
@@ -17,13 +19,19 @@
 -Social Cooking es un proyecto web que tiene la intencion de crear comunidad, basada en normas de convivencia y respeto por los usuarios.
 
 # Equipo de desarrollo 👪 
-ARANGO JARAMILLO, SERGIO	405122	sarangoj@unal.edu.co
-CASTAÑO ZULUAGA, SEBASTIAN	316053	sebastian.castanoz@upb.edu.co
-ECHEVERRI PALACIO, JOSE M.	159747	jose.echeverri@upb.edu.co
-RESTREPO CORREA, JULIAN	319215	julian.restrepoc@upb.edu.co
-PALACIO CUARTAS, CRISTIAN C.	318735	cristianc.palacio@upb.edu.co
 
-#Herramientas de desarrollo 💻
+- ARANGO JARAMILLO, SERGIO	405122	sarangoj@unal.edu.co
+
+- CASTAÑO ZULUAGA, SEBASTIAN	316053	sebastian.castanoz@upb.edu.co
+
+- ECHEVERRI PALACIO, JOSE M.	159747	jose.echeverri@upb.edu.co
+
+- RESTREPO CORREA, JULIAN	319215	julian.restrepoc@upb.edu.co
+
+- PALACIO CUARTAS, CRISTIAN C.	318735	cristianc.palacio@upb.edu.co
+
+# Herramientas de desarrollo 💻
+
 - La aplicacion esta desarrollada bajo el modelo **API REST**
 - Usamos una plantilla para nuestro disenno, por obvias razones tambien incluimos nuestros estilos.
 - **Bootstrap **para el diseño
