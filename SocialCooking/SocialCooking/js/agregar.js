@@ -231,14 +231,15 @@ function addOptions(optionSelect) {
         optGroup.setAttribute("id", "optGroup"+i);
         optionSelect.appendChild(optGroup);
         //Crear las opciones dentro del optGroup
-        if (true) {
+        if (i = 0) {
 
+            let opt = document.createElement('option');
+            opt.value = i;
+            opt.innerHTML = tipos[i];
+            document.getElementById("optGroup" + i).appendChild(opt);
         }
         
-        let opt = document.createElement('option');
-        opt.value = i;
-        opt.innerHTML = tipos[i];
-        document.getElementById("optGroup"+i).appendChild(opt);
+       
     }
 }
 
