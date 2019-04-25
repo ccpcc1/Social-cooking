@@ -112,6 +112,7 @@ function GuardarReceta(receta) {
         }
     });
 }
+
 function ConvertirBase64(file) {
     var lectorImg = new FileReader();
     lectorImg.readAsDataURL(file);
@@ -149,7 +150,7 @@ function agregarCampos() {
       instanciar = false;
 
     }
-    
+
     //Agregar espacios entre cada campo.
     br1 = document.createElement("BR");
     document.getElementById("nombre").appendChild(br1);
@@ -160,37 +161,40 @@ function agregarCampos() {
     br3 = document.createElement("BR");
     document.getElementById("unidades").appendChild(br3);
 
-//Agregar Hr para separar cada ingrediente
-    //var hr = document.createElement("HR");
-    //document.getElementById("unidades").appendChild(hr);
 
-//Agregar atributos a cada campo
-//Input nombre
-  inputNombre = document.createElement("INPUT");
-  inputNombre.setAttribute("type", "text");
-  inputNombre.setAttribute("class", "form-control");
-  inputNombre.setAttribute("required", "required");
-  inputNombre.setAttribute("id", "campoNombre"+identificador);
-  document.getElementById("nombre").appendChild(inputNombre);
 
-//Input cantidad
+    //Agregar atributos a cada campo
+    //Input nombre
+    inputNombre = document.createElement("INPUT");
+    inputNombre.setAttribute("type", "text");
+    inputNombre.setAttribute("placeholder", "Nombre ingrediente");
+    inputNombre.setAttribute("class", "form-control");
+    inputNombre.setAttribute("required", "required");
+    inputNombre.setAttribute("id", "campoNombre"+identificador);
+    document.getElementById("nombre").appendChild(inputNombre);
 
-  inputCantidad = document.createElement("INPUT");
-  inputCantidad.setAttribute("type", "number");
-  inputCantidad.setAttribute("class", "form-control");
-  inputCantidad.setAttribute("required", "required");
-  inputCantidad.setAttribute("id", "campoCantidad"+identificador);
-  document.getElementById("cantidad").appendChild(inputCantidad);
+    //Input cantidad
+    inputCantidad = document.createElement("INPUT");
+    inputCantidad.setAttribute("type", "number");
+    inputCantidad.setAttribute("placeholder", "Cantidad");
+    inputCantidad.setAttribute("class", "form-control");
+    inputCantidad.setAttribute("required", "required");
+    inputCantidad.setAttribute("id", "campoCantidad"+identificador);
+    document.getElementById("cantidad").appendChild(inputCantidad);
 
-//Input unidad
-  var optionUnidades = document.createElement("select");
-  optionUnidades.setAttribute("class", "form-control");
-  optionUnidades.setAttribute("required", "required");
-  optionUnidades.setAttribute("id", "optionUnidades"+identificador);
+    //Input unidad
+    var optionUnidades = document.createElement("select");
+    optionUnidades.setAttribute("class", "form-control");
+    optionUnidades.setAttribute("required", "required");
+    optionUnidades.setAttribute("id", "optionUnidades"+identificador);
     document.getElementById("unidades").appendChild(optionUnidades);
-    addOptions();
 
-  identificador++;
+    var idoptUnidades = "optionUnidades" + identificador;
+    var opts = document.getElementById(idoptUnidades);
+    //Lenar los options
+    addOptions(opts);
+    //Se incrementa el numero de elementos creado
+    identificador++;
 
   
 }
@@ -219,29 +223,19 @@ function eliminarCampos() {
 //Funcion para agregar opciones al option Select
 function addOptions(optionSelect) {
 
-    var tipos = ['Liquidos', 'Solidos', 'Otros'];
-    var Liquidos = ['Lts', 'Mls'];
-    var Solidos = ['Kgs', 'Grs'];
-    var Otros = ['Cdtas', 'Cdas', 'Tazas', 'Pizcas'];
 
-    for (let i = 0; i <= 3; i++) {
-        //Crear el optGroup
-        let optGroup = document.createElement('optgroup');
-        optGroup.setAttribute("Label", tipos[i]);
-        optGroup.setAttribute("id", "optGroup"+i);
-        optionSelect.appendChild(optGroup);
-        //Crear las opciones dentro del optGroup
-        if (i = 0) {
+    var unds = ['Liquidos', 'Solidos', 'Otros', 'Lts', 'Mls', 'Kgs', 'Grs', 'Cdtas', 'Cdas', 'Tazas', 'Pizcas'];
 
-            let opt = document.createElement('option');
-            opt.value = i;
-            opt.innerHTML = tipos[i];
-            document.getElementById("optGroup" + i).appendChild(opt);
-        }
+    for (let i = 0; i < unds.length; i++) {
         
-       
-    }
-}
+                let opt = document.createElement("option");
+                opt.appendChild(document.createTextNode(unds[i]));
+                opt.innerHTML = (unds[i]);
+                optionSelect.appendChild(opt);
+            }
+
+     }
+     
 
 //agregar Imágenes
 function archivo(evt) {

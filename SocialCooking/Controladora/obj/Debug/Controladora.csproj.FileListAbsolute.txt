@@ -138,26 +138,6 @@ C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Controladora\obj\Debug\Cont
 C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.csproj.CopyComplete
 C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.dll
 C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.pdb
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Controladora.dll.config
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Controladora.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Controladora.pdb
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\AutoMapper.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Broker.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Entidades.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\EntityFramework.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\EntityFramework.SqlServer.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Broker.pdb
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Broker.dll.config
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Entidades.pdb
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Entidades.dll.config
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\AutoMapper.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\EntityFramework.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\EntityFramework.SqlServer.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.csprojAssemblyReference.cache
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.csproj.CoreCompileInputs.cache
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.csproj.CopyComplete
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.pdb
 C:\Users\user\Desktop\Social-cooking\SocialCooking\Controladora\bin\Debug\Controladora.dll.config
 C:\Users\user\Desktop\Social-cooking\SocialCooking\Controladora\bin\Debug\Controladora.dll
 C:\Users\user\Desktop\Social-cooking\SocialCooking\Controladora\bin\Debug\Controladora.pdb
@@ -198,3 +178,23 @@ C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Controladora\obj\Debug
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.csproj.CopyComplete
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.dll
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Controladora.dll.config
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Controladora.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Controladora.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\AutoMapper.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Broker.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Entidades.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\EntityFramework.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\EntityFramework.SqlServer.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Broker.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Broker.dll.config
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Entidades.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Entidades.dll.config
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\AutoMapper.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\EntityFramework.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\EntityFramework.SqlServer.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.csprojAssemblyReference.cache
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.csproj.CoreCompileInputs.cache
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.csproj.CopyComplete
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\obj\Debug\Controladora.pdb
