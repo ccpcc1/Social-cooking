@@ -217,11 +217,13 @@ function eliminarCampos() {
 }
 
 //Funcion para agregar opciones al option Select
-function addOptions() {
+function addOptions(optionSelect) {
 
-    var tipos = ['Liquidos', 'Solidos','Otros'];
+    var tipos = ['Liquidos', 'Solidos', 'Otros'];
+    var Liquidos = ['Lts', 'Mls'];
+    var Solidos = ['Kgs', 'Grs'];
+    var Otros = ['Cdtas', 'Cdas', 'Tazas', 'Pizcas'];
 
-    let optionSelect = document.getElementById("optionUnidades0");
     for (let i = 0; i <= 3; i++) {
         //Crear el optGroup
         let optGroup = document.createElement('optgroup');
@@ -229,9 +231,13 @@ function addOptions() {
         optGroup.setAttribute("id", "optGroup"+i);
         optionSelect.appendChild(optGroup);
         //Crear las opciones dentro del optGroup
+        if (true) {
+
+        }
+        
         let opt = document.createElement('option');
         opt.value = i;
-        opt.innerHTML = i;
+        opt.innerHTML = tipos[i];
         document.getElementById("optGroup"+i).appendChild(opt);
     }
 }
