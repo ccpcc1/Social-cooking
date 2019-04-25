@@ -11,7 +11,7 @@ namespace SocialCooking.Controllers
     public class ComentariosController : ApiController
     {
         // GET: api/Comentarios
-        public IEnumerable<string> Get()
+        public List<EN.Comentarios> Get(int idReceta)
         {
             return new string[] { "value1", "value2" };
         }

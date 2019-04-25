@@ -86,9 +86,12 @@ namespace Controladora
             user.IdTipoUsu = usu.IdTipoUsu;
             user.img = usu.img;
             user.Id_Usuario = usu.Id_Usuario;
-
-
             return user;
+        }
+
+        public string imagenUsuario(int idUsusario) {
+
+            return db.Usuarios.Where(x => x.Id_Usuario == idUsusario).FirstOrDefault().img;
         }
 
     }
