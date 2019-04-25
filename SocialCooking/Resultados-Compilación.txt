@@ -1,0 +1,10 @@
+﻿1>------ Operación Recompilar todo iniciada: proyecto: Broker, configuración: Debug Any CPU ------
+2>------ Operación Recompilar todo iniciada: proyecto: Entidades, configuración: Debug Any CPU ------
+1>  Broker -> F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll
+2>C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets(5055,5): warning MSB3061: No se puede eliminar el archivo "F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.dll". El proceso no puede obtener acceso al archivo 'F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.dll' porque está siendo utilizado en otro proceso.
+2>  Entidades -> F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll
+3>------ Operación Recompilar todo iniciada: proyecto: Controladora, configuración: Debug Any CPU ------
+3>  Controladora -> F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Controladora\bin\Debug\Controladora.dll
+4>------ Operación Recompilar todo iniciada: proyecto: SocialCooking, configuración: Debug Any CPU ------
+4>  SocialCooking -> F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.dll
+========== Recompilar todo: 4 correctos, 0 incorrectos, 0 omitidos ==========

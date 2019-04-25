@@ -10,10 +10,11 @@ namespace SocialCooking.Controllers
 {
     public class ComentariosController : ApiController
     {
+        CT.Comentarios comentariosController = new CT.Comentarios();
         // GET: api/Comentarios
-        public List<EN.Comentarios> Get(int idReceta)
+        public List<EN.Comentarios> Get(int idReceta, bool opcion)
         {
-            return new string[] { "value1", "value2" };
+            return comentariosController.obtenerComentarios(idReceta);
         }
 
         // GET: api/Comentarios/5
