@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BR = Broker;
-using EN = Entidades;
-using CT = Controladora;
+
 
 
 namespace Controladora

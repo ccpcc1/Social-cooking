@@ -12,5 +12,6 @@ namespace Entidades
         public int Id_comentario { get; set; }
         public int Id_usuario { get; set; }
         public string Mensaje { get; set; }
+        public string imgUsuario { get; set; }
     }
 }
