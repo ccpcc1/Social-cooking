@@ -24,8 +24,10 @@ namespace Controladora
 
             CT.Usuario usuarioController = new CT.Usuario();
 
+            //Lista que se retonarna de tipo Entidades
             List<EN.Comentarios> listComentarios = new List<EN.Comentarios>();
 
+            //Lista donde esta la consulta con el 
             List<BR.Comentario> query = db.Recetas.Where(x => x.Id_receta == idReceta).FirstOrDefault().Comentarios.ToList();
 
             foreach (BR.Comentario item in query)
