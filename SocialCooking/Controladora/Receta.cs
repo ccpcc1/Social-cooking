@@ -56,6 +56,44 @@ namespace Controladora
             }
             return resultado;
         }
+        //Metodo para actualizar una receta 
+        public bool ActualizarReceta(int id, EN.Receta recetas)
+        {
+            bool resultado = false;
+            BR.Receta temp = new BR.Receta();
+            try
+            {
+
+                BR.Receta rec = new BR.Receta();
+                Usuario temp1 = new Usuario();
+                Categorias cat = new Categorias();
+                ImagenesxReceta imagenes = new ImagenesxReceta();
+                Ingredientes ingredientes = new Ingredientes();
+                rec.Id_usuario = temp1.getIdUsuario(recetas.correo_usu);
+                rec.Descripcion = recetas.Descripcion;
+                rec.PasoApaso = recetas.PasoApaso;
+                rec.Idiomas = recetas.Idioma;
+                rec.Nombre = recetas.Nombre;
+                rec.puntuacion = 0;
+                rec.nopuntuaciones = 0;
+                rec.Id_categoria = cat.getIdCategoria(recetas.Categoria);
+                db.Recetas.Add(rec);
+                db.SaveChanges();//hasta aqui va bien
+                BR.Receta tempReceta = db.Recetas.ToList().Last();
+                recetas.Id_receta = tempReceta.Id_receta;
+                imagenes.ingresarImagenesReceta(recetas);
+                ingredientes.ingresarIngrediente(recetas);
+
+                resultado = true;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return resultado;
+        }
 
         //Metodo que devuelve todas las recetas de tipo EN.Receta
         public List<EN.Receta> getRecetas()
@@ -96,21 +134,27 @@ namespace Controladora
             ImagenesxReceta img = new ImagenesxReceta();
             Ingredientes ingredientes = new Ingredientes();
             var query = db.Recetas.Where(x => x.Id_receta==idReceta).FirstOrDefault();
-            receta.Id_receta = query.Id_receta;
-            receta.Idioma = query.Idiomas;
-            receta.PasoApaso = query.PasoApaso;
-            receta.Descripcion = query.Descripcion;
-            receta.Nombre = query.Nombre;
-            receta.puntuacion = query.puntuacion;
-            receta.Categoria = query.Categoria.Nombre;
-            receta.correo_usu = usuario.getNombreUsuario(query.Id_usuario);
-            receta.Categoria = categoria.getNombreCategoria(query.Id_categoria);
-            receta.nopuntucaiones = query.nopuntuaciones;
-            receta.imagenes =img.getImagenes(query.Id_receta).ToArray();
-            receta.ingrediente = ingredientes.getIngredientes(query.Id_receta).ToArray();
-
-
-            return receta;
+            if (query.GetType() != null)
+            {
+                receta.Id_receta = query.Id_receta;
+                receta.Idioma = query.Idiomas;
+                receta.PasoApaso = query.PasoApaso;
+                receta.Descripcion = query.Descripcion;
+                receta.Nombre = query.Nombre;
+                receta.puntuacion = query.puntuacion;
+                receta.Categoria = query.Categoria.Nombre;
+                receta.correo_usu = usuario.getNombreUsuario(query.Id_usuario);
+                receta.Categoria = categoria.getNombreCategoria(query.Id_categoria);
+                receta.nopuntucaiones = query.nopuntuaciones;
+                receta.imagenes = img.getImagenes(query.Id_receta).ToArray();
+                receta.ingrediente = ingredientes.getIngredientes(query.Id_receta).ToArray();
+                return receta;
+            }
+            else {
+                return null;
+            }
+            
+            
         }
 
         //Metodo para obtener recetas por nombre

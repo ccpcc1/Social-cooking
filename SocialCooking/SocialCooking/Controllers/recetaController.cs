@@ -11,13 +11,6 @@ namespace SocialCooking.Controllers
 {
     public class recetaController : ApiController
     {
-        // devuelve la receta especifica
-        public EN.Receta Get(int idReceta)
-        {
-            CT.Receta receta = new CT.Receta();
-
-            return receta.getReceta(idReceta);
-        }
 
         // obtener todas las recetas
         public List<EN.Receta> Get()
@@ -25,6 +18,16 @@ namespace SocialCooking.Controllers
             CT.Receta recetas = new CT.Receta();
             return recetas.getRecetas();
         }
+
+        // devuelve la receta especifica
+        public EN.Receta Get(int id)
+        {
+            CT.Receta receta = new CT.Receta();
+
+
+            return receta.getReceta(id);
+        }
+
 
         //buscar la receta por categoria
         public List<EN.Receta> Get(String categoria)
@@ -55,7 +58,7 @@ namespace SocialCooking.Controllers
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, EN.Receta receta)
         {
         }
 
