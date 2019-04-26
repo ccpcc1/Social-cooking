@@ -87,7 +87,7 @@
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="ventanaFormulario">
                                         <div class="encabezadoFormulario">
-                                            <h5 class="tituloFormulario" id="titulo">Agrega tu Receta</h5>
+                                            <label for="recipient-name" class="text-center">Agrega tu Receta</label>
                                         </div>
                                         <!-- Campo Nombre de la receta -->
                                         <form method="dialog">
@@ -98,7 +98,7 @@
                                                 </div>
                                                 <!-- lista de Idiomas -->
                                                 <div class="form-group">
-                                                    <label for="exampleFormControlSelect1">Idioma</label>
+                                                    <label for="recipient-name" class="alinear">Idioma</label>
                                                     <select class="form-control" id="listaIdiomas" required>
                                                         <option value="" disabled selected>Selecciona un Idioma</option>
                                                         <option>Español</option>
@@ -109,7 +109,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="exampleFormControlSelect1">Categoría</label>
+                                                    <label for="recipient-name" class="alinear">Categoría</label>
                                                     <select class="form-control" id="listaCategorias" required>
                                                         <option value="" disabled selected>Selecciona una Categoría</option>
                                                         <option>Vegetariana</option>
@@ -120,21 +120,19 @@
                                                 </div>
                                                 <!-- campos de nombre y cantidad de ingredientes -->
                                                 <div class="form-group">
-                                                    <label class="col-form-label">Ingredientes</label>
+                                                    <label class="col-form-label alinear">Ingredientes</label>
                                                     <hr>
                                                 </div>
                                                 <!-- campo nombre de ingrediente Ppal -->
                                                 <div class="form-row" id="Ingredientes">
-                                                   
-                                                </div>
-                                                    
+
                                                 </div>
                                                 <!-- botones agregar y eliminar campos de cantidad y nombre -->
                                                 <button onclick="agregarCampos()" class="btn btn-primary margenBoton">Agregar</button>
                                                 <button onclick="eliminarCampos()" class="btn btn-danger margenBoton">Eliminar</button>
                                                 <hr>
                                                 <!-- campo de texto descripción-->
-                                                <div class="form-group">
+                                                <div class="form-group col">
                                                     <label for="exampleFormControlTextarea1" class="alinear">Descripción</label>
                                                     <textarea class="form-control" id="descripcionReceta" rows="3" required></textarea>
                                                 </div>
@@ -143,13 +141,14 @@
                                                     <label for="exampleFormControlTextarea1" class="alinear">Paso a Paso</label>
                                                     <textarea class="form-control" id="pasosReceta" rows="3" required></textarea>
                                                 </div>
+                                                <hr />
                                                 <!-- obtener imagenes -->
                                                 <div class="form-group">
-                                                    <label for="exampleFormControlFile1">Imágenes</label>
+                                                    <label>Imágenes</label>
                                                     <input type="file" id="files" name="files[]" multiple><br>
                                                     <output id="list"></output>
                                                 </div>
-
+                                            </div>
                                             </div>
                                             <!-- Parte final del formulario -->
                                             <div class="modal-footer" id="finalFormulario">

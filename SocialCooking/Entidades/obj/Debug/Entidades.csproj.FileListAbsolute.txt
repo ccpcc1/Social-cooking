@@ -107,3 +107,4 @@ F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooki
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache

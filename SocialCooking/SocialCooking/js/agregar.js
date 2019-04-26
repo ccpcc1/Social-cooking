@@ -148,7 +148,6 @@ function agregarCampos() {
       unidades.setAttribute("id", "unidades");
       document.getElementById("Ingredientes").appendChild(unidades);
       instanciar = false;
-
     }
 
     //Agregar espacios entre cada campo.
@@ -196,7 +195,6 @@ function agregarCampos() {
     //Se incrementa el numero de elementos creado
     identificador++;
 
-  
 }
 
 //Funcion para eliminar campos de nombre y cantidad en la ventana modal. 
@@ -224,14 +222,23 @@ function eliminarCampos() {
 function addOptions(optionSelect) {
 
 
-    var unds = ['Liquidos', 'Solidos', 'Otros', 'Lts', 'Mls', 'Kgs', 'Grs', 'Cdtas', 'Cdas', 'Tazas', 'Pizcas'];
+    var unds = ['Lts', 'Mls', 'Kgs', 'Grs', 'Cdtas', 'Cdas', 'Tazas', 'Pizcas'];
 
     for (let i = 0; i < unds.length; i++) {
-        
-                let opt = document.createElement("option");
-                opt.appendChild(document.createTextNode(unds[i]));
-                opt.innerHTML = (unds[i]);
-                optionSelect.appendChild(opt);
+
+        if (i==0) {
+            let opt = document.createElement("option");
+            opt.appendChild(document.createTextNode("Unidades"));
+            opt.innerHTML = ("Unidades");
+            opt.setAttribute("selected","");
+            opt.setAttribute("disabled","");     
+            optionSelect.appendChild(opt);
+        }
+            let opt = document.createElement("option");
+            opt.appendChild(document.createTextNode(unds[i]));
+            opt.innerHTML = (unds[i]);
+            optionSelect.appendChild(opt);
+
             }
 
      }
