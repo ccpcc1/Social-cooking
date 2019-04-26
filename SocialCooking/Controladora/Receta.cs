@@ -39,8 +39,11 @@ namespace Controladora
                 rec.puntuacion = 0;
                 rec.nopuntuaciones = 0;
                 rec.Id_categoria = cat.getIdCategoria(recetas.Categoria);
+                rec.fechaPublicacion = DateTime.Today;
+                rec.tiempoPreparacion = recetas.tiempoPreparacion;
+                rec.porciones = recetas.porciones;
                 db.Recetas.Add(rec);
-                db.SaveChanges();//hasta aqui va bien
+                db.SaveChanges();
                 BR.Receta tempReceta= db.Recetas.ToList().Last();             
                 recetas.Id_receta = tempReceta.Id_receta;
                 imagenes.ingresarImagenesReceta(recetas);
@@ -64,25 +67,32 @@ namespace Controladora
             try
             {
 
-                BR.Receta rec = new BR.Receta();
-                Usuario temp1 = new Usuario();
-                Categorias cat = new Categorias();
-                ImagenesxReceta imagenes = new ImagenesxReceta();
-                Ingredientes ingredientes = new Ingredientes();
-                rec.Id_usuario = temp1.getIdUsuario(recetas.correo_usu);
+      
+                Categorias categoriasController = new Categorias();
+                ImagenesxReceta imagenesController = new ImagenesxReceta();
+                Ingredientes ingredientesController = new Ingredientes();
+
+                //Query de la receta a actualizar
+                BR.Receta rec = db.Recetas.Where(x=>x.Id_categoria == id).FirstOrDefault();
+                //Se actualizan los campos
                 rec.Descripcion = recetas.Descripcion;
                 rec.PasoApaso = recetas.PasoApaso;
                 rec.Idiomas = recetas.Idioma;
                 rec.Nombre = recetas.Nombre;
-                rec.puntuacion = 0;
-                rec.nopuntuaciones = 0;
-                rec.Id_categoria = cat.getIdCategoria(recetas.Categoria);
-                db.Recetas.Add(rec);
-                db.SaveChanges();//hasta aqui va bien
+                rec.puntuacion = recetas.puntuacion;
+                rec.nopuntuaciones = recetas.nopuntucaiones;
+                rec.Id_categoria = categoriasController.getIdCategoria(recetas.Categoria);
+                rec.fechaPublicacion = DateTime.Today;
+                rec.tiempoPreparacion = recetas.tiempoPreparacion;
+                rec.porciones = recetas.porciones;
+
+                db.SaveChanges();
+
+                //Falta verificar como es la actualizacion de los ingredintes
                 BR.Receta tempReceta = db.Recetas.ToList().Last();
                 recetas.Id_receta = tempReceta.Id_receta;
-                imagenes.ingresarImagenesReceta(recetas);
-                ingredientes.ingresarIngrediente(recetas);
+                imagenesController.ingresarImagenesReceta(recetas);
+                ingredientesController.ingresarIngrediente(recetas);
 
                 resultado = true;
 
