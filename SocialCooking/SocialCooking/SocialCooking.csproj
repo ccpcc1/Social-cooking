@@ -142,7 +142,6 @@
     <Compile Include="Controllers\PuntuarController.cs" />
     <Compile Include="Controllers\recetaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
