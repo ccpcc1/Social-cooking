@@ -113,8 +113,11 @@
     <Content Include="css\pagina.css" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\style.css" />
+    <Content Include="detalleReceta.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="prueba - Copia.html" />
+    <Content Include="prueba.html" />
     <Content Include="index2.html" />
     <Content Include="js\agregar.js" />
     <Content Include="js\bootstrap.min.js" />
