@@ -10,7 +10,7 @@
 
     <title>Hello, world!</title>
 </head>
-<body>
+<body class="bg-light">
     <style>
         .ec-stars-wrapper a {
             text-decoration: none;
@@ -30,6 +30,45 @@
         }
 
     </style>
+
+<!-- Panel superior -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FF5733">
+        <a class="navbar-brand text-light" href="#"><strong>Social</strong>Cooking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">Feed de recetas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light active" href="#">Compartir una receta</a>
+            </li>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Nombre usuario
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Ver mi perfil</a>
+                      <a class="dropdown-item text-success" href="#">Mis recetas</a>
+                      <a class="dropdown-item text-warning" href="#">Ver recetas reportadas</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item text-danger" href="#">Salir</a>
+                    </div>
+                  </li>
+            <!-- Foto de perfil -->
+            <a class="navbar-brand px-2 pt-0 mx-auto" href="#">
+                    <img src="images/about-img.jpg" class="img-circle" style="border-radius:30px;" width="30" height="25" alt="">
+            </a>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pastas" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar recetas por nombre</button>
+          </form>
+        </div>
+      </nav>
+    <!-- Termina panel superior -->
     <div class="row">
         <div class="mx-auto py-5">
         <div class="card center-block" style="width: 40rem;">

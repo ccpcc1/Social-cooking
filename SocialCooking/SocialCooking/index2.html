@@ -1,509 +1,143 @@
-﻿<!DOCTYPE html>
-  <html lang="en">
-    <head>
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/estilosPropios.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Hello, world!</title>
+</head>
+<body class="bg-light">
+    <style>
+        .ec-stars-wrapper a {
+            text-decoration: none;
+            display: inline-block;
+            /* Volver a dar tamaño al texto */
+            font-size: 32px;
+            font-size: 2rem;
+            color: #888;
+        }
 
-      <!-- Parametros de plantilla 2083 Steak House http://www.tooplate.com/view/2083-steak-house-->
+        .ec-stars-wrapper:hover a {
+            color: rgb(39, 130, 228);
+        }
 
-	    <title>Steak House - Free HTML CSS Template</title>
-        
-      <meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta name="keywords" content="">
-      <meta name="description" content="">
+        .ec-stars-wrapper > a:hover ~ a {
+            color: #888;
+        }
 
-      <!-- Estilos css -->
-      
-	  <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/magnific-popup.css">
-      <link rel="stylesheet" href="css/animate.min.css">
-      <link rel="stylesheet" href="css/font-awesome.min.css">
-      <link rel="stylesheet" href="css/pagina.css">
-      <link rel="stylesheet" href="css/nivo-lightbox.css">
-      <link rel="stylesheet" href="css/nivo_themes/default/default.css">
-      <link rel="stylesheet" href="css/hover-min.css">
-  	  <link rel="stylesheet" href="css/flexslider.css">
-      <link rel="stylesheet" href="css/style.css">
-      <link href="css/custom.css" rel="stylesheet">
-      
-      <!-- Fuentas de letras -->
+    </style>
 
-      <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-  	  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
-      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    </head>
-    <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50" style="padding: 0px;">
-
-        <!-- Preloader section -->
-
-        <div class="preloader">
-            <div class="sk-spinner sk-spinner-pulse"></div>
+<!-- Panel superior -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FF5733">
+        <a class="navbar-brand text-light" href="#"><strong>Social</strong>Cooking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">Feed de recetas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light active" href="#">Compartir una receta</a>
+            </li>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Nombre usuario
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Ver mi perfil</a>
+                      <a class="dropdown-item text-success" href="#">Mis recetas</a>
+                      <a class="dropdown-item text-warning" href="#">Ver recetas reportadas</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item text-danger" href="#">Salir</a>
+                    </div>
+                  </li>
+            <!-- Foto de perfil -->
+            <a class="navbar-brand px-2 pt-0 mx-auto" href="#">
+                    <img src="images/about-img.jpg" class="img-circle" style="border-radius:30px;" width="30" height="25" alt="">
+            </a>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pastas" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar recetas por nombre</button>
+          </form>
         </div>
-
-        <!-- Barra superior de Navegacion -->
-
-        <div class="navbar navbar-default navbar-static-top" role="navigation">
-
-            <div class="container">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon icon-bar"></span>
-                        <span class="icon icon-bar"></span>
-                        <span class="icon icon-bar"></span>
-                    </button>
-                    <a href="#" class="navbar-brand">SOCIAL COOKING</a>
-                </div>
-
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#top" class="smoothScroll">Compartir</a></li>
-                        <li><a href="#about" class="smoothScroll">Recetas</a></li>
-                        <li><a href="#menu" class="smoothScroll">Buscar</a></li>
-                        <li><a href="recetas.html" class="smoothScroll">Mis recetas</a></li>
-                        <li><a class="smoothScroll" id="nombreUsuario"><img src="images/slide-img3.jpg" id="images">Sebastian Castano</a></li>
-                        <li><a href="login.html" class="smoothScroll"><input type="Button" id="btnsignOut" class="form-control submit" value="Sign Out"></a></li>
-                    </ul>
-                </div>
-            </div>
+      </nav>
+      <!-- Empieza jumboTron -->
+    <div class="jumbotron jumbotron-fluid" style="background-color:#FD9078">
+        <div class="container text-center">
+            <h1 class="display-4 "><strong>Bienvenido a SocialCooking</strong></h1>
+            <p class="lead"> La cocina social y libre esta aqui</p>
+            <p class="lead">🍷 🍴 🍕 🍔 🍟 🍗 🍖</p>
         </div>
-
-
-        <!-- Sección principal Compartir Receta -->
-        <section id="feature" class="parallax-section">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
-                        <div class="wow fadeInUp section-title" data-wow-delay="0.6s">
-                            <h2 class="compartir">¡Comparte tu nueva receta!</h2>
-
-                            <!-- Boton Compartir -->
-                            <button type="button" class="btn btn-primary btnluz" id="btnCompartir" data-toggle="modal" data-target="#exampleModalCenter">Compartir</button>
-
-                            <!-- Ventana Modal Para formulacio de agregar receta -->
-
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="ventanaFormulario">
-                                        <div class="encabezadoFormulario">
-                                            <label for="recipient-name" class="text-center">Agrega tu Receta</label>
-                                        </div>
-                                        <!-- Campo Nombre de la receta -->
-                                        <form method="dialog">
-                                            <div class="cuerpoFormulario">
-                                                <div class="form-group">
-                                                    <label for="recipient-name" class="alinear">Nombre de la Receta</label>
-                                                    <input type="text" class="form-control" id="nombreReceta" required>
-                                                </div>
-                                                <!-- lista de Idiomas -->
-                                                <div class="form-group">
-                                                    <label for="recipient-name" class="alinear">Idioma</label>
-                                                    <select class="form-control" id="listaIdiomas" required>
-                                                        <option value="" disabled selected>Selecciona un Idioma</option>
-                                                        <option>Español</option>
-                                                        <option>Inglés</option>
-                                                        <option>Francés</option>
-                                                        <option>Italiano</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="recipient-name" class="alinear">Categoría</label>
-                                                    <select class="form-control" id="listaCategorias" required>
-                                                        <option value="" disabled selected>Selecciona una Categoría</option>
-                                                        <option>Vegetariana</option>
-                                                        <option>Comida Rápida</option>
-                                                        <option>Comida Italiana</option>
-                                                        <option>Desayuno</option>
-                                                    </select>
-                                                </div>
-                                                <!-- campos de nombre y cantidad de ingredientes -->
-                                                <div class="form-group">
-                                                    <label class="col-form-label alinear">Ingredientes</label>
-                                                    <hr>
-                                                </div>
-                                                <!-- campo nombre de ingrediente Ppal -->
-                                                <div class="form-row" id="Ingredientes">
-
-                                                </div>
-                                                <!-- botones agregar y eliminar campos de cantidad y nombre -->
-                                                <button onclick="agregarCampos()" class="btn btn-primary margenBoton">Agregar</button>
-                                                <button onclick="eliminarCampos()" class="btn btn-danger margenBoton">Eliminar</button>
-                                                <hr>
-                                                <!-- campo de texto descripción-->
-                                                <div class="form-group col">
-                                                    <label for="exampleFormControlTextarea1" class="alinear">Descripción</label>
-                                                    <textarea class="form-control" id="descripcionReceta" rows="3" required></textarea>
-                                                </div>
-                                                <!-- campo de texto paso a paso -->
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlTextarea1" class="alinear">Paso a Paso</label>
-                                                    <textarea class="form-control" id="pasosReceta" rows="3" required></textarea>
-                                                </div>
-                                                <hr />  
-                                                 <!--Datos adicionales-->
-                                                <div class="form-row" id="DatosAdiconales">
-                                                    <div class="form-group col-md-6" id="Porciones">
-                                                        <label for="recipient-name" class="alinear">Porciones</label>
-                                                        <input type="number" placeholder="porciones" class="form-control" required="required" id="porciones">
-                                                    </div>
-                                                    <div class="form-group col-md-6" id="">
-                                                        <label for="recipient-name" class="alinear">Tiempo de preparacion</label>
-                                                        <input id="apptime" type="time" name="appt-time" class="form-control" value="13:30">
-                                                    </div>
-                                                </div>
-                                                <hr />
-                                                <!-- obtener imagenes -->
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlFile1" class="ali">Imágenes</label>
-                                                    <input type="file" id="files" name="files[]" multiple  ><br>
-                                                    <output id="list"></output>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <!-- Parte final del formulario -->
-                                            <div class="modal-footer" id="finalFormulario">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
-                                                <button type="submit" class="btn btn-primary" id="btnAgregarReceta" onclick="guardarDatos()">Agregar Receta</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+    </div>
+    <!-- Feed de recetas -->
+    <div class="card text-center">
+            <div class="card-header">
+              Feed de recetas en SocialCooking
+            </div>
+            <!-- Contenedor de las recetas -->
+            <div class="card-body">
+                    <div class="card-deck">
+                            <div class="card">
+                              <img class="card-img-top" src="images/chef3.jpg" alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              </div>
+                              <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </section>
-
-        <!-- Muro de recetas y categorías -->
-
-        <section id="about" class="parallax-section">
-            <!-- Barra de categogias -->
-            <div id="barraCategorias">
-
-                <div id="exampleSlider">
-                    <div class="MS-content">
-                        <div class="item" onclick="buscarXCategoria('Vegetariana')">
-                            <img src="images/saludable.jpg" class="categoria btnluz" id="categoriaVegetariana">
-                            <div class="texto-encima"><h3>Vegetariana</h3></div>
-                        </div>
-                        <div class="item" onclick="buscarXCategoria('Comida Rápida')">
-                            <img src="images/chatarra.jpg" class="categoria btnluz" id="categoriaRapida">
-                            <div class="texto-encima"><h3>Comida Rápida </h3></div>
-                        </div>
-                        <div class="item" onclick="buscarXCategoria('Italiana')">
-                            <img src="images/italiana.jpg" class="categoria btnluz" id="categoriaItaliana">
-                            <div class="texto-encima"><h3>Italiana</h3></div>
-                        </div>
-                        <div class="item" onclick="buscarXCategoria('Desayuno')">
-                            <img src="images/desayuno.jpg" class="categoria btnluz" id="categoriaDesayuno">
-                            <div class="texto-encima"><h3>Desayuno</h3></div>
-                        </div>
-                        <div class="item">
-                            <img src="images/tradicional.jpg" class="categoria btnluz" id="categoriaTradicional">
-                            <div class="texto-encima"><h3>No disponible</h3></div>
-                        </div>
-                        <div class="item">
-                            <img src="images/facil.jpg" class="categoria btnluz" id="categoriaFacil">
-                            <div class="texto-encima"><h3>No disponible</h3></div>
-                        </div>
-                        <div class="item">
-                            <img src="images/saludable.jpg" class="categoria" id="categoriaSaludable">
-                            <div class="texto-encima"><h3>No disponible</h3></div>
-                        </div>
-                        <div class="item">
-                            <img src="images/saludable.jpg" class="categoria">
-                            <div class="texto-encima"><h3>No disponible</h3></div>
-                        </div>
-                        <div class="item">
-                            <img src="images/saludable.jpg" class="categoria">
-                            <div class="texto-encima"><h3>No disponible</h3></div>
-                        </div>
-                        <div class="item">
-                            <img src="images/saludable.jpg" class="categoria">
-                            <div class="texto-encima"><h3>No disponible</h3></div>
-                        </div>
-                    </div>
-                    <div class="MS-controls">
-                        <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-                        <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-            </div>
-
-            <h2 class="busqueda">¡Muro de Recetas!</h2>
-            <div class="box">
-                <!-- Barra buscar receta-->
-                <div class="container-3">
-                    <span class="icon"><button id="botonBusqueda" class="fa fa-search" onclick="buscarxNombre()"></button></span>
-                    <input type="search" id="buscarReceta" placeholder="Buscar Receta..." />
-                </div>
-
-            </div>
-
-
-            <div class="containerPost">
-                <div id="recetasxNombre">
-
-                </div>
-                <div class="clearfix"></div>
-
-                <div class="col-md-3 col-sm-6 wow fadeInUp card ">
-                    <div class="team-thumb">
-                        <img src="images/chef1.jpg" class="img-responsive" alt="Team">
-                        <div class="team-des">
-                            <h6>Ensalada Cesar</h6>
-                            <h4>Comida Vegetariana</h4>
-                            <ul class="social-icon">
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><button type="button" class="btn btn-primary" id="btnComentar" data-toggle="modal" data-target="#exampleModalCenter2">Ver Mas</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="encima">
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="ventanaFormulario">
-                            <div class="encabezadoFormulario">
-                                <h5 class="tituloFormulario" id="titulo">Agrega tu Receta</h5>
+                            <div class="card">
+                              <img class="card-img-top" src="images/about-img.jpg" alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                              </div>
+                              <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                              </div>
                             </div>
-                            <!-- Campo Nombre de la receta -->
-                            <form method="dialog">
-                                <div class="cuerpoFormulario">
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="alinear">Nombre de la Receta</label>
-                                        <input type="text" class="form-control" id="nombreReceta" required>
-                                    </div>
-                                    <!-- lista de Idiomas -->
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Idioma</label>
-                                        <select class="form-control" id="listaIdiomas" required>
-                                            <option value="" disabled selected>Selecciona un Idioma</option>
-                                            <option>Español</option>
-                                            <option>Inglés</option>
-                                            <option>Francés</option>
-                                            <option>Italiano</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Categoría</label>
-                                        <select class="form-control" id="listaCategorias" required>
-                                            <option value="" disabled selected>Selecciona una Categoría</option>
-                                            <option>Vegetariana</option>
-                                            <option>Comida Rápida</option>
-                                            <option>Comida Italiana</option>
-                                            <option>Desayuno</option>
-                                        </select>
-                                    </div>
-                                    <!-- campos de nombre y cantidad de ingredientes -->
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Ingredientes</label>
-                                        <hr>
-                                    </div>
-                                    <!-- campo nombre de ingrediente -->
-                                    <div class="form-row" id="Ingredientes">
-                                        <div class="margen col-md-6">
-                                            <label for="inputEmail4">Nombre</label>
-                                            <input type="text" class="form-control" id="nombreIngrediente" required>
-                                        </div>
-                                        <!-- campo cantidad de ingrediente -->
-                                        <div class="margen col-md-6">
-                                            <label for="inputPassword4">Cantidad</label>
-                                            <input type="number" class="form-control" id="cantidadIngrediente" required>
-                                        </div>
-                                    </div>
-                                    <!-- botones agregar y eliminar campos de cantidad y nombre -->
-                                    <button onclick="agregarCampos()" class="btn btn-primary margenBoton">Agregar</button>
-                                    <button onclick="eliminarCampos()" class="btn btn-danger margenBoton">Eliminar</button>
-                                    <hr>
-                                    <!-- campo de texto descripción-->
-                                    <div class="form-group">
-                                        <label for="exampleFormControlTextarea1" class="alinear">Descripción</label>
-                                        <textarea class="form-control" id="descripcionReceta" rows="3" required></textarea>
-                                    </div>
-                                    <!-- campo de texto paso a paso -->
-                                    <div class="form-group">
-                                        <label for="exampleFormControlTextarea1" class="alinear">Paso a Paso</label>
-                                        <textarea class="form-control" id="pasosReceta" rows="3" required></textarea>
-                                    </div>
-                                    <!-- obtener imagenes -->
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Imágenes</label>
-                                        <input type="file" id="files" name="files[]" multiple><br>
-                                        <output id="list"></output>
-                                    </div>
-
-                                </div>
-                                <!-- Parte final del formulario -->
-                                <div class="modal-footer" id="finalFormulario">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
-                                    <button type="submit" class="btn btn-primary" id="btnAgregarReceta" onclick="guardarDatos()">Agregar Receta</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-              </div>
-
-
-
-
-                <div class="col-md-3 col-sm-6 wow fadeInUp card ">
-                    <div class="team-thumb">
-                        <img src="images/chef1.jpg" class="img-responsive" alt="Team">
-                        <div class="team-des">
-                            <h6>Recalentado</h6>
-                            <h4>Desayuno</h4>
-                            <ul class="social-icon">
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><button type="button" class="btn btn-primary" id="btnComentar">Ver Mas</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-3 col-sm-6 wow fadeInUp card ">
-                    <div class="team-thumb">
-                        <img src="images/chef1.jpg" class="img-responsive" alt="Team">
-                        <div class="team-des">
-                            <h6>Penne al Pesto</h6>
-                            <h4>Comida Italiana</h4>
-                            <ul class="social-icon">
-                                <li><a href="#" class="fa fa-facebook"></a></li>
-                                <li><button type="button" class="btn btn-primary" id="btnComentar">Ver Mas</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+                            <div class="card">
+                              <img class="card-img-top" src="images/chef2.jpg" alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                              </div>
+                              <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                              </div>
+                            </div>
+             </div>
             </div>
-
-
-            <!-- <div class="ventanaPost">
-                    <div class="encabezadoPost">
-                      <h3 class="tituloPost" id="tituloPost">Nombre de la receta</h3>
-                      <a class="usuario"  id="nombreUsuario"><img src="images/slide-img3.jpg" id="images" >Sebastian Castano</a>
-                    </div>
-
-                     <div class="cuerpoFormulario">
-                       <section>
-                              <label >Descripción</label>
-                              <br/>
-                              <br/>
-                              <br/>
-
-                              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit consequat lobortis libero ullamcorper, risus vehicula vulputate volutpat vestibulum nostra tempus torquent suscipit litora. Maecenas nunc vel viverra felis lectus vestibulum duis ridiculus eget blandit, phasellus cubilia primis mus non volutpat magnis quisque sociosqu sem est, placerat lacus in sollicitudin varius morbi facilisis arcu cum. Cras posuere proin dapibus tristique curabitur auctor accumsan, tortor dis nibh duis habitasse laoreet potenti vivamus, sagittis tincidunt tempus lobortis class porttitor.
-                              Nunc ac nec sodales proin posuere primis sollicitudin, mollis varius neque vestibulum cursus sagittis justo, dis platea pellentesque tortor taciti aenean. Morbi class euismod lacinia malesuada est fames libero aptent quam, maecenas aenean condimentum donec dictumst ullamcorper senectus nascetur, odio posuere volutpat primis cras nec commodo tellus. Nascetur auctor varius semper penatibus tellus nunc, enim phasellus congue nam molestie, pharetra in class cras inceptos.</p>
-
-
-                        </section>
-                        <section>
-                              <label >Imágenes</label>
-                              <br/>
-                              <br/>
-                              <br/>
-                              <img src="images/saludable.jpg" class="imagenes" >
-                              <img src="images/saludable.jpg" class="imagenes" >
-                              <img src="images/saludable.jpg" class="imagenes" >
-                              <img src="images/saludable.jpg" class="imagenes" >
-                              <img src="images/saludable.jpg" class="imagenes" >
-                              <img src="images/saludable.jpg" class="imagenes" >
-
-                        </section>
-                        <section>
-                              <label >Ingredietes</label>
-                              <br/>
-                              <br/>
-                              <br/>
-                              <table class="table table-striped table-dark">
-                              <thead>
-                                <tr>
-                                  <th scope="col">Nombre</th>
-                                  <th scope="col">Cantidad</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>Sal</td>
-                                  <td>1gr</td>
-                                </tr>
-                                <tr>
-                                  <td>leche</td>
-                                  <td>2 bolsas</td>
-                                </tr>
-
-                                 <tr>
-                                  <td>Huevos</td>
-                                  <td>2</td>
-                                </tr>
-
-                              </tbody>
-                            </table>
-
-                        </section>
-
-                        <section>
-                              <label >Paso a Paso</label>
-                              <br/>
-                              <br/>
-                              <br/>
-
-                              <p>Lorem ipsum dolor sit amet consectetur adipiscing elit consequat lobortis libero ullamcorper, risus vehicula vulputate volutpat vestibulum nostra tempus torquent suscipit litora. Maecenas nunc vel viverra felis lectus vestibulum duis ridiculus eget blandit, phasellus cubilia primis mus non volutpat magnis quisque sociosqu sem est, placerat lacus in sollicitudin varius morbi facilisis arcu cum. Cras posuere proin dapibus tristique curabitur auctor accumsan, tortor dis nibh duis habitasse laoreet potenti vivamus, sagittis tincidunt tempus lobortis class porttitor.
-                              Nunc ac nec sodales proin posuere primis sollicitudin, mollis varius neque vestibulum cursus sagittis justo, dis platea pellentesque tortor taciti aenean. Morbi class euismod lacinia malesuada est fames libero aptent quam, maecenas aenean condimentum donec dictumst ullamcorper senectus nascetur, odio posuere volutpat primis cras nec commodo tellus. Nascetur auctor varius semper penatibus tellus nunc, enim phasellus congue nam molestie, pharetra in class cras inceptos.</p>
-
-                        </section>
-
-
-
-
-                  </div>
-
-                  <div class="modal-footer" id="finalFormulario">
-                    <a class="categorias"  id="categoria"><img src="images/slide-img3.jpg" id="images" >categoria</a>
-                    <a class="Idiomas"  id="Idioma"><img src="images/slide-img3.jpg" id="images" >Idioma</a>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnReportar">Reportar</button>
-                    <button type="button" class="btn btn-primary" id="btnCompartirPost">Compartir</button>
-                    <button type="button" class="btn btn-primary" id="btnComentar">Comentar</button>
-                    <button type="button" class="btn btn-primary" id="btnAgregarFavoritos">Favorito</button>
-
-                  </div>
-                  </div>-->
-
-        </section>
-
-        <!-- JQuery -->
-
-        <script src="js/jquery.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/jquery.backstretch.min.js"></script>
-        <script src="js/jquery.flexslider-min.js"></script>
-        <script src="js/jquery.parallax.js"></script>
-        <script src="js/jquery-2.2.4.min.js"></script>
-
-        <!-- Frameworks -->
-
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/isotope.js"></script>
-        <script src="js/imagesloaded.min.js"></script>
-        <script src="js/nivo-lightbox.min.js"></script>
-        <script src="js/smoothscroll.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/multislider.min.js"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-        <!--Custom Scripts -->
-        <script src="js/slider.js"></script>
-        <script src="js/custom.js"></script>
-        <script src="js/agregar.js?123"></script>
-
-    </body>
-  </html>
+            <div class="card-footer text-muted">
+             <!-- Botones de navegacion -->
+             <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Atras</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Siguiente</a>
+                  </li>
+                </ul>
+             </nav>
+            </div>
+    </div>
+    <!-- Termina panel superior -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
