@@ -1,4 +1,4 @@
-﻿var usuario = new Object();
+var usuario = new Object();
 
 function onSignIn(googleUser) {
 
@@ -63,4 +63,3 @@ function enviarAPerfil(tipousuario) {
 
 
 }
-

@@ -58,8 +58,8 @@ function guardarDatos() {
     var pasoApaso = document.getElementById('pasosReceta');
     var categoria = document.getElementById('listaCategorias');
     ingredientes[0] = { ingrediente: "", cantidad: "" };
-    ingredientes[0].ingrediente = document.getElementById('nombreIngrediente').value;
-    ingredientes[0].cantidad = document.getElementById('cantidadIngrediente').value;
+    ingredientes[0].ingrediente = document.getElementById('nombre').value;
+    ingredientes[0].cantidad = document.getElementById('cantidad').value;
     var j = 1;
     var i;
     if (ingrediente != null)
@@ -103,12 +103,14 @@ function GuardarReceta(receta) {
         dataType: 'json',
         data: receta,
         success: function (receta) {
-            swal("Receta agregada satisfactoriamente", "Oprime ok para continuar", "success");
-            $("#exampleModalCenter").modal('hide');
+
+            alert("Receta agregada satisfactoriamente", "Oprime ok para continuar");
+            
 
         },
         error: function (request, message, error) {
-            swal("Receta no agregada", "warning");
+
+            alert("Receta no agregada");
         }
     });
 }
