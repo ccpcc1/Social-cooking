@@ -77,10 +77,10 @@ namespace Controladora
 
         public EN.Usuario retornarUser(string correo)
         {
-
+            
             DA.Usuario usu = new DA.Usuario();
             EN.Usuario user = new EN.Usuario();
-            usu = db.Usuarios.Where(x => x.Correo == correo).FirstOrDefault();
+            usu = db.Usuarios.Where(x => x.Correo.Contains(correo)).FirstOrDefault();
             user.Correo = usu.Correo;
             user.Nombre = usu.Nombre;
             user.IdTipoUsu = usu.IdTipoUsu;

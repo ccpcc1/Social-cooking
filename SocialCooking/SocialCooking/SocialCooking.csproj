@@ -1,6 +1,4 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -89,54 +87,17 @@
     <Reference Include="System.Web.Http.WebHost">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\animate.min.css" />
-    <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\flexslider.css" />
-    <Content Include="css\font-awesome.min.css" />
-    <Content Include="css\hover-min.css" />
-    <Content Include="css\magnific-popup.css" />
-    <Content Include="css\nivo-lightbox.css" />
-    <Content Include="css\nivo_themes\default\close%402x.png" />
-    <Content Include="css\nivo_themes\default\close.png" />
-    <Content Include="css\nivo_themes\default\default.css" />
-    <Content Include="css\nivo_themes\default\loading%402x.gif" />
-    <Content Include="css\nivo_themes\default\loading.gif" />
-    <Content Include="css\nivo_themes\default\next%402x.png" />
-    <Content Include="css\nivo_themes\default\next.png" />
-    <Content Include="css\nivo_themes\default\prev%402x.png" />
-    <Content Include="css\nivo_themes\default\prev.png" />
-    <Content Include="css\pagina.css" />
-    <Content Include="css\sb-admin-2.css" />
-    <Content Include="css\style.css" />
+    <Content Include="compartirReceta.html" />
     <Content Include="detalleReceta.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
-    <Content Include="prueba - Copia.html" />
-    <Content Include="prueba.html" />
-    <Content Include="index2.html" />
-    <Content Include="js\agregar.js" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\custom.js" />
+    <Content Include="feedUsuario.html" />
+    <Content Include="js\cargarPerfil.js" />
+    <Content Include="js\receta.js" />
     <Content Include="js\imagesloaded.min.js" />
-    <Content Include="js\isotope.js" />
-    <Content Include="js\isotope.min.js" />
-    <Content Include="js\jquery.backstretch.min.js" />
-    <Content Include="js\jquery.flexslider-min.js" />
-    <Content Include="js\jquery.js" />
-    <Content Include="js\jquery.magnific-popup.min.js" />
-    <Content Include="js\jquery.parallax.js" />
-    <Content Include="js\jquery.sticky.js" />
-    <Content Include="js\main.js" />
-    <Content Include="js\nivo-lightbox.min.js" />
-    <Content Include="js\smoothscroll.js" />
-    <Content Include="js\wow.min.js" />
-    <Content Include="login.html" />
-    <Content Include="moderador.html" />
+    <Content Include="js\usuario.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +112,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\nivo_themes\.DS_Store" />
     <Fakes Include="Fakes\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.fakes" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -163,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="css\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -204,13 +165,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
