@@ -23,9 +23,5 @@ namespace Entidades
         public System.DateTime fechaPublicacion { get; set; }
         public string tiempoPreparacion { get; set; }
         public int porciones { get; set; }
-        public FileInfo[] imgs { get; set; }
-
-
-
     }
 }

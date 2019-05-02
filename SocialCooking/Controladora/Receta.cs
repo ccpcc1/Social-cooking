@@ -57,12 +57,12 @@ namespace Controladora
                 db.Recetas.Add(recetaToSave);
                 db.SaveChanges();
 
-                ////Se toma la ultima receta guardada
-                //BR.Receta tempReceta= db.Recetas.ToList().Last();             
-                //recetas.Id_receta = tempReceta.Id_receta;
-                //imagenesController.ingresarImagenesReceta(recetas);
-                //ingredientesController.ingresarIngrediente(recetas);
-                
+                //Se toma la ultima receta guardada
+                BR.Receta tempReceta = db.Recetas.ToList().Last();
+                recetas.Id_receta = tempReceta.Id_receta;
+                imagenesController.ingresarImagenesReceta(recetas.imagenes,tempReceta.Id_receta);
+                ingredientesController.ingresarIngrediente(recetas);
+
                 resultado = true;
 
             }
@@ -74,7 +74,7 @@ namespace Controladora
             return resultado;
         }
         //Metodo para actualizar una receta 
-        public bool ActualizarReceta(int id, EN.Receta recetas)
+        public bool ActualizarReceta(int id, EN.Receta otherReceta)
         {
             bool resultado = false;
             BR.Receta temp = new BR.Receta();
@@ -89,24 +89,24 @@ namespace Controladora
                 //Query de la receta a actualizar
                 BR.Receta rec = db.Recetas.Where(x=>x.Id_categoria == id).FirstOrDefault();
                 //Se actualizan los campos
-                rec.Descripcion = recetas.Descripcion;
-                rec.PasoApaso = recetas.PasoApaso;
-                rec.Idiomas = recetas.Idioma;
-                rec.Nombre = recetas.Nombre;
-                rec.puntuacion = recetas.puntuacion;
-                rec.nopuntuaciones = recetas.nopuntucaiones;
-                rec.Id_categoria = categoriasController.getIdCategoria(recetas.Categoria);
+                rec.Descripcion = otherReceta.Descripcion;
+                rec.PasoApaso = otherReceta.PasoApaso;
+                rec.Idiomas = otherReceta.Idioma;
+                rec.Nombre = otherReceta.Nombre;
+                rec.puntuacion = otherReceta.puntuacion;
+                rec.nopuntuaciones = otherReceta.nopuntucaiones;
+                rec.Id_categoria = categoriasController.getIdCategoria(otherReceta.Categoria);
                 rec.fechaPublicacion = DateTime.Today;
-                rec.tiempoPreparacion = recetas.tiempoPreparacion;
-                rec.porciones = recetas.porciones;
+                rec.tiempoPreparacion = otherReceta.tiempoPreparacion;
+                rec.porciones = otherReceta.porciones;
 
                 db.SaveChanges();
 
-                ////Falta verificar como es la actualizacion de los ingredintes
-                //BR.Receta tempReceta = db.Recetas.ToList().Last();
-                //recetas.Id_receta = tempReceta.Id_receta;
-                //imagenesController.ingresarImagenesReceta(recetas);
-                //ingredientesController.ingresarIngrediente(recetas);
+                //Falta verificar como es la actualizacion de los ingredintes
+                BR.Receta tempReceta = db.Recetas.ToList().Last();
+                otherReceta.Id_receta = tempReceta.Id_receta;
+                imagenesController.ingresarImagenesReceta(otherReceta);
+                ingredientesController.ingresarIngrediente(otherReceta);
 
                 resultado = true;
 

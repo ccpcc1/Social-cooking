@@ -43,7 +43,7 @@
                 </a>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pastas" aria-label="Search">
+                <input id="recetasxNombre" class="form-control mr-sm-2" type="search" placeholder="Por ejemplo Pastas" aria-label="Search">
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar recetas por nombre</button>
             </form>
         </div>
@@ -133,23 +133,24 @@
                 <!-- obtener imagenes -->
                 <div class="form-group col-md-12">
                     <label for="exampleFormControlFile1" class="ali">Imágenes</label>
-                    <input type="file" id="files" name="files[]" multiple><br>
+                    <input type="file" id="files" name="files[]" multiple>
+                    <br>
                     <output id="list"></output>
                 </div>
             </div>
         </div>
         <!-- Parte final del formulario -->
         <div class="modal-footer mx-auto" id="finalFormulario">
-            <button type="button" class="btn btn-danger" data-dismiss="modal" id="btnCerrarModal">Cerrar</button>
             <button type="submit" class="btn btn-primary" id="btnAgregarReceta" onclick="guardarDatos()">Agregar Receta</button>
         </div>
     </div>
     <!-- Termina panel superior -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/receta.js"></script>
     <script src="js/usuario.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>

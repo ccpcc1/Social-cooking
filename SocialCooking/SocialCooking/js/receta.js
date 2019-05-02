@@ -15,9 +15,9 @@ var reader;
 var imagenes = [];
 var receta = new Object();
 
-console.log("Documento guardado");
-console.log(document.getElementById("files"));
-//document.getElementById("files").addEventListener("change", guardarImagenes);
+console.log("Documento cargado");
+//Evento que guarda las imagenes en el servidor
+document.getElementById("files").addEventListener("change", guardarImagenes);
 
 function guardarDatos() {
 
@@ -28,7 +28,6 @@ function guardarDatos() {
     var ingrediente = document.getElementById('nombre');
     var cantidadIngrediente = document.getElementById('cantidad');
     var idiomas = document.getElementById('listaIdiomas');
-    var imagen = document.getElementById('files');
     var descripcion = document.getElementById('descripcionReceta');
     var pasoApaso = document.getElementById('pasosReceta');
     var categoria = document.getElementById('listaCategorias');
@@ -49,12 +48,8 @@ function guardarDatos() {
             j++;
         }
     }
-   
-    for (var k = 0; k < imagen.files.length; k++) {
-        ConvertirBase64(imagen.files[k]);
-        img[k] = imagen.files[k];
-    }
-
+  
+    
 
     receta =
         {
@@ -66,11 +61,11 @@ function guardarDatos() {
         'PasoApaso': pasoApaso.value,
         'Categoria': categoria.value,
         'imagenes': imagenes,
-        'tiempoPreparacion': horas.value + " " + minutos.value,
+        'tiempoPreparacion': horas.value + " hrs y " + minutos.value + " minutos",
         'porciones': porciones.value
         };
 
-   GuardarReceta(receta);
+   //GuardarReceta(receta);
 
 }
 
@@ -85,7 +80,7 @@ function GuardarReceta(receta) {
         data: receta,
         success: function (receta) {
 
-            alert("Receta agregada satisfactoriamente", "Oprime ok para continuar");
+            alert("Receta " + receta.nombreReceta + " agregada satisfactoriamente", "Oprime ok para continuar");
             
 
         },
@@ -194,11 +189,8 @@ function eliminarCampos() {
   list = document.getElementById("cantidad");
   list.removeChild(list.childNodes[contador-1]);
 
-  list = document.getElementById("nombre");
-  list.removeChild(list.childNodes[contador-2]);
-
-  list = document.getElementById("cantidad");
-  list.removeChild(list.childNodes[contador-2]);
+   list = document.getElementById("unidades");
+   list.removeChild(list.childNodes[contador - 1]);
 
   identificador--;
  
@@ -241,6 +233,7 @@ function guardarImagenes(e) {
         for (var x = 0; x < files.length; x++) {
             console.log(files[x]);
             img.append("file" + x, files[x]);
+            
         }
 
         $.ajax({
@@ -251,21 +244,29 @@ function guardarImagenes(e) {
             data: img,
             success: function (result) {
                 console.log("Se guardaron las imagenes");
+
+                //Annadimos las imagenes al arreglo de imagenes
+                for (var i = 0; i < result.length; i++) {
+
+                    imagenes.push(result[i]);
+                }
+                
             },
             error: function (xhr, status, p3, p4) {
                 var err = "Error " + " " + status + " " + p3 + " " + p4;
                 if (xhr.responseText && xhr.responseText[0] == "{")
                     err = JSON.parse(xhr.responseText).Message;
-                console.log(err);
+                    console.log(err);
             }
         });
+
     } else {
-        alert("This browser doesn't support HTML5 file uploads!");
+        alert("Este navegador no permite subir archivos");
     }
 }
- 
 
 function limpiarBusqueda() {
+
     var item = document.getElementById('recetasxNombre');
     item.innerHTML = "";
 }
