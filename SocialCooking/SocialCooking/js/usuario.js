@@ -1,6 +1,5 @@
 window.onload = load;
 var usuario = new Object();
-var usuario = new Object();
 usuario =
     {
         'Nombre': "",
@@ -45,7 +44,8 @@ function onSignIn(googleUser) {
             'Correo': profile.getEmail(),
             'img': profile.getImageUrl()
         }
-    console.log("Envia a la APi" + profile.getEmail())
+ 
+    localStorage.setItem("CorreoUsuario", profile.getEmail());
     verificarTipoUsu(profile.getEmail());
 }
 function signOut() {

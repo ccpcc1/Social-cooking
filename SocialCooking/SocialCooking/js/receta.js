@@ -7,13 +7,17 @@ var br2;
 var br3;
 var inputNombre;
 var inputCantidad;
-var porciones, tiempo;
+var porciones, horas, minutos;
 var contador;
 var list;
 var files;
 var reader;
 var imagenes = [];
 var receta = new Object();
+
+console.log("Documento guardado");
+console.log(document.getElementById("files"));
+document.getElementById("files").addEventListener("change", guardarImagenes);
 
 function guardarDatos() {
 
@@ -28,7 +32,8 @@ function guardarDatos() {
     var descripcion = document.getElementById('descripcionReceta');
     var pasoApaso = document.getElementById('pasosReceta');
     var categoria = document.getElementById('listaCategorias');
-    tiempo = document.getElementById('apptime');
+    horas = document.getElementById('hrs');
+    minutos = document.getElementById('mnts');
     porciones = document.getElementById('porciones');
     ingredientes[0] = { ingrediente: "", cantidad: "" };
     ingredientes[0].ingrediente = document.getElementById('nombre').value;
@@ -53,17 +58,17 @@ function guardarDatos() {
 
     receta =
         {
-            'Nombre': nombreReceta.value,
-            'correo_usu': usuario.Correo,
-            'ingrediente': ingredientes,
-            'Idioma': idiomas.value,
-            'Descripcion': descripcion.value,
-            'PasoApaso': pasoApaso.value,
-            'Categoria': categoria.value,
-            'imagenes': imagenes,
-            'imgs': img,
-            'tiempoPreparacion': tiempo.value,
-            'porciones': porciones.value
+         'Nombre': nombreReceta.value,
+        'correo_usu': localStorage.getItem("CorreoUsuario"),
+        'ingrediente': ingredientes,
+        'Idioma': idiomas.value,
+        'Descripcion': descripcion.value,
+        'PasoApaso': pasoApaso.value,
+        'Categoria': categoria.value,
+        'imagenes': imagenes,
+        'imgs': img,
+        'tiempoPreparacion': horas.value + " " + minutos.value,
+        'porciones': porciones.value
         };
 
    GuardarReceta(receta);
@@ -71,6 +76,7 @@ function guardarDatos() {
 }
 
 function GuardarReceta(receta) {
+
     receta = JSON.stringify(receta);
     $.ajax({
         url: "/api/receta",
@@ -86,20 +92,23 @@ function GuardarReceta(receta) {
         },
         error: function (request, message, error) {
 
-            alert("Receta no agregada");
+            alert("Receta no agregada, intente de nuevo");
         }
     });
 }
 
 function ConvertirBase64(file) {
+
     var lectorImg = new FileReader();
     lectorImg.readAsDataURL(file);
+
     lectorImg.onload = function () {
         console.log(lectorImg.result);
         imagenes.push(lectorImg.result);
 
 
     };
+
     lectorImg.onerror = function (error) {
         console.log('Hubo un error: ', error);
 
@@ -222,32 +231,41 @@ function addOptions(optionSelect) {
      }
     
 //agregar Imágenes
-function archivo(evt) {
-  files = evt.target.files; // FileList object
-  
-    //Obtenemos la imagen del campo "file". 
-    for (var i = 0, f; f = files[i]; i++) {  
-        document.getElementById("list").innerHTML = "";
-       //Solo admitimos imágenes.
-       if (!f.type.match('image.*')) {
-            continue;
-       }
-   
-       reader = new FileReader();
-       
-       reader.onload = (function(theFile) {
-           return function(e) {
-           // Creamos la imagen.
-            document.getElementById("list").innerHTML += ['<img class="thumb" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
-           };
+function guardarImagenes(e) {
 
-       })(f);
+    console.log("Se empezaron a guardar las imagenes");
+    var files = e.target.files;
 
-       reader.readAsDataURL(f);
-   }
+    if (window.FormData !== undefined) {
+
+        var img = new FormData();
+
+        for (var x = 0; x < files.length; x++) {
+            console.log(files[x]);
+            img.append("file" + x, files[x]);
+        }
+
+        $.ajax({
+            type: "POST",
+            url: '/api/FileUpload/',
+            contentType: false,
+            processData: false,
+            data: img,
+            success: function (result) {
+                console.log("Se guardo la imagen");
+            },
+            error: function (xhr, status, p3, p4) {
+                var err = "Error " + " " + status + " " + p3 + " " + p4;
+                if (xhr.responseText && xhr.responseText[0] == "{")
+                    err = JSON.parse(xhr.responseText).Message;
+                console.log(err);
+            }
+        });
+    } else {
+        alert("This browser doesn't support HTML5 file uploads!");
+    }
 }
-         
-document.getElementById('files').addEventListener('change', archivo, false);
+ 
 
 function limpiarBusqueda() {
     var item = document.getElementById('recetasxNombre');
