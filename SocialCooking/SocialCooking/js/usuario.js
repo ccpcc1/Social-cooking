@@ -1,6 +1,6 @@
 window.onload = load;
 var usuario = new Object();
-var usuario = new Object();
+var profile;
 usuario =
     {
         'Nombre': "",
@@ -23,8 +23,8 @@ function cargarUsuario() {
     var correo = parametro[1];
 
     $.getJSON('/api/Usuario?correo=' + correo + "&confirmacion=" + true, function (data) {
-        console.log("Aqui se pintan los datos del usuario" + data.Nombre)
-        alert(data.Nombre);
+        console.log("Aqui se pintan los datos del usuario" + data.Nombre);
+        alert("Bienvendio "+data.Nombre);
         document.getElementById("nombreUsuario").innerHTML = capitalizarPrimeraLetra(data.Nombre);
         document.getElementById("imagenUsuario").src = data.img;
     });
@@ -32,7 +32,7 @@ function cargarUsuario() {
 }
 function onSignIn(googleUser) {
 
-    var profile = googleUser.getBasicProfile();
+    profile = googleUser.getBasicProfile();
     console.log("ID: " + profile.getId()); // Don't send this directly to your server!
     console.log('Full Name: ' + profile.getName());
     console.log('Given Name: ' + profile.getGivenName());
@@ -45,7 +45,8 @@ function onSignIn(googleUser) {
             'Correo': profile.getEmail(),
             'img': profile.getImageUrl()
         }
-    console.log("Envia a la APi" + profile.getEmail())
+    console.log("Envia a la APi" + profile.getEmail());
+    localStorage.setItem("correoUsuario", profile.getEmail());
     verificarTipoUsu(profile.getEmail());
 }
 function signOut() {
@@ -53,7 +54,7 @@ function signOut() {
 }
 function verificarTipoUsu(correo) {
 
-    var tipousu
+    var tipousu;
 
     $.getJSON('/api/Usuario?correo=' + correo, function (data) {
         console.log("es lo que recoge en verificar tipo usuario =" + data.correo)
@@ -73,10 +74,9 @@ function enviarAPerfil(tipousuario) {
                 type: 'POST',
                 contentType: 'application/json;charset=utf-8',
                 dataType: 'json',
-                data: JSON.stringify(usuario),
+                data: JSON.stringify(usuarioRecibido),
                 success: function (usuario) {
-                    window.location = "feedUsuario.html?user=" + usuario.Correo;
-                   
+                    window.location = "feedUsuario.html?user=" + usuarioRecibido.Correo;
                 },
                 error: function (request, message, error) {
                     handleException(request, message, error);
