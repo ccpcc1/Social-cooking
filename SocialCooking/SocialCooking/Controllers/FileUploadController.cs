@@ -27,7 +27,7 @@ namespace SocialCooking.Controllers
 
         // POST api/<controller>
 
-        public void Post()
+        public string[] Post()
         {
 
             // Get the uploaded image from the Files collection
@@ -42,6 +42,8 @@ namespace SocialCooking.Controllers
                 path[i] = rootPaht.Substring(1);
                 file.SaveAs(HttpContext.Current.Server.MapPath(rootPaht));
             }
+            
+            return path;
 
         }
         // PUT api/<controller>/5

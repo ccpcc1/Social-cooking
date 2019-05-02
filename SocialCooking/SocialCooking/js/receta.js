@@ -17,7 +17,7 @@ var receta = new Object();
 
 console.log("Documento guardado");
 console.log(document.getElementById("files"));
-document.getElementById("files").addEventListener("change", guardarImagenes);
+//document.getElementById("files").addEventListener("change", guardarImagenes);
 
 function guardarDatos() {
 
@@ -66,7 +66,6 @@ function guardarDatos() {
         'PasoApaso': pasoApaso.value,
         'Categoria': categoria.value,
         'imagenes': imagenes,
-        'imgs': img,
         'tiempoPreparacion': horas.value + " " + minutos.value,
         'porciones': porciones.value
         };
@@ -233,7 +232,6 @@ function addOptions(optionSelect) {
 //agregar Imágenes
 function guardarImagenes(e) {
 
-    console.log("Se empezaron a guardar las imagenes");
     var files = e.target.files;
 
     if (window.FormData !== undefined) {
@@ -252,7 +250,7 @@ function guardarImagenes(e) {
             processData: false,
             data: img,
             success: function (result) {
-                console.log("Se guardo la imagen");
+                console.log("Se guardaron las imagenes");
             },
             error: function (xhr, status, p3, p4) {
                 var err = "Error " + " " + status + " " + p3 + " " + p4;

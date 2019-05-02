@@ -11,24 +11,26 @@ namespace Controladora
    public class ImagenesxReceta
     {
         private BR.SocialCookingEntities db;
+        private BR.imagenesxReceta imgsToSave;
 
         //Metodo constructor
         public ImagenesxReceta()
         {
             db = new BR.SocialCookingEntities();
+            imgsToSave = new BR.imagenesxReceta();
         }
 
         //Metodo para ingresar el array de imagenes a la receta
-        public void ingresarImagenesReceta(EN.Receta receta)
+        public void ingresarImagenesReceta(string [] paths, int idReceta)
         {
-            BR.imagenesxReceta imgReceta = new BR.imagenesxReceta();
-            imgReceta.Id_receta = receta.Id_receta;
 
-            foreach (var otherReceta in receta.imagenes)
+            imgsToSave.Id_receta = idReceta;
+
+            foreach (var rutas in paths)
             {
-                
-                imgReceta.img = otherReceta;
-                db.imagenesxRecetas.Add(imgReceta);
+
+                imgsToSave.ImagePath = rutas;
+                db.imagenesxRecetas.Add(imgsToSave);
                 db.SaveChanges();
             
 
@@ -36,18 +38,18 @@ namespace Controladora
             }
 
         //Metodo para obtener los strings con las direcciones de la imagenes
-        //Metodo para obtener los strings con las direcciones de la imagenes
         public List<string> getImagenes(int id)
         {
             //Lista a retornar
-            List<string> imagenes = new List<string>();
+            List<string> paths = new List<string>();
             //Consulta por LINQ
             var query = db.imagenesxRecetas.Where(x => x.Id_receta == id);
+
             foreach (var imagen in query)
             {
-                imagenes.Add(imagen.img);
+                paths.Add(imagen.ImagePath);
             }
-            return imagenes;
+            return paths;
 
         }
 

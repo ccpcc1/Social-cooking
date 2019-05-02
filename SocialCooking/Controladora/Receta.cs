@@ -12,42 +12,56 @@ namespace Controladora
     public class Receta
     {
         private BR.SocialCookingEntities db;
+        private BR.Receta recetaToSave;
+        private Usuario usuarioController;
+        private Categorias categoriasController;
+        private ImagenesxReceta imagenesController;
+        private Ingredientes ingredientesController;
 
         //Metodo constructor
         public Receta()
         {
             db = new BR.SocialCookingEntities();
+            usuarioController = new Usuario();
+            categoriasController = new Categorias();
+            imagenesController = new ImagenesxReceta();
+            ingredientesController = new Ingredientes();
+            recetaToSave = new BR.Receta();
+
         }
         //Metodo para crear una receta que recibe una EN.Receta
         public bool CrearReceta(EN.Receta recetas)
         {
             bool resultado = false;
-            BR.Receta temp = new BR.Receta();
+
             try
             {
                 
-                BR.Receta rec = new BR.Receta();
-                Usuario temp1 = new Usuario();
-                Categorias cat = new Categorias();
-                ImagenesxReceta imagenes = new ImagenesxReceta();
-                Ingredientes ingredientes = new Ingredientes();
-                rec.Id_usuario = temp1.getIdUsuario(recetas.correo_usu);             
-                rec.Descripcion = recetas.Descripcion;
-                rec.PasoApaso = recetas.PasoApaso;
-                rec.Idiomas = recetas.Idioma;
-                rec.Nombre = recetas.Nombre;
-                rec.puntuacion = 0;
-                rec.nopuntuaciones = 0;
-                rec.Id_categoria = cat.getIdCategoria(recetas.Categoria);
-                rec.fechaPublicacion = DateTime.Today;
-                rec.tiempoPreparacion = recetas.tiempoPreparacion;
-                rec.porciones = recetas.porciones;
-                db.Recetas.Add(rec);
+                //Controladores 
+                Usuario usuarioController = new Usuario();
+                Categorias categoriasController = new Categorias();
+                ImagenesxReceta imagenesController = new ImagenesxReceta();
+                Ingredientes ingredientesController = new Ingredientes();
+
+                recetaToSave.Id_usuario = usuarioController.getIdUsuario(recetas.correo_usu);             
+                recetaToSave.Descripcion = recetas.Descripcion;
+                recetaToSave.PasoApaso = recetas.PasoApaso;
+                recetaToSave.Idiomas = recetas.Idioma;
+                recetaToSave.Nombre = recetas.Nombre;
+                recetaToSave.puntuacion = 0;
+                recetaToSave.nopuntuaciones = 0;
+                recetaToSave.Id_categoria = categoriasController.getIdCategoria(recetas.Categoria);
+                recetaToSave.fechaPublicacion = DateTime.Today;
+                recetaToSave.tiempoPreparacion = recetas.tiempoPreparacion;
+                recetaToSave.porciones = recetas.porciones;
+                db.Recetas.Add(recetaToSave);
                 db.SaveChanges();
-                BR.Receta tempReceta= db.Recetas.ToList().Last();             
-                recetas.Id_receta = tempReceta.Id_receta;
-                imagenes.ingresarImagenesReceta(recetas);
-                ingredientes.ingresarIngrediente(recetas);
+
+                ////Se toma la ultima receta guardada
+                //BR.Receta tempReceta= db.Recetas.ToList().Last();             
+                //recetas.Id_receta = tempReceta.Id_receta;
+                //imagenesController.ingresarImagenesReceta(recetas);
+                //ingredientesController.ingresarIngrediente(recetas);
                 
                 resultado = true;
 
@@ -88,11 +102,11 @@ namespace Controladora
 
                 db.SaveChanges();
 
-                //Falta verificar como es la actualizacion de los ingredintes
-                BR.Receta tempReceta = db.Recetas.ToList().Last();
-                recetas.Id_receta = tempReceta.Id_receta;
-                imagenesController.ingresarImagenesReceta(recetas);
-                ingredientesController.ingresarIngrediente(recetas);
+                ////Falta verificar como es la actualizacion de los ingredintes
+                //BR.Receta tempReceta = db.Recetas.ToList().Last();
+                //recetas.Id_receta = tempReceta.Id_receta;
+                //imagenesController.ingresarImagenesReceta(recetas);
+                //ingredientesController.ingresarIngrediente(recetas);
 
                 resultado = true;
 

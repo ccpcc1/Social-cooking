@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SocialCookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SocialCookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categorias">
           <Key>
             <PropertyRef Name="Id_categoria" />
@@ -31,11 +31,12 @@
         </EntityType>
         <EntityType Name="imagenesxReceta">
           <Key>
+            <PropertyRef Name="ImageId" />
             <PropertyRef Name="Id_receta" />
-            <PropertyRef Name="img" />
           </Key>
-          <Property Name="Id_receta" Type="int" Nullable="false" />
-          <Property Name="img" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="ImageId" Type="int" Nullable="false" />
+          <Property Name="Id_receta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="Ingredientes">
           <Key>
@@ -338,8 +339,7 @@ advertencia 6002: La tabla o vista 'SocialCooking.sys.database_firewall_rules' n
             <End Role="usuariosxfavoritos" EntitySet="usuariosxfavoritos" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SocialCookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -364,11 +364,12 @@ advertencia 6002: La tabla o vista 'SocialCooking.sys.database_firewall_rules' n
         <EntityType Name="imagenesxReceta">
           <Key>
             <PropertyRef Name="Id_receta" />
-            <PropertyRef Name="img" />
+            <PropertyRef Name="ImageId" />
           </Key>
           <Property Name="Id_receta" Type="Int32" Nullable="false" />
-          <Property Name="img" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Receta" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="imagenesxReceta" ToRole="Recetas" />
+          <Property Name="ImageId" Type="Int32" Nullable="false" />
+          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Ingrediente">
           <Key>
@@ -652,8 +653,9 @@ advertencia 6002: La tabla o vista 'SocialCooking.sys.database_firewall_rules' n
           <EntitySetMapping Name="imagenesxRecetas">
             <EntityTypeMapping TypeName="SocialCookingModel.imagenesxReceta">
               <MappingFragment StoreEntitySet="imagenesxReceta">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
                 <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
-                <ScalarProperty Name="img" ColumnName="img" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
