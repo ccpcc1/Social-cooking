@@ -10,13 +10,14 @@
 namespace Broker
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_helpdiagrams_Result
+    public partial class sysdiagrams
     {
-        public string Database { get; set; }
-        public string Name { get; set; }
-        public int ID { get; set; }
-        public string Owner { get; set; }
-        public int OwnerID { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

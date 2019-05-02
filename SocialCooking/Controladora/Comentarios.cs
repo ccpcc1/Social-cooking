@@ -28,9 +28,9 @@ namespace Controladora
             List<EN.Comentarios> listComentarios = new List<EN.Comentarios>();
 
             //Lista donde esta la consulta con el 
-            List<BR.Comentario> query = db.Recetas.Where(x => x.Id_receta == idReceta).FirstOrDefault().Comentarios.ToList();
+            List<BR.Comentarios> query = db.Recetas.Where(x => x.Id_receta == idReceta).FirstOrDefault().Comentarios.ToList();
 
-            foreach (BR.Comentario item in query)
+            foreach (BR.Comentarios item in query)
             {
                 EN.Comentarios ComentarioReceta = new EN.Comentarios();
 

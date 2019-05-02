@@ -12,15 +12,15 @@ namespace Broker
     using System;
     using System.Collections.Generic;
     
-    public partial class Receta
+    public partial class Recetas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Receta()
+        public Recetas()
         {
-            this.imagenesxRecetas = new HashSet<imagenesxReceta>();
-            this.recetasxIngredientes = new HashSet<recetasxIngrediente>();
-            this.Comentarios = new HashSet<Comentario>();
-            this.Usuarios = new HashSet<Usuario>();
+            this.imagenesxReceta = new HashSet<imagenesxReceta>();
+            this.recetasxIngredientes = new HashSet<recetasxIngredientes>();
+            this.Comentarios = new HashSet<Comentarios>();
+            this.Usuario = new HashSet<Usuario>();
         }
     
         public int Id_receta { get; set; }
@@ -36,15 +36,13 @@ namespace Broker
         public string tiempoPreparacion { get; set; }
         public Nullable<int> porciones { get; set; }
     
-        public virtual Categoria Categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<imagenesxReceta> imagenesxRecetas { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public virtual ICollection<imagenesxReceta> imagenesxReceta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<recetasxIngrediente> recetasxIngredientes { get; set; }
+        public virtual ICollection<recetasxIngredientes> recetasxIngredientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comentario> Comentarios { get; set; }
+        public virtual ICollection<Comentarios> Comentarios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

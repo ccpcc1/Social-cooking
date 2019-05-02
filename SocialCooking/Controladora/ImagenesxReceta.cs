@@ -23,14 +23,13 @@ namespace Controladora
         //Metodo para ingresar el array de imagenes a la receta
         public void ingresarImagenesReceta(string [] paths, int idReceta)
         {
+            imgsToSave.ImageId = idReceta;
 
-            imgsToSave.Id_receta = idReceta;
-
-            foreach (var rutas in paths)
+            foreach (var ruta in paths)
             {
 
-                imgsToSave.ImagePath = rutas;
-                db.imagenesxRecetas.Add(imgsToSave);
+                imgsToSave.ImagePath = ruta;
+                db.imagenesxReceta.Add(imgsToSave);
                 db.SaveChanges();
             
 
@@ -43,7 +42,7 @@ namespace Controladora
             //Lista a retornar
             List<string> paths = new List<string>();
             //Consulta por LINQ
-            var query = db.imagenesxRecetas.Where(x => x.Id_receta == id);
+            var query = db.imagenesxReceta.Where(x => x.Id_receta == id);
 
             foreach (var imagen in query)
             {

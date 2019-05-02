@@ -19,16 +19,16 @@ namespace Controladora
             objUsuario.img = usuario.img;
             objUsuario.Nombre = usuario.Nombre;
             objUsuario.IdTipoUsu = 5;
-            db.Usuarios.Add(objUsuario);
+            db.Usuario.Add(objUsuario);
             db.SaveChanges();
 
         }
         public int getIdUsuario(string correo)
         {
-            DA.Usuario usu = db.Usuarios.Where(x => x.Correo == correo).FirstOrDefault();
+            DA.Usuario usu = db.Usuario.Where(x => x.Correo == correo).FirstOrDefault();
             if (usu != null)
             {
-                return usu.Id_Usuario;
+                return 5;
             }
             else
             {
@@ -38,14 +38,14 @@ namespace Controladora
         public string getNombreUsuario(int id)
         {
 
-            return db.Usuarios.Where(x => x.Id_Usuario == id).FirstOrDefault().Nombre;
+            return db.Usuario.Where(x => x.Id_Usuario == id).FirstOrDefault().Nombre;
         }
 
         public int RetornarTipoUsu(string correo)
         {
 
             DA.Usuario usu = new DA.Usuario();
-            usu = db.Usuarios.Where(x => x.Correo == correo).FirstOrDefault();
+            usu = db.Usuario.Where(x => x.Correo == correo).FirstOrDefault();
 
 
             if (usu == null)
@@ -71,7 +71,7 @@ namespace Controladora
         public List<DA.Usuario> getUsuarios()
         {
 
-            return db.Usuarios.ToList<DA.Usuario>();
+            return db.Usuario.ToList<DA.Usuario>();
 
         }
 
@@ -80,7 +80,7 @@ namespace Controladora
             
             DA.Usuario usu = new DA.Usuario();
             EN.Usuario user = new EN.Usuario();
-            usu = db.Usuarios.Where(x => x.Correo.Contains(correo)).FirstOrDefault();
+            usu = db.Usuario.Where(x => x.Correo.Contains(correo)).FirstOrDefault();
             user.Correo = usu.Correo;
             user.Nombre = usu.Nombre;
             user.IdTipoUsu = usu.IdTipoUsu;
@@ -91,7 +91,7 @@ namespace Controladora
 
         public string imagenUsuario(int idUsusario) {
 
-            return db.Usuarios.Where(x => x.Id_Usuario == idUsusario).FirstOrDefault().img;
+            return db.Usuario.Where(x => x.Id_Usuario == idUsusario).FirstOrDefault().img;
         }
 
     }

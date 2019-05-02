@@ -22,8 +22,8 @@ namespace Controladora
             
             for(int i=0;i<receta.ingrediente.Length;i++)
             {
-                BR.Ingrediente ingrediente = new BR.Ingrediente();
-                BR.recetasxIngrediente recetaXIngrediente = new BR.recetasxIngrediente();
+                BR.Ingredientes ingrediente = new BR.Ingredientes();
+                BR.recetasxIngredientes recetaXIngrediente = new BR.recetasxIngredientes();
                 // primero se añade el ingrediente
                 ingrediente.nombre = receta.ingrediente[i].ingrediente;
                 db.Ingredientes.Add(ingrediente);
@@ -48,7 +48,7 @@ namespace Controladora
             foreach (var item in query)
             {
                 
-                ingrediente.ingrediente = item.Ingrediente.nombre;
+                ingrediente.ingrediente = item.Ingredientes.nombre;
                 ingrediente.cantidad = item.cantidad;             
                 ingredientes.Add(ingrediente);
             }

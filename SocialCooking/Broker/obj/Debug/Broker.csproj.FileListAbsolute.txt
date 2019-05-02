@@ -116,7 +116,6 @@ C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFrame
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.xml
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.xml
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll

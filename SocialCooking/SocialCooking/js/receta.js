@@ -65,22 +65,23 @@ function guardarDatos() {
         'porciones': porciones.value
         };
 
-   //GuardarReceta(receta);
+        GuardarReceta(receta);
 
 }
 
-function GuardarReceta(receta) {
+function GuardarReceta(recetaToSave) {
 
-    receta = JSON.stringify(receta);
+    var otherReceta = JSON.stringify(recetaToSave);
+
     $.ajax({
         url: "/api/receta",
         type: 'POST',
         contentType: 'application/json;charset=utf-8',
         dataType: 'json',
-        data: receta,
-        success: function (receta) {
+        data: otherReceta,
+        success: function (otherReceta) {
 
-            alert("Receta " + receta.nombreReceta + " agregada satisfactoriamente", "Oprime ok para continuar");
+            alert("Receta  agregada satisfactoriamente, Oprime ok para continuar");
             
 
         },

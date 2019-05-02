@@ -12,19 +12,18 @@ namespace Broker
     using System;
     using System.Collections.Generic;
     
-    public partial class Comentario
+    public partial class Ingredientes
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Comentario()
+        public Ingredientes()
         {
-            this.Recetas = new HashSet<Receta>();
+            this.recetasxIngredientes = new HashSet<recetasxIngredientes>();
         }
     
-        public int Id_comentario { get; set; }
-        public int Id_usuario { get; set; }
-        public string Mensaje { get; set; }
+        public int Id_ingrediente { get; set; }
+        public string nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Receta> Recetas { get; set; }
+        public virtual ICollection<recetasxIngredientes> recetasxIngredientes { get; set; }
     }
 }

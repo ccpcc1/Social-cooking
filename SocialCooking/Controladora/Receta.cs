@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,6 @@ namespace Controladora
     public class Receta
     {
         private BR.SocialCookingEntities db;
-        private BR.Receta recetaToSave;
         private Usuario usuarioController;
         private Categorias categoriasController;
         private ImagenesxReceta imagenesController;
@@ -26,49 +26,56 @@ namespace Controladora
             categoriasController = new Categorias();
             imagenesController = new ImagenesxReceta();
             ingredientesController = new Ingredientes();
-            recetaToSave = new BR.Receta();
+           
 
         }
         //Metodo para crear una receta que recibe una EN.Receta
-        public bool CrearReceta(EN.Receta otherReceta)
+        public bool CrearReceta(EN.Receta recetaTSave)
         {
             bool resultado = false;
-
+            BR.Recetas temp = new BR.Recetas();
             try
             {
-                
-                //Controladores 
-                Usuario usuarioController = new Usuario();
-                Categorias categoriasController = new Categorias();
-                ImagenesxReceta imagenesController = new ImagenesxReceta();
-                Ingredientes ingredientesController = new Ingredientes();
 
-                recetaToSave.Id_usuario = usuarioController.getIdUsuario(otherReceta.correo_usu);             
-                recetaToSave.Descripcion = otherReceta.Descripcion;
-                recetaToSave.PasoApaso = otherReceta.PasoApaso;
-                recetaToSave.Idiomas = otherReceta.Idioma;
-                recetaToSave.Nombre = otherReceta.Nombre;
-                recetaToSave.puntuacion = 0;
-                recetaToSave.nopuntuaciones = 0;
-                recetaToSave.Id_categoria = categoriasController.getIdCategoria(otherReceta.Categoria);
-                recetaToSave.fechaPublicacion = DateTime.Today;
-                recetaToSave.tiempoPreparacion = otherReceta.tiempoPreparacion;
-                recetaToSave.porciones = otherReceta.porciones;
-                db.Recetas.Add(recetaToSave);
+                BR.Recetas rec = new BR.Recetas();
+                Usuario temp1 = new Usuario();
+                Categorias cat = new Categorias();
+                ImagenesxReceta imagenes = new ImagenesxReceta();
+                Ingredientes ingredientes = new Ingredientes();
+                rec.Id_usuario = 1244;
+                rec.Descripcion = recetaTSave.Descripcion;
+                rec.PasoApaso = recetaTSave.PasoApaso;
+                rec.Idiomas = recetaTSave.Idioma;
+                rec.Nombre = recetaTSave.Nombre;
+                rec.puntuacion = 0;
+                rec.nopuntuaciones = 0;
+                rec.Id_categoria = cat.getIdCategoria(recetaTSave.Categoria);
+                rec.fechaPublicacion = DateTime.Today;
+                rec.tiempoPreparacion = recetaTSave.tiempoPreparacion;
+                rec.porciones = recetaTSave.porciones;
+                db.Recetas.Add(rec);
                 db.SaveChanges();
-
-                ////Se toma la ultima receta guardada para ingresar los ingredientes y las imagenes
-                //BR.Receta tempReceta = db.Recetas.ToList().Last();
-                //imagenesController.ingresarImagenesReceta(otherReceta.imagenes,tempReceta.Id_receta);
-                //ingredientesController.ingresarIngrediente(otherReceta);
+                BR.Recetas tempReceta = db.Recetas.ToList().Last();
+                recetaTSave.Id_receta = tempReceta.Id_receta;
+                imagenes.ingresarImagenesReceta(recetaTSave.imagenes,tempReceta.Id_receta);
+                ingredientes.ingresarIngrediente(recetaTSave);
 
                 resultado = true;
 
             }
-            catch (Exception)
+            catch (DbEntityValidationException e)
             {
-
-                throw;
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+               
             }
             return resultado;
         }
@@ -76,7 +83,7 @@ namespace Controladora
         public bool ActualizarReceta(int id, EN.Receta otherReceta)
         {
             bool resultado = false;
-            BR.Receta temp = new BR.Receta();
+            BR.Recetas temp = new BR.Recetas();
             try
             {
 
@@ -86,7 +93,7 @@ namespace Controladora
                 Ingredientes ingredientesController = new Ingredientes();
 
                 //Query de la receta a actualizar
-                BR.Receta rec = db.Recetas.Where(x=>x.Id_categoria == id).FirstOrDefault();
+                BR.Recetas rec = db.Recetas.Where(x=>x.Id_categoria == id).FirstOrDefault();
                 //Se actualizan los campos
                 rec.Descripcion = otherReceta.Descripcion;
                 rec.PasoApaso = otherReceta.PasoApaso;
@@ -156,7 +163,9 @@ namespace Controladora
             Categorias categoria = new Categorias();
             ImagenesxReceta img = new ImagenesxReceta();
             Ingredientes ingredientes = new Ingredientes();
+
             var query = db.Recetas.Where(x => x.Id_receta==idReceta).FirstOrDefault();
+
             if (query.GetType() != null)
             {
                 receta.Id_receta = query.Id_receta;
@@ -165,7 +174,7 @@ namespace Controladora
                 receta.Descripcion = query.Descripcion;
                 receta.Nombre = query.Nombre;
                 receta.puntuacion = query.puntuacion;
-                receta.Categoria = query.Categoria.Nombre;
+                receta.Categoria = query.Id_categoria.ToString();
                 receta.correo_usu = usuario.getNombreUsuario(query.Id_usuario);
                 receta.Categoria = categoria.getNombreCategoria(query.Id_categoria);
                 receta.nopuntucaiones = query.nopuntuaciones;
@@ -246,7 +255,7 @@ namespace Controladora
             var query = db.Recetas.Where(x => x.Id_receta == IdReceta);
             if (query != null)
             {
-                db.Recetas.Remove((BR.Receta)query);
+                db.Recetas.Remove((BR.Recetas)query);
                 db.SaveChanges();
                 return 1;
             }
@@ -258,9 +267,9 @@ namespace Controladora
 
         public void calificarReceta(int idReceta, int puntaje)
         {
-            BR.Receta recetaPuntuada = new BR.Receta();
+            BR.Recetas recetaPuntuada = new BR.Recetas();
             var query = db.Recetas.Where(x => x.Id_receta == idReceta);
-            recetaPuntuada = (BR.Receta)query;
+            recetaPuntuada = (BR.Recetas)query;
             recetaPuntuada.puntuacion = puntaje;
             recetaPuntuada.nopuntuaciones += 1;
             db.SaveChanges();

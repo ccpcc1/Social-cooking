@@ -12,12 +12,14 @@ namespace Broker
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class recetasxIngredientes
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Id_receta { get; set; }
+        public int Id_ingredientes { get; set; }
+        public int cantidad { get; set; }
+        public string unidad { get; set; }
+    
+        public virtual Ingredientes Ingredientes { get; set; }
+        public virtual Recetas Recetas { get; set; }
     }
 }
