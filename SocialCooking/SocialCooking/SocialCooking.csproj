@@ -98,7 +98,6 @@
     <Content Include="js\receta.js" />
     <Content Include="js\imagesloaded.min.js" />
     <Content Include="js\usuario.js" />
-    <Content Include="js\VentanaModal.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

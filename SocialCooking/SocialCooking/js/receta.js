@@ -15,7 +15,6 @@ var reader;
 var imagenes = [];
 var receta = new Object();
 
-
 function guardarDatos() {
 
     //trabajo bajo el supuesto de que los campos estan llenos
@@ -55,7 +54,7 @@ function guardarDatos() {
     receta =
         {
             'Nombre': nombreReceta.value,
-            'correo_usu': localStorage.getItem("correoUsuario"),
+            'correo_usu': usuario.Correo,
             'ingrediente': ingredientes,
             'Idioma': idiomas.value,
             'Descripcion': descripcion.value,
@@ -66,13 +65,12 @@ function guardarDatos() {
             'tiempoPreparacion': tiempo.value,
             'porciones': porciones.value
         };
-    GuardarReceta(receta);
 
+   GuardarReceta(receta);
 
 }
 
 function GuardarReceta(receta) {
-    
     receta = JSON.stringify(receta);
     $.ajax({
         url: "/api/receta",
@@ -82,7 +80,7 @@ function GuardarReceta(receta) {
         data: receta,
         success: function (receta) {
 
-            
+            alert("Receta agregada satisfactoriamente", "Oprime ok para continuar");
             
 
         },
@@ -180,18 +178,21 @@ function agregarCampos() {
 //Funcion para eliminar campos de nombre y cantidad en la ventana modal. 
 function eliminarCampos() {
 
-    contador = document.getElementById("nombre").childElementCount;
- 
-    list = document.getElementById("nombre");
-    list.removeChild(list.childNodes[contador - 1]);
+  contador = document.getElementById("nombre").childElementCount;
 
-    list = document.getElementById("cantidad");
-    list.removeChild(list.childNodes[contador - 1]);
+  list = document.getElementById("nombre");
+  list.removeChild(list.childNodes[contador-1]);
 
-    list = document.getElementById("unidades");
-    list.removeChild(list.childNodes[contador - 1]);
+  list = document.getElementById("cantidad");
+  list.removeChild(list.childNodes[contador-1]);
 
-    identificador--;
+  list = document.getElementById("nombre");
+  list.removeChild(list.childNodes[contador-2]);
+
+  list = document.getElementById("cantidad");
+  list.removeChild(list.childNodes[contador-2]);
+
+  identificador--;
  
 }
 
