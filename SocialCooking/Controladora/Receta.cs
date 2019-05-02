@@ -30,7 +30,7 @@ namespace Controladora
 
         }
         //Metodo para crear una receta que recibe una EN.Receta
-        public bool CrearReceta(EN.Receta recetas)
+        public bool CrearReceta(EN.Receta otherReceta)
         {
             bool resultado = false;
 
@@ -43,25 +43,24 @@ namespace Controladora
                 ImagenesxReceta imagenesController = new ImagenesxReceta();
                 Ingredientes ingredientesController = new Ingredientes();
 
-                recetaToSave.Id_usuario = usuarioController.getIdUsuario(recetas.correo_usu);             
-                recetaToSave.Descripcion = recetas.Descripcion;
-                recetaToSave.PasoApaso = recetas.PasoApaso;
-                recetaToSave.Idiomas = recetas.Idioma;
-                recetaToSave.Nombre = recetas.Nombre;
+                recetaToSave.Id_usuario = usuarioController.getIdUsuario(otherReceta.correo_usu);             
+                recetaToSave.Descripcion = otherReceta.Descripcion;
+                recetaToSave.PasoApaso = otherReceta.PasoApaso;
+                recetaToSave.Idiomas = otherReceta.Idioma;
+                recetaToSave.Nombre = otherReceta.Nombre;
                 recetaToSave.puntuacion = 0;
                 recetaToSave.nopuntuaciones = 0;
-                recetaToSave.Id_categoria = categoriasController.getIdCategoria(recetas.Categoria);
+                recetaToSave.Id_categoria = categoriasController.getIdCategoria(otherReceta.Categoria);
                 recetaToSave.fechaPublicacion = DateTime.Today;
-                recetaToSave.tiempoPreparacion = recetas.tiempoPreparacion;
-                recetaToSave.porciones = recetas.porciones;
+                recetaToSave.tiempoPreparacion = otherReceta.tiempoPreparacion;
+                recetaToSave.porciones = otherReceta.porciones;
                 db.Recetas.Add(recetaToSave);
                 db.SaveChanges();
 
-                //Se toma la ultima receta guardada
-                BR.Receta tempReceta = db.Recetas.ToList().Last();
-                recetas.Id_receta = tempReceta.Id_receta;
-                imagenesController.ingresarImagenesReceta(recetas.imagenes,tempReceta.Id_receta);
-                ingredientesController.ingresarIngrediente(recetas);
+                ////Se toma la ultima receta guardada para ingresar los ingredientes y las imagenes
+                //BR.Receta tempReceta = db.Recetas.ToList().Last();
+                //imagenesController.ingresarImagenesReceta(otherReceta.imagenes,tempReceta.Id_receta);
+                //ingredientesController.ingresarIngrediente(otherReceta);
 
                 resultado = true;
 
@@ -102,11 +101,11 @@ namespace Controladora
 
                 db.SaveChanges();
 
-                //Falta verificar como es la actualizacion de los ingredintes
-                BR.Receta tempReceta = db.Recetas.ToList().Last();
-                otherReceta.Id_receta = tempReceta.Id_receta;
-                imagenesController.ingresarImagenesReceta(otherReceta);
-                ingredientesController.ingresarIngrediente(otherReceta);
+                ////Falta verificar como es la actualizacion de los ingredintes
+                //BR.Receta tempReceta = db.Recetas.ToList().Last();
+                //otherReceta.Id_receta = tempReceta.Id_receta;
+                //imagenesController.ingresarImagenesReceta(otherReceta);
+                //ingredientesController.ingresarIngrediente(otherReceta);
 
                 resultado = true;
 

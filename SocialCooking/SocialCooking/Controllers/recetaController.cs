@@ -15,45 +15,44 @@ namespace SocialCooking.Controllers
         // obtener todas las recetas
         public List<EN.Receta> Get()
         {
-            CT.Receta recetas = new CT.Receta();
-            return recetas.getRecetas();
+            CT.Receta recetasController = new CT.Receta();
+            return recetasController.getRecetas();
         }
 
         // devuelve la receta especifica
         public EN.Receta Get(int id)
         {
-            CT.Receta receta = new CT.Receta();
+            CT.Receta recetaController = new CT.Receta();
 
-
-            return receta.getReceta(id);
+            return recetaController.getReceta(id);
         }
 
 
         //buscar la receta por categoria
         public List<EN.Receta> Get(String categoria)
         {
-            CT.Receta receta = new CT.Receta();
+            CT.Receta recetaController = new CT.Receta();
 
-            return receta.getRecetaxCategoria(categoria);
+            return recetaController.getRecetaxCategoria(categoria);
         }
 
         //buscar  la recta por nombre
         public List<EN.Receta> Get(String nombre, bool validar)
         {
-            CT.Receta receta = new CT.Receta();
+            CT.Receta recetaController = new CT.Receta();
 
-            return receta.getRecetaxNombre(nombre);
+            return recetaController.getRecetaxNombre(nombre);
         }
 
 
 
         // guarda en la bd la receta
-        public void Post(EN.Receta receta)
+        public void Post(EN.Receta recetaTosave)
         {
         
-            CT.Receta nuevaReceta = new CT.Receta();
+            CT.Receta recetaController = new CT.Receta();
             
-            nuevaReceta.CrearReceta(receta);
+            recetaController.CrearReceta(recetaTosave);
           
         }
 
@@ -65,8 +64,9 @@ namespace SocialCooking.Controllers
         // DELETE api/<controller>/5
         public void Delete(int idreceta)
         {
-            CT.Receta recetaEliminada = new CT.Receta();
-            recetaEliminada.deleteReceta(idreceta);
+            CT.Receta recetaController = new CT.Receta();
+
+            recetaController.deleteReceta(idreceta);
         }
     }
 }

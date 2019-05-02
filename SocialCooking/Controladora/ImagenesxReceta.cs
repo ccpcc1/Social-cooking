@@ -53,15 +53,15 @@ namespace Controladora
 
         }
 
-        public EN.Receta convertirImg(EN.Receta imgReceta)
-        {
-            string ruta = "../SocialCooking/images/";
-            for (int i = 0; i < imgReceta.imgs.Length; i++)
-            {
-                imgReceta.imgs[i].CopyTo(ruta);
-                imgReceta.imagenes[i] = imgReceta.imgs[i].Name;
-            }
-            return imgReceta;
-        }
+        //public EN.Receta convertirImg(EN.Receta imgReceta)
+        //{
+        //    string ruta = "../SocialCooking/images/";
+        //    for (int i = 0; i < imgReceta.imgs.Length; i++)
+        //    {
+        //        imgReceta.imagenes[i].CopyTo(ruta);
+        //        imgReceta.imagenes[i] = imgReceta.imgs[i].Name;
+        //    }
+        //    return imgReceta;
+        //}
     }
 }
