@@ -14,8 +14,17 @@ namespace Broker
     
     public partial class Categorias
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Categorias()
+        {
+            this.Recetas = new HashSet<Recetas>();
+        }
+    
         public int Id_categoria { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Recetas> Recetas { get; set; }
     }
 }

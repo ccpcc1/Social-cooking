@@ -53,47 +53,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categorias.cs">
-      <DependentUpon>socialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCooking.tt</DependentUpon>
     </Compile>
     <Compile Include="Comentarios.cs">
-      <DependentUpon>socialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCooking.tt</DependentUpon>
     </Compile>
     <Compile Include="imagenesxReceta.cs">
-      <DependentUpon>socialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCooking.tt</DependentUpon>
     </Compile>
     <Compile Include="Ingredientes.cs">
-      <DependentUpon>socialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCooking.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recetas.cs">
-      <DependentUpon>socialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCooking.tt</DependentUpon>
     </Compile>
     <Compile Include="recetasxIngredientes.cs">
-      <DependentUpon>socialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCooking.tt</DependentUpon>
     </Compile>
-    <Compile Include="socialCooking.Context.cs">
+    <Compile Include="SocialCooking.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>socialCooking.Context.tt</DependentUpon>
+      <DependentUpon>SocialCooking.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="socialCooking.cs">
+    <Compile Include="SocialCooking.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>socialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCooking.tt</DependentUpon>
     </Compile>
-    <Compile Include="socialCooking.Designer.cs">
+    <Compile Include="SocialCooking.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>socialCooking.edmx</DependentUpon>
+      <DependentUpon>SocialCooking.edmx</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>socialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCooking.tt</DependentUpon>
     </Compile>
     <Compile Include="Tipo_Usuario.cs">
-      <DependentUpon>socialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCooking.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
-      <DependentUpon>socialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCooking.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -101,27 +101,27 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <EntityDeploy Include="socialCooking.edmx">
+    <EntityDeploy Include="SocialCooking.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>socialCooking.Designer.cs</LastGenOutput>
+      <LastGenOutput>SocialCooking.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="socialCooking.edmx.diagram">
-      <DependentUpon>socialCooking.edmx</DependentUpon>
+    <None Include="SocialCooking.edmx.diagram">
+      <DependentUpon>SocialCooking.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="socialCooking.Context.tt">
+    <Content Include="SocialCooking.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>socialCooking.edmx</DependentUpon>
-      <LastGenOutput>socialCooking.Context.cs</LastGenOutput>
+      <DependentUpon>SocialCooking.edmx</DependentUpon>
+      <LastGenOutput>SocialCooking.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="socialCooking.tt">
+    <Content Include="SocialCooking.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>socialCooking.edmx</DependentUpon>
-      <LastGenOutput>socialCooking.cs</LastGenOutput>
+      <DependentUpon>SocialCooking.edmx</DependentUpon>
+      <LastGenOutput>SocialCooking.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

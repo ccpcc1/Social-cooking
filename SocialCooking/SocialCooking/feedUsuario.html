@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--estilos propios-->
+    <link href="css/EstilosFeed.css" rel="stylesheet" />
     <title>Feed recetas</title>
 </head>
 <body class="bg-light">
@@ -54,8 +57,20 @@
             <h1 class="display-4 "><strong>Bienvenido a SocialCooking</strong></h1>
             <p class="lead"> La cocina social y libre esta aqui</p>
             <p class="lead">🍷 🍴 🍕 🍔 🍟 🍗 🍖</p>
+            <div class="btn-group">
+                <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ver recetas por categoria
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" value="1" href="#">Comida Rápida</a>
+                    <a class="dropdown-item" value="2" href="#">Vegetariana</a>
+                    <a class="dropdown-item" value="3" href="#">Comida Italiana</a>
+                    <a class="dropdown-item" value="4" href="#">Desayunos</a>
+                </div>
+                </div>
+            </div>
+
         </div>
-    </div>
     <!-- Feed de recetas -->
     <div class="card text-center">
         <div class="card-header">
@@ -64,34 +79,88 @@
         <!-- Contenedor de las recetas -->
         <div class="card-body">
             <div class="card-deck">
-                <div class="card">
-                    <img class="card-img-top" src="images/chef3.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
+                <!--Tarjeta-->
                 <div class="card">
                     <img class="card-img-top" src="images/about-img.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title">Nombre de la Receta</h5>
+                        <p class="card-text">Descripcion</p>
+                        <h6>Categoria</h6>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <small class="text-muted text-danger"><i class="fas fa-stopwatch"></i>Tiempo de preparacion</small>
+                        <br />
+                        <small class="text-muted "><strong><i class="fas fa-utensils-alt"></i>Porciones</strong></small>
+                        <br />
+                        <small class="text-muted "><i class="fas fa-globe-americas"></i>Idioma</small>
+                        <br />
+                        <small class="text-muted "><i class="fas fa-calendar-alt"></i>Fecha</small>
+                        <br />
+                        <small class="text-muted "><strong><i class="fas fa-star-half-alt"></i>Puntuaciones</strong></small>
+                        <br />
                     </div>
                 </div>
+                <!--Tarjeta-->
                 <div class="card">
-                    <img class="card-img-top" src="images/chef2.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/about-img.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <h5 class="card-title">Nombre de la Receta</h5>
+                        <p class="card-text">Descripcion</p>
+                        <h6>Categoria</h6>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <small class="text-muted text-danger"><i class="fas fa-stopwatch"></i>Tiempo de preparacion</small>
+                        <br />
+                        <small class="text-muted "><strong><i class="fas fa-utensils-alt"></i>Porciones</strong></small>
+                        <br />
+                        <small class="text-muted "><i class="fas fa-globe-americas"></i>Idioma</small>
+                        <br />
+                        <small class="text-muted "><i class="fas fa-calendar-alt"></i>Fecha</small>
+                        <br />
+                        <small class="text-muted "><strong><i class="fas fa-star-half-alt"></i>Puntuaciones</strong></small>
+                        <br />
+                    </div>
+                </div>
+                <!--Tarjeta-->
+                <div class="card">
+                    <img class="card-img-top" src="images/about-img.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre de la Receta</h5>
+                        <p class="card-text">Descripcion</p>
+                        <h6>Categoria</h6>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted text-danger"><i class="fas fa-stopwatch"></i>Tiempo de preparacion</small>
+                        <br />
+                        <small class="text-muted "><strong><i class="fas fa-utensils-alt"></i>Porciones</strong></small>
+                        <br />
+                        <small class="text-muted "><i class="fas fa-globe-americas"></i>Idioma</small>
+                        <br />
+                        <small class="text-muted "><i class="fas fa-calendar-alt"></i>Fecha</small>
+                        <br />
+                        <small class="text-muted "><strong><i class="fas fa-star-half-alt"></i>Puntuaciones</strong></small>
+                        <br />
+                    </div>
+                </div>
+                <!--Tarjeta-->
+                <div class="card">
+                    <img class="card-img-top" src="images/about-img.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Nombre de la Receta</h5>
+                        <p class="card-text">Descripcion</p>
+                        <h6>Categoria</h6>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted text-danger"><i class="fas fa-stopwatch"></i>Tiempo de preparacion</small>
+                        <br />
+                        <small class="text-muted "><strong><i class="fas fa-utensils-alt"></i>Porciones</strong></small>
+                        <br />
+                        <small class="text-muted "><i class="fas fa-globe-americas"></i>Idioma</small>
+                        <br />
+                        <small class="text-muted "><i class="fas fa-calendar-alt"></i>Fecha</small>
+                        <br />
+                        <small class="text-muted "><strong><i class="fas fa-star-half-alt"></i>Puntuaciones</strong></small>
+                        <br />
                     </div>
                 </div>
             </div>

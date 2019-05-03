@@ -216,18 +216,6 @@ function guardarImagenes(e) {
         for (var x = 0; x < files.length; x++) {
             console.log(files[x]);
             img.append("file" + x, files[x]);  
-          
-            reader = new FileReader();
-
-            reader.onload = (function (theFile) {
-                return function (e) {
-                    // Creamos la imagen.
-                    document.getElementById("list").innerHTML += ['<img class="thumb" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
-                };
-
-            })(f);
-
-            reader.readAsDataURL(f);
         }
 
       

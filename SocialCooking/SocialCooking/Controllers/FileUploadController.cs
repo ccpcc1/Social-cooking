@@ -39,7 +39,7 @@ namespace SocialCooking.Controllers
             {
                 HttpPostedFile file = files[i];
                 string rootPaht = "~/Upload/" +file.FileName;
-                path[i] = rootPaht.Substring(1);
+                path[i] = rootPaht.Substring(2);
                 file.SaveAs(HttpContext.Current.Server.MapPath(rootPaht));
             }
             

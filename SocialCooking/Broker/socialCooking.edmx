@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SocialCookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SocialCookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categorias">
           <Key>
             <PropertyRef Name="Id_categoria" />
@@ -34,8 +34,8 @@
             <PropertyRef Name="ImageId" />
             <PropertyRef Name="Id_receta" />
           </Key>
-          <Property Name="ImageId" Type="int" Nullable="false" />
-          <Property Name="Id_receta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_receta" Type="int" Nullable="false" />
           <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="Ingredientes">
@@ -143,6 +143,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Recetas_Categorias">
+          <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+          <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorias">
+              <PropertyRef Name="Id_categoria" />
+            </Principal>
+            <Dependent Role="Recetas">
+              <PropertyRef Name="Id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_recetasxIngredientes_Ingredientes">
           <End Role="Ingredientes" Type="Self.Ingredientes" Multiplicity="1" />
           <End Role="recetasxIngredientes" Type="Self.recetasxIngredientes" Multiplicity="*" />
@@ -227,6 +239,10 @@
             <End Role="Recetas" EntitySet="Recetas" />
             <End Role="imagenesxReceta" EntitySet="imagenesxReceta" />
           </AssociationSet>
+          <AssociationSet Name="FK_Recetas_Categorias" Association="Self.FK_Recetas_Categorias">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
           <AssociationSet Name="FK_recetasxIngredientes_Ingredientes" Association="Self.FK_recetasxIngredientes_Ingredientes">
             <End Role="Ingredientes" EntitySet="Ingredientes" />
             <End Role="recetasxIngredientes" EntitySet="recetasxIngredientes" />
@@ -248,7 +264,8 @@
             <End Role="usuariosxfavoritos" EntitySet="usuariosxfavoritos" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SocialCookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -259,6 +276,7 @@
           <Property Name="Id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Recetas" Relationship="Self.FK_Recetas_Categorias" FromRole="Categorias" ToRole="Recetas" />
         </EntityType>
         <EntityType Name="Comentarios">
           <Key>
@@ -274,8 +292,8 @@
             <PropertyRef Name="ImageId" />
             <PropertyRef Name="Id_receta" />
           </Key>
-          <Property Name="ImageId" Type="Int32" Nullable="false" />
-          <Property Name="Id_receta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_receta" Type="Int32" Nullable="false" />
           <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Recetas" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="imagenesxReceta" ToRole="Recetas" />
         </EntityType>
@@ -303,6 +321,7 @@
           <Property Name="fechaPublicacion" Type="DateTime" Precision="0" />
           <Property Name="tiempoPreparacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="porciones" Type="Int32" />
+          <NavigationProperty Name="Categorias" Relationship="Self.FK_Recetas_Categorias" FromRole="Recetas" ToRole="Categorias" />
           <NavigationProperty Name="imagenesxReceta" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="Recetas" ToRole="imagenesxReceta" />
           <NavigationProperty Name="recetasxIngredientes" Relationship="Self.FK_recetasxIngredientes_Recetas" FromRole="Recetas" ToRole="recetasxIngredientes" />
           <NavigationProperty Name="Comentarios" Relationship="Self.comentariosXreceta" FromRole="Recetas" ToRole="Comentarios" />
@@ -350,6 +369,18 @@
           <NavigationProperty Name="Tipo_Usuario" Relationship="Self.FK_Usuario_Tipo_Usuario" FromRole="Usuario" ToRole="Tipo_Usuario" />
           <NavigationProperty Name="Recetas" Relationship="Self.usuariosxfavoritos" FromRole="Usuario" ToRole="Recetas" />
         </EntityType>
+        <Association Name="FK_Recetas_Categorias">
+          <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+          <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorias">
+              <PropertyRef Name="Id_categoria" />
+            </Principal>
+            <Dependent Role="Recetas">
+              <PropertyRef Name="Id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_imagenesxReceta_Recetas">
           <End Role="Recetas" Type="Self.Recetas" Multiplicity="1" />
           <End Role="imagenesxReceta" Type="Self.imagenesxReceta" Multiplicity="*" />
@@ -416,6 +447,10 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tipo_Usuario" EntityType="Self.Tipo_Usuario" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK_Recetas_Categorias" Association="Self.FK_Recetas_Categorias">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
           <AssociationSet Name="FK_imagenesxReceta_Recetas" Association="Self.FK_imagenesxReceta_Recetas">
             <End Role="Recetas" EntitySet="Recetas" />
             <End Role="imagenesxReceta" EntitySet="imagenesxReceta" />

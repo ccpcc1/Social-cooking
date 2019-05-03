@@ -13,10 +13,10 @@ namespace SocialCooking.Controllers
     {
 
         // obtener todas las recetas
-        public List<EN.Receta> Get()
+        public List<EN.previewReceta> Get()
         {
             CT.Receta recetasController = new CT.Receta();
-            return recetasController.getRecetas();
+            return recetasController.recetasPreview();
         }
 
         // devuelve la receta especifica
@@ -52,7 +52,7 @@ namespace SocialCooking.Controllers
         
             CT.Receta recetaController = new CT.Receta();
             
-            recetaController.CrearReceta(recetaTosave);
+            recetaController.CrearRecetaAsync(recetaTosave);
           
         }
 

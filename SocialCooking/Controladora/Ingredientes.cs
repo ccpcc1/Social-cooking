@@ -27,7 +27,7 @@ namespace Controladora
                 // primero se añade el ingrediente
                 ingrediente.nombre = receta.ingrediente[i].ingrediente;
                 db.Ingredientes.Add(ingrediente);
-                db.SaveChanges();
+                
 
                 // se agrega a la tabla el recexingredientes el id del ultimo ingrediente que se agrego y el id de la receta
                 recetaXIngrediente.Id_ingredientes = db.Ingredientes.ToList().Last().Id_ingrediente;

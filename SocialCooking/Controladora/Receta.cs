@@ -12,32 +12,32 @@ namespace Controladora
     
     public class Receta
     {
-        public BR.SocialCookingEntities db = new BR.SocialCookingEntities();
+        public BR.SocialCookingEntities db;
         public Usuario usuarioController;
         public Categorias categoriasController;
         public ImagenesxReceta imagenesController;
         public Ingredientes ingredientesController;
+        BR.Recetas BrokerReceta;
 
         //Metodo constructor
         public Receta()
         {
-            
+            db = new BR.SocialCookingEntities();
             usuarioController = new Usuario();
             categoriasController = new Categorias();
             imagenesController = new ImagenesxReceta();
             ingredientesController = new Ingredientes();
+            BrokerReceta = new BR.Recetas();
            
 
         }
         //Metodo para crear una receta que recibe una EN.Receta
-        public bool CrearReceta(EN.Receta recetaTSave)
+        public async Task<bool> CrearRecetaAsync(EN.Receta recetaTSave)
         {
             bool resultado = false;
 
             try
             {
-             
-                BR.Recetas BrokerReceta = new BR.Recetas();
 
                 BrokerReceta.Descripcion = recetaTSave.Descripcion;
                 BrokerReceta.fechaPublicacion = DateTime.Today;
@@ -46,20 +46,17 @@ namespace Controladora
                 BrokerReceta.Id_usuario = usuarioController.getIdUsuario(recetaTSave.correo_usu);
                 BrokerReceta.Nombre = recetaTSave.Nombre;
                 BrokerReceta.nopuntuaciones = 0;
+                BrokerReceta.puntuacion = 0;
                 BrokerReceta.PasoApaso = recetaTSave.PasoApaso;
                 BrokerReceta.porciones = recetaTSave.porciones;
-                BrokerReceta.puntuacion = 0;
-
                 BrokerReceta.tiempoPreparacion = recetaTSave.tiempoPreparacion;
-
                 db.Recetas.Add(BrokerReceta);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
 
-                //BR.Recetas tempReceta = db.Recetas.ToList().Last();
-                //recetaTSave.Id_receta = tempReceta.Id_receta;
-                //imagenesController.ingresarImagenesReceta(recetaTSave.imagenes, tempReceta.Id_receta);
-                //ingredientesController.ingresarIngrediente(recetaTSave);
-
+                //Guardar el path de las imagenes
+                BR.Recetas tempReceta = db.Recetas.ToList().Last();
+                imagenesController.ingresarImagenesReceta(recetaTSave.imagenes, tempReceta.Id_receta);
+                ingredientesController.ingresarIngrediente(recetaTSave);
                 resultado = true;
 
             }
@@ -144,6 +141,30 @@ namespace Controladora
 
             return recetas;
 
+        }
+
+        //Funcion para traer un preview de receta
+        public List<EN.previewReceta> recetasPreview() {
+
+            var query = db.Recetas.ToList();
+            List<EN.previewReceta> listToReturn = new List<EN.previewReceta>();
+
+            foreach (var receta in query)
+            {
+                EN.previewReceta pr = new EN.previewReceta();
+                pr.Categoria = categoriasController.getNombreCategoria(receta.Id_categoria);
+                pr.Descripcion = receta.Descripcion;
+                pr.fechaPublicacion = receta.fechaPublicacion.ToString();
+                pr.Idioma = receta.Idiomas;
+                pr.Id_receta = receta.Id_receta;
+                pr.imagen = "";
+                pr.Nombre = receta.Nombre;
+                pr.porciones = Convert.ToInt32(receta.porciones);
+                pr.puntuacion = receta.puntuacion;
+                pr.tiempoPreparacion = receta.tiempoPreparacion;
+                listToReturn.Add(pr);
+            }
+            return listToReturn;
         }
 
         // metodo que devuelve una receta en especifico

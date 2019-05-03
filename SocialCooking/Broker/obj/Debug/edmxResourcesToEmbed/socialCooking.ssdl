@@ -29,8 +29,8 @@
       <PropertyRef Name="ImageId" />
       <PropertyRef Name="Id_receta" />
     </Key>
-    <Property Name="ImageId" Type="int" Nullable="false" />
-    <Property Name="Id_receta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_receta" Type="int" Nullable="false" />
     <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
   </EntityType>
   <EntityType Name="Ingredientes">
@@ -138,6 +138,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Recetas_Categorias">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="Id_categoria" />
+      </Principal>
+      <Dependent Role="Recetas">
+        <PropertyRef Name="Id_categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_recetasxIngredientes_Ingredientes">
     <End Role="Ingredientes" Type="Self.Ingredientes" Multiplicity="1" />
     <End Role="recetasxIngredientes" Type="Self.recetasxIngredientes" Multiplicity="*" />
@@ -221,6 +233,10 @@
     <AssociationSet Name="FK_imagenesxReceta_Recetas" Association="Self.FK_imagenesxReceta_Recetas">
       <End Role="Recetas" EntitySet="Recetas" />
       <End Role="imagenesxReceta" EntitySet="imagenesxReceta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Recetas_Categorias" Association="Self.FK_Recetas_Categorias">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Recetas" EntitySet="Recetas" />
     </AssociationSet>
     <AssociationSet Name="FK_recetasxIngredientes_Ingredientes" Association="Self.FK_recetasxIngredientes_Ingredientes">
       <End Role="Ingredientes" EntitySet="Ingredientes" />

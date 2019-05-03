@@ -36,6 +36,7 @@ namespace Broker
         public string tiempoPreparacion { get; set; }
         public Nullable<int> porciones { get; set; }
     
+        public virtual Categorias Categorias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<imagenesxReceta> imagenesxReceta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
