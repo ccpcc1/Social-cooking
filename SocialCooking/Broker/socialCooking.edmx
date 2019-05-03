@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SocialCookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SocialCookingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categorias">
           <Key>
             <PropertyRef Name="Id_categoria" />
@@ -59,7 +59,7 @@
           <Property Name="puntuacion" Type="int" Nullable="false" />
           <Property Name="nopuntuaciones" Type="int" Nullable="false" />
           <Property Name="fechaPublicacion" Type="date" />
-          <Property Name="tiempoPreparacion" Type="nchar" MaxLength="10" />
+          <Property Name="tiempoPreparacion" Type="varchar" MaxLength="50" />
           <Property Name="porciones" Type="int" />
         </EntityType>
         <EntityType Name="recetasxIngredientes">
@@ -248,8 +248,7 @@
             <End Role="usuariosxfavoritos" EntitySet="usuariosxfavoritos" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SocialCookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -302,7 +301,7 @@
           <Property Name="puntuacion" Type="Int32" Nullable="false" />
           <Property Name="nopuntuaciones" Type="Int32" Nullable="false" />
           <Property Name="fechaPublicacion" Type="DateTime" Precision="0" />
-          <Property Name="tiempoPreparacion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="tiempoPreparacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="porciones" Type="Int32" />
           <NavigationProperty Name="imagenesxReceta" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="Recetas" ToRole="imagenesxReceta" />
           <NavigationProperty Name="recetasxIngredientes" Relationship="Self.FK_recetasxIngredientes_Recetas" FromRole="Recetas" ToRole="recetasxIngredientes" />

@@ -53,8 +53,8 @@ function guardarDatos() {
 
     receta =
         {
-         'Nombre': nombreReceta.value,
-        'correo_usu': localStorage.getItem("CorreoUsuario"),
+        'Nombre': nombreReceta.value,
+        'correo_usu': localStorage.getItem("CorreoUsuario").toString(),
         'ingrediente': ingredientes,
         'Idioma': idiomas.value,
         'Descripcion': descripcion.value,
@@ -65,20 +65,20 @@ function guardarDatos() {
         'porciones': porciones.value
         };
 
-        GuardarReceta(receta);
+       
 
 }
 
 function GuardarReceta(recetaToSave) {
 
-    var otherReceta = JSON.stringify(recetaToSave);
+    receta =  JSON.stringify(recetaToSave);
 
     $.ajax({
         url: "/api/receta",
         type: 'POST',
         contentType: 'application/json;charset=utf-8',
         dataType: 'json',
-        data: otherReceta,
+        data: receta,
         success: function (otherReceta) {
 
             alert("Receta  agregada satisfactoriamente, Oprime ok para continuar");
@@ -90,24 +90,6 @@ function GuardarReceta(recetaToSave) {
             alert("Receta no agregada, intente de nuevo");
         }
     });
-}
-
-function ConvertirBase64(file) {
-
-    var lectorImg = new FileReader();
-    lectorImg.readAsDataURL(file);
-
-    lectorImg.onload = function () {
-        console.log(lectorImg.result);
-        imagenes.push(lectorImg.result);
-
-
-    };
-
-    lectorImg.onerror = function (error) {
-        console.log('Hubo un error: ', error);
-
-    };
 }
 
 //Funcion para agregar campos de nombre, cantidad y unidades en la ventana modal.
@@ -233,10 +215,22 @@ function guardarImagenes(e) {
 
         for (var x = 0; x < files.length; x++) {
             console.log(files[x]);
-            img.append("file" + x, files[x]);
-            
+            img.append("file" + x, files[x]);  
+          
+            reader = new FileReader();
+
+            reader.onload = (function (theFile) {
+                return function (e) {
+                    // Creamos la imagen.
+                    document.getElementById("list").innerHTML += ['<img class="thumb" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
+                };
+
+            })(f);
+
+            reader.readAsDataURL(f);
         }
 
+      
         $.ajax({
             type: "POST",
             url: '/api/FileUpload/',
@@ -262,6 +256,7 @@ function guardarImagenes(e) {
         });
 
     } else {
+
         alert("Este navegador no permite subir archivos");
     }
 }

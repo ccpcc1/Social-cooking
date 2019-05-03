@@ -117,7 +117,6 @@ C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFr
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.xml
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.xml
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll

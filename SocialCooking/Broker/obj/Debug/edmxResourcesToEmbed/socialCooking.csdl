@@ -49,7 +49,7 @@
     <Property Name="puntuacion" Type="Int32" Nullable="false" />
     <Property Name="nopuntuaciones" Type="Int32" Nullable="false" />
     <Property Name="fechaPublicacion" Type="DateTime" Precision="0" />
-    <Property Name="tiempoPreparacion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="tiempoPreparacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="porciones" Type="Int32" />
     <NavigationProperty Name="imagenesxReceta" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="Recetas" ToRole="imagenesxReceta" />
     <NavigationProperty Name="recetasxIngredientes" Relationship="Self.FK_recetasxIngredientes_Recetas" FromRole="Recetas" ToRole="recetasxIngredientes" />

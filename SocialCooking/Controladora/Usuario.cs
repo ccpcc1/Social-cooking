@@ -26,9 +26,10 @@ namespace Controladora
         public int getIdUsuario(string correo)
         {
             DA.Usuario usu = db.Usuario.Where(x => x.Correo == correo).FirstOrDefault();
+
             if (usu != null)
             {
-                return 5;
+                return usu.Id_Usuario;
             }
             else
             {

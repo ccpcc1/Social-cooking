@@ -12,16 +12,16 @@ namespace Controladora
     
     public class Receta
     {
-        private BR.SocialCookingEntities db;
-        private Usuario usuarioController;
-        private Categorias categoriasController;
-        private ImagenesxReceta imagenesController;
-        private Ingredientes ingredientesController;
+        public BR.SocialCookingEntities db = new BR.SocialCookingEntities();
+        public Usuario usuarioController;
+        public Categorias categoriasController;
+        public ImagenesxReceta imagenesController;
+        public Ingredientes ingredientesController;
 
         //Metodo constructor
         public Receta()
         {
-            db = new BR.SocialCookingEntities();
+            
             usuarioController = new Usuario();
             categoriasController = new Categorias();
             imagenesController = new ImagenesxReceta();
@@ -33,52 +33,43 @@ namespace Controladora
         public bool CrearReceta(EN.Receta recetaTSave)
         {
             bool resultado = false;
-            BR.Recetas temp = new BR.Recetas();
+
             try
             {
+             
+                BR.Recetas BrokerReceta = new BR.Recetas();
 
-                BR.Recetas rec = new BR.Recetas();
-                Usuario temp1 = new Usuario();
-                Categorias cat = new Categorias();
-                ImagenesxReceta imagenes = new ImagenesxReceta();
-                Ingredientes ingredientes = new Ingredientes();
-                rec.Id_usuario = 1244;
-                rec.Descripcion = recetaTSave.Descripcion;
-                rec.PasoApaso = recetaTSave.PasoApaso;
-                rec.Idiomas = recetaTSave.Idioma;
-                rec.Nombre = recetaTSave.Nombre;
-                rec.puntuacion = 0;
-                rec.nopuntuaciones = 0;
-                rec.Id_categoria = cat.getIdCategoria(recetaTSave.Categoria);
-                rec.fechaPublicacion = DateTime.Today;
-                rec.tiempoPreparacion = recetaTSave.tiempoPreparacion;
-                rec.porciones = recetaTSave.porciones;
-                db.Recetas.Add(rec);
+                BrokerReceta.Descripcion = recetaTSave.Descripcion;
+                BrokerReceta.fechaPublicacion = DateTime.Today;
+                BrokerReceta.Idiomas = recetaTSave.Idioma;
+                BrokerReceta.Id_categoria = categoriasController.getIdCategoria(recetaTSave.Categoria);
+                BrokerReceta.Id_usuario = usuarioController.getIdUsuario(recetaTSave.correo_usu);
+                BrokerReceta.Nombre = recetaTSave.Nombre;
+                BrokerReceta.nopuntuaciones = 0;
+                BrokerReceta.PasoApaso = recetaTSave.PasoApaso;
+                BrokerReceta.porciones = recetaTSave.porciones;
+                BrokerReceta.puntuacion = 0;
+
+                BrokerReceta.tiempoPreparacion = recetaTSave.tiempoPreparacion;
+
+                db.Recetas.Add(BrokerReceta);
                 db.SaveChanges();
-                BR.Recetas tempReceta = db.Recetas.ToList().Last();
-                recetaTSave.Id_receta = tempReceta.Id_receta;
-                imagenes.ingresarImagenesReceta(recetaTSave.imagenes,tempReceta.Id_receta);
-                ingredientes.ingresarIngrediente(recetaTSave);
+
+                //BR.Recetas tempReceta = db.Recetas.ToList().Last();
+                //recetaTSave.Id_receta = tempReceta.Id_receta;
+                //imagenesController.ingresarImagenesReceta(recetaTSave.imagenes, tempReceta.Id_receta);
+                //ingredientesController.ingresarIngrediente(recetaTSave);
 
                 resultado = true;
 
             }
-            catch (DbEntityValidationException e)
-            {
-                foreach (var eve in e.EntityValidationErrors)
-                {
-                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
-                    foreach (var ve in eve.ValidationErrors)
-                    {
-                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            ve.PropertyName, ve.ErrorMessage);
-                    }
-                }
-               
+            catch(Exception ex) {
+
+                throw ex;
             }
             return resultado;
         }
+
         //Metodo para actualizar una receta 
         public bool ActualizarReceta(int id, EN.Receta otherReceta)
         {
@@ -249,6 +240,7 @@ namespace Controladora
             return recetas;
 
         }
+
         public int deleteReceta(int IdReceta)
         {
 

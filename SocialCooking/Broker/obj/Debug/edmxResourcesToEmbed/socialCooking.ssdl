@@ -54,7 +54,7 @@
     <Property Name="puntuacion" Type="int" Nullable="false" />
     <Property Name="nopuntuaciones" Type="int" Nullable="false" />
     <Property Name="fechaPublicacion" Type="date" />
-    <Property Name="tiempoPreparacion" Type="nchar" MaxLength="10" />
+    <Property Name="tiempoPreparacion" Type="varchar" MaxLength="50" />
     <Property Name="porciones" Type="int" />
   </EntityType>
   <EntityType Name="recetasxIngredientes">

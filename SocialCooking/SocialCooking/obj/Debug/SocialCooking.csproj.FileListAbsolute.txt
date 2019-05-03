@@ -895,6 +895,7 @@ F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooki
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csproj.CopyComplete
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.dll
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.pdb
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.dll
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.dll.config
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.dll
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.pdb
@@ -927,5 +928,4 @@ C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\bin\es\System.
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csprojAssemblyReference.cache
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csproj.CoreCompileInputs.cache
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csproj.CopyComplete
-C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.dll
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.pdb
