@@ -29,7 +29,7 @@ namespace SocialCooking.Controllers
 
 
         //buscar la receta por categoria
-        public List<EN.Receta> Get(String categoria)
+        public List<EN.previewReceta> Get(String categoria)
         {
             CT.Receta recetaController = new CT.Receta();
 

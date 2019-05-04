@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!--estilos propios-->
     <link href="css/EstilosFeed.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
     <title>Feed recetas</title>
 </head>
 <body class="bg-light">
@@ -30,7 +31,6 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href="#" id="nombreUsuario" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Ver mi perfil</a>
@@ -46,8 +46,8 @@
                 </a>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pastas" aria-label="Search">
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar recetas por nombre</button>
+                <input id="buscarReceta" class="form-control mr-sm-2" required type="search" placeholder="Buscar Pastas" aria-label="Search">
+                <button onclick="buscarxNombre()" id="btn-buscar" class="btn btn-outline-light my-2 my-sm-0" type="button">Buscar recetas por nombre</button>
             </form>
         </div>
     </nav>
@@ -61,11 +61,13 @@
                 <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Ver recetas por categoria
                 </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" value="1" href="#">Comida Rápida</a>
-                    <a class="dropdown-item" value="2" href="#">Vegetariana</a>
-                    <a class="dropdown-item" value="3" href="#">Comida Italiana</a>
-                    <a class="dropdown-item" value="4" href="#">Desayunos</a>
+                <div id="filtrarCategoria" class="dropdown-menu">
+                    <a onclick="buscarXCategoria('Comida Rápida')" class="dropdown-item" value="1" href="#">Comida Rápida</a>
+                    <a onclick="buscarXCategoria('Vegetariana')" class="dropdown-item" value="2" href="#">Vegetariana</a>
+                    <a onclick="buscarXCategoria('Comida Italiana')" class="dropdown-item" value="3" href="#">Comida Italiana</a>
+                    <a onclick="buscarXCategoria('Desayunos')" class="dropdown-item" value="4" href="#">Desayunos</a>
+                    <a onclick="buscarXCategoria('Snack')" class="dropdown-item" value="7" href="#">Snack</a>
+                    <a onclick="buscarXCategoria('Bebidas')" class="dropdown-item" value="9" href="#">Bebidas</a>
                 </div>
             </div>
         </div>

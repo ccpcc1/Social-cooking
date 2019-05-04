@@ -90,7 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="compartirReceta.html" />
+    <Content Include="css\animate.css" />
     <Content Include="css\EstilosFeed.css" />
+    <Content Include="css\estilosPropios.css" />
     <Content Include="detalleReceta.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />

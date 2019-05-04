@@ -244,34 +244,38 @@ namespace Controladora
         }
 
         //Metodo para obtener receta por categorias
-        public List<EN.Receta> getRecetaxCategoria(string categoria)
+        public List<EN.previewReceta> getRecetaxCategoria(string categoria)
         {
-            List<EN.Receta> recetas = new List<EN.Receta>();
-            Categorias categorias = new Categorias();
-            ImagenesxReceta img = new ImagenesxReceta();
-            Ingredientes ingredientes = new Ingredientes();
-            int prueba = categorias.getIdCategoria(categoria);
-            var query = db.Recetas.Where(x => x.Id_categoria== prueba);
+            List<EN.previewReceta> retorno = new List<EN.previewReceta> ();
+
+            int idCategoria = categoriasController.getIdCategoria(categoria);
+
+            var query = db.Recetas.Where(x => x.Id_categoria== idCategoria);
+
             foreach (var item in query)
             {
-                EN.Receta receta_buscada = new EN.Receta();
-                Categorias categoriaController = new Categorias();
-                Usuario usuarioController = new Usuario();
-                receta_buscada.Id_receta = item.Id_receta;
-                receta_buscada.correo_usu = usuarioController.getNombreUsuario(item.Id_usuario);
-                receta_buscada.Categoria = categoriaController.getNombreCategoria(item.Id_categoria);
-                receta_buscada.Descripcion = item.Descripcion;
-                receta_buscada.PasoApaso = item.PasoApaso;
-                receta_buscada.Idioma = item.Idiomas;
-                receta_buscada.Nombre = item.Nombre;
-                receta_buscada.puntuacion = item.puntuacion;
-                receta_buscada.nopuntucaiones = item.nopuntuaciones;
-                receta_buscada.imagenes = img.getImagenes(item.Id_receta).ToArray();
-                receta_buscada.ingrediente = ingredientes.getIngredientes(item.Id_receta).ToArray();
-                recetas.Add(receta_buscada);
+                EN.previewReceta nuevaReceta = new EN.previewReceta();
+                nuevaReceta.Id_receta = item.Id_receta;
+                nuevaReceta.Categoria = item.Categorias.Nombre;
+                nuevaReceta.Descripcion = item.Descripcion;
+                nuevaReceta.fechaPublicacion = item.fechaPublicacion.ToString();
+                nuevaReceta.Idioma = item.Idiomas;
+                if (item.imagenesxReceta.ToList().Count == 0)
+                {
+                    nuevaReceta.imagen = "images/imagen-no-disponible.jpg";
+                }
+                else
+                {
+                    nuevaReceta.imagen = item.imagenesxReceta.ToList().First().ImagePath;
+                }
+                nuevaReceta.Nombre = item.Nombre;
+                nuevaReceta.porciones = Convert.ToInt32(item.porciones);
+                nuevaReceta.puntuacion = item.puntuacion;
+                nuevaReceta.tiempoPreparacion = item.tiempoPreparacion;
+                retorno.Add(nuevaReceta);
             }
 
-            return recetas;
+            return retorno;
 
         }
 

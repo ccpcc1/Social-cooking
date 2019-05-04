@@ -16,9 +16,18 @@ var imagenes = [];
 var receta = new Object();
 window.onload = load;
 
+document.getElementById("files").addEventListener("change", guardarImagenes);
+$('#btnBuscar').on('click', function () {
+
+    GetFacturaByid($('#txtid').val());
+
+});
+
 function load() {
     console.log("Documento cargado");
     cargarUsuario();
+    getAllRecetas();
+    
 
 }
 
@@ -55,8 +64,7 @@ function guardarDatos() {
             j++;
         }
     }
-  
-    
+ 
 
     receta =
         {
@@ -72,7 +80,7 @@ function guardarDatos() {
         'porciones': porciones.value
         };
 
-       
+    GuardarReceta(receta);
 
 }
 
@@ -246,7 +254,8 @@ function guardarImagenes(e) {
                 var err = "Error " + " " + status + " " + p3 + " " + p4;
                 if (xhr.responseText && xhr.responseText[0] == "{")
                     err = JSON.parse(xhr.responseText).Message;
-                    console.log(err);
+                console.log(err);
+                alert("No se pudieron guardar las imagenes");
             }
         });
 
@@ -258,132 +267,29 @@ function guardarImagenes(e) {
 
 function limpiarBusqueda() {
 
-    var item = document.getElementById('recetasxNombre');
-    item.innerHTML = "";
+    
+    document.getElementById('ppal').innerHTML = "";
 }
   
 function buscarxNombre()
 {
-    
-    limpiarBusqueda();
     var search = document.getElementById('buscarReceta').value;
+    console.log(search);
 
     //(String nombre, bool validar)
     $.getJSON('/api/receta?nombre=' + search + "&validar=" + true, function (data) {
-        var ContendorRecetas = document.getElementById("recetasXNombre");
+       
         if (data == "") {
             swal("No se encontró la receta :(", "Intenta con otra :)", "warning");
             
 
         }
         else { 
-        $.each(data, function (recetaobtenidas, recActual) {
+        $.each(data, function (recActual) {
             {
                
-                $("#recetasxNombre").append("\
-                    <div class='col-md-3 col-sm-6 wow fadeInUp card ' > \
-                        <div class='team-thumb'> \
-                            <img src='images/chef1.jpg' class='img-responsive' alt='Team'> \
-                                <div class='team-des'> \
-                                    <h6>"+recActual.Nombre+"</h6> \
-                                    <h4>"+ recActual.Categoria+"</h4> \
-                                    <ul class='social-icon'> \
-                                        <li><a href='#' class='fa fa-facebook'></a></li> \
-                                        <li><button type='button' class='btn btn-primary' id='btnComentar' onclick=" + recActual.Id_receta +" data-toggle='modal' data-target='#exampleModalCenter6'>Ver Mas</button></li> \
-                                    </ul> \
-                               </div> \
-                        </div> \
-                </div> \
-                   <div class='encima' aria-hidden='true'> \
-                    <div class='modal fade' id ='exampleModalCenter6' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'> \
-                    <div class='modal-dialog modal-dialog-centered' role='document'> \
-                        <div class='ventanaFormulario'> \
-                            <div class='encabezadoFormulario'> \
-                                <h5 class='tituloFormulario' id='titulo'>"+recActual.Nombre+"</h5> \
-                            </div> \
-                                <form method='dialog'> \
-                                <div class='cuerpoFormulario'> \
-                                    <div class='form-group'> \
-                                        <label for='recipient-name' class='alinear'>Nombre de la Receta</label> \
-                                        <input type='text' class='form-control' id='nombreReceta' required> \
-                                        </div> \
-                                        <!-- lista de Idiomas --> \
-                                        <div class='form-group'> \
-                                            <label for='exampleFormControlSelect1'>Idioma</label> \
-                                            <select class='form-control' id='listaIdiomas' required> \
-                                                <option value='' disabled selected>Selecciona un Idioma</option> \
-                                                <option>Español</option> \
-                                                <option>Inglés</option> \
-                                                <option>Francés</option> \
-                                                <option>Italiano</option> \
-                                            </select> \
-                                        </div> \
-                                        <div class='form-group'> \
-                                            <label for='exampleFormControlSelect1'>Categoría</label> \
-                                            <select class='form-control' id='listaCategorias' required> \
-                                                <option value='' disabled selected>Selecciona una Categoría</option> \
-                                                <option>Vegetariana</option> \
-                                                <option>Comida Rápida</option> \
-                                                <option>Comida Italiana</option> \
-                                                <option>Desayuno</option> \
-                                            </select> \
-                                        </div> \
-                                        <!-- campos de nombre y cantidad de ingredientes --> \
-                                        <div class='form-group'> \
-                                            <label for='recipient-name' class='col-form-label'>Ingredientes</label> \
-                                            <hr> \
-                                        </div> \
-                                            <!-- campo nombre de ingrediente --> \
-                                        <div class='form-row' id='Ingredientes'> \
-                                                <div class='margen col-md-6'> \
-                                                    <label for='inputEmail4'>Nombre</label> \
-                                                    <input type='text' class='form-control' id='nombreIngrediente' required> \
-                                            </div> \
-                                                    <!-- campo cantidad de ingrediente --> \
-                                            <div class='margen col-md-6'> \
-                                                        <label for='inputPassword4'>Cantidad</label> \
-                                                        <input type='number' class='form-control' id='cantidadIngrediente' required> \
-                                            </div> \
-                                                    </div> \
-                                                    <!-- botones agregar y eliminar campos de cantidad y nombre --> \
-                                        <button onclick='agregarCampos()' class='btn btn-primary margenBoton'>Agregar</button> \
-                                                    <button onclick='eliminarCampos()' class='btn btn-danger margenBoton'>Eliminar</button> \
-                                                    <hr> \
-                                                        <!-- campo de texto descripción--> \
-                                        <div class='form-group'> \
-                                                            <label for='exampleFormControlTextarea1' class='alinear'>Descripción</label> \
-                                                            <textarea class='form-control' id='descripcionReceta' rows='3' required></textarea> \
-                                                        </div> \
-                                                        <!-- campo de texto paso a paso --> \
-                                        <div class='form-group'> \
-                                                            <label for='exampleFormControlTextarea1' class='alinear'>Paso a Paso</label> \
-                                                            <textarea class='form-control' id='pasosReceta' rows='3' required></textarea> \
-                                                        </div> \
-                                                        <!-- obtener imagenes --> \
-                                        <div class='form-group'> \
-                                                            <label for='exampleFormControlFile1'>Imágenes</label> \
-                                                            <input type='file' id='files' name='files[]' multiple><br> \
-                                                                <output id='list'></output> \
-                                        </div>\
-                                    </div>\
-                                                            <!-- Parte final del formulario --> \
-                                    <div class='modal-footer' id='finalFormulario'> \
-                                                                <button type='button' class='btn btn-danger' data-dismiss='modal' id='btnCerrarModal'>Cerrar</button> \
-                                                                <button type='submit' class='btn btn-primary' id='btnAgregarReceta'>Agregar Receta</button> \
-                                                            </div> \
-                                </form> \
-                            </div> \
-                                                </div> \
-                                            </div>\
-                                        </div>");
-                
-                console.log("1" + recActual.Id_receta);
-                console.log("2" + recActual.Categoria);
-                console.log("3" + recActual.Descripcion);
-                console.log("4" + recActual.Idioma);
-                console.log("5" + recActual.Nombre);
-                console.log("6" + recActual.correo_usu);
-                console.log("7" + recActual.imagenes);
+
+                console.log(recActual.Nombre);
             }
 
 
@@ -397,33 +303,75 @@ function buscarxNombre()
 function buscarXCategoria(categoria) {
 
     limpiarBusqueda();
+    console.log("Se esta buscando por categoria");
 
     $.getJSON('/api/receta?categoria=' + categoria, function (data) {
         var ContendorRecetas = document.getElementById("recetasXNombre");
+        var contador = 0;
+        var i = 0;
         $.each(data, function (recetaobtenidas, recActual) {
             {
 
-                $("#recetasxNombre").append("\
-                    <div class='col-md-3 col-sm-6 wow fadeInUp card ' > \
-                        <div class='team-thumb'> \
-                            <img src='images/chef1.jpg' class='img-responsive' alt='Team'> \
-                                <div class='team-des'> \
-                                    <h6>"+ recActual.Nombre + "</h6> \
-                                    <h4>"+ recActual.Categoria + "</h4> \
-                                    <ul class='social-icon'> \
-                                        <li><a href='#' class='fa fa-facebook'></a></li> \
-                                        <li><button type='button' class='btn btn-primary' id='btnComentar' onclick=" + recActual.Id_receta + " data-toggle='modal' data-target='#exampleModalCenter2' >Ver Mas</button></li> \
-                                    </ul> \
-                               </div> \
-                        </div> \
-                </div>");
-                console.log("1" + recActual.Id_receta);
-                console.log("2" + recActual.Categoria);
-                console.log("3" + recActual.Descripcion);
-                console.log("4" + recActual.Idioma);
-                console.log("5" + recActual.Nombre);
-                console.log("6" + recActual.correo_usu);
-                console.log("7" + recActual.imagenes);
+                if (contador % 4 == 0) {
+                    i = contador;
+                    $("#ppal").append("\
+                 <br>\
+                 <div id='cardeck"+ i + "' class='card-deck'>\
+                <div class= 'card  animated zoomIn'>\
+                <img class='card-img-top' src='"+ recActual.imagen + "' alt='Card image cap'>\
+                    <div class='card-body'>\
+                        <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
+                        <p class='card-text'>"+ recActual.Descripcion + "</p>\
+                        <h6>Categoria</h6>\
+                        <p class='card-text'>"+ recActual.Categoria + "</p>\
+                    </div>\
+                    <div class='card-footer'>\
+                        <small class='text-muted text-danger'><i class='fas fa-stopwatch'></i>"+ recActual.tiempoPreparacion + "</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-utensils-alt'></i>Porciones "+ recActual.porciones + "</strong></small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-globe-americas'></i>Idioma "+ recActual.Idioma + "</small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion + "</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
+                        <button onclick='ampliarReceta("+ recActual.Id_receta + ")' type='button' class='btn btn-primary'>Ver mas</button>\
+                        <br />\
+                    </div>\
+                    </div>\
+                ");
+                    contador++;
+
+                } else {
+
+                    $("#cardeck" + i + "").append("\
+                 <div class= 'card  animated zoomIn'>\
+                <img class='card-img-top' src='"+ recActual.imagen + "' alt='Card image cap'>\
+                    <div class='card-body'>\
+                        <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
+                        <p class='card-text'>"+ recActual.Descripcion + "</p>\
+                        <h6>Categoria</h6>\
+                        <p class='card-text'>"+ recActual.Categoria + "</p>\
+                    </div>\
+                    <div class='card-footer'>\
+                        <small class='text-muted text-danger'><i class='fas fa-stopwatch'></i>"+ recActual.tiempoPreparacion + "</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-utensils-alt'></i>Porciones "+ recActual.porciones + "</strong></small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-globe-americas'></i>Idioma "+ recActual.Idioma + "</small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion + "</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
+                        <button onclick='ampliarReceta("+ recActual.Id_receta + ")' type='button' class='btn btn-primary'>Ver mas</button>\
+                        <br />\
+                    </div>\
+                ");
+                }
+
+
+
+                contador++;
             }
 
 
@@ -443,7 +391,7 @@ function getAllRecetas() {
                 $("#ppal").append("\
                  <br>\
                  <div id='cardeck"+ i +"' class='card-deck'>\
-                <div class= 'card'>\
+                <div class= 'card  animated zoomIn'>\
                 <img class='card-img-top' src='"+ recActual.imagen +"' alt='Card image cap'>\
                     <div class='card-body'>\
                         <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
@@ -461,7 +409,7 @@ function getAllRecetas() {
                         <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion +"</small>\
                         <br />\
                         <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
-                        <button onclick='ampliarReceta("+ recActual.Id_receta +")' type='button' class='btn btn - primary'>Ver mas</button>\
+                        <button onclick='ampliarReceta("+ recActual.Id_receta +")' type='button' class='btn btn-primary'>Ver mas</button>\
                         <br />\
                     </div>\
                     </div>\
@@ -471,7 +419,7 @@ function getAllRecetas() {
             } else {
 
                 $("#cardeck"+i+"").append("\
-                 <div class= 'card'>\
+                 <div class= 'card  animated zoomIn'>\
                 <img class='card-img-top' src='"+ recActual.imagen+"' alt='Card image cap'>\
                     <div class='card-body'>\
                         <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
@@ -489,7 +437,7 @@ function getAllRecetas() {
                         <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion + "</small>\
                         <br />\
                         <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
-                        <button onclick='ampliarReceta("+ recActual.Id_receta +")' type='button' class='btn btn - primary'>Ver mas</button>\
+                        <button onclick='ampliarReceta("+ recActual.Id_receta +")' type='button' class='btn btn-primary'>Ver mas</button>\
                         <br />\
                     </div>\
                 ");
@@ -510,3 +458,18 @@ function ampliarReceta(idReceta) {
 
 }
 
+function limpiarCampoReceta() {
+
+     document.getElementById('nombreReceta').innerHTML = "";
+     document.getElementById('nombre').innerHTML = "";
+    document.getElementById('cantidad').innerHTML = "";
+    document.getElementById('unidades').innerHTML = "";
+    document.getElementById('listaIdiomas').innerHTML = "";
+     document.getElementById('descripcionReceta').innerHTML = "";
+     document.getElementById('pasosReceta').innerHTML = "";
+     document.getElementById('listaCategorias');
+     document.getElementById('hrs');
+     document.getElementById('mnts');
+    document.getElementById('porciones');
+
+}
