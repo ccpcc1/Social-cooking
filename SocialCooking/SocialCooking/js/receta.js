@@ -14,10 +14,14 @@ var files;
 var reader;
 var imagenes = [];
 var receta = new Object();
+window.onload = load;
 
-console.log("Documento cargado");
-//Evento que guarda las imagenes en el servidor
-document.getElementById("files").addEventListener("change", guardarImagenes);
+function load() {
+    console.log("Documento cargado");
+    cargarUsuario();
+
+}
+
 
 function guardarDatos() {
 
@@ -391,7 +395,9 @@ function buscarxNombre()
 }
 
 function buscarXCategoria(categoria) {
+
     limpiarBusqueda();
+
     $.getJSON('/api/receta?categoria=' + categoria, function (data) {
         var ContendorRecetas = document.getElementById("recetasXNombre");
         $.each(data, function (recetaobtenidas, recActual) {
@@ -426,4 +432,81 @@ function buscarXCategoria(categoria) {
     });
 }
 
+function getAllRecetas() {
+    var contador = 0;
+    var i = 0;
+    $.getJSON('/api/receta' , function (data) {
+        $.each(data, function (recetaobtenidas, recActual) {
+            
+            if (contador % 4 == 0) {
+                i = contador;
+                $("#ppal").append("\
+                 <br>\
+                 <div id='cardeck"+ i +"' class='card-deck'>\
+                <div class= 'card'>\
+                <img class='card-img-top' src='"+ recActual.imagen +"' alt='Card image cap'>\
+                    <div class='card-body'>\
+                        <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
+                        <p class='card-text'>"+ recActual.Descripcion +"</p>\
+                        <h6>Categoria</h6>\
+                        <p class='card-text'>"+ recActual.Categoria + "</p>\
+                    </div>\
+                    <div class='card-footer'>\
+                        <small class='text-muted text-danger'><i class='fas fa-stopwatch'></i>"+ recActual.tiempoPreparacion +"</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-utensils-alt'></i>Porciones "+ recActual.porciones +"</strong></small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-globe-americas'></i>Idioma "+ recActual.Idioma +"</small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion +"</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
+                        <button onclick='ampliarReceta("+ recActual.Id_receta +")' type='button' class='btn btn - primary'>Ver mas</button>\
+                        <br />\
+                    </div>\
+                    </div>\
+                ");
+                contador++;
+
+            } else {
+
+                $("#cardeck"+i+"").append("\
+                 <div class= 'card'>\
+                <img class='card-img-top' src='"+ recActual.imagen+"' alt='Card image cap'>\
+                    <div class='card-body'>\
+                        <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
+                        <p class='card-text'>"+ recActual.Descripcion + "</p>\
+                        <h6>Categoria</h6>\
+                        <p class='card-text'>"+ recActual.Categoria + "</p>\
+                    </div>\
+                    <div class='card-footer'>\
+                        <small class='text-muted text-danger'><i class='fas fa-stopwatch'></i>"+ recActual.tiempoPreparacion + "</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-utensils-alt'></i>Porciones "+ recActual.porciones + "</strong></small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-globe-americas'></i>Idioma "+ recActual.Idioma + "</small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion + "</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
+                        <button onclick='ampliarReceta("+ recActual.Id_receta +")' type='button' class='btn btn - primary'>Ver mas</button>\
+                        <br />\
+                    </div>\
+                ");
+            }
+
+            
+
+            contador++;
+                
+            });
+
+    });
+
+}
+
+function ampliarReceta(idReceta) {
+
+
+}
 

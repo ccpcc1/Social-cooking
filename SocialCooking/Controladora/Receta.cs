@@ -152,6 +152,7 @@ namespace Controladora
         public List<EN.previewReceta> recetasPreview() {
 
             var query = db.Recetas.ToList();
+
             List<EN.previewReceta> listToReturn = new List<EN.previewReceta>();
 
             foreach (var receta in query)
@@ -162,7 +163,14 @@ namespace Controladora
                 pr.fechaPublicacion = receta.fechaPublicacion.ToString();
                 pr.Idioma = receta.Idiomas;
                 pr.Id_receta = receta.Id_receta;
-                pr.imagen = "";
+                if (receta.imagenesxReceta.ToList().Count == 0)
+                {
+                    pr.imagen = "images/imagen-no-disponible.jpg";
+                }
+                else {
+                    pr.imagen = receta.imagenesxReceta.ToList().First().ImagePath;
+                }
+               
                 pr.Nombre = receta.Nombre;
                 pr.porciones = Convert.ToInt32(receta.porciones);
                 pr.puntuacion = receta.puntuacion;
