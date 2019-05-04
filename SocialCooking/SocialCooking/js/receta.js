@@ -274,7 +274,10 @@ function limpiarBusqueda() {
 function buscarxNombre()
 {
     var search = document.getElementById('buscarReceta').value;
+    console.log(search);
 
+
+    //(String nombre, bool validar)
     $.getJSON('/api/receta?nombre=' + search + "&validar=" + true, function (data) {
         var contador = 0;
         var i = 0;
@@ -446,20 +449,31 @@ function getAllRecetas() {
                         <p class='card-text'>"+ recActual.Descripcion +"</p>\
                         <h6>Categoria</h6>\
                         <p class='card-text'>"+ recActual.Categoria + "</p>\
+                    <ul class='list-group'>\
+                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-stopwatch'></i>\
+                            Tiempo de preparacion\
+                            <span class='badge badge-primary badge-pill'>"+ recActual.tiempoPreparacion +"</span>\
+                        </li>\
+                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-globe-americas'></i>\
+                           Idioma\
+                            <span class='badge badge-primary badge-pill'>"+ recActual.Idioma +"</span>\
+                        </li>\
+                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-star-half-alt'></i>\
+                           Puntuacion\
+                            <span class='badge badge-primary badge-pill'>"+ recActual.puntuacion + "</span>\
+                        </li>\
+                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-users'></i>\
+                           No. porciones\
+                            <span class='badge badge-primary badge-pill'>"+ recActual.porciones + "</span>\
+                        </li>\
+                     </ul>\
                     </div>\
                     <div class='card-footer'>\
-                        <small class='text-muted text-danger'><i class='fas fa-stopwatch'></i>"+ recActual.tiempoPreparacion +"</small>\
-                        <br />\
-                        <small class='text-muted'><strong><i class='fas fa-utensils-alt'></i>Porciones "+ recActual.porciones +"</strong></small>\
-                        <br />\
-                        <small class='text-muted'><i class='fas fa-globe-americas'></i>Idioma "+ recActual.Idioma +"</small>\
-                        <br />\
                         <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion +"</small>\
                         <br />\
-                        <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
+                    </div>\
                         <button onclick='ampliarReceta("+ recActual.Id_receta +")' type='button' class='btn btn-primary'>Ver mas</button>\
                         <br />\
-                    </div>\
                     </div>\
                 ");
                 contador++;
@@ -474,17 +488,29 @@ function getAllRecetas() {
                         <p class='card-text'>"+ recActual.Descripcion + "</p>\
                         <h6>Categoria</h6>\
                         <p class='card-text'>"+ recActual.Categoria + "</p>\
+                     <ul class='list-group'>\
+                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-stopwatch'></i>\
+                            Tiempo de preparacion\
+                            <span class='badge badge-primary badge-pill'>"+ recActual.tiempoPreparacion + "</span>\
+                        </li>\
+                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-globe-americas'></i>\
+                           Idioma\
+                            <span class='badge badge-primary badge-pill'>"+ recActual.Idioma + "</span>\
+                        </li>\
+                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-star-half-alt'></i>\
+                           Puntuacion\
+                            <span class='badge badge-primary badge-pill'>"+ recActual.puntuacion + "</span>\
+                        </li>\
+                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-users'></i>\
+                           No. porciones\
+                            <span class='badge badge-primary badge-pill'>"+ recActual.porciones + "</span>\
+                        </li>\
+                     </ul>\
                     </div>\
                     <div class='card-footer'>\
-                        <small class='text-muted text-danger'><i class='fas fa-stopwatch'></i>"+ recActual.tiempoPreparacion + "</small>\
-                        <br />\
-                        <small class='text-muted'><strong><i class='fas fa-utensils-alt'></i>Porciones "+ recActual.porciones + "</strong></small>\
-                        <br />\
-                        <small class='text-muted'><i class='fas fa-globe-americas'></i>Idioma "+ recActual.Idioma + "</small>\
-                        <br />\
                         <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion + "</small>\
                         <br />\
-                        <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
+                    </div>\
                         <button onclick='ampliarReceta("+ recActual.Id_receta +")' type='button' class='btn btn-primary'>Ver mas</button>\
                         <br />\
                     </div>\
