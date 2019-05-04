@@ -217,11 +217,11 @@ namespace Controladora
         //Metodo para obtener recetas por nombre
         public List<EN.previewReceta> getRecetaxNombre(string nombre_receta)
         {
+
             List<EN.previewReceta> retorno = new List<EN.previewReceta>();
 
-            int idCategoria = categoriasController.getIdCategoria(categoria);
 
-            var query = db.Recetas.Where(x => x.Id_categoria == idCategoria);
+            var query = db.Recetas.Where(x => x.Nombre.Contains(nombre_receta));
 
             foreach (var item in query)
             {

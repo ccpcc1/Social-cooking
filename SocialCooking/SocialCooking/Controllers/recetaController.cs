@@ -37,7 +37,7 @@ namespace SocialCooking.Controllers
         }
 
         //buscar  la recta por nombre
-        public List<EN.Receta> Get(String nombre, bool validar)
+        public List<EN.previewReceta> Get(String nombre, bool validar)
         {
             CT.Receta recetaController = new CT.Receta();
 

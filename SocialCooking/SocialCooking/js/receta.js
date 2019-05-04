@@ -274,28 +274,77 @@ function limpiarBusqueda() {
 function buscarxNombre()
 {
     var search = document.getElementById('buscarReceta').value;
-    console.log(search);
 
-    //(String nombre, bool validar)
     $.getJSON('/api/receta?nombre=' + search + "&validar=" + true, function (data) {
-       
-        if (data == "") {
-            swal("No se encontró la receta :(", "Intenta con otra :)", "warning");
-            
-
-        }
-        else { 
-        $.each(data, function (recActual) {
+        var contador = 0;
+        var i = 0;
+        $.each(data, function (recetaobtenidas,recActual) {
             {
                
+                if (contador % 4 == 0) {
+                    i = contador;
+                    $("#ppal").append("\
+                 <br>\
+                 <div id='cardeck"+ i + "' class='card-deck'>\
+                <div class= 'card  animated zoomIn'>\
+                <img class='card-img-top' src='"+ recActual.imagen + "' alt='Card image cap'>\
+                    <div class='card-body'>\
+                        <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
+                        <p class='card-text'>"+ recActual.Descripcion + "</p>\
+                        <h6>Categoria</h6>\
+                        <p class='card-text'>"+ recActual.Categoria + "</p>\
+                    </div>\
+                    <div class='card-footer'>\
+                        <small class='text-muted text-danger'><i class='fas fa-stopwatch'></i>"+ recActual.tiempoPreparacion + "</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-utensils-alt'></i>Porciones "+ recActual.porciones + "</strong></small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-globe-americas'></i>Idioma "+ recActual.Idioma + "</small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion + "</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
+                        <button onclick='ampliarReceta("+ recActual.Id_receta + ")' type='button' class='btn btn-primary'>Ver mas</button>\
+                        <br />\
+                    </div>\
+                    </div>\
+                ");
+                    contador++;
 
-                console.log(recActual.Nombre);
+                } else {
+
+                    $("#cardeck" + i + "").append("\
+                 <div class= 'card  animated zoomIn'>\
+                <img class='card-img-top' src='"+ recActual.imagen + "' alt='Card image cap'>\
+                    <div class='card-body'>\
+                        <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
+                        <p class='card-text'>"+ recActual.Descripcion + "</p>\
+                        <h6>Categoria</h6>\
+                        <p class='card-text'>"+ recActual.Categoria + "</p>\
+                    </div>\
+                    <div class='card-footer'>\
+                        <small class='text-muted text-danger'><i class='fas fa-stopwatch'></i>"+ recActual.tiempoPreparacion + "</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-utensils-alt'></i>Porciones "+ recActual.porciones + "</strong></small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-globe-americas'></i>Idioma "+ recActual.Idioma + "</small>\
+                        <br />\
+                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion + "</small>\
+                        <br />\
+                        <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
+                        <button onclick='ampliarReceta("+ recActual.Id_receta + ")' type='button' class='btn btn-primary'>Ver mas</button>\
+                        <br />\
+                    </div>\
+                ");
+                }
+
+
+
+                contador++;
             }
 
 
             });
-
-        }
 
     });
 }
@@ -306,7 +355,6 @@ function buscarXCategoria(categoria) {
     console.log("Se esta buscando por categoria");
 
     $.getJSON('/api/receta?categoria=' + categoria, function (data) {
-        var ContendorRecetas = document.getElementById("recetasXNombre");
         var contador = 0;
         var i = 0;
         $.each(data, function (recetaobtenidas, recActual) {
