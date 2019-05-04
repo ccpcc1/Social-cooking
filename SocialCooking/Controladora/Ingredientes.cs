@@ -25,17 +25,19 @@ namespace Controladora
                 BR.Ingredientes ingrediente = new BR.Ingredientes();
                 BR.recetasxIngredientes recetaXIngrediente = new BR.recetasxIngredientes();
                 // primero se añade el ingrediente
+
                 ingrediente.nombre = receta.ingrediente[i].ingrediente;
                 db.Ingredientes.Add(ingrediente);
-                
+                db.SaveChanges();
 
-                // se agrega a la tabla el recexingredientes el id del ultimo ingrediente que se agrego y el id de la receta
-                recetaXIngrediente.Id_ingredientes = db.Ingredientes.ToList().Last().Id_ingrediente;
+                //Se agrega a la tabla el recexingredientes el id del ultimo ingrediente que se agrego y el id de la receta
+                recetaXIngrediente.Id_ingredientes = ingrediente.Id_ingrediente;
                 recetaXIngrediente.Id_receta = receta.Id_receta;
                 recetaXIngrediente.cantidad = receta.ingrediente[i].cantidad;
+                recetaXIngrediente.unidad = receta.ingrediente[i].unidades;
                 db.recetasxIngredientes.Add(recetaXIngrediente);
                 db.SaveChanges();
-                               
+
             }
             
 

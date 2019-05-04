@@ -32,7 +32,7 @@ namespace Controladora
 
         }
         //Metodo para crear una receta que recibe una EN.Receta
-        public async Task<bool> CrearRecetaAsync(EN.Receta recetaTSave)
+        public bool CrearRecetaAsync(EN.Receta recetaTSave)
         {
             bool resultado = false;
 
@@ -51,19 +51,24 @@ namespace Controladora
                 BrokerReceta.porciones = recetaTSave.porciones;
                 BrokerReceta.tiempoPreparacion = recetaTSave.tiempoPreparacion;
                 db.Recetas.Add(BrokerReceta);
-                await db.SaveChangesAsync();
+                db.SaveChanges();
+                
 
-                //Guardar el path de las imagenes
-                BR.Recetas tempReceta = db.Recetas.ToList().Last();
-                imagenesController.ingresarImagenesReceta(recetaTSave.imagenes, tempReceta.Id_receta);
-                ingredientesController.ingresarIngrediente(recetaTSave);
-                resultado = true;
+                 //Guardar el path de las imagenes
+                 //BR.Recetas tempReceta = db.Recetas.OrderByDescending(x=>x.Id_receta).FirstOrDefault();
+                 recetaTSave.Id_receta = BrokerReceta.Id_receta;
+                 imagenesController.ingresarImagenesReceta(recetaTSave.imagenes, BrokerReceta.Id_receta);
+                 //Guardar los ingredientes
+                 ingredientesController.ingresarIngrediente(recetaTSave);
+                 resultado = true;
+                
 
             }
             catch(Exception ex) {
 
                 throw ex;
             }
+
             return resultado;
         }
 

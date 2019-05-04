@@ -44,16 +44,15 @@ namespace SocialCooking.Controllers
             return recetaController.getRecetaxNombre(nombre);
         }
 
-
-
         // guarda en la bd la receta
-        public void Post(EN.Receta recetaTosave)
+        public bool Post(EN.Receta recetaTosave)
         {
         
             CT.Receta recetaController = new CT.Receta();
-            
+
             recetaController.CrearRecetaAsync(recetaTosave);
-          
+
+            return true;
         }
 
         // PUT api/<controller>/5

@@ -27,6 +27,7 @@ function guardarDatos() {
     var nombreReceta = document.getElementById('nombreReceta');
     var ingrediente = document.getElementById('nombre');
     var cantidadIngrediente = document.getElementById('cantidad');
+    var unidades = document.getElementById('unidades');
     var idiomas = document.getElementById('listaIdiomas');
     var descripcion = document.getElementById('descripcionReceta');
     var pasoApaso = document.getElementById('pasosReceta');
@@ -39,12 +40,14 @@ function guardarDatos() {
     ingredientes[0].cantidad = document.getElementById('cantidad').value;
     var j = 0;
     var i;
+
     if (ingrediente != null)
     {
         for (i = 1; i < ingrediente.childNodes.length; i += 2) {
-            ingredientes[j] = { ingrediente: "", cantidad: "" };
+            ingredientes[j] = { ingrediente: "", cantidad: "", unidades:""};
             ingredientes[j].ingrediente = ingrediente.childNodes[i].value;
             ingredientes[j].cantidad = cantidadIngrediente.childNodes[i].value;
+            ingredientes[j].unidades = unidades.childNodes[i].value;
             j++;
         }
     }
@@ -80,8 +83,8 @@ function GuardarReceta(recetaToSave) {
         dataType: 'json',
         data: receta,
         success: function (otherReceta) {
-
-            alert("Receta  agregada satisfactoriamente, Oprime ok para continuar");
+            console.log(otherReceta);
+            alert("Receta  agregada satisfactoriamente, Oprime ok para continuar ");
             
 
         },
