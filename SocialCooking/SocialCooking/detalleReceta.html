@@ -7,9 +7,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Datatables -->
+    <link href="css/animate.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <title>Detalle de receta</title>
-   
+
 </head>
 <body class="bg-light">
     <style>
@@ -29,131 +30,154 @@
         .ec-stars-wrapper > a:hover ~ a {
             color: #888;
         }
-
     </style>
-<!-- Panel superior -->
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FF5733">
+    <!-- Panel superior -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FF5733">
         <a class="navbar-brand text-light" href="#"><strong>Social</strong>Cooking</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link text-light" href="feedUsuario.html">Feed de recetas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light active" href="compartirReceta.html">Compartir una receta</a>
-            </li>
-            <li class="nav-item dropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="feedUsuario.html">Feed de recetas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light active" href="compartirReceta.html">Compartir una receta</a>
+                </li>
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Nombre usuario
+                        Nombre usuario
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Ver mi perfil</a>
-                      <a class="dropdown-item text-success" href="#">Mis recetas</a>
-                      <a class="dropdown-item text-warning" href="#">Ver recetas reportadas</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item text-danger" href="#">Salir</a>
+                        <a class="dropdown-item" href="#">Ver mi perfil</a>
+                        <a class="dropdown-item text-success" href="#">Mis recetas</a>
+                        <a class="dropdown-item text-warning" href="#">Ver recetas reportadas</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#">Salir</a>
                     </div>
-                  </li>
-            <!-- Foto de perfil -->
-            <a class="navbar-brand px-2 pt-0 mx-auto" href="#">
+                </li>
+                <!-- Foto de perfil -->
+                <a class="navbar-brand px-2 pt-0 mx-auto" href="#">
                     <img src="images/about-img.jpg" class="img-circle" style="border-radius:30px;" width="30" height="25" alt="">
-            </a>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pastas" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar recetas por nombre</button>
-          </form>
-        </div>
-      </nav>
-    <!-- Termina panel superior -->
-    <div class="row">
-        <div class="mx-auto py-5">
-        <div class="card center-block" style="width: 50rem;">
-        <img src="images/recalentado.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h3 class="card-title text-warning">Nombre de la receta</h3>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <h5>Descripción</h5>
-            <p>Descripcion de la receta</p>
-            <h5>Paso a paso</h5>
-            <ul class="list-group py-2">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                </a>
             </ul>
-            <h5>Ingredientes</h5>
-            <div class="row py-2">
-                <div class="col-6">
-
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Cras justo odio
-                            <span class="badge badge-primary badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Dapibus ac facilisis in
-                            <span class="badge badge-primary badge-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Morbi leo risus
-                            <span class="badge badge-primary badge-pill">1</span>
-                        </li>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pastas" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar recetas por nombre</button>
+            </form>
+        </div>
+    </nav>
+    <!-- Termina panel superior -->
+    <div class="row animated bounceInUp">
+        <div class="mx-auto py-5">
+            <div class="card center-block" style="width: 50rem;">
+                <img id="imagen" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h3 class="card-title text-warning">Nombre de la receta</h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5>Descripción</h5>
+                    <p>Descripcion de la receta</p>
+                    <h5>Paso a paso</h5>
+                    <ul class="list-group py-2">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
                     </ul>
+                    <h5>Ingredientes</h5>
+                    <div class="row py-2">
+                        <div class="col-6">
 
-                </div>
-                       <div class="col-6">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Cras justo odio
+                                    <span class="badge badge-primary badge-pill">14</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Dapibus ac facilisis in
+                                    <span class="badge badge-primary badge-pill">2</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Morbi leo risus
+                                    <span class="badge badge-primary badge-pill">1</span>
+                                </li>
+                            </ul>
 
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Cras justo odio
-                            <span class="badge badge-primary badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Dapibus ac facilisis in
-                            <span class="badge badge-primary badge-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Morbi leo risus
-                            <span class="badge badge-primary badge-pill">1</span>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="col-6">
 
-                </div>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Cras justo odio
+                                    <span class="badge badge-primary badge-pill">14</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Dapibus ac facilisis in
+                                    <span class="badge badge-primary badge-pill">2</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Morbi leo risus
+                                    <span class="badge badge-primary badge-pill">1</span>
+                                </li>
+                            </ul>
 
-            </div>
-            <h5>Imagenes</h5>
-            <a href="#" class="btn btn-warning">Añadir a favoritos</a>
-            <a href="#" class="btn btn-danger">Reportar</a>
-            <a href="#" class="btn btn-info">Comentar</a>
-            <div class="ec-stars-wrapper mx-auto">
-                <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
-                <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
-                <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
-                <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
-                <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
-            </div>
-            <noscript>Necesitas tener habilitado javascript para poder votar</noscript>
-            <div class="row">
-                <div class="col-4">
-                    <p class="card-text"><small class="text-muted">1/1/2019</small></p>
-                </div>
-                <div class="col-4">
-                    <p class="card-text"><small class="text-muted">10</small></p>
-                </div>
-                <div class="col-4">
-                    <p class="card-text"><small class="text-muted">Usuario</small></p>
+                        </div>
+
+                    </div>
+                    <h5>Imagenes</h5>
+                    <a href="#" class="btn btn-warning">Añadir a favoritos</a>
+                    <a href="#" class="btn btn-danger">Reportar</a>
+                    <a href="#" class="btn btn-info">Comentar</a>
+                    <!--Estrellas-->
+                    <div class="ec-stars-wrapper mx-auto">
+                        <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
+                        <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
+                        <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
+                        <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
+                        <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+                    </div>
+                    <noscript>Necesitas tener habilitado javascript para poder votar</noscript>
+                    <div class="row">
+                        <div class="col-4">
+                            <p class="card-text"><small class="text-muted">1/1/2019</small></p>
+                        </div>
+                        <div class="col-4">
+                            <p class="card-text"><small class="text-muted">10</small></p>
+                        </div>
+                        <div class="col-4">
+                            <p class="card-text"><small class="text-muted">Usuario</small></p>
+                        </div>
+                    </div>
+                    <div class="container-fluid py-5">
+                        <div class="row justify-content-lg-center">
+                        <div class="col-md-12 border border-info py-5" style="border-radius:10px;">
+                    <table id="table_id" class="display">
+                        <thead>
+                            <tr>
+                                <th>Ususario</th>
+                                <th>Comentario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Row 1 Data 2</td>
+                                <td>Row 1 Data 1</td>
+                            </tr>
+                            <tr>
+                                <td>Row 2 Data 1</td>
+                                <td>Row 2 Data 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+                </div>
+            </div>
         </div>
-        </div>
-
-
+        
     </div>
 
     <!-- Optional JavaScript -->
@@ -163,39 +187,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- dataTables -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-    <script type="text/javascript"> 
-       
-        $(document).ready( function () {
-        $('#table_id').DataTable();
-        } );
+    <script src="js/usuario.js"></script>
+    <script src="js/receta.js"></script>
+    <script src="js/cargarPerfil.js"></script>
+    <script src="js/detalleReceta.js"></script>
+    <script>
 
-   </script>
-    <div class="container-fluid" >
-        <div class="row justify-content-lg-center" >
-        <div class="col-md-8 border border-info py-5" style="border-radius:10px;" >  
-                <table id="table_id" class="display" >
-                        <thead>
-                            <tr>
-                                <th>Imagen</th>
-                                <th>Ususario</th>
-                                <th>Comentario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Row 1 Data 1</td>
-                                <td>Row 1 Data 2</td>
-                                <td>Row 1 Data 1</td>
-                            </tr>
-                            <tr>
-                                <td>Row 2 Data 1</td>
-                                <td>Row 2 Data 2</td>
-                                <td>Row 1 Data 1</td>
-                            </tr>
-                        </tbody>
-                    </table>
-        </div>
-    </div>
-</div>
-</body>
+    $(document).ready(function () {
+    $('#table_id').DataTable();
+    });
+
+    </script>
+
 </html>

@@ -98,6 +98,7 @@
     <Content Include="index.html" />
     <Content Include="feedUsuario.html" />
     <Content Include="js\cargarPerfil.js" />
+    <Content Include="js\detalleReceta.js" />
     <Content Include="js\receta.js" />
     <Content Include="js\imagesloaded.min.js" />
     <Content Include="js\usuario.js" />

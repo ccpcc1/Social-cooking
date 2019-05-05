@@ -16,18 +16,10 @@ var imagenes = [];
 var receta = new Object();
 window.onload = load;
 
-document.getElementById("files").addEventListener("change", guardarImagenes);
-$('#btnBuscar').on('click', function () {
-
-    GetFacturaByid($('#txtid').val());
-
-});
-
 function load() {
-    console.log("Documento cargado");
-    cargarUsuario();
-    getAllRecetas();
-    
+
+    console.log("Documento recetas.js cargado");
+    document.getElementById("files").addEventListener("change", guardarImagenes);
 
 }
 
@@ -95,10 +87,8 @@ function GuardarReceta(recetaToSave) {
         dataType: 'json',
         data: receta,
         success: function (otherReceta) {
-            console.log(otherReceta);
-            alert("Receta  agregada satisfactoriamente, Oprime ok para continuar ");
-            
-
+            $("#modalReceta").modal();
+            limpiarCampoReceta();
         },
         error: function (request, message, error) {
 
@@ -198,7 +188,7 @@ function eliminarCampos() {
 function addOptions(optionSelect) {
 
 
-    var unds = ['Lts', 'Mls', 'Kgs', 'Grs', 'Cdtas', 'Cdas', 'Tazas', 'Pizcas'];
+    var unds = ['Lts', 'Mls', 'Kgs', 'Grs', 'Cdtas', 'Cdas', 'Tazas', 'Pizcas', 'Unidad', 'Unidades', 'Una mitad','Al gusto'];
 
     for (let i = 0; i < unds.length; i++) {
 
@@ -281,11 +271,17 @@ function buscarxNombre()
     $.getJSON('/api/receta?nombre=' + search + "&validar=" + true, function (data) {
         var contador = 0;
         var i = 0;
+        console.log("Se esta buscando por nombre");
+
+        if (data.length == 0) {
+            $("#modalBusqueda").modal();
+            }
+
         $.each(data, function (recetaobtenidas,recActual) {
             {
                
-                if (contador % 4 == 0) {
-                    i = contador;
+                document.getElementById("ppal").innerHTML = "";
+
                     $("#ppal").append("\
                  <br>\
                  <div id='cardeck"+ i + "' class='card-deck'>\
@@ -312,35 +308,7 @@ function buscarxNombre()
                     </div>\
                     </div>\
                 ");
-                    contador++;
-
-                } else {
-
-                    $("#cardeck" + i + "").append("\
-                 <div class= 'card  animated zoomIn'>\
-                <img class='card-img-top' src='"+ recActual.imagen + "' alt='Card image cap'>\
-                    <div class='card-body'>\
-                        <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
-                        <p class='card-text'>"+ recActual.Descripcion + "</p>\
-                        <h6>Categoria</h6>\
-                        <p class='card-text'>"+ recActual.Categoria + "</p>\
-                    </div>\
-                    <div class='card-footer'>\
-                        <small class='text-muted text-danger'><i class='fas fa-stopwatch'></i>"+ recActual.tiempoPreparacion + "</small>\
-                        <br />\
-                        <small class='text-muted'><strong><i class='fas fa-utensils-alt'></i>Porciones "+ recActual.porciones + "</strong></small>\
-                        <br />\
-                        <small class='text-muted'><i class='fas fa-globe-americas'></i>Idioma "+ recActual.Idioma + "</small>\
-                        <br />\
-                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion + "</small>\
-                        <br />\
-                        <small class='text-muted'><strong><i class='fas fa-star-half-alt'></i>Puntuaciones "+ recActual.puntuacion + "</strong></small>\
-                        <button onclick='ampliarReceta("+ recActual.Id_receta + ")' type='button' class='btn btn-primary'>Ver mas</button>\
-                        <br />\
-                    </div>\
-                ");
-                }
-
+                   
 
 
                 contador++;
@@ -434,9 +402,18 @@ function buscarXCategoria(categoria) {
 function getAllRecetas() {
     var contador = 0;
     var i = 0;
+    var pb = 0;
+    var progressBar = document.getElementById("progresBar");
+    $("#modalCargando").modal({ backdrop: true });
     $.getJSON('/api/receta' , function (data) {
         $.each(data, function (recetaobtenidas, recActual) {
-            
+            pb++;
+            if (pb<=100) {
+                progressBar.style.width = pb*10 + "%";
+            }
+
+            console.log(pb);
+
             if (contador % 4 == 0) {
                 i = contador;
                 $("#ppal").append("\
@@ -520,21 +497,25 @@ function getAllRecetas() {
             
 
             contador++;
+            
                 
-            });
-
+        });
+        
+        $("#modalCargando").modal("hide");
     });
-
+   
 }
 
 function ampliarReceta(idReceta) {
 
-
+    console.log(idReceta);
+    window.location = "detalleReceta.html?id=" + idReceta;
 }
+
 
 function limpiarCampoReceta() {
 
-     document.getElementById('nombreReceta').innerHTML = "";
+    document.getElementById('nombreReceta').innerHTML = "";
      document.getElementById('nombre').innerHTML = "";
     document.getElementById('cantidad').innerHTML = "";
     document.getElementById('unidades').innerHTML = "";
