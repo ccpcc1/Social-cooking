@@ -80,12 +80,13 @@
         <div class="container text-center">
             <h1 class="display-4 text-light"><strong>Bienvenido a SocialCooking</strong></h1>
             <p class="lead"> La cocina social y libre esta aqui</p>
-            <p class="lead">🍷 🍴 🍕 🍔 🍟 🍗 🍖</p>
+            <button onclick="recetaRandom()" id="btn-buscar" class="mx-auto  btn btn-outline-light my-2 my-sm-0 d-block" type="button">Ver una receta Aleatoria</button>
+            <p class="lead py-5">🍷 🍴 🍕 🍔 🍟 🍗 🍖</p>
             <div class="btn-group">
                 <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Ver recetas por categoria
                 </button>
-                <div id="filtrarCategoria" class="dropdown-menu">
+                <div id="filtrarCategoria" class="py-5 dropdown-menu">
                     <a onclick="buscarXCategoria('Comida Rápida')" class="dropdown-item" value="1" href="#">Comida Rápida</a>
                     <a onclick="buscarXCategoria('Vegetariana')" class="dropdown-item" value="2" href="#">Vegetariana</a>
                     <a onclick="buscarXCategoria('Comida Italiana')" class="dropdown-item" value="3" href="#">Comida Italiana</a>
