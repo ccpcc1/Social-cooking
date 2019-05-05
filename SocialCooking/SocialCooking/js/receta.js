@@ -402,17 +402,18 @@ function buscarXCategoria(categoria) {
 function getAllRecetas() {
     var contador = 0;
     var i = 0;
-    var pb = 0;
+    var pb = 5;
     var progressBar = document.getElementById("progresBar");
+    progressBar.style.width = "5%";
+    progressBar.style.width = "10%";
     $("#modalCargando").modal({ backdrop: true });
+
     $.getJSON('/api/receta' , function (data) {
         $.each(data, function (recetaobtenidas, recActual) {
-            pb++;
+            pb= pb*10;
             if (pb<=100) {
-                progressBar.style.width = pb*10 + "%";
+                progressBar.style.width = pb * 10 + "%";
             }
-
-            console.log(pb);
 
             if (contador % 4 == 0) {
                 i = contador;
@@ -494,14 +495,16 @@ function getAllRecetas() {
                 ");
             }
 
-            
-
             contador++;
-            
+
+            if (pb == data.length) {
+
+                $("#modalCargando").modal("hide");
+            }
                 
         });
         
-        $("#modalCargando").modal("hide");
+       
     });
    
 }

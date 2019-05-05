@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Datatables -->
     <link href="css/animate.css" rel="stylesheet" />
+    <!--fonts icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <title>Detalle de receta</title>
 
@@ -69,67 +71,48 @@
         </div>
     </nav>
     <!-- Termina panel superior -->
-    <div class="row animated bounceInUp">
+    <div class="row animated bounceInUp delay-2s">
         <div class="mx-auto py-5">
             <div class="card center-block" style="width: 50rem;">
                 <img id="imagen" class="card-img-top" alt="">
                 <div class="card-body">
-                    <h3 class="card-title text-warning">Nombre de la receta</h3>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <h5>Descripción</h5>
-                    <p>Descripcion de la receta</p>
-                    <h5>Paso a paso</h5>
-                    <ul class="list-group py-2">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                        <li class="list-group-item">Porta ac consectetur ac</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
+                    <h3 class="card-title text-warning py-2">Nombre de la receta</h3>
+                    <h4 id="categoria" class="card-title text-success py-2"></h4>
+                    <h5 class="py-2">Descripción</h5>
+                    <p id="descripcion">Descripcion de la receta</p>
+                    <h5 class="py-2">Paso a paso</h5>
+                    <ul id="listaPasos" class="list-group py-2">
+                        
                     </ul>
-                    <h5>Ingredientes</h5>
-                    <div class="row py-2">
-                        <div class="col-6">
-
-                            <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Cras justo odio
-                                    <span class="badge badge-primary badge-pill">14</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Dapibus ac facilisis in
-                                    <span class="badge badge-primary badge-pill">2</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Morbi leo risus
-                                    <span class="badge badge-primary badge-pill">1</span>
-                                </li>
-                            </ul>
-
-                        </div>
-                        <div class="col-6">
-
-                            <ul class="list-group">
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Cras justo odio
-                                    <span class="badge badge-primary badge-pill">14</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Dapibus ac facilisis in
-                                    <span class="badge badge-primary badge-pill">2</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Morbi leo risus
-                                    <span class="badge badge-primary badge-pill">1</span>
-                                </li>
-                            </ul>
-
-                        </div>
-
+                    <!--Otros Datos de la receta-->
+                    <h5 class="py-2">Datos Adicionales</h5>
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i id="tiempo" class='fas fa-stopwatch px-2'></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i id="idioma" class='fas fa-globe-americas px-2'></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i id="nporciones" class='fas fa-users px-2'></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i id="ncalificaciones" class='fas fa-star-half-alt px-2'></i></a>
+                        </li>
+                    </ul>
+                    <!--Lista de ingredientes-->
+                    <h5 class="py-2">Ingredientes</h5>
+                    <div id="ingredientes" class="row py-2">
+                       
+                      
                     </div>
-                    <h5>Imagenes</h5>
+                    <!--Imagenes adicionales-->
+                    <h5 class="py-2">Imagenes</h5>
+                    <div id="contenedorImagenes" class="row py-2">
+                    </div>
+                    <!--Botones al final-->
                     <a href="#" class="btn btn-warning">Añadir a favoritos</a>
                     <a href="#" class="btn btn-danger">Reportar</a>
-                    <a href="#" class="btn btn-info">Comentar</a>
                     <!--Estrellas-->
                     <div class="ec-stars-wrapper mx-auto">
                         <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
@@ -141,39 +124,40 @@
                     <noscript>Necesitas tener habilitado javascript para poder votar</noscript>
                     <div class="row">
                         <div class="col-4">
-                            <p class="card-text"><small class="text-muted">1/1/2019</small></p>
+                            <p id="fecha" class="card-text"><small class="text-muted">1/1/2019</small></p>
                         </div>
                         <div class="col-4">
-                            <p class="card-text"><small class="text-muted">10</small></p>
+                            <p id="idreceta" class="card-text"><small class="text-muted">10</small></p>
                         </div>
                         <div class="col-4">
-                            <p class="card-text"><small class="text-muted">Usuario</small></p>
+                            <p id="usuario" class="card-text"><small class="text-muted">Usuario</small></p>
                         </div>
                     </div>
+                    <!--Tabla de comentarios-->
                     <div class="container-fluid py-5">
                         <div class="row justify-content-lg-center">
-                        <div class="col-md-12 border border-info py-5" style="border-radius:10px;">
-                    <table id="table_id" class="display">
-                        <thead>
-                            <tr>
-                                <th>Ususario</th>
-                                <th>Comentario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Row 1 Data 2</td>
-                                <td>Row 1 Data 1</td>
-                            </tr>
-                            <tr>
-                                <td>Row 2 Data 1</td>
-                                <td>Row 2 Data 2</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+                            <div class="col-md-12 border border-info py-5" style="border-radius:10px;">
+                                <table id="table_id" class="display">
+                                    <thead>
+                                        <tr>
+                                            <th>Ususario</th>
+                                            <th>Comentario</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Row 1 Data 2</td>
+                                            <td>Row 1 Data 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Row 2 Data 1</td>
+                                            <td>Row 2 Data 2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -191,12 +175,5 @@
     <script src="js/receta.js"></script>
     <script src="js/cargarPerfil.js"></script>
     <script src="js/detalleReceta.js"></script>
-    <script>
-
-    $(document).ready(function () {
-    $('#table_id').DataTable();
-    });
-
-    </script>
-
+    </body>
 </html>

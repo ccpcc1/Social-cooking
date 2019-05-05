@@ -44,17 +44,19 @@ namespace Controladora
         }
         public List<EN.Ingrediente> getIngredientes(int idReceta)
         {
-            EN.Ingrediente ingrediente = new EN.Ingrediente();
-            List < EN.Ingrediente > ingredientes = new List<EN.Ingrediente>();
+            List <EN.Ingrediente> listaIngredientes = new List<EN.Ingrediente>();
+
             var query = db.recetasxIngredientes.Where(x => x.Id_receta == idReceta);
+
             foreach (var item in query)
             {
-                
+                EN.Ingrediente ingrediente = new EN.Ingrediente();
                 ingrediente.ingrediente = item.Ingredientes.nombre;
-                ingrediente.cantidad = item.cantidad;             
-                ingredientes.Add(ingrediente);
+                ingrediente.cantidad = item.cantidad;
+                ingrediente.unidades = item.unidad;
+                listaIngredientes.Add(ingrediente);
             }
-            return ingredientes;
+            return listaIngredientes;
 
         }
     }

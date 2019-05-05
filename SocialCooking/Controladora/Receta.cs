@@ -183,29 +183,29 @@ namespace Controladora
         // metodo que devuelve una receta en especifico
         public EN.Receta getReceta(int idReceta)
         {
-            EN.Receta receta = new EN.Receta();
-            Usuario usuario = new Usuario();
-            Categorias categoria = new Categorias();
-            ImagenesxReceta img = new ImagenesxReceta();
-            Ingredientes ingredientes = new Ingredientes();
-
+            EN.Receta recetaADevolver = new EN.Receta();
+     
             var query = db.Recetas.Where(x => x.Id_receta==idReceta).FirstOrDefault();
 
             if (query.GetType() != null)
             {
-                receta.Id_receta = query.Id_receta;
-                receta.Idioma = query.Idiomas;
-                receta.PasoApaso = query.PasoApaso;
-                receta.Descripcion = query.Descripcion;
-                receta.Nombre = query.Nombre;
-                receta.puntuacion = query.puntuacion;
-                receta.Categoria = query.Id_categoria.ToString();
-                receta.correo_usu = usuario.getNombreUsuario(query.Id_usuario);
-                receta.Categoria = categoria.getNombreCategoria(query.Id_categoria);
-                receta.nopuntucaiones = query.nopuntuaciones;
-                receta.imagenes = img.getImagenes(query.Id_receta).ToArray();
-                receta.ingrediente = ingredientes.getIngredientes(query.Id_receta).ToArray();
-                return receta;
+                recetaADevolver.Id_receta = query.Id_receta;
+                recetaADevolver.Idioma = query.Idiomas;
+                recetaADevolver.PasoApaso = query.PasoApaso;
+                recetaADevolver.Descripcion = query.Descripcion;
+                recetaADevolver.Nombre = query.Nombre;
+                recetaADevolver.puntuacion = query.puntuacion;
+                recetaADevolver.Categoria = query.Id_categoria.ToString();
+                recetaADevolver.correo_usu = usuarioController.getNombreUsuario(query.Id_usuario);
+                recetaADevolver.Categoria = categoriasController.getNombreCategoria(query.Id_categoria);
+                recetaADevolver.nopuntucaiones = query.nopuntuaciones;
+                recetaADevolver.imagenes = imagenesController.getImagenes(query.Id_receta).ToArray();
+                recetaADevolver.ingrediente = ingredientesController.getIngredientes(query.Id_receta).ToArray();
+                recetaADevolver.tiempoPreparacion = query.tiempoPreparacion;
+                recetaADevolver.porciones = Convert.ToInt32(query.porciones);
+                var fechaCorta = query.fechaPublicacion.ToString();
+                recetaADevolver.fechaPublicacion = fechaCorta;
+                return recetaADevolver;
             }
             else {
                 return null;

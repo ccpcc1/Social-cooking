@@ -20,7 +20,7 @@ namespace Entidades
         public string Categoria { get; set; }
         public int puntuacion { get; set; }
         public int nopuntucaiones { get; set; }
-        public System.DateTime fechaPublicacion { get; set; }
+        public string fechaPublicacion { get; set; }
         public string tiempoPreparacion { get; set; }
         public int porciones { get; set; }
     }
