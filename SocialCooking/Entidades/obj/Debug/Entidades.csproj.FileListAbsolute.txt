@@ -1,0 +1,124 @@
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\bin\Debug\Entidades.dll
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\bin\Debug\Entidades.pdb
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\bin\Debug\AutoMapper.dll
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\bin\Debug\AutoMapper.xml
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\obj\Debug\Entidades.dll
+C:\Users\sebas\source\repos\SocialCooking4\Entidades\obj\Debug\Entidades.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\Entidades.dll.config
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\Entidades.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\Entidades.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.pdb
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\AutoMapper.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\AutoMapper.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+D:\UPB Jose Manuel\7mo Semestre\Gestion de la Calidad del Software\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\bin\Debug\Entidades.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\bin\Debug\Entidades.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\bin\Debug\AutoMapper.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\bin\Debug\AutoMapper.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.dll
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll.config
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.pdb
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.dll
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.xml
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.xml
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll
+F:\UPB Jose Manuel\7mo Semestre\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.pdb
+C:\Users\sebas\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.pdb
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.dll
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.xml
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll
+C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.pdb
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.pdb
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.dll
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.xml
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll.config
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.pdb
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.dll
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.xml
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.pdb
