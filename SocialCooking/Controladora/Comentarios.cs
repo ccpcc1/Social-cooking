@@ -12,11 +12,13 @@ namespace Controladora
     public class Comentarios
     {
         private BR.SocialCookingEntities db;
+        private CT.Usuario usuariosController;
 
         //Metodo constructor
         public Comentarios()
         {
             db = new BR.SocialCookingEntities();
+            usuariosController = new CT.Usuario(); 
         }
 
         //Funcion para obtener comentarios por receta
@@ -47,5 +49,21 @@ namespace Controladora
 
 
         }
+
+        //Funcion para obtener comentarios por id de comentario
+        public EN.Comentarios obtenerComentario(int idComentario) {
+
+            var query = db.Comentarios.Where(x=> x.Id_comentario==idComentario).FirstOrDefault();
+            EN.Comentarios comentarioReceta = new EN.Comentarios();
+            comentarioReceta.Id_comentario = query.Id_comentario;
+            comentarioReceta.Id_receta = query.Recetas.FirstOrDefault().Id_receta;
+            comentarioReceta.Id_usuario = query.Id_usuario;
+            comentarioReceta.imgUsuario = usuariosController.imagenUsuario(query.Id_usuario);
+            comentarioReceta.Mensaje = query.Mensaje;
+
+            return comentarioReceta;
+        }
     }
+
+
 }
