@@ -21,6 +21,31 @@ namespace Controladora
             usuariosController = new CT.Usuario(); 
         }
 
+        //Funcion para crear comentarios
+        public bool crearCometario(EN.Comentarios comentarioEntrante)
+        {
+            bool resultado = false;
+
+            try
+            {
+                BR.Comentarios comentario = new BR.Comentarios();
+                comentario.Id_usuario = comentarioEntrante.Id_usuario;
+                comentario.Mensaje = comentarioEntrante.Mensaje;
+                db.Comentarios.Add(comentario);
+                db.SaveChanges();
+                resultado = true;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+            return resultado;
+
+
+        }
+
         //Funcion para obtener comentarios por receta
         public List<EN.Comentarios> obtenerComentarios(int idReceta) {
 
@@ -63,6 +88,8 @@ namespace Controladora
 
             return comentarioReceta;
         }
+
+
     }
 
 
