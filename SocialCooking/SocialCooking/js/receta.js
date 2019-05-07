@@ -15,6 +15,8 @@ var reader;
 var imagenes = [];
 var receta = new Object();
 var RecetasConsultadas = [];
+var numPaginas;
+var numRecetas;
 
 window.onload = load;
 
@@ -482,6 +484,7 @@ function recetaRandom() {
 }
 
 function getAllRecetas() {
+
     var contador = 0;
     var i = 0;
     var pb = 5;
@@ -617,7 +620,36 @@ function getAllRecetas() {
         
        
     });
-   
+    paginar();
+
+}
+function paginar() {
+
+    numRecetas = RecetasConsultadas.length;
+    numPaginas = numRecetas / 3;
+    numPaginas = Math.ceil(numPaginas);
+
+    for (var k = 0; k < numPaginas; k++) {
+
+        var ruta = "feedUsuario.html?user=" + localStorage.getItem("CorreoUsuario") + "&pagina=" + k;
+        //Rellenar Botones de pagginacion
+        $('#listaBotones').append("\
+                <li class='page-item'>\
+                    <a class='page-link' href='"+ruta+"'>"+ k + "</a>\
+                </li>\
+                ");
+
+        if (k == numPaginas - 1) {
+
+            $('#listaBotones').append("\
+            <li id='siguiente' class='page-item'>\
+                <a class='page-link' href = '#' >Siguiente</a>\
+            </li>\
+                ");
+          
+        }
+    }
+
 }
 
 function ampliarReceta(idReceta) {
