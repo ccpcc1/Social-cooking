@@ -15,8 +15,8 @@ var reader;
 var imagenes = [];
 var receta = new Object();
 var RecetasConsultadas = [];
-var numPaginas;
-var numRecetas;
+var numPaginas = 0;
+var numRecetas =0;
 
 window.onload = load;
 
@@ -496,13 +496,7 @@ function getAllRecetas() {
     $.getJSON('/api/receta', function (data) {
         var RecetaReview = new Object();
         $.each(data, function (recetaobtenidas, recActual) {
-            pb= pb*10;
-            if (pb<=100) {
-                progressBar.style.width = pb * 10 + "%";
-            }
-
-            if (contador % 4 == 0) {
-                i = contador;
+      
                 RecetaReview =
                     {
                         'Id_receta': recActual.Id_receta,
@@ -517,138 +511,138 @@ function getAllRecetas() {
                         'porciones': recActual.porciones
                     }
                 RecetasConsultadas.push(RecetaReview);
-                $("#ppal").append("\
-                 <br>\
-                 <div id='cardeck"+ i +"' class='card-deck'>\
-                <div class= 'card  animated zoomIn'>\
-                <img class='card-img-top' src='"+ recActual.imagen +"' alt='Card image cap'>\
-                    <div class='card-body'>\
-                        <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
-                        <p class='card-text'>"+ recActual.Descripcion +"</p>\
-                        <h6>Categoria</h6>\
-                        <p class='card-text'>"+ recActual.Categoria + "</p>\
-                    <ul class='list-group'>\
-                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-stopwatch'></i>\
-                            Tiempo de preparacion\
-                            <span class='badge badge-primary badge-pill'>"+ recActual.tiempoPreparacion +"</span>\
-                        </li>\
-                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-globe-americas'></i>\
-                           Idioma\
-                            <span class='badge badge-primary badge-pill'>"+ recActual.Idioma +"</span>\
-                        </li>\
-                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-star-half-alt'></i>\
-                           Puntuacion\
-                            <span class='badge badge-primary badge-pill'>"+ recActual.puntuacion + "</span>\
-                        </li>\
-                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-users'></i>\
-                           No. porciones\
-                            <span class='badge badge-primary badge-pill'>"+ recActual.porciones + "</span>\
-                        </li>\
-                     </ul>\
-                    </div>\
-                    <div class='card-footer'>\
-                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion +"</small>\
-                        <br />\
-                    </div>\
-                        <button onclick='ampliarReceta("+ recActual.Id_receta +")' type='button' class='btn btn-primary'>Ver mas</button>\
-                        <br />\
-                    </div>\
-                ");
-                contador++;
-
-            } else {
-                RecetaReview =
-                {
-                    'Id_receta': recActual.Id_receta,
-                    'Descripcion': recActual.Descripcion,
-                    'Idioma': recActual.Idioma,
-                    'Nombre': recActual.Nombre,
-                    'imagen': recActual.imagen,
-                    'Categoria': recActual.Categoria,
-                    'puntuacion': recActual.puntuacion,
-                    'fechaPublicacion': recActual.fechaPublicacion,
-                    'tiempoPreparacion': recActual.tiempoPreparacion,
-                    'porciones': recActual.porciones
-                    }
-                RecetasConsultadas.push(RecetaReview);
-
-                $("#cardeck"+i+"").append("\
-                 <div class= 'card  animated zoomIn'>\
-                <img class='card-img-top' src='"+ recActual.imagen+"' alt='Card image cap'>\
-                    <div class='card-body'>\
-                        <h5 class='card-title'>"+ recActual.Nombre + "</h5>\
-                        <p class='card-text'>"+ recActual.Descripcion + "</p>\
-                        <h6>Categoria</h6>\
-                        <p class='card-text'>"+ recActual.Categoria + "</p>\
-                     <ul class='list-group'>\
-                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-stopwatch'></i>\
-                            Tiempo de preparacion\
-                            <span class='badge badge-primary badge-pill'>"+ recActual.tiempoPreparacion + "</span>\
-                        </li>\
-                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-globe-americas'></i>\
-                           Idioma\
-                            <span class='badge badge-primary badge-pill'>"+ recActual.Idioma + "</span>\
-                        </li>\
-                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-star-half-alt'></i>\
-                           Puntuacion\
-                            <span class='badge badge-primary badge-pill'>"+ recActual.puntuacion + "</span>\
-                        </li>\
-                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-users'></i>\
-                           No. porciones\
-                            <span class='badge badge-primary badge-pill'>"+ recActual.porciones + "</span>\
-                        </li>\
-                     </ul>\
-                    </div>\
-                    <div class='card-footer'>\
-                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ recActual.fechaPublicacion + "</small>\
-                        <br />\
-                    </div>\
-                        <button onclick='ampliarReceta("+ recActual.Id_receta +")' type='button' class='btn btn-primary'>Ver mas</button>\
-                        <br />\
-                    </div>\
-                ");
-            }
-
-            contador++;
-
-            if (pb == data.length) {
-
-                $("#modalCargando").modal("hide");
-            }
                 
         });
         
-       
+        //Paginacion
+
+        var pages = Math.ceil((numRecetas / 3));
+
+        console.log('Paginas ' + pages);
+
+        $('#pagination-container').pagination({
+            dataSource: RecetasConsultadas,
+            pageSize: 3,
+            pageNumber: pages,
+            callback: function (data, pagination) {
+                // template method of yourself
+                //var html = template(data);
+                console.log(data);
+                document.getElementById('data-container').innerHTML = "";
+
+                $("#data-container").append("\
+                 <div class= 'card  animated zoomIn'>\
+                <img class='card-img-top' src='"+ data[0].imagen + "' alt='Card image cap'>\
+                    <div class='card-body'>\
+                        <h5 class='card-title'>"+ data[0].Nombre + "</h5>\
+                        <p class='card-text'>"+ data[0].Descripcion + "</p>\
+                        <h6>Categoria</h6>\
+                        <p class='card-text'>"+ data[0].Categoria + "</p>\
+                     <ul class='list-group'>\
+                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-stopwatch'></i>\
+                            Tiempo de preparacion\
+                            <span class='badge badge-primary badge-pill'>"+ data[0].tiempoPreparacion + "</span>\
+                        </li>\
+                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-globe-americas'></i>\
+                           Idioma\
+                            <span class='badge badge-primary badge-pill'>"+ data[0].Idioma + "</span>\
+                        </li>\
+                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-star-half-alt'></i>\
+                           Puntuacion\
+                            <span class='badge badge-primary badge-pill'>"+ data[0].puntuacion + "</span>\
+                        </li>\
+                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-users'></i>\
+                           No. porciones\
+                            <span class='badge badge-primary badge-pill'>"+ data[0].porciones + "</span>\
+                        </li>\
+                     </ul>\
+                    </div>\
+                    <div class='card-footer'>\
+                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ data[0].fechaPublicacion + "</small>\
+                        <br />\
+                    </div>\
+                        <button onclick='ampliarReceta("+ data[0].Id_receta + ")' type='button' class='btn btn-primary'>Ver mas</button>\
+                        <br />\
+                    </div>\
+                ");
+
+                $("#data-container").append("\
+                 <div class= 'card  animated zoomIn'>\
+                <img class='card-img-top' src='"+ data[1].imagen + "' alt='Card image cap'>\
+                    <div class='card-body'>\
+                        <h5 class='card-title'>"+ data[1].Nombre + "</h5>\
+                        <p class='card-text'>"+ data[1].Descripcion + "</p>\
+                        <h6>Categoria</h6>\
+                        <p class='card-text'>"+ data[1].Categoria + "</p>\
+                     <ul class='list-group'>\
+                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-stopwatch'></i>\
+                            Tiempo de preparacion\
+                            <span class='badge badge-primary badge-pill'>"+ data[1].tiempoPreparacion + "</span>\
+                        </li>\
+                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-globe-americas'></i>\
+                           Idioma\
+                            <span class='badge badge-primary badge-pill'>"+ data[1].Idioma + "</span>\
+                        </li>\
+                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-star-half-alt'></i>\
+                           Puntuacion\
+                            <span class='badge badge-primary badge-pill'>"+ data[1].puntuacion + "</span>\
+                        </li>\
+                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-users'></i>\
+                           No. porciones\
+                            <span class='badge badge-primary badge-pill'>"+ data[1].porciones + "</span>\
+                        </li>\
+                     </ul>\
+                    </div>\
+                    <div class='card-footer'>\
+                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ data[1].fechaPublicacion + "</small>\
+                        <br />\
+                    </div>\
+                        <button onclick='ampliarReceta("+ data[1].Id_receta + ")' type='button' class='btn btn-primary'>Ver mas</button>\
+                        <br />\
+                    </div>\
+                ");
+
+                $("#data-container").append("\
+                 <div class= 'card  animated zoomIn'>\
+                <img class='card-img-top' src='"+ data[2].imagen + "' alt='Card image cap'>\
+                    <div class='card-body'>\
+                        <h5 class='card-title'>"+ data[2].Nombre + "</h5>\
+                        <p class='card-text'>"+ data[2].Descripcion + "</p>\
+                        <h6>Categoria</h6>\
+                        <p class='card-text'>"+ data[2].Categoria + "</p>\
+                     <ul class='list-group'>\
+                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-stopwatch'></i>\
+                            Tiempo de preparacion\
+                            <span class='badge badge-primary badge-pill'>"+ data[2].tiempoPreparacion + "</span>\
+                        </li>\
+                        <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-globe-americas'></i>\
+                           Idioma\
+                            <span class='badge badge-primary badge-pill'>"+ data[2].Idioma + "</span>\
+                        </li>\
+                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-star-half-alt'></i>\
+                           Puntuacion\
+                            <span class='badge badge-primary badge-pill'>"+ data[2].puntuacion + "</span>\
+                        </li>\
+                     <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-users'></i>\
+                           No. porciones\
+                            <span class='badge badge-primary badge-pill'>"+ data[2].porciones + "</span>\
+                        </li>\
+                     </ul>\
+                    </div>\
+                    <div class='card-footer'>\
+                        <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ data[2].fechaPublicacion + "</small>\
+                        <br />\
+                    </div>\
+                        <button onclick='ampliarReceta("+ data[2].Id_receta + ")' type='button' class='btn btn-primary'>Ver mas</button>\
+                        <br />\
+                    </div>\
+                ");
+            }
+        });
+
     });
-    paginar();
 
-}
-function paginar() {
-
-    numRecetas = RecetasConsultadas.length;
-    numPaginas = numRecetas / 3;
-    numPaginas = Math.ceil(numPaginas);
-
-    for (var k = 0; k < numPaginas; k++) {
-
-        var ruta = "feedUsuario.html?user=" + localStorage.getItem("CorreoUsuario") + "&pagina=" + k;
-        //Rellenar Botones de pagginacion
-        $('#listaBotones').append("\
-                <li class='page-item'>\
-                    <a class='page-link' href='"+ruta+"'>"+ k + "</a>\
-                </li>\
-                ");
-
-        if (k == numPaginas - 1) {
-
-            $('#listaBotones').append("\
-            <li id='siguiente' class='page-item'>\
-                <a class='page-link' href = '#' >Siguiente</a>\
-            </li>\
-                ");
-          
-        }
-    }
+   
 
 }
 
@@ -662,7 +656,7 @@ function ampliarReceta(idReceta) {
 function limpiarCampoReceta() {
 
     document.getElementById('nombreReceta').innerHTML = "";
-     document.getElementById('nombre').innerHTML = "";
+    document.getElementById('nombre').innerHTML = "";
     document.getElementById('cantidad').innerHTML = "";
     document.getElementById('unidades').innerHTML = "";
     document.getElementById('listaIdiomas').innerHTML = "";

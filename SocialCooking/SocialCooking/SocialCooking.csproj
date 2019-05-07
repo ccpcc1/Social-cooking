@@ -99,6 +99,8 @@
     <Content Include="feedUsuario.html" />
     <Content Include="js\cargarPerfil.js" />
     <Content Include="js\detalleReceta.js" />
+    <Content Include="js\jquery.bootpag.min.js" />
+    <Content Include="js\paginationjs.js" />
     <Content Include="js\receta.js" />
     <Content Include="js\imagesloaded.min.js" />
     <Content Include="js\usuario.js" />
