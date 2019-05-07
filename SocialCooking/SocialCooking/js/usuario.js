@@ -1,5 +1,6 @@
 window.onload = load;
 var usuario = new Object();
+var datosUsuario;
 usuario =
     {
         'Nombre': "",
@@ -22,8 +23,6 @@ function cargarUsuario() {
     var correo = parametro[1];
 
     $.getJSON('/api/Usuario?correo=' + correo + "&confirmacion=" + true, function (data) {
-        //console.log("Aqui se pintan los datos del usuario" + data.Nombre)
-        //alert(data.Nombre);
         document.getElementById("nombreUsuario").innerHTML = capitalizarPrimeraLetra(data.Nombre);
         document.getElementById("imagenUsuario").src = data.img;
     });
@@ -47,6 +46,7 @@ function onSignIn(googleUser) {
         }
  
     localStorage.setItem("CorreoUsuario", profile.getEmail());
+    localStorage.setItem("imgUsuario", profile.getImageUrl());
     verificarTipoUsu(profile.getEmail());
 }
 function signOut() {
