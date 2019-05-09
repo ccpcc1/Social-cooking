@@ -198,19 +198,19 @@
                     html += '<div class="paginationjs-pages">';
 
                     if (ulClassName) {
-                        html += '<ul class="' + ulClassName + '">';
+                        html += '<ul class="pagination ' + ulClassName + '">';
                     } else {
-                        html += '<ul>';
+                        html += '<ul  class="pagination">';
                     }
 
                     // Whether to display the Previous button
                     if (showPrevious) {
                         if (currentPage <= 1) {
                             if (!autoHidePrevious) {
-                                html += '<li class="' + classPrefix + '-prev ' + disableClassName + '"><a>' + prevText + '<\/a><\/li>';
+                                html += '<li class="' + classPrefix + '-prev ' + disableClassName + ' "><a class="page-link">' + prevText + '<\/a><\/li>';
                             }
                         } else {
-                            html += '<li class="' + classPrefix + '-prev J-paginationjs-previous" data-num="' + (currentPage - 1) + '" title="Previous page"><a href="' + pageLink + '">' + prevText + '<\/a><\/li>';
+                            html += '<li class="page-item ' + classPrefix + '-prev J-paginationjs-previous" data-num="' + (currentPage - 1) + '" title="Previous page"><a class="page-link" href="' + pageLink + '">' + prevText + '<\/a><\/li>';
                         }
                     }
 
@@ -219,35 +219,35 @@
                         if (rangeStart <= 3) {
                             for (i = 1; i < rangeStart; i++) {
                                 if (i == currentPage) {
-                                    html += '<li class="' + classPrefix + '-page J-paginationjs-page ' + activeClassName + '" data-num="' + i + '"><a>' + i + '<\/a><\/li>';
+                                    html += '<li  class="page-item ' + classPrefix + '-page J-paginationjs-page ' + activeClassName + '" data-num="' + i + '"><a class="page-link">' + i + '<\/a><\/li>';
                                 } else {
-                                    html += '<li class="' + classPrefix + '-page J-paginationjs-page" data-num="' + i + '"><a href="' + pageLink + '">' + i + '<\/a><\/li>';
+                                    html += '<li class="page-item"' + classPrefix + '-page J-paginationjs-page" data-num="' + i + '"><a class="page-link" href="' + pageLink + '">' + i + '<\/a><\/li>';
                                 }
                             }
                         } else {
                             if (attributes.showFirstOnEllipsisShow) {
-                                html += '<li class="' + classPrefix + '-page ' + classPrefix + '-first J-paginationjs-page" data-num="1"><a href="' + pageLink + '">1<\/a><\/li>';
+                                html += '<li class="page-item' + classPrefix + '-page ' + classPrefix + '-first J-paginationjs-page" data-num="1"><a class="page-link" href="' + pageLink + '">1<\/a><\/li>';
                             }
-                            html += '<li class="' + classPrefix + '-ellipsis ' + disableClassName + '"><a>' + ellipsisText + '<\/a><\/li>';
+                            html += '<li class="page-item' + classPrefix + '-ellipsis ' + disableClassName + '"><a class="page-link">' + ellipsisText + '<\/a><\/li>';
                         }
 
                         for (i = rangeStart; i <= rangeEnd; i++) {
                             if (i == currentPage) {
-                                html += '<li class="' + classPrefix + '-page J-paginationjs-page ' + activeClassName + '" data-num="' + i + '"><a>' + i + '<\/a><\/li>';
+                                html += '<li class="page-item' + classPrefix + '-page J-paginationjs-page ' + activeClassName + '" data-num="' + i + '"><a class="page-link">' + i + '<\/a><\/li>';
                             } else {
-                                html += '<li class="' + classPrefix + '-page J-paginationjs-page" data-num="' + i + '"><a href="' + pageLink + '">' + i + '<\/a><\/li>';
+                                html += '<li class="page-item' + classPrefix + '-page J-paginationjs-page" data-num="' + i + '"><a class="page-link" href="' + pageLink + '">' + i + '<\/a><\/li>';
                             }
                         }
 
                         if (rangeEnd >= totalPage - 2) {
                             for (i = rangeEnd + 1; i <= totalPage; i++) {
-                                html += '<li class="' + classPrefix + '-page J-paginationjs-page" data-num="' + i + '"><a href="' + pageLink + '">' + i + '<\/a><\/li>';
+                                html += '<li class="page-item' + classPrefix + '-page J-paginationjs-page" data-num="' + i + '"><a class="page-link" href="' + pageLink + '">' + i + '<\/a><\/li>';
                             }
                         } else {
-                            html += '<li class="' + classPrefix + '-ellipsis ' + disableClassName + '"><a>' + ellipsisText + '<\/a><\/li>';
+                            html += '<li class="' + classPrefix + '-ellipsis ' + disableClassName + '"><a class="page-link">' + ellipsisText + '<\/a><\/li>';
 
                             if (attributes.showLastOnEllipsisShow) {
-                                html += '<li class="' + classPrefix + '-page ' + classPrefix + '-last J-paginationjs-page" data-num="' + totalPage + '"><a href="' + pageLink + '">' + totalPage + '<\/a><\/li>';
+                                html += '<li class="' + classPrefix + '-page ' + classPrefix + '-last J-paginationjs-page" data-num="' + totalPage + '"><a class="page-link" href="' + pageLink + '">' + totalPage + '<\/a><\/li>';
                             }
                         }
                     }
@@ -256,10 +256,10 @@
                     if (showNext) {
                         if (currentPage >= totalPage) {
                             if (!autoHideNext) {
-                                html += '<li class="' + classPrefix + '-next ' + disableClassName + '"><a>' + nextText + '<\/a><\/li>';
+                                html += '<li class="' + classPrefix + '-next ' + disableClassName + '"><a class="page-link">' + nextText + '<\/a><\/li>';
                             }
                         } else {
-                            html += '<li class="' + classPrefix + '-next J-paginationjs-next" data-num="' + (currentPage + 1) + '" title="Next page"><a href="' + pageLink + '">' + nextText + '<\/a><\/li>';
+                            html += '<li class="' + classPrefix + '-next J-paginationjs-next" data-num="' + (currentPage + 1) + '" title="Next page"><a class="page-link" href="' + pageLink + '">' + nextText + '<\/a><\/li>';
                         }
                     }
                     html += '<\/ul><\/div>';
@@ -273,7 +273,7 @@
                             totalPage: totalPage,
                             totalNumber: totalNumber
                         });
-                        html += '<div class="' + classPrefix + '-nav J-paginationjs-nav">' + formattedString + '<\/div>';
+                        html += '<div class="m-auto ' + classPrefix + '-nav J-paginationjs-nav">' + formattedString + '<\/div>';
                     }
                 }
 
@@ -286,7 +286,7 @@
                             totalNumber: totalNumber,
                             input: goInput
                         });
-                        html += '<div class="' + classPrefix + '-go-input">' + formattedString + '</div>';
+                        html += '<div class="mx-auto ' + classPrefix + '-go-input">' + formattedString + '</div>';
                     }
                 }
 
@@ -299,7 +299,7 @@
                             totalNumber: totalNumber,
                             button: goButton
                         });
-                        html += '<div class="' + classPrefix + '-go-button">' + formattedString + '</div>';
+                        html += '<div class=" mx-auto' + classPrefix + '-go-button">' + formattedString + '</div>';
                     }
                 }
 

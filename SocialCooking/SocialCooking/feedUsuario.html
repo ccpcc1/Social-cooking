@@ -46,8 +46,8 @@
                     <img id="imagenUsuario" src="images/chef1.jpg" class="img-circle" style="border-radius:30px;" width="30" height="25" alt="">
                 </a>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input id="buscarReceta" class="form-control mr-sm-2" required type="search" placeholder="Buscar Pastas" aria-label="Search">
+            <form method="dialog" class="form-inline my-2 my-lg-0">
+                <input id="buscarReceta" class="form-control mr-sm-2" maxlength="256" type="search" placeholder="Buscar Pastas" aria-label="Search">
                 <button onclick="buscarxNombre()" id="btn-buscar" class="btn btn-outline-light my-2 my-sm-0" type="button">Buscar recetas por nombre</button>
             </form>
         </div>
@@ -121,12 +121,12 @@
         </div>
 
     </div>
-    <!-- Botones de navegacion -->
-    <div id="pagination-container"></div>
+
     <!-- Feed de recetas -->
     <div class="card text-center">
+   
         <div class="card-header">
-
+            <h4 class="text-success">Feed de recetas</h4>
         </div>
         <!-- Contenedor de las recetas -->
         <div id="ppal" class="card-body">
@@ -136,8 +136,9 @@
         </div>
 
         <!--Terminan recetas-->
-        <div class="card-footer text-muted">
-
+        <div class="card-footer text-muted text-center">
+            <!-- Botones de navegacion -->
+            <div class="" id="pagination-container"></div>
         </div>
     </div>
 
