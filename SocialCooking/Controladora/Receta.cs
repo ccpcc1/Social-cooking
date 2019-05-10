@@ -123,7 +123,7 @@ namespace Controladora
 
             int id = usuarioController.getIdUsuario(correo);
 
-            var query = db.Recetas.Where(x=>x.Id_usuario == id).ToList();
+            var query = db.Recetas.Where(x=>x.Id_usuario == 1248).ToList();
             
             List<EN.previewReceta> listToReturn = new List<EN.previewReceta>();
 

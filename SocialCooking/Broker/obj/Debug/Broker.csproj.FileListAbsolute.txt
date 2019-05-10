@@ -121,3 +121,4 @@ C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.cspr
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
