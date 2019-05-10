@@ -94,7 +94,9 @@ function obtenerRecetasPorUsuario(correo) {
                                   <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ data[i].fechaPublicacion + "</small>\
                                   <br />\
                               </div>\
-                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-primary'>Ver mas</button>\
+                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-primary''>Ver mas</button>\
+                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-warning'>Editar</button>\
+                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-danger''>Eliminar</button>\
                                   <br />\
                               </div>\
                           ");
@@ -136,7 +138,9 @@ function obtenerRecetasPorUsuario(correo) {
                                   <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ data[i].fechaPublicacion + "</small>\
                                   <br />\
                               </div>\
-                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-primary'>Ver mas</button>\
+                                   <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-primary''>Ver mas</button>\
+                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-warning'>Editar</button>\
+                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-danger''>Eliminar</button>\
                                   <br />\
                               </div>\
                           ");
@@ -151,4 +155,18 @@ function obtenerRecetasPorUsuario(correo) {
 
 }
 
+function eliminarReceta(idReceta) {
+
+    $.ajax({
+        url: '/api/receta/' + id,
+        type: 'DELETE',
+        success: function (data) {
+            console.log('Se elimino la receta');
+        },
+        error: function (request, message, error) {
+            handleException(request, message, error);
+        }
+    });
+
+}
 

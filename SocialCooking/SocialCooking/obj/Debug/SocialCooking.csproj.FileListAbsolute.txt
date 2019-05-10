@@ -811,40 +811,6 @@ C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\SocialCooking\obj\Debu
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.dll
 C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.pdb
 C:\Users\sebas\Desktop\Social-cooking\SocialCooking\SocialCooking\bin\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.dll.config
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.pdb
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\AutoMapper.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Broker.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Controladora.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Entidades.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\EntityFramework.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\EntityFramework.SqlServer.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Newtonsoft.Json.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Net.Http.Formatting.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Web.Http.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Web.Http.WebHost.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Broker.pdb
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Broker.dll.config
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Controladora.pdb
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Controladora.dll.config
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Entidades.pdb
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Entidades.dll.config
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\AutoMapper.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\EntityFramework.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\EntityFramework.SqlServer.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Newtonsoft.Json.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Net.Http.Formatting.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Web.Http.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Web.Http.WebHost.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\es\System.Net.Http.Formatting.resources.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\es\System.Web.Http.resources.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\es\System.Web.Http.WebHost.resources.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csprojAssemblyReference.cache
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csproj.CoreCompileInputs.cache
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csproj.CopyComplete
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.dll
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.pdb
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.dll.config
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.dll
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.pdb
@@ -879,3 +845,37 @@ C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\obj\Debug\Soci
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csproj.CopyComplete
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.dll
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.dll.config
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\SocialCooking.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\AutoMapper.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Broker.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Controladora.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Entidades.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\EntityFramework.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\EntityFramework.SqlServer.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Newtonsoft.Json.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Net.Http.Formatting.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Web.Http.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Web.Http.WebHost.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Broker.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Broker.dll.config
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Controladora.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Controladora.dll.config
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Entidades.pdb
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Entidades.dll.config
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\AutoMapper.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\EntityFramework.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\EntityFramework.SqlServer.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\Newtonsoft.Json.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Net.Http.Formatting.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Web.Http.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\System.Web.Http.WebHost.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\es\System.Net.Http.Formatting.resources.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\es\System.Web.Http.resources.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\bin\es\System.Web.Http.WebHost.resources.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csprojAssemblyReference.cache
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csproj.CoreCompileInputs.cache
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.csproj.CopyComplete
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.dll
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\SocialCooking\obj\Debug\SocialCooking.pdb

@@ -62,11 +62,12 @@ namespace SocialCooking.Controllers
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int idreceta)
+        [HttpDelete]
+        public void Delete(int id)
         {
             CT.Receta recetaController = new CT.Receta();
 
-            recetaController.deleteReceta(idreceta);
+            recetaController.deleteReceta(id);
         }
     }
 }

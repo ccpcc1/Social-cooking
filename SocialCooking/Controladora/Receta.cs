@@ -123,7 +123,7 @@ namespace Controladora
 
             int id = usuarioController.getIdUsuario(correo);
 
-            var query = db.Recetas.Where(x=>x.Id_usuario == 1248).ToList();
+            var query = db.Recetas.Where(x=>x.Id_usuario == id).ToList();
             
             List<EN.previewReceta> listToReturn = new List<EN.previewReceta>();
 
@@ -133,7 +133,7 @@ namespace Controladora
                 pr.Categoria = categoriasController.getNombreCategoria(receta.Id_categoria);
                 pr.Descripcion = receta.Descripcion;
                 pr.fechaPublicacion = receta.fechaPublicacion.ToString();
-                pr.Idioma = "Coma mierda";
+                pr.Idioma = receta.Idiomas;
                 pr.Id_receta = receta.Id_receta;
                 if (receta.imagenesxReceta.ToList().Count == 0)
                 {
@@ -323,10 +323,10 @@ namespace Controladora
         public int deleteReceta(int IdReceta)
         {
 
-            var query = db.Recetas.Where(x => x.Id_receta == IdReceta);
+            BR.Recetas query = db.Recetas.Where(x => x.Id_receta == IdReceta).FirstOrDefault();
             if (query != null)
             {
-                db.Recetas.Remove((BR.Recetas)query);
+                db.Recetas.Remove(query);
                 db.SaveChanges();
                 return 1;
             }
