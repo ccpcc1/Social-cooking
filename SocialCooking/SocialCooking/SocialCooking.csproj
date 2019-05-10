@@ -94,12 +94,14 @@
     <Content Include="css\EstilosFeed.css" />
     <Content Include="css\estilosPropios.css" />
     <Content Include="detalleReceta.html" />
+    <Content Include="misRecetas.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="feedUsuario.html" />
     <Content Include="js\cargarPerfil.js" />
     <Content Include="js\detalleReceta.js" />
     <Content Include="js\jquery.bootpag.min.js" />
+    <Content Include="js\misRecetas.js" />
     <Content Include="js\paginationjs.js" />
     <Content Include="js\receta.js" />
     <Content Include="js\imagesloaded.min.js" />
@@ -110,6 +112,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ComentariosController.cs" />
     <Compile Include="Controllers\FileUploadController.cs" />
+    <Compile Include="Controllers\misRecetasController.cs" />
     <Compile Include="Controllers\PuntuarController.cs" />
     <Compile Include="Controllers\recetaController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
@@ -121,6 +124,8 @@
   <ItemGroup>
     <Fakes Include="Fakes\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.fakes" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\socialCookingWeb - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\socialCookingWeb - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

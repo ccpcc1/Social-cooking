@@ -25,11 +25,12 @@ namespace SocialCooking.Controllers
             CT.Receta recetaController = new CT.Receta();
 
             return recetaController.getReceta(id);
+
+
         }
 
-
-        //buscar la receta por categoria
-        public List<EN.previewReceta> Get(String categoria)
+    //buscar la receta por categoria
+    public List<EN.previewReceta> Get(String categoria)
         {
             CT.Receta recetaController = new CT.Receta();
 

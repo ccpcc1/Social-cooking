@@ -38,7 +38,7 @@ namespace Controladora
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
             return resultado;

@@ -118,6 +118,41 @@ namespace Controladora
             return resultado;
         }
 
+        //Obtener las recetas de un usuario especifco
+        public List<EN.previewReceta> obtenerRecetasPorUsuario(string correo) {
+
+            int id = usuarioController.getIdUsuario(correo);
+
+            var query = db.Recetas.Where(x=>x.Id_usuario == id).ToList();
+            
+            List<EN.previewReceta> listToReturn = new List<EN.previewReceta>();
+
+            foreach (var receta in query)
+            {
+                EN.previewReceta pr = new EN.previewReceta();
+                pr.Categoria = categoriasController.getNombreCategoria(receta.Id_categoria);
+                pr.Descripcion = receta.Descripcion;
+                pr.fechaPublicacion = receta.fechaPublicacion.ToString();
+                pr.Idioma = "Coma mierda";
+                pr.Id_receta = receta.Id_receta;
+                if (receta.imagenesxReceta.ToList().Count == 0)
+                {
+                    pr.imagen = "images/imagen-no-disponible.jpg";
+                }
+                else
+                {
+                    pr.imagen = receta.imagenesxReceta.ToList().First().ImagePath;
+                }
+
+                pr.Nombre = receta.Nombre;
+                pr.porciones = Convert.ToInt32(receta.porciones);
+                pr.puntuacion = receta.puntuacion;
+                pr.tiempoPreparacion = receta.tiempoPreparacion;
+                listToReturn.Add(pr);
+            }
+            return listToReturn;
+        }
+
         //Metodo que devuelve todas las recetas de tipo EN.Receta
         public List<EN.Receta> getRecetas()
         {
@@ -310,7 +345,5 @@ namespace Controladora
             recetaPuntuada.nopuntuaciones += 1;
             db.SaveChanges();
         }
-
-
     }
 }
