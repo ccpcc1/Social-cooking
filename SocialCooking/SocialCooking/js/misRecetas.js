@@ -96,7 +96,7 @@ function obtenerRecetasPorUsuario(correo) {
                               </div>\
                                   <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-primary''>Ver mas</button>\
                                   <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-warning'>Editar</button>\
-                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-danger''>Eliminar</button>\
+                                  <button onclick='eliminarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-danger''>Eliminar</button>\
                                   <br />\
                               </div>\
                           ");
@@ -140,7 +140,7 @@ function obtenerRecetasPorUsuario(correo) {
                               </div>\
                                    <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-primary''>Ver mas</button>\
                                   <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-warning'>Editar</button>\
-                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-danger''>Eliminar</button>\
+                                  <button onclick='eliminarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-danger''>Eliminar</button>\
                                   <br />\
                               </div>\
                           ");
@@ -158,7 +158,7 @@ function obtenerRecetasPorUsuario(correo) {
 function eliminarReceta(idReceta) {
 
     $.ajax({
-        url: '/api/receta/' + id,
+        url: '/api/receta/' + idReceta,
         type: 'DELETE',
         success: function (data) {
             console.log('Se elimino la receta');
