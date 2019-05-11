@@ -94,6 +94,8 @@
     <Content Include="css\EstilosFeed.css" />
     <Content Include="css\estilosPropios.css" />
     <Content Include="detalleReceta.html" />
+    <Content Include="js\bootbox.js" />
+    <Content Include="js\popper.min.js" />
     <Content Include="misRecetas.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />

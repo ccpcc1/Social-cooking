@@ -322,10 +322,31 @@ namespace Controladora
 
         public int deleteReceta(int IdReceta)
         {
-
+            ///Receta a elminar
             BR.Recetas query = db.Recetas.Where(x => x.Id_receta == IdReceta).FirstOrDefault();
+            List<BR.imagenesxReceta> imagenes = db.imagenesxReceta.Where(x=> x.Id_receta == IdReceta).ToList();
+            List<BR.recetasxIngredientes> ingredientesxReceta = db.recetasxIngredientes.Where(x => x.Id_receta == IdReceta).ToList();
+
             if (query != null)
             {
+                //Eliminar ingredientes
+                foreach (BR.recetasxIngredientes item in ingredientesxReceta)
+                {
+                    BR.Ingredientes ingrediente = db.Ingredientes.Where(x=>x.Id_ingrediente == item.Id_ingredientes).FirstOrDefault();
+                    db.Ingredientes.Remove(ingrediente);
+                    db.recetasxIngredientes.Remove(item);
+                    db.SaveChanges();
+                }
+                //Eliminar imagenes
+                foreach (BR.imagenesxReceta item in imagenes)
+                {
+                    db.imagenesxReceta.Remove(item);
+                    db.SaveChanges();
+                }
+
+                //Eliminar comentarios
+
+                //Eliminar receta
                 db.Recetas.Remove(query);
                 db.SaveChanges();
                 return 1;

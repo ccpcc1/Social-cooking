@@ -13,6 +13,7 @@ function load() {
     cargarUsuario();
     obtenerRecetasPorUsuario(correoUsuario);
 }
+
 function obtenerRecetasPorUsuario(correo) {
 
     $.getJSON('/api/misRecetas?correo=' + correo, function (data) {
@@ -108,40 +109,42 @@ function obtenerRecetasPorUsuario(correo) {
                     for (var i = 0; i < 3; i++) {
 
                         $("#data-container").append("\
-                           <div class= 'card  animated zoomIn'>\
+                           <div class= 'card card text-white bg-dark mb-3  animated zoomIn'>\
                           <img class='card-img-top' src='"+ data[i].imagen + "' alt='Card image cap'>\
                               <div class='card-body'>\
                                   <h5 class='card-title'>"+ data[i].Nombre + "</h5>\
                                   <p class='card-text'>"+ data[i].Descripcion + "</p>\
                                   <h6>Categoria</h6>\
                                   <p class='card-text'>"+ data[i].Categoria + "</p>\
-                               <ul class='list-group'>\
-                                  <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-stopwatch'></i>\
+                               <ul class='list-group text-light'>\
+                                  <li class='list-group-item list-group-item-dark d-flex justify-content-between align-items-center'><i class='fas fa-stopwatch'></i>\
                                       Tiempo de preparacion\
                                       <span class='badge badge-primary badge-pill'>"+ data[i].tiempoPreparacion + "</span>\
                                   </li>\
-                                  <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-globe-americas'></i>\
+                                  <li class='list-group-item list-group-item-dark d-flex justify-content-between align-items-center'><i class='fas fa-globe-americas'></i>\
                                      Idioma\
                                       <span class='badge badge-primary badge-pill'>"+ data[i].Idioma + "</span>\
                                   </li>\
-                               <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-star-half-alt'></i>\
+                               <li class='list-group-item list-group-item-dark d-flex justify-content-between align-items-center'><i class='fas fa-star-half-alt'></i>\
                                      Puntuacion\
                                       <span class='badge badge-primary badge-pill'>"+ data[i].puntuacion + "</span>\
                                   </li>\
-                               <li class='list-group-item list-group-item-warning d-flex justify-content-between align-items-center'><i class='fas fa-users'></i>\
+                               <li class='list-group-item list-group-item-dark d-flex justify-content-between align-items-center'><i class='fas fa-users'></i>\
                                      No. porciones\
                                       <span class='badge badge-primary badge-pill'>"+ data[i].porciones + "</span>\
                                   </li>\
                                </ul>\
                               </div>\
                               <div class='card-footer'>\
-                                  <small class='text-muted'><i class='fas fa-calendar-alt'></i>Fecha "+ data[i].fechaPublicacion + "</small>\
+                                  <small class='text-light'><i class='fas fa-calendar-alt'></i>Fecha "+ data[i].fechaPublicacion + "</small>\
                                   <br />\
-                              </div>\
-                                   <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-primary''>Ver mas</button>\
-                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-warning'>Editar</button>\
-                                  <button onclick='eliminarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-danger''>Eliminar</button>\
-                                  <br />\
+                               </div>\
+                               <div class='btn-group py-2 px-3'>\
+                                   <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-primary'><i class='fas fa-info-circle'></i></button>\
+                                   <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-warning'><i class='far fa-edit'></i></button>\
+                                   <button onclick='eliminarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-danger'> <i class='far fa-trash-alt'></i></button >\
+                               </div>\
+                                  <br/>\
                               </div>\
                           ");
                     }
@@ -157,16 +160,45 @@ function obtenerRecetasPorUsuario(correo) {
 
 function eliminarReceta(idReceta) {
 
-    $.ajax({
-        url: '/api/receta/' + idReceta,
-        type: 'DELETE',
-        success: function (data) {
-            console.log('Se elimino la receta');
+    //Usando bootbox para confirmar la eliminacion
+
+    bootbox.confirm({
+        message: "¿Esta seguro de eliminar la receta?",
+        buttons: {
+            confirm: {
+                label: 'Si, estoy seguro',
+                className: 'btn-success'
+            },
+            cancel: {
+                label: 'No, no lo estoy',
+                className: 'btn-danger'
+            }
         },
-        error: function (request, message, error) {
-            handleException(request, message, error);
+        callback: function (result) {
+            console.log('This was logged in the callback: ' + result);
+
+            //Si presionamos si se elimina la receta
+            if (result===true) {
+
+                $.ajax({
+                    url: '/api/receta/' + idReceta,
+                    type: 'DELETE',
+                    success: function (data) {
+                        bootbox.alert({
+                            title: "Se elimino tu receta, nos lamenta saberlo!",
+                            className: 'rubberBand animated',
+                            message: "<span style='font-size: 100px; color: Dodgerblue;'><i class='far fa-sad-tear'></i></span> Te invitamos a compartir mas recetas, esta es la manera mas facil de contribuir"
+                        });
+                    },
+                    error: function (request, message, error) {
+                        handleException(request, message, error);
+                    }
+                });
+            }
         }
     });
+
+   
 
 }
 

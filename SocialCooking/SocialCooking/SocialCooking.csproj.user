@@ -19,6 +19,7 @@
     <WebStackScaffolding_DbContextTypeFullName>Broker.SocialCookingEntities1</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <NameOfLastUsedPublishProfile>socialCookingWeb - Web Deploy</NameOfLastUsedPublishProfile>
+    <ActiveDebugTarget />
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
