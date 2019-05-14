@@ -16,6 +16,12 @@ function load() {
 
 function obtenerRecetasPorUsuario(correo) {
 
+    //Cargando...
+    var dialog = bootbox.dialog({
+        message: '<p class="text-center mb-0"><i class="fas fa-sync fa-spin px-3"></i>Espera mientras cargamos tus recetas...</p>',
+        closeButton: false
+    });
+
     $.getJSON('/api/misRecetas?correo=' + correo, function (data) {
         var RecetaReview = new Object();
         $.each(data, function (recetaobtenidas, recActual) {
@@ -153,7 +159,7 @@ function obtenerRecetasPorUsuario(correo) {
 
             }
         });
-
+        dialog.modal('hide');
     });
 
 }
@@ -175,25 +181,29 @@ function eliminarReceta(idReceta) {
             }
         },
         callback: function (result) {
-            console.log('This was logged in the callback: ' + result);
 
             //Si presionamos si se elimina la receta
-            if (result===true) {
+            if (result === true) {
+
+                var dialog;
 
                 $.ajax({
                     url: '/api/receta/' + idReceta,
                     type: 'DELETE',
                     success: function (data) {
-                        bootbox.alert({
-                            title: "Se elimino tu receta, nos lamenta saberlo!",
-                            className: 'rubberBand animated',
-                            message: "<span style='font-size: 100px; color: Dodgerblue;'><i class='far fa-sad-tear'></i></span> Te invitamos a compartir mas recetas, esta es la manera mas facil de contribuir"
-                        });
+                       
+
+                        obtenerRecetasPorUsuario(correoUsuario);
+
+                       
+                       
                     },
                     error: function (request, message, error) {
                         handleException(request, message, error);
                     }
                 });
+
+              
             }
         }
     });

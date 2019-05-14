@@ -493,13 +493,15 @@ function recetaRandom() {
 
 function getAllRecetas() {
 
-    var progressBar = document.getElementById("progresBar");
-    progressBar.style.width = "5%";
-    progressBar.style.width = "10%";
-    $("#modalCargando").modal({ backdrop: true });
+    //Cargando...
+    var dialog = bootbox.dialog({
+        message: '<p class="text-center mb-0"><i class="fas fa-sync fa-spin px-3"></i>Espera mientras cargamos la recetas...</p>',
+        closeButton: false
+    });
 
     $.getJSON('/api/receta', function (data) {
         var RecetaReview = new Object();
+        
         $.each(data, function (recetaobtenidas, recActual) {
       
                 RecetaReview =
@@ -519,7 +521,6 @@ function getAllRecetas() {
                 
         });
 
-     
         var pages = Math.ceil((numRecetas / 3));
 
         //Paginacion
@@ -626,8 +627,9 @@ function getAllRecetas() {
                 }
             }
         });
-       
+        dialog.modal('hide');
     });
+   
 
 }
 
