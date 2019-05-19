@@ -142,9 +142,6 @@ function agregarCampos() {
     inputNombre.setAttribute("max", "256");
 
 
-
-
-
     inputNombre.setAttribute("id", "campoNombre" + identificador);
     document.getElementById("nombre").appendChild(inputNombre);
 
