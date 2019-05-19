@@ -1,8 +1,7 @@
 ﻿
 window.onload = function () {
-    console.log("Cargado detalleReceta.js");
+
     cargarRecetaId();
-    $('#table_id').DataTable();
 };
 
 function cargarRecetaId() {

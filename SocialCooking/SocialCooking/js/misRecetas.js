@@ -10,7 +10,6 @@ function load() {
     document.getElementById('compartirReceta').setAttribute('href', "compartirReceta.html?user=" + localStorage.getItem("CorreoUsuario"));
     parametro = window.location.search.substr('?').split('=');
     correoUsuario = parametro[1];
-    cargarUsuario();
     obtenerRecetasPorUsuario(correoUsuario);
 }
 
@@ -147,7 +146,7 @@ function obtenerRecetasPorUsuario(correo) {
                                </div>\
                                <div class='btn-group py-2 px-3'>\
                                    <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-primary'><i class='fas fa-info-circle'></i></button>\
-                                   <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-warning'><i class='far fa-edit'></i></button>\
+                                   <button onclick='editarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-warning'><i class='far fa-edit'></i></button>\
                                    <button onclick='eliminarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-danger'> <i class='far fa-trash-alt'></i></button >\
                                </div>\
                                   <br/>\
@@ -191,11 +190,8 @@ function eliminarReceta(idReceta) {
                     url: '/api/receta/' + idReceta,
                     type: 'DELETE',
                     success: function (data) {
-                       
 
                         obtenerRecetasPorUsuario(correoUsuario);
-
-                       
                        
                     },
                     error: function (request, message, error) {
@@ -211,4 +207,18 @@ function eliminarReceta(idReceta) {
    
 
 }
+
+function ampliarReceta(idReceta) {
+
+    var correo = localStorage.getItem("CorreoUsuario");
+
+    window.location = "detalleReceta.html?user=" + correo+"&id="+ idReceta;
+}
+
+function editarReceta(idReceta) {
+
+    var correo = localStorage.getItem("CorreoUsuario");
+    window.location = "editarReceta.html?user=" + correo + "&id=" + idReceta;
+}
+
 
