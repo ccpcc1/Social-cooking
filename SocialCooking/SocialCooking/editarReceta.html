@@ -131,6 +131,9 @@
                                     <label for="exampleFormControlTextarea1" class="alinear">Paso a Paso</label>
                                     <textarea maxlength="999" class="form-control" id="pasosReceta" rows="3" required></textarea>
                                 </div>
+                                <!-- Imagenes -->
+                                <div id="imagenesContainer" class="row mx-auto py-5">
+                                </div>
                                 <!-- obtener imagenes -->
                                 <div class="form-group col-md-12">
                                     <label for="exampleFormControlFile1" class="ali">Imágenes</label>
@@ -140,9 +143,10 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Parte final del formulario -->
                         <div class="modal-footer mx-auto" id="finalFormulario">
-                            <button type="submit" class="btn btn-primary" id="btnEditarReceta" onclick="editarReceta()">Agregar Receta</button>
+                            <button type="submit" class="btn btn-primary" id="btnEditarReceta" onclick="editarReceta()">Actualizar Receta</button>
                             <button type="submit" class="btn btn-danger" id="btnCandelar" onclick="">Cancelar</button>
                         </div>
                     </div>
@@ -167,24 +171,15 @@
             </div>
 
         </div>
-        <!-- Termina panel superior -->
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="js/usuario.js"></script>
+        <script src="js/receta.js"></script>
         <script src="js/editarReceta.js"></script>
-        <script>
-            var parametro = window.location.search.substr('?').split('=');
-            var correo = parametro[1];
-
-            console.log(parametro);
-            $.getJSON('/api/Usuario?correo=' + correo + "&confirmacion=" + true, function (data) {
-                document.getElementById("nombreUsuario").innerHTML = capitalizarPrimeraLetra(data.Nombre);
-                document.getElementById("imagenUsuario").src = data.img;
-            });
-        </script>
 
 </body>
 </html>

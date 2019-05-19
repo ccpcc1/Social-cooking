@@ -1,13 +1,31 @@
 ﻿
 window.onload = function () {
-
-    cargarRecetaId();
+    var parametros = obtenerURL();
+    var id = parametros['id'];
+    cargarRecetaId(id);
 };
 
-function cargarRecetaId() {
 
-    var parametro = window.location.search.substr('?').split('=');
-    var idReceta = parametro[1];
+function obtenerURL() {
+    // capturamos la url
+    var loc = document.location.href;
+    // si existe el interrogante
+    if (loc.indexOf('?') > 0) {
+        // cogemos la parte de la url que hay despues del interrogante
+        var getString = loc.split('?')[1];
+        // obtenemos un array con cada clave=valor
+        var GET = getString.split('&');
+        var get = {};
+        // recorremos todo el array de valores
+        for (var i = 0, l = GET.length; i < l; i++) {
+            var tmp = GET[i].split('=');
+            get[tmp[0]] = unescape(decodeURI(tmp[1]));
+        }
+        return get;
+    }
+}
+
+function cargarRecetaId(idReceta) {
 
     $.getJSON('/api/receta?id=' + idReceta, function (data) {
         console.log(data);

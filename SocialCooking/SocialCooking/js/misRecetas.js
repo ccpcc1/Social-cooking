@@ -70,7 +70,7 @@ function obtenerRecetasPorUsuario(correo) {
                     for (var i = 0; i < UltimosRegistros-1; i++) {
 
                         $("#data-container").append("\
-                           <div class= 'card  animated zoomIn'>\
+                           <div class= 'card  animated slideInRight'>\
                           <img class='card-img-top' src='"+ data[i].imagen + "' alt='Card image cap'>\
                               <div class='card-body'>\
                                   <h5 class='card-title'>"+ data[i].Nombre + "</h5>\
@@ -114,7 +114,7 @@ function obtenerRecetasPorUsuario(correo) {
                     for (var i = 0; i < 3; i++) {
 
                         $("#data-container").append("\
-                           <div class= 'card card text-white bg-dark mb-3  animated zoomIn'>\
+                           <div class= 'card card text-white bg-dark mb-3  animated  slideInRight'>\
                           <img class='card-img-top' src='"+ data[i].imagen + "' alt='Card image cap'>\
                               <div class='card-body'>\
                                   <h5 class='card-title'>"+ data[i].Nombre + "</h5>\
@@ -211,7 +211,6 @@ function eliminarReceta(idReceta) {
 function ampliarReceta(idReceta) {
 
     var correo = localStorage.getItem("CorreoUsuario");
-
     window.location = "detalleReceta.html?user=" + correo+"&id="+ idReceta;
 }
 

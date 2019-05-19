@@ -21,8 +21,6 @@ var numRecetas =0;
 window.onload = load;
 
 function load() {
-
-    console.log("Documento recetas.js cargado");
     document.getElementById("files").addEventListener("change", guardarImagenes);
 
 }
@@ -189,8 +187,8 @@ function eliminarCampos() {
   list = document.getElementById("cantidad");
   list.removeChild(list.childNodes[contador-1]);
 
-   list = document.getElementById("unidades");
-   list.removeChild(list.childNodes[contador - 1]);
+  list = document.getElementById("unidades");
+  list.removeChild(list.childNodes[contador - 1]);
 
   identificador--;
  
@@ -546,7 +544,7 @@ function getAllRecetas() {
                     for (var i = 0; i < UltimosRegistros - 1; i++) {
 
                         $("#data-container").append("\
-                           <div class= 'card  animated zoomIn'>\
+                           <div class= 'card  animated slideInRight'>\
                           <img class='card-img-top' src='"+ data[i].imagen + "' alt='Card image cap'>\
                               <div class='card-body'>\
                                   <h5 class='card-title'>"+ data[i].Nombre + "</h5>\
@@ -588,7 +586,7 @@ function getAllRecetas() {
                     for (var i = 0; i < 3; i++) {
 
                         $("#data-container").append("\
-                           <div class= 'card  animated zoomIn'>\
+                           <div class= 'card  animated slideInRight'>\
                           <img class='card-img-top' src='"+ data[i].imagen + "' alt='Card image cap'>\
                               <div class='card-body'>\
                                   <h5 class='card-title'>"+ data[i].Nombre + "</h5>\
