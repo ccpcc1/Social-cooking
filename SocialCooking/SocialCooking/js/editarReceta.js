@@ -7,7 +7,14 @@ var br2;
 var br3;
 var inputNombre;
 var inputCantidad;
+var dialog;
+
 window.onload = function () {
+    //Cargando...
+    dialog = bootbox.dialog({
+        message: '<p class="text-center mb-0"><i class="fas fa-sync fa-spin px-3"></i>Cargando receta para editar</p>',
+        closeButton: false
+    });
     var parametros = obtenerURL();
     var id = parametros['id'];
     var correo = parametros['user'];
@@ -36,9 +43,10 @@ function obtenerURL() {
 
 function cargarRecetaId(idReceta) {
 
-    
 
     $.getJSON('/api/receta?id=' + idReceta, function (data) {
+
+       
 
         $('#nombreReceta').val(data.Nombre);
         $('#listaIdiomas').val(data.Idioma);
@@ -72,7 +80,7 @@ function cargarRecetaId(idReceta) {
         }
 
  
-
+        dialog.modal('hide');
 
     });
 

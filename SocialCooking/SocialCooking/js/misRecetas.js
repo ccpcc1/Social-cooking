@@ -101,7 +101,7 @@ function obtenerRecetasPorUsuario(correo) {
                                   <br />\
                               </div>\
                                   <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-primary''>Ver mas</button>\
-                                  <button onclick='ampliarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-warning'>Editar</button>\
+                                  <button onclick='editarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-warning'>Editar</button>\
                                   <button onclick='eliminarReceta("+ data[i].Id_receta + ")' type='button' class='btn btn-danger''>Eliminar</button>\
                                   <br />\
                               </div>\

@@ -630,8 +630,8 @@ function getAllRecetas() {
 
 function ampliarReceta(idReceta) {
 
-    console.log(idReceta);
-    window.location = "detalleReceta.html?id=" + idReceta;
+    var correo = localStorage.getItem("CorreoUsuario");
+    window.location = "detalleReceta.html?user=" + correo + "&id=" + idReceta;
 }
 
 function limpiarCampoReceta() {

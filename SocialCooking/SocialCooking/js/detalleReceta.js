@@ -1,5 +1,10 @@
-﻿
+﻿var dialog;
 window.onload = function () {
+    //Cargando...
+    dialog = bootbox.dialog({
+        message: '<p class="text-center mb-0"><i class="fas fa-sync fa-spin px-3"></i>Cargando receta</p>',
+        closeButton: false
+    });
     var parametros = obtenerURL();
     var id = parametros['id'];
     cargarRecetaId(id);
@@ -27,8 +32,8 @@ function obtenerURL() {
 
 function cargarRecetaId(idReceta) {
 
+   
     $.getJSON('/api/receta?id=' + idReceta, function (data) {
-        console.log(data);
 
         if (data.imagenes[0] == undefined) {
             document.getElementById('imagen').setAttribute("src", "images/imagen-no-disponible.jpg");
@@ -86,7 +91,10 @@ function cargarRecetaId(idReceta) {
                 </div>");
 
         }
+        document.getElementById("contenedorReceta").style.display = "";
+        dialog.modal('hide');
     });
 
+    
 
 }
