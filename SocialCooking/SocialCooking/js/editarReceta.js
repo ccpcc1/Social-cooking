@@ -8,6 +8,9 @@ var br3;
 var inputNombre;
 var inputCantidad;
 var dialog;
+var imagenes = [];
+var id;
+var recetaEditada = new Object();
 
 window.onload = function () {
     //Cargando...
@@ -16,7 +19,7 @@ window.onload = function () {
         closeButton: false
     });
     var parametros = obtenerURL();
-    var id = parametros['id'];
+    id = parametros['id'];
     var correo = parametros['user'];
     cargarUsuario(correo);
     cargarRecetaId(id);
@@ -38,6 +41,51 @@ function obtenerURL() {
             get[tmp[0]] = unescape(decodeURI(tmp[1]));
         }
         return get;
+    }
+}
+
+function guardarImagenes(e) {
+
+    var files = e.target.files;
+
+    if (window.FormData !== undefined) {
+
+        var img = new FormData();
+
+        for (var x = 0; x < files.length; x++) {
+            console.log(files[x]);
+            img.append("file" + x, files[x]);
+        }
+
+
+        $.ajax({
+            type: "POST",
+            url: '/api/FileUpload/',
+            contentType: false,
+            processData: false,
+            data: img,
+            success: function (result) {
+                console.log("Se guardaron las imagenes");
+
+                //Annadimos las imagenes al arreglo de imagenes
+                for (var i = 0; i < result.length; i++) {
+
+                    imagenes.push(result[i]);
+                }
+
+            },
+            error: function (xhr, status, p3, p4) {
+                var err = "Error " + " " + status + " " + p3 + " " + p4;
+                if (xhr.responseText && xhr.responseText[0] == "{")
+                    err = JSON.parse(xhr.responseText).Message;
+                console.log(err);
+                alert("No se pudieron guardar las imagenes");
+            }
+        });
+
+    } else {
+
+        alert("Este navegador no permite subir archivos");
     }
 }
 
@@ -83,6 +131,149 @@ function cargarRecetaId(idReceta) {
         dialog.modal('hide');
 
     });
+
+}
+
+function editarReceta() {
+    var ingredientes = [];
+    var img = [];
+    var nombreReceta = document.getElementById('nombreReceta');
+    var ingrediente = document.getElementById('nombre');
+    var cantidadIngrediente = document.getElementById('cantidad');
+    var unidades = document.getElementById('unidades');
+    var idiomas = document.getElementById('listaIdiomas');
+    var descripcion = document.getElementById('descripcionReceta');
+    var pasoApaso = document.getElementById('pasosReceta');
+    var categoria = document.getElementById('listaCategorias');
+    horas = document.getElementById('hrs');
+    minutos = document.getElementById('mnts');
+    porciones = document.getElementById('porciones');
+    ingredientes[0] = { ingrediente: "", cantidad: "" };
+    ingredientes[0].ingrediente = document.getElementById('nombre').value;
+    ingredientes[0].cantidad = document.getElementById('cantidad').value;
+    var j = 0;
+    var i;
+
+    if (ingrediente != null) {
+        for (i = 1; i < ingrediente.childNodes.length; i += 2) {
+            ingredientes[j] = { ingrediente: "", cantidad: "", unidades: "" };
+            ingredientes[j].ingrediente = ingrediente.childNodes[i].value;
+            ingredientes[j].cantidad = cantidadIngrediente.childNodes[i].value;
+            ingredientes[j].unidades = unidades.childNodes[i].value;
+            j++;
+        }
+    }
+
+
+    recetaEditada =
+        {
+            'Id_receta': id,
+            'Nombre': nombreReceta.value,
+            'correo_usu': localStorage.getItem("CorreoUsuario").toString(),
+            'ingrediente': ingredientes,
+            'Idioma': idiomas.value,
+            'Descripcion': descripcion.value,
+            'PasoApaso': pasoApaso.value,
+            'Categoria': categoria.value,
+            'imagenes': imagenes,
+            'tiempoPreparacion': horas.value + " hrs y " + minutos.value + " minutos",
+            'porciones': porciones.value
+        };
+    ActualizarReceta();
+}
+
+
+function ActualizarReceta()
+{
+    recetaEditada = JSON.stringify(recetaEditada);
+    $.ajax({
+        url: "/api/receta",
+        type: 'PUT',
+        contentType: 'application/json;charset=utf-8',
+        dataType: 'json',
+        data:recetaEditada,
+        success: function (recetaEditada) {
+            $("#modalReceta").modal();
+            limpiarCampoReceta();
+        },
+        error: function (request, message, error) {
+
+            alert("Receta no agregada, intente de nuevo");
+        }
+    });
+
+}
+
+function agregarCamposNuevos() {
+
+    if (instanciar === true) {
+        div1 = document.createElement("DIV");
+        div1.setAttribute("class", "form-group col-md-6");
+        div1.setAttribute("id", "nombre");
+        document.getElementById("Ingredientes").appendChild(div1);
+
+        div2 = document.createElement("DIV");
+        div2.setAttribute("class", "form-group col-md-3");
+        div2.setAttribute("id", "cantidad");
+        document.getElementById("Ingredientes").appendChild(div2);
+
+        var unidades = document.createElement("div");
+        unidades.setAttribute("class", "form-group col-md-3");
+        unidades.setAttribute("id", "unidades");
+        document.getElementById("Ingredientes").appendChild(unidades);
+        instanciar = false;
+    }
+
+    //Agregar espacios entre cada campo.
+    br1 = document.createElement("BR");
+    document.getElementById("nombre").appendChild(br1);
+
+    br2 = document.createElement("BR");
+    document.getElementById("cantidad").appendChild(br2);
+
+    br3 = document.createElement("BR");
+    document.getElementById("unidades").appendChild(br3);
+
+
+
+    //Agregar atributos a cada campo
+    //Input nombre
+    inputNombre = document.createElement("INPUT");
+    inputNombre.setAttribute("type", "text");
+    inputNombre.setAttribute("placeholder", "Nombre ingrediente");
+    inputNombre.setAttribute("class", "form-control");
+    inputNombre.setAttribute("required", "required");
+    inputNombre.setAttribute("max", "256");
+
+
+    inputNombre.setAttribute("id", "campoNombre" + identificador);
+    document.getElementById("nombre").appendChild(inputNombre);
+
+    //Input cantidad
+    inputCantidad = document.createElement("INPUT");
+    inputCantidad.setAttribute("type", "number");
+    inputCantidad.setAttribute("placeholder", "Cantidad");
+    inputCantidad.setAttribute("class", "form-control");
+    inputCantidad.setAttribute("required", "required");
+    inputCantidad.setAttribute("min", "1");
+    inputCantidad.setAttribute("id", "campoCantidad" + identificador);
+    document.getElementById("cantidad").appendChild(inputCantidad);
+
+    //Input unidad
+    var optionUnidades = document.createElement("select");
+    optionUnidades.setAttribute("class", "form-control");
+    optionUnidades.setAttribute("required", "required");
+
+
+    optionUnidades.setAttribute("id", "optionUnidades" + identificador);
+    document.getElementById("unidades").appendChild(optionUnidades);
+
+    var idoptUnidades = "optionUnidades" + identificador;
+    var opts = document.getElementById(idoptUnidades);
+    //Lenar los options
+    addOptions(opts);
+    //Se incrementa el numero de elementos creado
+    identificador++;
 
 }
 

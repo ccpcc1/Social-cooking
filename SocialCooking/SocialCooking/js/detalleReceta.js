@@ -28,7 +28,11 @@ function obtenerURL() {
         }
         return get;
     }
+
 }
+
+
+
 
 function cargarRecetaId(idReceta) {
 
@@ -94,6 +98,8 @@ function cargarRecetaId(idReceta) {
         document.getElementById("contenedorReceta").style.display = "";
         dialog.modal('hide');
     });
+
+
 
     
 

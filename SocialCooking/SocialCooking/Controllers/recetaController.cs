@@ -29,8 +29,8 @@ namespace SocialCooking.Controllers
 
         }
 
-    //buscar la receta por categoria
-    public List<EN.previewReceta> Get(String categoria)
+        //buscar la receta por categoria
+        public List<EN.previewReceta> Get(String categoria)
         {
             CT.Receta recetaController = new CT.Receta();
 
@@ -57,8 +57,11 @@ namespace SocialCooking.Controllers
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, EN.Receta receta)
+        public void Put(EN.Receta recetaEditada)
         {
+            CT.Receta recetasController = new CT.Receta();
+            recetasController.ActualizarReceta(recetaEditada.Id_receta, recetaEditada);
+
         }
 
         // DELETE api/<controller>/5

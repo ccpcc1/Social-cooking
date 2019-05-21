@@ -76,7 +76,9 @@ namespace Controladora
         public bool ActualizarReceta(int id, EN.Receta otherReceta)
         {
             bool resultado = false;
-            BR.Recetas temp = new BR.Recetas();
+
+        
+
             try
             {
 
@@ -86,7 +88,7 @@ namespace Controladora
                 Ingredientes ingredientesController = new Ingredientes();
 
                 //Query de la receta a actualizar
-                BR.Recetas rec = db.Recetas.Where(x=>x.Id_categoria == id).FirstOrDefault();
+                BR.Recetas rec = db.Recetas.Where(x=>x.Id_receta == id).FirstOrDefault();
                 //Se actualizan los campos
                 rec.Descripcion = otherReceta.Descripcion;
                 rec.PasoApaso = otherReceta.PasoApaso;
@@ -101,7 +103,7 @@ namespace Controladora
 
                 db.SaveChanges();
 
-                ////Falta verificar como es la actualizacion de los ingredintes
+                //Falta verificar como es la actualizacion de los ingredintes
                 //BR.Receta tempReceta = db.Recetas.ToList().Last();
                 //otherReceta.Id_receta = tempReceta.Id_receta;
                 //imagenesController.ingresarImagenesReceta(otherReceta);
