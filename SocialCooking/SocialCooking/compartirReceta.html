@@ -20,19 +20,17 @@
         <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="feedUsuario.html">Feed de recetas</a>
+                    <a id="feedRecetas" class="nav-link text-light" href="">Feed de recetas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light active" href="compartirReceta.html">Compartir una receta</a>
+                    <a id="compartirReceta" class="nav-link text-light active" href="">Compartir una receta</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href="#" id="nombreUsuario" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Nombre usuario
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a id="miperfil" class="dropdown-item" href="#">Ver mi perfil</a>
                         <a id="misRecetas" class="dropdown-item text-success" href="#">Mis recetas</a>
-                        <a id="reportadas" class="dropdown-item text-warning" href="#">Ver recetas reportadas</a>
                         <div class="dropdown-divider"></div>
                         <a id="salir" class="dropdown-item text-danger" href="#">Salir</a>
                     </div>
@@ -42,10 +40,6 @@
                     <img id="imagenUsuario" src="images/about-img.jpg" class="img-circle" style="border-radius:30px;" width="30" height="25" alt="">
                 </a>
             </ul>
-            <form method="dialog" class="form-inline my-2 my-lg-0">
-                <input id="recetasxNombre" class="form-control mr-sm-2" maxlength="256" type="search" placeholder="Por ejemplo Pastas" aria-label="Search" required>
-                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar recetas por nombre</button>
-            </form>
         </div>
     </nav>
     <!-- Empieza jumboTron -->
@@ -178,15 +172,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/usuario.js"></script>
     <script src="js/receta.js"></script>
-    <script>
-        var parametro = window.location.search.substr('?').split('=');
-        var correo = parametro[1];
+    <script src="js/compartirReceta.js"></script>
 
-        console.log(parametro);
-        $.getJSON('/api/Usuario?correo=' + correo + "&confirmacion=" + true, function (data) {
-            document.getElementById("nombreUsuario").innerHTML = capitalizarPrimeraLetra(data.Nombre);
-            document.getElementById("imagenUsuario").src = data.img;
-        });
-    </script>
 </body>
 </html>

@@ -39,6 +39,7 @@
     <EntitySetMapping Name="Recetas">
       <EntityTypeMapping TypeName="SocialCookingModel.Recetas">
         <MappingFragment StoreEntitySet="Recetas">
+          <ScalarProperty Name="estaReportada" ColumnName="estaReportada" />
           <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="PasoApaso" ColumnName="PasoApaso" />
@@ -100,14 +101,6 @@
       </EndProperty>
       <EndProperty Name="Recetas">
         <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="usuariosxfavoritos" TypeName="SocialCookingModel.usuariosxfavoritos" StoreEntitySet="usuariosxfavoritos">
-      <EndProperty Name="Recetas">
-        <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
-      </EndProperty>
-      <EndProperty Name="Usuario">
-        <ScalarProperty Name="Id_Usuario" ColumnName="Id_usuario" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

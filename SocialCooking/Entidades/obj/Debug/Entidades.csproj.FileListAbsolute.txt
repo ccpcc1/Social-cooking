@@ -108,7 +108,6 @@ C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidade
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll
 C:\Users\palac\Desktop\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.pdb
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.xml
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll.config
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.dll
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\Entidades.pdb
@@ -116,8 +115,8 @@ F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooki
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.dll
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.dll
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\AutoMapper.xml
+F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.xml
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\bin\Debug\EntityFramework.SqlServer.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.csproj.CopyComplete
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Entidades\obj\Debug\Entidades.dll

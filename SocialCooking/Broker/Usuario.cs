@@ -26,8 +26,8 @@ namespace Broker
         public int IdTipoUsu { get; set; }
         public string img { get; set; }
     
-        public virtual Tipo_Usuario Tipo_Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Recetas> Recetas { get; set; }
+        public virtual Tipo_Usuario Tipo_Usuario { get; set; }
     }
 }

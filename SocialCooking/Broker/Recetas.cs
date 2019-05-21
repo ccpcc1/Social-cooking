@@ -20,7 +20,6 @@ namespace Broker
             this.imagenesxReceta = new HashSet<imagenesxReceta>();
             this.recetasxIngredientes = new HashSet<recetasxIngredientes>();
             this.Comentarios = new HashSet<Comentarios>();
-            this.Usuario = new HashSet<Usuario>();
         }
     
         public int Id_receta { get; set; }
@@ -35,15 +34,15 @@ namespace Broker
         public Nullable<System.DateTime> fechaPublicacion { get; set; }
         public string tiempoPreparacion { get; set; }
         public Nullable<int> porciones { get; set; }
+        public Nullable<int> estaReportada { get; set; }
     
         public virtual Categorias Categorias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<imagenesxReceta> imagenesxReceta { get; set; }
+        public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<recetasxIngredientes> recetasxIngredientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comentarios> Comentarios { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

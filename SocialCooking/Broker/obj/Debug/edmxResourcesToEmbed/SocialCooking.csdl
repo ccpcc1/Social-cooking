@@ -57,6 +57,7 @@
     <NavigationProperty Name="recetasxIngredientes" Relationship="Self.FK_recetasxIngredientes_Recetas" FromRole="Recetas" ToRole="recetasxIngredientes" />
     <NavigationProperty Name="Comentarios" Relationship="Self.comentariosXreceta" FromRole="Recetas" ToRole="Comentarios" />
     <NavigationProperty Name="Usuario" Relationship="Self.usuariosxfavoritos" FromRole="Recetas" ToRole="Usuario" />
+    <Property Name="estaReportada" Type="Int32" />
   </EntityType>
   <EntityType Name="recetasxIngredientes">
     <Key>

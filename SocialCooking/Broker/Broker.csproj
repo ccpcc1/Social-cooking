@@ -53,47 +53,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categorias.cs">
-      <DependentUpon>SocialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Comentarios.cs">
-      <DependentUpon>SocialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="imagenesxReceta.cs">
-      <DependentUpon>SocialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Ingredientes.cs">
-      <DependentUpon>SocialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recetas.cs">
-      <DependentUpon>SocialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="recetasxIngredientes.cs">
-      <DependentUpon>SocialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="SocialCooking.Context.cs">
+    <Compile Include="SocialCookingEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SocialCooking.Context.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="SocialCooking.cs">
+    <Compile Include="SocialCookingEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SocialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="SocialCooking.Designer.cs">
+    <Compile Include="SocialCookingEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SocialCooking.edmx</DependentUpon>
+      <DependentUpon>SocialCookingEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>SocialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Tipo_Usuario.cs">
-      <DependentUpon>SocialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
-      <DependentUpon>SocialCooking.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -101,27 +101,27 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <EntityDeploy Include="SocialCooking.edmx">
+    <EntityDeploy Include="SocialCookingEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SocialCooking.Designer.cs</LastGenOutput>
+      <LastGenOutput>SocialCookingEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="SocialCooking.edmx.diagram">
-      <DependentUpon>SocialCooking.edmx</DependentUpon>
+    <None Include="SocialCookingEntities.edmx.diagram">
+      <DependentUpon>SocialCookingEntities.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SocialCooking.Context.tt">
+    <Content Include="SocialCookingEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SocialCooking.edmx</DependentUpon>
-      <LastGenOutput>SocialCooking.Context.cs</LastGenOutput>
+      <DependentUpon>SocialCookingEntities.edmx</DependentUpon>
+      <LastGenOutput>SocialCookingEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="SocialCooking.tt">
+    <Content Include="SocialCookingEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SocialCooking.edmx</DependentUpon>
-      <LastGenOutput>SocialCooking.cs</LastGenOutput>
+      <DependentUpon>SocialCookingEntities.edmx</DependentUpon>
+      <LastGenOutput>SocialCookingEntities.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,6 +10,7 @@ var inputCantidad;
 var dialog;
 var imagenes = [];
 var id;
+var indices = ""; 
 var recetaEditada = new Object();
 
 window.onload = function () {
@@ -23,6 +24,7 @@ window.onload = function () {
     var correo = parametros['user'];
     cargarUsuario(correo);
     cargarRecetaId(id);
+    document.getElementById("files").addEventListener("change", guardarImagenes);
 };
 
 function obtenerURL() {
@@ -113,6 +115,7 @@ function cargarRecetaId(idReceta) {
         for (var i = 0; i < data.ingrediente.length; i++) {
             agregarCampos(data.ingrediente[i].ingrediente, data.ingrediente[i].cantidad, data.ingrediente[i].unidades);
         }
+        indices = document.getElementById('nombre').childNodes.length;
         //Pintar las imagenes
         for (var j = 0; j < data.imagenes.length; j++) {
             $('#imagenesContainer').append("\
@@ -135,6 +138,7 @@ function cargarRecetaId(idReceta) {
 }
 
 function editarReceta() {
+   
     var ingredientes = [];
     var img = [];
     var nombreReceta = document.getElementById('nombreReceta');
@@ -155,7 +159,7 @@ function editarReceta() {
     var i;
 
     if (ingrediente != null) {
-        for (i = 1; i < ingrediente.childNodes.length; i += 2) {
+        for (i = indices+1; i < ingrediente.childNodes.length; i += 2) {
             ingredientes[j] = { ingrediente: "", cantidad: "", unidades: "" };
             ingredientes[j].ingrediente = ingrediente.childNodes[i].value;
             ingredientes[j].cantidad = cantidadIngrediente.childNodes[i].value;
@@ -182,7 +186,6 @@ function editarReceta() {
     ActualizarReceta();
 }
 
-
 function ActualizarReceta()
 {
     recetaEditada = JSON.stringify(recetaEditada);
@@ -194,7 +197,7 @@ function ActualizarReceta()
         data:recetaEditada,
         success: function (recetaEditada) {
             $("#modalReceta").modal();
-            limpiarCampoReceta();
+            
         },
         error: function (request, message, error) {
 
@@ -279,13 +282,10 @@ function agregarCamposNuevos() {
 
 function cargarUsuario(correo) {
 
-
     $.getJSON('/api/Usuario?correo=' + correo + "&confirmacion=" + true, function (data) {
         document.getElementById("nombreUsuario").innerHTML = capitalizarPrimeraLetra(data.Nombre);
         document.getElementById("imagenUsuario").src = data.img;
     });
-
-
 }
 
 function agregarCampos(nombre,cantidad,unidad) {
@@ -330,6 +330,7 @@ function agregarCampos(nombre,cantidad,unidad) {
     inputNombre.setAttribute("max", "256");
     inputNombre.setAttribute("id", "campoNombre" + identificador);
     inputNombre.value = nombre;
+    inputNombre.disabled = true;
     document.getElementById("nombre").appendChild(inputNombre);
 
     //Input cantidad
@@ -341,6 +342,7 @@ function agregarCampos(nombre,cantidad,unidad) {
     inputCantidad.setAttribute("min", "1");
     inputCantidad.setAttribute("id", "campoCantidad" + identificador);
     inputCantidad.value = cantidad;
+    inputCantidad.disabled = true;
     document.getElementById("cantidad").appendChild(inputCantidad);
 
     //Input unidad
@@ -349,6 +351,7 @@ function agregarCampos(nombre,cantidad,unidad) {
     optionUnidades.setAttribute("required", "required");
     optionUnidades.setAttribute("id", "optionUnidades" + identificador);
     optionUnidades.value = unidad;
+    optionUnidades.disabled = true;
     document.getElementById("unidades").appendChild(optionUnidades);
 
     var idoptUnidades = "optionUnidades" + identificador;

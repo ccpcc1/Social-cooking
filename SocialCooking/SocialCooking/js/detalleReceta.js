@@ -1,4 +1,6 @@
 ﻿var dialog;
+var id;
+
 window.onload = function () {
     //Cargando...
     dialog = bootbox.dialog({
@@ -6,10 +8,11 @@ window.onload = function () {
         closeButton: false
     });
     var parametros = obtenerURL();
-    var id = parametros['id'];
+    id = parametros['id'];
+    var correo = parametros['user'];
+    cargarUsuario(correo);
     cargarRecetaId(id);
 };
-
 
 function obtenerURL() {
     // capturamos la url
@@ -30,9 +33,6 @@ function obtenerURL() {
     }
 
 }
-
-
-
 
 function cargarRecetaId(idReceta) {
 
@@ -56,6 +56,12 @@ function cargarRecetaId(idReceta) {
         $('#usuario').text(data.correo_usu);
         $('#idreceta').text(data.idReceta);
 
+        document.getElementById('btnReportar').addEventListener('click', reportarReceta);
+        document.getElementById('btnCompartirFacebook').addEventListener('click', compartirFacebook);
+        document.getElementById('btnCompartirtwitter').addEventListener('click', compartirTwitter);
+
+        
+       
         //Lista de ingrentes
         $('#listaPasos').append("\
             <li class='list-group-item'>"+ data.PasoApaso+"</li>\
@@ -99,8 +105,79 @@ function cargarRecetaId(idReceta) {
         dialog.modal('hide');
     });
 
+}
+
+function reportarReceta() {
+
+    $("#btnReportar").attr('disabled', 'disabled');
+
+    $.ajax({
+        url: "/api/reportar/"+id,
+        type: 'PUT',
+        contentType: 'application/json;charset=utf-8',
+        dataType: 'json',
+        success: function () {
+            
+            bootbox.alert({
+                message: "Se reporto la receta!",
+                callback: function () {
+                    console.log('Gracias por la contribucion!');
+                }
+            })
+        },
+        error: function (request, message, error) {
+
+            bootbox.alert({
+                message: "No se pudo reportar tu receta, intenta de nuevo!",
+                size: 'small'
+            });
+        }
+    });
+}
+
+function compartirFacebook() {
+    window.open("http://www.facebook.com/sharer/sharer.php?u=http://socialcookingweb.azurewebsites.net/detalleReceta.html?id="+ id + "&p[images][0]=Logo.png");
+
+}
+
+function compartirTwitter() {
+    window.open("http://twitter.com/share?url=http://socialcookingweb.azurewebsites.net/detalleReceta.html?id=" + id + "&p[images][0]=Logo.png");
+}
+
+function calificarReceta(valor) {
+    $("#divRecetas").children().attr("disabled", "disabled"); 
+    console.log(valor);
+    $.ajax({
+        url: "/api/Puntuar?id=" + id +"&valor="+valor,
+        type: 'PUT',
+        contentType: 'application/json;charset=utf-8',
+        dataType: 'json',
+        success: function () {
+           
+            bootbox.alert({
+                message: "Se califico la receta!",
+                callback: function () {
+                    console.log('Gracias por calificar esta deliciosa receta!');
+                }
+            })
+        },
+        error: function (request, message, error) {
+
+            bootbox.alert("No se pudo calificar!");
+        }
+    });
 
 
-    
+}
 
+function cargarUsuario(correo) {
+
+    $.getJSON('/api/Usuario?correo=' + correo + "&confirmacion=" + true, function (data) {
+        document.getElementById("nombreUsuario").innerHTML = data.Nombre;
+        document.getElementById("imagenUsuario").src = data.img;
+        //Links
+        document.getElementById('feedRecetas').setAttribute('href', "feedUsuario.html?user=" + data.Correo);
+        document.getElementById('compartirReceta').setAttribute('href', "compartirReceta.html?user=" + data.Correo);
+        document.getElementById('misRecetas').setAttribute('href', "misRecetas.html?user=" + data.Correo);
+    });
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7f1633d7e0e148329eac9fa8606018e2" Name="Diagram1">
+        <EntityTypeShape EntityType="SocialCookingModel.Categorias" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocialCookingModel.Comentarios" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocialCookingModel.imagenesxReceta" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocialCookingModel.Ingredientes" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocialCookingModel.Recetas" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocialCookingModel.recetasxIngredientes" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocialCookingModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocialCookingModel.Tipo_Usuario" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SocialCookingModel.Usuario" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="SocialCookingModel.FK_Recetas_Categorias" ManuallyRouted="false" />
+        <AssociationConnector Association="SocialCookingModel.FK_imagenesxReceta_Recetas" ManuallyRouted="false" />
+        <AssociationConnector Association="SocialCookingModel.FK_recetasxIngredientes_Ingredientes1" ManuallyRouted="false" />
+        <AssociationConnector Association="SocialCookingModel.FK_Recetas_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="SocialCookingModel.FK_recetasxIngredientes_Recetas1" ManuallyRouted="false" />
+        <AssociationConnector Association="SocialCookingModel.FK_Usuario_Tipo_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="SocialCookingModel.comentariosXreceta" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

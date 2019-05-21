@@ -9,7 +9,7 @@ using EN = Entidades;
 
 namespace Controladora
 {
-    
+
     public class Receta
     {
         public BR.SocialCookingEntities db;
@@ -28,7 +28,7 @@ namespace Controladora
             imagenesController = new ImagenesxReceta();
             ingredientesController = new Ingredientes();
             BrokerReceta = new BR.Recetas();
-           
+
 
         }
         //Metodo para crear una receta que recibe una EN.Receta
@@ -38,7 +38,7 @@ namespace Controladora
 
             try
             {
-
+                BrokerReceta.estaReportada = 0;
                 BrokerReceta.Descripcion = recetaTSave.Descripcion;
                 BrokerReceta.fechaPublicacion = DateTime.Today;
                 BrokerReceta.Idiomas = recetaTSave.Idioma;
@@ -52,43 +52,42 @@ namespace Controladora
                 BrokerReceta.tiempoPreparacion = recetaTSave.tiempoPreparacion;
                 db.Recetas.Add(BrokerReceta);
                 db.SaveChanges();
-                
 
-                 //Guardar el path de las imagenes
-                 //BR.Recetas tempReceta = db.Recetas.OrderByDescending(x=>x.Id_receta).FirstOrDefault();
-                 recetaTSave.Id_receta = BrokerReceta.Id_receta;
-                 imagenesController.ingresarImagenesReceta(recetaTSave.imagenes, BrokerReceta.Id_receta);
-                 //Guardar los ingredientes
-                 ingredientesController.ingresarIngrediente(recetaTSave);
-                 resultado = true;
-                
+
+                //Guardar el path de las imagenes
+                //BR.Recetas tempReceta = db.Recetas.OrderByDescending(x=>x.Id_receta).FirstOrDefault();
+                recetaTSave.Id_receta = BrokerReceta.Id_receta;
+                imagenesController.ingresarImagenesReceta(recetaTSave.imagenes, BrokerReceta.Id_receta);
+                //Guardar los ingredientes
+                ingredientesController.ingresarIngrediente(recetaTSave);
+                resultado = true;
+
 
             }
-            catch(Exception ex) {
+            catch (Exception ex) {
 
                 throw ex;
             }
 
             return resultado;
         }
-
         //Metodo para actualizar una receta 
         public bool ActualizarReceta(int id, EN.Receta otherReceta)
         {
             bool resultado = false;
 
-        
+
 
             try
             {
 
-      
+
                 Categorias categoriasController = new Categorias();
                 ImagenesxReceta imagenesController = new ImagenesxReceta();
                 Ingredientes ingredientesController = new Ingredientes();
 
                 //Query de la receta a actualizar
-                BR.Recetas rec = db.Recetas.Where(x=>x.Id_receta == id).FirstOrDefault();
+                BR.Recetas rec = db.Recetas.Where(x => x.Id_receta == id).FirstOrDefault();
                 //Se actualizan los campos
                 rec.Descripcion = otherReceta.Descripcion;
                 rec.PasoApaso = otherReceta.PasoApaso;
@@ -103,11 +102,17 @@ namespace Controladora
 
                 db.SaveChanges();
 
-                //Falta verificar como es la actualizacion de los ingredintes
-                //BR.Receta tempReceta = db.Recetas.ToList().Last();
-                //otherReceta.Id_receta = tempReceta.Id_receta;
-                //imagenesController.ingresarImagenesReceta(otherReceta);
-                //ingredientesController.ingresarIngrediente(otherReceta);
+                //Falta verificar como es la actualizacion de los ingredientes
+
+                if (otherReceta.imagenes.Length > 0)
+                {
+                    imagenesController.ingresarImagenesReceta(otherReceta.imagenes, otherReceta.Id_receta);
+                }
+                if (otherReceta.ingrediente.Length > 0)
+                {
+                    ingredientesController.ingresarIngrediente(otherReceta);
+                }
+
 
                 resultado = true;
 
@@ -119,14 +124,13 @@ namespace Controladora
             }
             return resultado;
         }
-
         //Obtener las recetas de un usuario especifco
         public List<EN.previewReceta> obtenerRecetasPorUsuario(string correo) {
 
             int id = usuarioController.getIdUsuario(correo);
 
-            var query = db.Recetas.Where(x=>x.Id_usuario == id).ToList();
-            
+            var query = db.Recetas.Where(x => x.Id_usuario == id).ToList().OrderBy(x => x.fechaPublicacion);
+
             List<EN.previewReceta> listToReturn = new List<EN.previewReceta>();
 
             foreach (var receta in query)
@@ -154,7 +158,6 @@ namespace Controladora
             }
             return listToReturn;
         }
-
         //Metodo que devuelve todas las recetas de tipo EN.Receta
         public List<EN.Receta> getRecetas()
         {
@@ -184,11 +187,10 @@ namespace Controladora
             return recetas;
 
         }
-
         //Funcion para traer un preview de receta
         public List<EN.previewReceta> recetasPreview() {
 
-            var query = db.Recetas.ToList();
+            var query = db.Recetas.ToList().OrderByDescending(x => x.fechaPublicacion);
 
             List<EN.previewReceta> listToReturn = new List<EN.previewReceta>();
 
@@ -207,7 +209,7 @@ namespace Controladora
                 else {
                     pr.imagen = receta.imagenesxReceta.ToList().First().ImagePath;
                 }
-               
+
                 pr.Nombre = receta.Nombre;
                 pr.porciones = Convert.ToInt32(receta.porciones);
                 pr.puntuacion = receta.puntuacion;
@@ -216,13 +218,12 @@ namespace Controladora
             }
             return listToReturn;
         }
-
         // metodo que devuelve una receta en especifico
         public EN.Receta getReceta(int idReceta)
         {
             EN.Receta recetaADevolver = new EN.Receta();
-     
-            var query = db.Recetas.Where(x => x.Id_receta==idReceta).FirstOrDefault();
+
+            var query = db.Recetas.Where(x => x.Id_receta == idReceta).FirstOrDefault();
 
             if (query.GetType() != null)
             {
@@ -247,10 +248,9 @@ namespace Controladora
             else {
                 return null;
             }
-            
-            
-        }
 
+
+        }
         //Metodo para obtener recetas por nombre
         public List<EN.previewReceta> getRecetaxNombre(string nombre_receta)
         {
@@ -285,15 +285,14 @@ namespace Controladora
 
             return retorno;
         }
-
         //Metodo para obtener receta por categorias
         public List<EN.previewReceta> getRecetaxCategoria(string categoria)
         {
-            List<EN.previewReceta> retorno = new List<EN.previewReceta> ();
+            List<EN.previewReceta> retorno = new List<EN.previewReceta>();
 
             int idCategoria = categoriasController.getIdCategoria(categoria);
 
-            var query = db.Recetas.Where(x => x.Id_categoria== idCategoria);
+            var query = db.Recetas.Where(x => x.Id_categoria == idCategoria);
 
             foreach (var item in query)
             {
@@ -326,7 +325,7 @@ namespace Controladora
         {
             ///Receta a elminar
             BR.Recetas query = db.Recetas.Where(x => x.Id_receta == IdReceta).FirstOrDefault();
-            List<BR.imagenesxReceta> imagenes = db.imagenesxReceta.Where(x=> x.Id_receta == IdReceta).ToList();
+            List<BR.imagenesxReceta> imagenes = db.imagenesxReceta.Where(x => x.Id_receta == IdReceta).ToList();
             List<BR.recetasxIngredientes> ingredientesxReceta = db.recetasxIngredientes.Where(x => x.Id_receta == IdReceta).ToList();
 
             if (query != null)
@@ -334,7 +333,7 @@ namespace Controladora
                 //Eliminar ingredientes
                 foreach (BR.recetasxIngredientes item in ingredientesxReceta)
                 {
-                    BR.Ingredientes ingrediente = db.Ingredientes.Where(x=>x.Id_ingrediente == item.Id_ingredientes).FirstOrDefault();
+                    BR.Ingredientes ingrediente = db.Ingredientes.Where(x => x.Id_ingrediente == item.Id_ingredientes).FirstOrDefault();
                     db.Ingredientes.Remove(ingrediente);
                     db.recetasxIngredientes.Remove(item);
                     db.SaveChanges();
@@ -361,12 +360,65 @@ namespace Controladora
 
         public void calificarReceta(int idReceta, int puntaje)
         {
-            BR.Recetas recetaPuntuada = new BR.Recetas();
-            var query = db.Recetas.Where(x => x.Id_receta == idReceta);
-            recetaPuntuada = (BR.Recetas)query;
-            recetaPuntuada.puntuacion = puntaje;
+            BR.Recetas recetaPuntuada = db.Recetas.Where(x => x.Id_receta == idReceta).FirstOrDefault();
             recetaPuntuada.nopuntuaciones += 1;
+            var puntucacionActual = recetaPuntuada.puntuacion + puntaje;
+            if (recetaPuntuada.nopuntuaciones == 1)
+            {
+
+                recetaPuntuada.puntuacion = puntucacionActual / recetaPuntuada.nopuntuaciones;
+            }
+            else
+            {
+                recetaPuntuada.puntuacion = puntucacionActual / 2;
+            }
+           
+        
+
+        db.SaveChanges();
+        }
+
+        public void reportarReceta(int idReceta) {
+
+            BR.Recetas reportarReceta = db.Recetas.Where(x=>x.Id_receta == idReceta).FirstOrDefault();
+
+            reportarReceta.estaReportada += 1;
+
             db.SaveChanges();
         }
+
+        public List<EN.previewReceta> recetasReportadas()
+        {
+
+            var query = db.Recetas.Where(x=>x.estaReportada>0).ToList().OrderByDescending(x => x.fechaPublicacion);
+
+            List<EN.previewReceta> listToReturn = new List<EN.previewReceta>();
+
+            foreach (var receta in query)
+            {
+                EN.previewReceta pr = new EN.previewReceta();
+                pr.Categoria = categoriasController.getNombreCategoria(receta.Id_categoria);
+                pr.Descripcion = receta.Descripcion;
+                pr.fechaPublicacion = receta.fechaPublicacion.ToString();
+                pr.Idioma = receta.Idiomas;
+                pr.Id_receta = receta.Id_receta;
+                if (receta.imagenesxReceta.ToList().Count == 0)
+                {
+                    pr.imagen = "images/imagen-no-disponible.jpg";
+                }
+                else
+                {
+                    pr.imagen = receta.imagenesxReceta.ToList().First().ImagePath;
+                }
+
+                pr.Nombre = receta.Nombre;
+                pr.porciones = Convert.ToInt32(receta.porciones);
+                pr.puntuacion = receta.puntuacion;
+                pr.tiempoPreparacion = receta.tiempoPreparacion;
+                listToReturn.Add(pr);
+            }
+            return listToReturn;
+        }
+
     }
 }

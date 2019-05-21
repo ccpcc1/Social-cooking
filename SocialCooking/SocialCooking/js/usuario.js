@@ -17,11 +17,10 @@ function capitalizarPrimeraLetra(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 function cargarUsuario() {
-
-
-    var parametro = window.location.search.substr('?').split('=');
-    var correo = parametro[1];
-
+        
+    var parametros = obtenerURL();
+    var id = parametros['id'];
+    var correo = parametros['user'];
     $.getJSON('/api/Usuario?correo=' + correo + "&confirmacion=" + true, function (data) {
         document.getElementById("nombreUsuario").innerHTML = capitalizarPrimeraLetra(data.Nombre);
         document.getElementById("imagenUsuario").src = data.img;
@@ -50,7 +49,8 @@ function onSignIn(googleUser) {
     verificarTipoUsu(profile.getEmail());
 }
 function signOut() {
-    GoogleAuth.signOut();
+    //GoogleAuth.signOut();
+    window.location = "index.html";
 }
 function verificarTipoUsu(correo) {
 
@@ -96,3 +96,23 @@ function enviarAPerfil(tipousuario) {
 
 
 }
+function obtenerURL() {
+    // capturamos la url
+    var loc = document.location.href;
+    // si existe el interrogante
+    if (loc.indexOf('?') > 0) {
+        // cogemos la parte de la url que hay despues del interrogante
+        var getString = loc.split('?')[1];
+        // obtenemos un array con cada clave=valor
+        var GET = getString.split('&');
+        var get = {};
+        // recorremos todo el array de valores
+        for (var i = 0, l = GET.length; i < l; i++) {
+            var tmp = GET[i].split('=');
+            get[tmp[0]] = unescape(decodeURI(tmp[1]));
+        }
+        return get;
+    }
+
+}
+

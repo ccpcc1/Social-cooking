@@ -25,7 +25,6 @@ function load() {
 
 }
 
-
 function guardarDatos() {
 
     //trabajo bajo el supuesto de que los campos estan llenos

@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/estilosPropios.css">
+    <!--Cuenta de google-->
+    
+    <meta name="google-signin-client_id" content="773333245714-3f5a96pc7egc38p4s51vkdos7pp0q1g7.apps.googleusercontent.com">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -34,11 +37,9 @@
                     <a class="nav-link dropdown-toggle text-light" href="#" id="nombreUsuario" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Ver mi perfil</a>
                         <a id="misRecetas" class="dropdown-item text-success" href="#">Mis recetas</a>
-                        <a class="dropdown-item text-warning" href="#">Ver recetas reportadas</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#">Salir</a>
+                        <a class="dropdown-item text-danger" onclick="signOut()">Salir</a>
                     </div>
                 </li>
                 <!-- Foto de perfil -->
@@ -134,6 +135,7 @@
     <script src="js/receta.js"></script>
     <script src="js/cargarPerfil.js"></script>
     <script src="js/paginationjs.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </body>
 </html>

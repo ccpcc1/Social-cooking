@@ -25,16 +25,18 @@ namespace SocialCooking.Controllers
         }
 
         // POST: api/Puntuar
-        public void Post(int idreceta,int puntuacion)
+        public void Post(int id,int valor)
         {
             CT.Receta recetaPuntuada = new CT.Receta();
-            recetaPuntuada.calificarReceta(idreceta,puntuacion);
+            recetaPuntuada.calificarReceta(id, valor);
 
         }
 
         // PUT: api/Puntuar/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, int valor)
         {
+            CT.Receta recetaPuntuada = new CT.Receta();
+            recetaPuntuada.calificarReceta(id, valor);
         }
 
         // DELETE: api/Puntuar/5

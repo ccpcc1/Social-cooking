@@ -14,8 +14,8 @@ namespace Broker
     
     public partial class recetasxIngredientes
     {
-        public int Id_receta { get; set; }
         public int Id_ingredientes { get; set; }
+        public int Id_receta { get; set; }
         public int cantidad { get; set; }
         public string unidad { get; set; }
     
