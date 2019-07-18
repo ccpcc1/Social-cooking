@@ -1,0 +1,147 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Datatables -->
+    <link href="css/animate.css" rel="stylesheet" />
+    <!--fonts icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <title>Detalle de receta</title>
+
+</head>
+<body class="bg-light">
+    <style>
+        .ec-stars-wrapper a {
+            text-decoration: none;
+            display: inline-block;
+            /* Volver a dar tamaño al texto */
+            font-size: 32px;
+            font-size: 2rem;
+            color: #888;
+        }
+
+        .ec-stars-wrapper:hover a {
+            color: rgb(39, 130, 228);
+        }
+
+        .ec-stars-wrapper > a:hover ~ a {
+            color: #888;
+        }
+    </style>
+    <!-- Panel superior -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FF5733">
+        <a class="navbar-brand text-light" href="#"><strong>Social</strong>Cooking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a id="feedRecetas" class="nav-link text-light" href="">Feed de recetas</a>
+                </li>
+                <li class="nav-item">
+                    <a id="compartirReceta" class="nav-link text-light active" href="">Compartir una receta</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="nombreUsuario" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Nombre usuario
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a id="misRecetas" class="dropdown-item text-success">Mis recetas</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#">Salir</a>
+                    </div>
+                </li>
+                <!-- Foto de perfil -->
+                <a class="navbar-brand px-2 pt-0 mx-auto" href="#">
+                    <img id="imagenUsuario" src="images/about-img.jpg" class="img-circle" style="border-radius:30px;" width="30" height="25" alt="">
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <!-- Termina panel superior -->
+    <div style="display:none" id="contenedorReceta" class="row animated bounceInUp delay-2s">
+        <div class="mx-auto py-5">
+            <div class="card center-block" style="width: 50rem;">
+                <img id="imagen" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h3 class="card-title text-warning py-2">Nombre de la receta</h3>
+                    <h4 id="categoria" class="card-title text-success py-2"></h4>
+                    <h5 class="py-2">Descripción</h5>
+                    <p id="descripcion">Descripcion de la receta</p>
+                    <h5 class="py-2">Paso a paso</h5>
+                    <ul id="listaPasos" class="list-group py-2"></ul>
+                    <!--Otros Datos de la receta-->
+                    <h5 class="py-2">Datos Adicionales</h5>
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i id="tiempo" class='fas fa-stopwatch px-2'></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i id="idioma" class='fas fa-globe-americas px-2'></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i id="nporciones" class='fas fa-users px-2'></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i id="ncalificaciones" class='fas fa-star-half-alt px-2'></i></a>
+                        </li>
+                    </ul>
+                    <!--Lista de ingredientes-->
+                    <h5 class="py-2">Ingredientes</h5>
+                    <div id="ingredientes" class="row py-2">
+
+
+                    </div>
+                    <!--Imagenes adicionales-->
+                    <h5 class="py-2">Imagenes</h5>
+                    <div id="contenedorImagenes" class="row py-2">
+                    </div>
+                    <!--Botones al final-->
+                    <a class="btn btn-warning">Añadir a favoritos</a>
+                    <a id="btnReportar" class="btn btn-danger">Reportar</a>
+                    <a id="btnCompartirFacebook" class="btn "><i class="fab fa-facebook-square px-2 fa-3x"></i></a>
+                    <a id="btnCompartirtwitter" class="btn "><i class="fab fa-twitter-square px-2 fa-3x"></i></a>
+                    <!--Estrellas-->
+                    <div id="divRecetas" class="ec-stars-wrapper mx-auto">
+                        <a class="estrellas" onclick="calificarReceta('1')" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
+                        <a class="estrellas" onclick="calificarReceta('2')" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
+                        <a class="estrellas" onclick="calificarReceta('3')" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
+                        <a class="estrellas" onclick="calificarReceta('4')" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
+                        <a class="estrellas" onclick="calificarReceta('5')" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+                    </div>
+                    <noscript>Necesitas tener habilitado javascript para poder votar</noscript>
+                    <div class="row">
+                        <div class="col-4">
+                            <p id="fecha" class="card-text"><small class="text-muted">1/1/2019</small></p>
+                        </div>
+                        <div class="col-4">
+                            <p id="idreceta" class="card-text"><small class="text-muted">10</small></p>
+                        </div>
+                        <div class="col-4">
+                            <p id="usuario" class="card-text"><small class="text-muted">Usuario</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- dataTables -->
+    <script src="js/usuario.js"></script>
+    <script src="js/receta.js"></script>
+    <script src="js/detalleReceta.js"></script>
+    <script src="js/bootbox.js"></script>
+</body>
+</html>

@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categorias.cs" />
+    <Compile Include="Comentarios.cs" />
+    <Compile Include="ControlllersException.cs" />
     <Compile Include="ImagenesxReceta.cs" />
     <Compile Include="Ingredientes.cs" />
     <Compile Include="Ingredientesxreceta.cs" />

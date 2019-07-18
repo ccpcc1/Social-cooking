@@ -80,6 +80,34 @@ C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csp
 C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
 C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
 C:\Users\sebas\Pictures\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll.config
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.pdb
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.dll
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.dll
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.xml
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.xml
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
+C:\Users\B09S309est\Pictures\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll.config
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.pdb
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.dll
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.dll
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.xml
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.xml
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll
+C:\Users\palac\Desktop\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.pdb
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll.config
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.dll
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\bin\Debug\Broker.pdb
@@ -89,7 +117,6 @@ F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooki
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\bin\Debug\AutoMapper.xml
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.xml
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\bin\Debug\EntityFramework.SqlServer.xml
-F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csprojAssemblyReference.cache
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CoreCompileInputs.cache
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.csproj.CopyComplete
 F:\UPB Jose Manuel\7mo Semestre\Gestion de la calidad\Social-cooking\SocialCooking\Broker\obj\Debug\Broker.dll

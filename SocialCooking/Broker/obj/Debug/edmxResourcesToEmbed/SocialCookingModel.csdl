@@ -21,11 +21,12 @@
   <EntityType Name="imagenesxReceta">
     <Key>
       <PropertyRef Name="Id_receta" />
-      <PropertyRef Name="img" />
+      <PropertyRef Name="ImageId" />
     </Key>
     <Property Name="Id_receta" Type="Int32" Nullable="false" />
-    <Property Name="img" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Receta" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="imagenesxReceta" ToRole="Recetas" />
+    <Property Name="ImageId" Type="Int32" Nullable="false" />
+    <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Ingrediente">
     <Key>

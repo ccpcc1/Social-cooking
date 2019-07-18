@@ -17,13 +17,13 @@ namespace Broker
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tipo_Usuario()
         {
-            this.Usuarios = new HashSet<Usuario>();
+            this.Usuario = new HashSet<Usuario>();
         }
     
         public int IdTipoUsu { get; set; }
         public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario> Usuarios { get; set; }
+        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

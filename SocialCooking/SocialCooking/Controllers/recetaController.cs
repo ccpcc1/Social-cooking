@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -10,57 +11,68 @@ namespace SocialCooking.Controllers
 {
     public class recetaController : ApiController
     {
-        // devuelve la receta especifica
-        public EN.Receta Get(int idReceta)
-        {
-            CT.Receta receta = new CT.Receta();
-
-            return receta.getReceta(idReceta);
-        }
 
         // obtener todas las recetas
-        public List<EN.Receta> Get()
+        public List<EN.previewReceta> Get()
         {
-            CT.Receta recetas = new CT.Receta();
-            return recetas.getRecetas();
+            CT.Receta recetasController = new CT.Receta();
+            return recetasController.recetasPreview();
+        }
+
+        // devuelve la receta especifica
+        public EN.Receta Get(int id)
+        {
+            CT.Receta recetaController = new CT.Receta();
+
+            return recetaController.getReceta(id);
+
+
         }
 
         //buscar la receta por categoria
-        public List<EN.Receta> Get(String categoria)
+        public List<EN.previewReceta> Get(String categoria)
         {
-            CT.Receta receta = new CT.Receta();
+            CT.Receta recetaController = new CT.Receta();
 
-            return receta.getRecetaxCategoria(categoria);
+            return recetaController.getRecetaxCategoria(categoria);
         }
 
         //buscar  la recta por nombre
-        public List<EN.Receta> Get(String nombre, bool validar)
+        public List<EN.previewReceta> Get(String nombre, bool validar)
         {
-            CT.Receta receta = new CT.Receta();
+            CT.Receta recetaController = new CT.Receta();
 
-            return receta.getRecetaxNombre(nombre);
+            return recetaController.getRecetaxNombre(nombre);
         }
 
-
-
         // guarda en la bd la receta
-        public void Post(EN.Receta receta)
+        public bool Post(EN.Receta recetaTosave)
         {
-            
-            Console.WriteLine(receta.Idioma);
-            CT.Receta nuevaReceta = new CT.Receta();
-            nuevaReceta.CrearReceta(receta);
+        
+            CT.Receta recetaController = new CT.Receta();
 
+            recetaController.CrearRecetaAsync(recetaTosave);
+
+            return true;
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(EN.Receta recetaEditada)
         {
+            CT.Receta recetasController = new CT.Receta();
+            recetasController.ActualizarReceta(recetaEditada.Id_receta, recetaEditada);
+
         }
 
+       
+
         // DELETE api/<controller>/5
+        [HttpDelete]
         public void Delete(int id)
         {
+            CT.Receta recetaController = new CT.Receta();
+
+            recetaController.deleteReceta(id);
         }
     }
 }

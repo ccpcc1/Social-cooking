@@ -26,11 +26,12 @@
   </EntityType>
   <EntityType Name="imagenesxReceta">
     <Key>
+      <PropertyRef Name="ImageId" />
       <PropertyRef Name="Id_receta" />
-      <PropertyRef Name="img" />
     </Key>
-    <Property Name="Id_receta" Type="int" Nullable="false" />
-    <Property Name="img" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="ImageId" Type="int" Nullable="false" />
+    <Property Name="Id_receta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="500" Nullable="false" />
   </EntityType>
   <EntityType Name="Ingredientes">
     <Key>

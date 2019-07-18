@@ -14,9 +14,10 @@ namespace Broker
     
     public partial class imagenesxReceta
     {
+        public int ImageId { get; set; }
         public int Id_receta { get; set; }
-        public string img { get; set; }
+        public string ImagePath { get; set; }
     
-        public virtual Receta Receta { get; set; }
+        public virtual Recetas Recetas { get; set; }
     }
 }

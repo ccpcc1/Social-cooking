@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SocialCookingModelStoreContainer" CdmEntityContainer="SocialCookingEntities">
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="SocialCookingModel.Categorias">
+        <MappingFragment StoreEntitySet="Categorias">
+          <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comentarios">
+      <EntityTypeMapping TypeName="SocialCookingModel.Comentarios">
+        <MappingFragment StoreEntitySet="Comentarios">
+          <ScalarProperty Name="Id_comentario" ColumnName="Id_comentario" />
+          <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="imagenesxReceta">
+      <EntityTypeMapping TypeName="SocialCookingModel.imagenesxReceta">
+        <MappingFragment StoreEntitySet="imagenesxReceta">
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingredientes">
+      <EntityTypeMapping TypeName="SocialCookingModel.Ingredientes">
+        <MappingFragment StoreEntitySet="Ingredientes">
+          <ScalarProperty Name="Id_ingrediente" ColumnName="Id_ingrediente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recetas">
+      <EntityTypeMapping TypeName="SocialCookingModel.Recetas">
+        <MappingFragment StoreEntitySet="Recetas">
+          <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="PasoApaso" ColumnName="PasoApaso" />
+          <ScalarProperty Name="Idiomas" ColumnName="Idiomas" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
+          <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
+          <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
+          <ScalarProperty Name="nopuntuaciones" ColumnName="nopuntuaciones" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="tiempoPreparacion" ColumnName="tiempoPreparacion" />
+          <ScalarProperty Name="porciones" ColumnName="porciones" />
+          <ScalarProperty Name="estaReportada" ColumnName="estaReportada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="recetasxIngredientes">
+      <EntityTypeMapping TypeName="SocialCookingModel.recetasxIngredientes">
+        <MappingFragment StoreEntitySet="recetasxIngredientes">
+          <ScalarProperty Name="Id_ingredientes" ColumnName="Id_ingredientes" />
+          <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SocialCookingModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Usuario">
+      <EntityTypeMapping TypeName="SocialCookingModel.Tipo_Usuario">
+        <MappingFragment StoreEntitySet="Tipo_Usuario">
+          <ScalarProperty Name="IdTipoUsu" ColumnName="IdTipoUsu" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="SocialCookingModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="IdTipoUsu" ColumnName="IdTipoUsu" />
+          <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="comentariosXreceta" TypeName="SocialCookingModel.comentariosXreceta" StoreEntitySet="comentariosXreceta">
+      <EndProperty Name="Comentarios">
+        <ScalarProperty Name="Id_comentario" ColumnName="Id_comentario" />
+      </EndProperty>
+      <EndProperty Name="Recetas">
+        <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

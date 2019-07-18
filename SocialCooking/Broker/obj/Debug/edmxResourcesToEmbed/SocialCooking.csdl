@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SocialCookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="Id_categoria" />
+    </Key>
+    <Property Name="Id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Recetas" Relationship="Self.FK_Recetas_Categorias" FromRole="Categorias" ToRole="Recetas" />
+  </EntityType>
+  <EntityType Name="Comentarios">
+    <Key>
+      <PropertyRef Name="Id_comentario" />
+    </Key>
+    <Property Name="Id_comentario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="Mensaje" Type="String" MaxLength="500" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Recetas" Relationship="Self.comentariosXreceta" FromRole="Comentarios" ToRole="Recetas" />
+  </EntityType>
+  <EntityType Name="imagenesxReceta">
+    <Key>
+      <PropertyRef Name="ImageId" />
+      <PropertyRef Name="Id_receta" />
+    </Key>
+    <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_receta" Type="Int32" Nullable="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Recetas" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="imagenesxReceta" ToRole="Recetas" />
+  </EntityType>
+  <EntityType Name="Ingredientes">
+    <Key>
+      <PropertyRef Name="Id_ingrediente" />
+    </Key>
+    <Property Name="Id_ingrediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="recetasxIngredientes" Relationship="Self.FK_recetasxIngredientes_Ingredientes" FromRole="Ingredientes" ToRole="recetasxIngredientes" />
+  </EntityType>
+  <EntityType Name="Recetas">
+    <Key>
+      <PropertyRef Name="Id_receta" />
+    </Key>
+    <Property Name="Id_receta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PasoApaso" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Idiomas" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="Id_categoria" Type="Int32" Nullable="false" />
+    <Property Name="puntuacion" Type="Int32" Nullable="false" />
+    <Property Name="nopuntuaciones" Type="Int32" Nullable="false" />
+    <Property Name="fechaPublicacion" Type="DateTime" Precision="0" />
+    <Property Name="tiempoPreparacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="porciones" Type="Int32" />
+    <NavigationProperty Name="Categorias" Relationship="Self.FK_Recetas_Categorias" FromRole="Recetas" ToRole="Categorias" />
+    <NavigationProperty Name="imagenesxReceta" Relationship="Self.FK_imagenesxReceta_Recetas" FromRole="Recetas" ToRole="imagenesxReceta" />
+    <NavigationProperty Name="recetasxIngredientes" Relationship="Self.FK_recetasxIngredientes_Recetas" FromRole="Recetas" ToRole="recetasxIngredientes" />
+    <NavigationProperty Name="Comentarios" Relationship="Self.comentariosXreceta" FromRole="Recetas" ToRole="Comentarios" />
+    <NavigationProperty Name="Usuario" Relationship="Self.usuariosxfavoritos" FromRole="Recetas" ToRole="Usuario" />
+    <Property Name="estaReportada" Type="Int32" />
+  </EntityType>
+  <EntityType Name="recetasxIngredientes">
+    <Key>
+      <PropertyRef Name="Id_receta" />
+      <PropertyRef Name="Id_ingredientes" />
+    </Key>
+    <Property Name="Id_receta" Type="Int32" Nullable="false" />
+    <Property Name="Id_ingredientes" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="unidad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Ingredientes" Relationship="Self.FK_recetasxIngredientes_Ingredientes" FromRole="recetasxIngredientes" ToRole="Ingredientes" />
+    <NavigationProperty Name="Recetas" Relationship="Self.FK_recetasxIngredientes_Recetas" FromRole="recetasxIngredientes" ToRole="Recetas" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tipo_Usuario">
+    <Key>
+      <PropertyRef Name="IdTipoUsu" />
+    </Key>
+    <Property Name="IdTipoUsu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_Tipo_Usuario" FromRole="Tipo_Usuario" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id_Usuario" />
+    </Key>
+    <Property Name="Id_Usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Correo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IdTipoUsu" Type="Int32" Nullable="false" />
+    <Property Name="img" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Tipo_Usuario" Relationship="Self.FK_Usuario_Tipo_Usuario" FromRole="Usuario" ToRole="Tipo_Usuario" />
+    <NavigationProperty Name="Recetas" Relationship="Self.usuariosxfavoritos" FromRole="Usuario" ToRole="Recetas" />
+  </EntityType>
+  <Association Name="FK_Recetas_Categorias">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="Id_categoria" />
+      </Principal>
+      <Dependent Role="Recetas">
+        <PropertyRef Name="Id_categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_imagenesxReceta_Recetas">
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="1" />
+    <End Role="imagenesxReceta" Type="Self.imagenesxReceta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recetas">
+        <PropertyRef Name="Id_receta" />
+      </Principal>
+      <Dependent Role="imagenesxReceta">
+        <PropertyRef Name="Id_receta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_recetasxIngredientes_Ingredientes">
+    <End Role="Ingredientes" Type="Self.Ingredientes" Multiplicity="1" />
+    <End Role="recetasxIngredientes" Type="Self.recetasxIngredientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingredientes">
+        <PropertyRef Name="Id_ingrediente" />
+      </Principal>
+      <Dependent Role="recetasxIngredientes">
+        <PropertyRef Name="Id_ingredientes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_recetasxIngredientes_Recetas">
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="1" />
+    <End Role="recetasxIngredientes" Type="Self.recetasxIngredientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recetas">
+        <PropertyRef Name="Id_receta" />
+      </Principal>
+      <Dependent Role="recetasxIngredientes">
+        <PropertyRef Name="Id_receta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Tipo_Usuario">
+    <End Role="Tipo_Usuario" Type="Self.Tipo_Usuario" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Usuario">
+        <PropertyRef Name="IdTipoUsu" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdTipoUsu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="comentariosXreceta">
+    <End Role="Comentarios" Type="Self.Comentarios" Multiplicity="*" />
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+  </Association>
+  <Association Name="usuariosxfavoritos">
+    <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="SocialCookingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" />
+    <EntitySet Name="Comentarios" EntityType="Self.Comentarios" />
+    <EntitySet Name="imagenesxReceta" EntityType="Self.imagenesxReceta" />
+    <EntitySet Name="Ingredientes" EntityType="Self.Ingredientes" />
+    <EntitySet Name="Recetas" EntityType="Self.Recetas" />
+    <EntitySet Name="recetasxIngredientes" EntityType="Self.recetasxIngredientes" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tipo_Usuario" EntityType="Self.Tipo_Usuario" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK_Recetas_Categorias" Association="Self.FK_Recetas_Categorias">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Recetas" EntitySet="Recetas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_imagenesxReceta_Recetas" Association="Self.FK_imagenesxReceta_Recetas">
+      <End Role="Recetas" EntitySet="Recetas" />
+      <End Role="imagenesxReceta" EntitySet="imagenesxReceta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_recetasxIngredientes_Ingredientes" Association="Self.FK_recetasxIngredientes_Ingredientes">
+      <End Role="Ingredientes" EntitySet="Ingredientes" />
+      <End Role="recetasxIngredientes" EntitySet="recetasxIngredientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_recetasxIngredientes_Recetas" Association="Self.FK_recetasxIngredientes_Recetas">
+      <End Role="Recetas" EntitySet="Recetas" />
+      <End Role="recetasxIngredientes" EntitySet="recetasxIngredientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Tipo_Usuario" Association="Self.FK_Usuario_Tipo_Usuario">
+      <End Role="Tipo_Usuario" EntitySet="Tipo_Usuario" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="comentariosXreceta" Association="Self.comentariosXreceta">
+      <End Role="Comentarios" EntitySet="Comentarios" />
+      <End Role="Recetas" EntitySet="Recetas" />
+    </AssociationSet>
+    <AssociationSet Name="usuariosxfavoritos" Association="Self.usuariosxfavoritos">
+      <End Role="Recetas" EntitySet="Recetas" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BR = Broker;
-using EN = Entidades;
-using CT = Controladora;
+
 
 
 namespace Controladora
@@ -18,7 +17,7 @@ namespace Controladora
         public int getIdCategoria(string categoria)
         {
 
-            BR.Categoria categoriaBuscada = db.Categorias.Where(x => x.Nombre.Contains(categoria)).FirstOrDefault();
+            BR.Categorias categoriaBuscada = db.Categorias.Where(x => x.Nombre.Contains(categoria)).FirstOrDefault();
 
             if(categoriaBuscada==null)
             {
@@ -40,7 +39,7 @@ namespace Controladora
 
         public void  agregarCategoria(String categoria)
         {
-            BR.Categoria categoriaNueva = new BR.Categoria();
+            BR.Categorias categoriaNueva = new BR.Categorias();
             categoriaNueva.Nombre = categoria;
             categoriaNueva.Descripcion = "";
         }

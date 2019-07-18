@@ -11,5 +11,6 @@ namespace Entidades
         //public int id_ingrediente { get; set; }
         public string ingrediente { get; set; }
         public int cantidad { get; set; }
+        public string unidades { get; set; }
     }
 }

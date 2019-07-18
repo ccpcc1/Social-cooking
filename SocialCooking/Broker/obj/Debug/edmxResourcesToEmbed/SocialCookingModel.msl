@@ -22,8 +22,9 @@
     <EntitySetMapping Name="imagenesxRecetas">
       <EntityTypeMapping TypeName="SocialCookingModel.imagenesxReceta">
         <MappingFragment StoreEntitySet="imagenesxReceta">
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
           <ScalarProperty Name="Id_receta" ColumnName="Id_receta" />
-          <ScalarProperty Name="img" ColumnName="img" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

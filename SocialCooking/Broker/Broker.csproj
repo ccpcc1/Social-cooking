@@ -52,57 +52,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
+    <Compile Include="Categorias.cs">
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Comentario.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database_firewall_rules.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
+    <Compile Include="Comentarios.cs">
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="imagenesxReceta.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Ingrediente.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
+    <Compile Include="Ingredientes.cs">
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Receta.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
+    <Compile Include="Recetas.cs">
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="recetasxIngrediente.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
+    <Compile Include="recetasxIngredientes.cs">
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="SocialCookingModel.Context.cs">
+    <Compile Include="SocialCookingEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SocialCookingModel.Context.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="SocialCookingModel.cs">
+    <Compile Include="SocialCookingEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="SocialCookingModel.Designer.cs">
+    <Compile Include="SocialCookingEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SocialCookingModel.edmx</DependentUpon>
+      <DependentUpon>SocialCookingEntities.edmx</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Tipo_Usuario.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
-      <DependentUpon>SocialCookingModel.tt</DependentUpon>
+      <DependentUpon>SocialCookingEntities.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -110,27 +101,27 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <EntityDeploy Include="SocialCookingModel.edmx">
+    <EntityDeploy Include="SocialCookingEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SocialCookingModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>SocialCookingEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="SocialCookingModel.edmx.diagram">
-      <DependentUpon>SocialCookingModel.edmx</DependentUpon>
+    <None Include="SocialCookingEntities.edmx.diagram">
+      <DependentUpon>SocialCookingEntities.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SocialCookingModel.Context.tt">
+    <Content Include="SocialCookingEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SocialCookingModel.edmx</DependentUpon>
-      <LastGenOutput>SocialCookingModel.Context.cs</LastGenOutput>
+      <DependentUpon>SocialCookingEntities.edmx</DependentUpon>
+      <LastGenOutput>SocialCookingEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="SocialCookingModel.tt">
+    <Content Include="SocialCookingEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SocialCookingModel.edmx</DependentUpon>
-      <LastGenOutput>SocialCookingModel.cs</LastGenOutput>
+      <DependentUpon>SocialCookingEntities.edmx</DependentUpon>
+      <LastGenOutput>SocialCookingEntities.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

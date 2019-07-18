@@ -1,98 +1,184 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
 <head>
-
-    <title>Steak House - Free HTML CSS Template</title>
-    <!--
-
-    Template 2083 Steak House
-
-    http://www.tooplate.com/view/2083-steak-house
-
-    -->
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-   
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="375831710522-stkrdasnepmffvgh59g8oukv8cea7e46.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/estilosPropios.css">
+    <!--Cuenta de google-->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <!-- stylesheets css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="css/nivo-lightbox.css">
-    <link rel="stylesheet" href="css/nivo_themes/default/default.css">
-
-    <link rel="stylesheet" href="css/hover-min.css">
-    <link rel="stylesheet" href="css/flexslider.css">
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
-
-    
+    <meta name="google-signin-client_id" content="773333245714-3f5a96pc7egc38p4s51vkdos7pp0q1g7.apps.googleusercontent.com">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Bienvenido a SocialCooking</title>
 </head>
-<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+<style>
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
 
-    <!-- Preloader section -->
-    <div class="preloader">
-        <div class="sk-spinner sk-spinner-pulse"></div>
-    </div>
+    #bntGoogle {
+        text-align:center;
+        margin : 0 auto;
+    }
 
+.bg {
+  /* The image used */
+  background-image: url("images/celebrate-celebration-cheers-1268558.jpg");
 
-    <!-- Home section -->
-    <section id="home" class="parallax-section">
-        <div class="gradient-overlay"></div>
-        <div class="container">
-            <div class="row">
+  /* Half height */
+  height: 50%;
 
-                <div class="col-md-offset-2 col-md-8 col-sm-12">
-                    <h1 class="wow fadeInUp" data-wow-delay="0.6s">Social Cooking</h1>
-                    <p class="wow fadeInUp" data-wow-delay="1.0s">Una red social para los amantes de las nuevas experiencias culinarias junto a su amor por compartirlas.</p>
-                    <div class="g-signin2  hvr-bounce-to-top " data-onsuccess="onSignIn"></div>
-                    <!--
-                        <a href="#feature" class="wow fadeInUp btn btn-default hvr-bounce-to-top smoothScroll" data-wow-delay="1.3s">
-                            login with google
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+}
 
-                        </a>
-                        -->
-                </div>
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  margin : 0 auto ;
+  text-align:center;
+}
 
-            </div>
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 1rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+}
+.opacity{
+   background-color:rgb(244, 149, 66);
+   opacity:0.9;
+   height: 100%;
+   width: 100%;
+  
+}
+</style>
+<body class="bg-light bg">
+
+        <div class="container-fluid text-center opacity py-4">
+                <h1 class="display-4 weight-bold">Hola Chef Apasionado</h1>
+                <p class="lead"><strong>Esta es la unica red Social para compartir tus recetas preferidas</strong></p>
+                <p>Gracias por estar aqui!</p>
         </div>
-    </section>
-
-
-    <!-- javscript js -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/jquery.magnific-popup.min.js"></script>
-
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.backstretch.min.js"></script>
-
-    <script src="js/isotope.js"></script>
-    <script src="js/imagesloaded.min.js"></script>
-    <script src="js/nivo-lightbox.min.js"></script>
-
-    <script src="js/jquery.flexslider-min.js"></script>
-
-    <script src="js/jquery.parallax.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/wow.min.js"></script>
-
-    <script src="js/custom.js"></script>
-    <script src="js/main.js"></script>
-    
-
+        <div class="container">
+                <div class="row">
+                  <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Ingresar</h5>
+                            <div id="bntGoogle" class="g-signin2" data-onsuccess="onSignIn"></div>
+                       
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+       
+    <!-- Termina panel superior -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="js/usuario.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

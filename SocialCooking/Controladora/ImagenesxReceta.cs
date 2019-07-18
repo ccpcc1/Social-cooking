@@ -11,43 +11,50 @@ namespace Controladora
    public class ImagenesxReceta
     {
         private BR.SocialCookingEntities db;
+        private BR.imagenesxReceta imgsToSave;
 
         //Metodo constructor
         public ImagenesxReceta()
         {
             db = new BR.SocialCookingEntities();
+            imgsToSave = new BR.imagenesxReceta();
         }
 
         //Metodo para ingresar el array de imagenes a la receta
-        public void ingresarImagenesReceta(EN.Receta receta)
+        public void ingresarImagenesReceta(string [] paths, int idReceta)
         {
-            BR.imagenesxReceta imgReceta = new BR.imagenesxReceta();
-            imgReceta.Id_receta = receta.Id_receta;
+            BR.imagenesxReceta imagenToSave = new BR.imagenesxReceta();
 
-            foreach (var otherReceta in receta.imagenes)
-            {
-                
-                imgReceta.img = otherReceta;
-                db.imagenesxRecetas.Add(imgReceta);
-                db.SaveChanges();
+            imagenToSave.Id_receta = idReceta;
+
+            foreach (string ruta in paths)
+                {
+
+                   imagenToSave.ImagePath = ruta;
+
+                   //Se guarda la ruta de cada imagen
+                   db.imagenesxReceta.Add(imagenToSave);
+                   db.SaveChanges();
             
 
-        }
+                }
             }
 
         //Metodo para obtener los strings con las direcciones de la imagenes
         public List<string> getImagenes(int id)
         {
             //Lista a retornar
-            List<string> imagenes = new List<string>();
+            List<string> paths = new List<string>();
             //Consulta por LINQ
-            var query = db.imagenesxRecetas.Where(x => x.Id_receta == id);
+            var query = db.imagenesxReceta.Where(x => x.Id_receta == id);
+
             foreach (var imagen in query)
             {
-                imagenes.Add(imagen.img);
+                paths.Add(imagen.ImagePath);
             }
-            return imagenes;
+            return paths;
 
         }
+
     }
 }

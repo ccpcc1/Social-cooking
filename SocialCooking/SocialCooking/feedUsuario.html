@@ -1,0 +1,141 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/estilosPropios.css">
+    <!--Cuenta de google-->
+    
+    <meta name="google-signin-client_id" content="773333245714-3f5a96pc7egc38p4s51vkdos7pp0q1g7.apps.googleusercontent.com">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--estilos propios-->
+    <link href="css/EstilosFeed.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <title>Feed recetas</title>
+</head>
+<body class="bg-light">
+
+    <!-- Panel superior -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FF5733">
+        <a class="navbar-brand text-light" href="#"><strong>Social</strong>Cooking</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="">Feed de recetas</a>
+                </li>
+                <li class="nav-item">
+                    <a id="compartirReceta" class="nav-link text-light" href="">Compartir una receta</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="nombreUsuario" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a id="misRecetas" class="dropdown-item text-success" href="#">Mis recetas</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" onclick="signOut()">Salir</a>
+                    </div>
+                </li>
+                <!-- Foto de perfil -->
+                <a class="navbar-brand px-2 pt-0 mx-auto" href="#">
+                    <img id="imagenUsuario" src="" class="img-circle" style="border-radius:30px;" width="30" height="25" alt="">
+                </a>
+            </ul>
+            <form method="dialog" class="form-inline my-2 my-lg-0">
+                <input id="buscarReceta" class="form-control mr-sm-2" maxlength="256" type="search" placeholder="Buscar Pastas" aria-label="Search">
+                <button onclick="buscarxNombre()" id="btn-buscar" class="btn btn-outline-light my-2 my-sm-0" type="button">Buscar recetas por nombre</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+    </div>
+    <!-- Empieza jumboTron -->
+    <div class="jumbotron jumbotron-fluid" style="background-color:#FD9078">
+        <div class="container text-center">
+            <h1 class="display-4 text-light"><strong>Bienvenido a SocialCooking</strong></h1>
+            <p class="lead"> La cocina social y libre esta aqui</p>
+            <button onclick="recetaRandom()" id="btn-buscar" class="mx-auto  btn btn-outline-light my-2 my-sm-0 d-block" type="button">Ver una receta Aleatoria</button>
+            <p class="lead py-5">🍷 🍴 🍕 🍔 🍟 🍗 🍖</p>
+            <div class="btn-group">
+                <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ver recetas por categoria
+                </button>
+                <div id="filtrarCategoria" class="py-5 dropdown-menu">
+                    <a onclick="buscarXCategoria('Comida Rápida')" class="dropdown-item" value="1" href="#">Comida Rápida</a>
+                    <a onclick="buscarXCategoria('Vegetariana')" class="dropdown-item" value="2" href="#">Vegetariana</a>
+                    <a onclick="buscarXCategoria('Comida Italiana')" class="dropdown-item" value="3" href="#">Comida Italiana</a>
+                    <a onclick="buscarXCategoria('Desayunos')" class="dropdown-item" value="4" href="#">Desayunos</a>
+                    <a onclick="buscarXCategoria('Snack')" class="dropdown-item" value="7" href="#">Snack</a>
+                    <a onclick="buscarXCategoria('Bebidas')" class="dropdown-item" value="9" href="#">Bebidas</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="modalBusqueda" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Lamentablemente no tenemos esa receta</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Querido Social-Cocinero, No hay recetas con ese nombre</p>
+                        <p>Te invitamos a agregar esa receta a nuestra comunidad</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Feed de recetas -->
+    <div class="card text-center">
+
+        <div class="card-header">
+            <h4 class="text-success">Feed de recetas</h4>
+        </div>
+        <!-- Contenedor de las recetas -->
+        <div id="ppal" class="card-body">
+            <div id="data-container" class="card-deck">
+
+            </div>
+        </div>
+
+        <!--Terminan recetas-->
+        <div class="card-footer text-muted text-center">
+            <!-- Botones de navegacion -->
+            <div class="" id="pagination-container"></div>
+        </div>
+    </div>
+
+    <!-- Termina panel superior -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- bootbox code -->
+    <script src="js/bootbox.js"></script>
+    <!--Js propios-->
+    <script src="js/usuario.js"></script>
+    <script src="js/receta.js"></script>
+    <script src="js/cargarPerfil.js"></script>
+    <script src="js/paginationjs.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</body>
+</html>
